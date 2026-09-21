@@ -1,0 +1,50 @@
+[
+  {
+    "id": "p1",
+    "displayName": {"text": "Güzellik Salonu Aylin"},
+    "formattedAddress": "Caferağa Mah. Moda Cad. No:12, Kadıköy/İstanbul",
+    "nationalPhoneNumber": "(0216) 123 45 67",
+    "websiteUri": "",
+    "googleMapsUri": "https://maps.google.com/?cid=1",
+    "rating": 4.6,
+    "businessStatus": "OPERATIONAL",
+    "_dryrun_status": "Yok",
+    "_dryrun_socials": []
+  },
+  {
+    "id": "p2",
+    "displayName": {"text": "Berber Mert"},
+    "formattedAddress": "Osmanağa Mah. Söğütlüçeşme Cad. No:5, Kadıköy/İstanbul",
+    "nationalPhoneNumber": "(0216) 234 56 78",
+    "websiteUri": "http://berbermert-eskisite.com",
+    "googleMapsUri": "https://maps.google.com/?cid=2",
+    "rating": 4.2,
+    "businessStatus": "OPERATIONAL",
+    "_dryrun_status": "Pasif (HTTP 404)",
+    "_dryrun_socials": []
+  },
+  {
+    "id": "p3",
+    "displayName": {"text": "Kırtasiye Dünyası"},
+    "formattedAddress": "Fenerbahçe Mah. Bağdat Cad. No:88, Kadıköy/İstanbul",
+    "nationalPhoneNumber": "(0216) 345 67 89",
+    "websiteUri": "https://kirtasiyedunyasi.com.tr",
+    "googleMapsUri": "https://maps.google.com/?cid=3",
+    "rating": 4.8,
+    "businessStatus": "OPERATIONAL",
+    "_dryrun_status": "Aktif",
+    "_dryrun_socials": ["Instagram", "Facebook"]
+  },
+  {
+    "id": "p4",
+    "displayName": {"text": "Eczane Yıldız"},
+    "formattedAddress": "Rasimpaşa Mah. Rıhtım Cad. No:3, Kadıköy/İstanbul",
+    "nationalPhoneNumber": "(0216) 456 78 90",
+    "websiteUri": "https://eczaneyildiz.com",
+    "googleMapsUri": "https://maps.google.com/?cid=4",
+    "rating": 4.5,
+    "businessStatus": "OPERATIONAL",
+    "_dryrun_status": "Aktif",
+    "_dryrun_socials": []
+  }
+]

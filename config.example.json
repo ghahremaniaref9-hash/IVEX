@@ -1,0 +1,15 @@
+{
+  "sectors": [
+    "kuaför",
+    "berber",
+    "kırtasiye",
+    "eczane",
+    "pastane"
+  ],
+  "locations": [
+    "Kadıköy, İstanbul",
+    "Üsküdar, İstanbul"
+  ],
+  "max_results_per_query": 40,
+  "output_csv": "leads.csv"
+}

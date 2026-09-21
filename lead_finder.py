@@ -22,6 +22,13 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import requests
 
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
 PLACES_SEARCH_URL = "https://places.googleapis.com/v1/places:searchText"
 FIELD_MASK = ",".join(
     [

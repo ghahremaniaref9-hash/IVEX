@@ -8,23 +8,46 @@ ve önceliklendirmeyi otomatikleştirir.
 
 ## Kurulum (bir kere yapılır)
 
-1. Python 3.9+ kurulu olmalı.
-2. Bağımlılığı yükleyin:
+0. **Kodu bilgisayarınıza indirin:** GitHub'da bu repo sayfasında yeşil
+   "Code" butonuna basıp "Download ZIP" seçin, indirilen dosyayı bir klasöre
+   çıkarın (örn. Masaüstü'nde `IVEX` klasörü). Git kullanmayı biliyorsanız
+   `git clone` ile de indirebilirsiniz.
+1. **Python 3.9+ kurun** (yoksa): https://www.python.org/downloads/ adresinden
+   indirip kurun. **Windows'ta kurulum ekranında "Add python.exe to PATH"
+   kutucuğunu mutlaka işaretleyin**, yoksa terminalden çalışmaz.
+2. **Terminali açıp klasöre gidin:**
+   - **Mac:** Spotlight'tan (Cmd+Space) "Terminal" yazıp açın, sonra:
+     ```
+     cd ~/Desktop/IVEX
+     ```
+   - **Windows:** Başlat menüsünden "PowerShell" yazıp açın, sonra:
+     ```
+     cd Desktop\IVEX
+     ```
+     (klasörü nereye çıkardıysanız yolu ona göre değiştirin)
+3. Bağımlılığı yükleyin:
    ```
    pip install -r requirements.txt
    ```
-3. Google Places API anahtarı alın:
+   (Mac'te `pip` çalışmazsa `pip3` deneyin)
+4. Google Places API anahtarı alın:
    - https://console.cloud.google.com/ adresinde bir proje açın.
    - "Places API (New)" servisini etkinleştirin.
    - Bir API anahtarı oluşturun ve kopyalayın.
    - Google her ay $200'a kadar ücretsiz kredi veriyor; düşük hacimde (birkaç
      yüz sorgu/ay) genelde ücretsiz kalır. Kesin fiyat için Google Places
      API fiyatlandırma sayfasını kontrol edin.
-4. Anahtarı ortam değişkeni olarak tanımlayın:
+5. `.env.example` dosyasını `.env` olarak kopyalayıp içine API anahtarınızı yazın:
    ```
-   export GOOGLE_MAPS_API_KEY=xxxxxxxx
+   cp .env.example .env
    ```
-5. `config.example.json` dosyasını `config.json` olarak kopyalayıp kendi
+   `.env` dosyasını bir metin editörüyle açıp şu satırı düzenleyin:
+   ```
+   GOOGLE_MAPS_API_KEY=AIza...sizin_gercek_anahtariniz
+   ```
+   Script her çalıştığında bu dosyayı otomatik okur, terminale tekrar
+   yazmanıza gerek yok.
+6. `config.example.json` dosyasını `config.json` olarak kopyalayıp kendi
    sektör ve mahalle listenizle düzenleyin:
    ```
    cp config.example.json config.json
@@ -43,8 +66,14 @@ ve önceliklendirmeyi otomatikleştirir.
 
 ## Çalıştırma
 
+Mac/Linux:
 ```
 python3 lead_finder.py --config config.json
+```
+
+Windows (PowerShell):
+```
+python lead_finder.py --config config.json
 ```
 
 API anahtarınız olmadan, örnek veriyle önce nasıl çalıştığını görmek isterseniz:
@@ -52,6 +81,7 @@ API anahtarınız olmadan, örnek veriyle önce nasıl çalıştığını görme
 ```
 python3 lead_finder.py --config config.example.json --dry-run --out ornek.csv
 ```
+(Windows'ta `python3` yerine `python` yazın.)
 
 ## Çıktı
 

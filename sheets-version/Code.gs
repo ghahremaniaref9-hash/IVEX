@@ -53,19 +53,28 @@ function setupSheets() {
   if (!ayarlar) ayarlar = ss.insertSheet('Ayarlar');
   ayarlar.clear();
   ayarlar.getRange('A1:C1').setValues([[
-    'Sektörler (her satıra bir tane)',
-    'Bölgeler (her satıra bir tane)',
+    'Sektör',
+    'Bölge',
     'Sorgu Başına Maks. Sonuç'
   ]]);
   ayarlar.getRange('A1:C1').setFontWeight('bold');
-  ayarlar.getRange('A2:B4').setValues([
+  ayarlar.getRange('A2:B6').setValues([
     ['kuaför', 'Kadıköy, İstanbul'],
-    ['berber', 'Üsküdar, İstanbul'],
-    ['eczane', '']
+    ['kuaför', 'Üsküdar, İstanbul'],
+    ['berber', 'Kadıköy, İstanbul'],
+    ['eczane', 'Beşiktaş, İstanbul'],
+    ['eczane', 'Şişli, İstanbul']
   ]);
   ayarlar.getRange('C2').setValue(40);
   ayarlar.setFrozenRows(1);
   ayarlar.autoResizeColumns(1, 3);
+  ayarlar.getRange('E1').setValue(
+    'Her satır bir arama demektir: o satırdaki sektörü, o satırdaki bölgede arar. ' +
+    'Aynı sektörü birden fazla bölgede aramak için sektörü tekrar tekrar yeni satırlara yazın. ' +
+    'Farklı sektörler farklı bölge setlerinde aranabilir, hepsi aynı olmak zorunda değil.'
+  );
+  ayarlar.getRange('E1').setFontStyle('italic').setFontColor('#666666');
+  ayarlar.autoResizeColumn(5);
 
   var leads = ss.getSheetByName('Leads');
   if (!leads) leads = ss.insertSheet('Leads');
@@ -101,16 +110,16 @@ function getSettings() {
   var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName('Ayarlar');
   if (!sheet) throw new Error('"Ayarlar" sayfası bulunamadı. Önce "0) Sayfaları Hazırla" çalıştırın.');
   var data = sheet.getDataRange().getValues();
-  var sectors = [];
-  var locations = [];
+  var pairs = [];
   for (var i = 1; i < data.length; i++) {
     var sector = (data[i][0] || '').toString().trim();
     var location = (data[i][1] || '').toString().trim();
-    if (sector) sectors.push(sector);
-    if (location) locations.push(location);
+    if (sector && location) {
+      pairs.push({ sector: sector, location: location });
+    }
   }
   var maxResults = Number(sheet.getRange('C2').getValue()) || 40;
-  return { sectors: sectors, locations: locations, maxResults: maxResults };
+  return { pairs: pairs, maxResults: maxResults };
 }
 
 function textSearch(query, apiKey, maxResults) {
@@ -216,23 +225,21 @@ function runLeadSearch() {
   }
 
   var settings = getSettings();
-  if (!settings.sectors.length || !settings.locations.length) {
-    ui.alert('"Ayarlar" sayfasında en az bir sektör ve bir bölge girin.');
+  if (!settings.pairs.length) {
+    ui.alert('"Ayarlar" sayfasında en az bir sektör-bölge satırı girin (her ikisi de dolu olmalı).');
     return;
   }
 
   var allPlaces = {};
-  for (var s = 0; s < settings.sectors.length; s++) {
-    for (var l = 0; l < settings.locations.length; l++) {
-      var sector = settings.sectors[s];
-      var location = settings.locations[l];
-      var query = sector + ' ' + location;
-      var places = textSearch(query, apiKey, settings.maxResults);
-      for (var p = 0; p < places.length; p++) {
-        var place = places[p];
-        if (place.id && !allPlaces[place.id]) {
-          allPlaces[place.id] = { place: place, sector: sector, location: location };
-        }
+  for (var i = 0; i < settings.pairs.length; i++) {
+    var sector = settings.pairs[i].sector;
+    var location = settings.pairs[i].location;
+    var query = sector + ' ' + location;
+    var places = textSearch(query, apiKey, settings.maxResults);
+    for (var p = 0; p < places.length; p++) {
+      var place = places[p];
+      if (place.id && !allPlaces[place.id]) {
+        allPlaces[place.id] = { place: place, sector: sector, location: location };
       }
     }
   }

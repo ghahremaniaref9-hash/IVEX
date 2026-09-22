@@ -58,12 +58,15 @@ function setupSheets() {
     'Sorgu Başına Maks. Sonuç'
   ]]);
   ayarlar.getRange('A1:C1').setFontWeight('bold');
-  ayarlar.getRange('A2:B6').setValues([
+  ayarlar.getRange('A2:B9').setValues([
     ['kuaför', 'Kadıköy, İstanbul'],
     ['kuaför', 'Üsküdar, İstanbul'],
-    ['berber', 'Kadıköy, İstanbul'],
-    ['eczane', 'Beşiktaş, İstanbul'],
-    ['eczane', 'Şişli, İstanbul']
+    ['kuaför', 'Beşiktaş, İstanbul'],
+    ['kuaför', 'Şişli, İstanbul'],
+    ['galerici', 'Kadıköy, İstanbul'],
+    ['galerici', 'Üsküdar, İstanbul'],
+    ['galerici', 'Beşiktaş, İstanbul'],
+    ['galerici', 'Şişli, İstanbul']
   ]);
   ayarlar.getRange('C2').setValue(40);
   ayarlar.setFrozenRows(1);
@@ -76,16 +79,18 @@ function setupSheets() {
   ayarlar.getRange('E1').setFontStyle('italic').setFontColor('#666666');
   ayarlar.autoResizeColumn(5);
 
-  var leads = ss.getSheetByName('Leads');
-  if (!leads) leads = ss.insertSheet('Leads');
-  leads.clearContents();
-  leads.appendRow(HEADERS);
-  leads.setFrozenRows(1);
+  var tumSonuclar = ss.getSheetByName('Tüm Sonuçlar');
+  if (!tumSonuclar) tumSonuclar = ss.insertSheet('Tüm Sonuçlar');
+  tumSonuclar.clearContents();
+  tumSonuclar.appendRow(HEADERS);
+  tumSonuclar.setFrozenRows(1);
 
   SpreadsheetApp.getUi().alert(
     'Sayfalar hazırlandı.\n\n' +
     '"Ayarlar" sayfasındaki örnek sektör/bölgeleri kendi listenizle değiştirin, ' +
-    'sonra menüden "1) API Anahtarını Kaydet" ve ardından "2) Taramayı Başlat" adımlarına geçin.'
+    'sonra menüden "1) API Anahtarını Kaydet" ve ardından "2) Taramayı Başlat" adımlarına geçin.\n\n' +
+    'Tarama bitince her sektör için ayrı bir sayfa ("Liste - <sektör adı>") ve hepsini bir arada ' +
+    'gösteren bir "Tüm Sonuçlar" sayfası otomatik oluşacak.'
   );
 }
 
@@ -203,10 +208,17 @@ function shouldCall(status) {
   return (status === 'Yok' || status.indexOf('Pasif') === 0) ? 'Evet' : 'Hayır';
 }
 
-function writeLeads(rows) {
+function sheetNameForSector(sector) {
+  var name = 'Liste - ' + sector;
+  name = name.replace(/[:\\\/\?\*\[\]]/g, '-');
+  if (name.length > 100) name = name.substring(0, 100);
+  return name;
+}
+
+function writeToSheet(sheetName, rows) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var sheet = ss.getSheetByName('Leads');
-  if (!sheet) sheet = ss.insertSheet('Leads');
+  var sheet = ss.getSheetByName(sheetName);
+  if (!sheet) sheet = ss.insertSheet(sheetName);
   sheet.clearContents();
   sheet.appendRow(HEADERS);
   if (rows.length) {
@@ -244,7 +256,9 @@ function runLeadSearch() {
     }
   }
 
-  var rows = [];
+  var allRows = [];
+  var bySector = {};
+  var sectorOrder = [];
   var skippedClosed = 0;
   var ids = Object.keys(allPlaces);
   for (var i = 0; i < ids.length; i++) {
@@ -257,7 +271,7 @@ function runLeadSearch() {
     var website = place.websiteUri || '';
     var check = checkWebsite(website);
     var name = (place.displayName && place.displayName.text) || '';
-    rows.push([
+    var row = [
       entry.sector,
       entry.location,
       name,
@@ -271,47 +285,79 @@ function runLeadSearch() {
       place.googleMapsUri || '',
       scorePriority(check.status, check.socials),
       shouldCall(check.status)
-    ]);
+    ];
+    allRows.push(row);
+    if (!bySector[entry.sector]) {
+      bySector[entry.sector] = [];
+      sectorOrder.push(entry.sector);
+    }
+    bySector[entry.sector].push(row);
   }
 
-  writeLeads(rows);
+  writeToSheet('Tüm Sonuçlar', allRows);
+  for (var s = 0; s < sectorOrder.length; s++) {
+    var sector = sectorOrder[s];
+    writeToSheet(sheetNameForSector(sector), bySector[sector]);
+  }
 
   var high = 0;
-  for (var r = 0; r < rows.length; r++) {
-    if (rows[r][11] === 'Yüksek') high++;
+  for (var r = 0; r < allRows.length; r++) {
+    if (allRows[r][11] === 'Yüksek') high++;
   }
+
+  var sectorSummary = sectorOrder.map(function (sector) {
+    return '- ' + sector + ': ' + bySector[sector].length + ' işletme (sayfa: "' + sheetNameForSector(sector) + '")';
+  }).join('\n');
 
   ui.alert(
     'Tamamlandı.\n\n' +
-    rows.length + ' benzersiz işletme bulundu.\n' +
+    allRows.length + ' benzersiz işletme bulundu.\n' +
     high + ' tanesi yüksek öncelikli (website yok/pasif -> aranmalı).\n' +
     skippedClosed + ' kalıcı kapalı işletme listeden çıkarıldı.\n\n' +
-    'Sonuçlar "Leads" sayfasında.'
+    'Sektöre göre dağılım:\n' + sectorSummary + '\n\n' +
+    'Hepsi bir arada: "Tüm Sonuçlar" sayfasında.'
   );
 }
 
 function runDryRun() {
-  var rows = [
-    ['kuaför', 'Kadıköy, İstanbul', 'Güzellik Salonu Aylin', '(0216) 123 45 67',
-      'Caferağa Mah. Moda Cad. No:12, Kadıköy/İstanbul', 4.6, '', 'Yok', '-',
-      manualCheckLink('Güzellik Salonu Aylin', 'Kadıköy, İstanbul'),
-      'https://maps.google.com/?cid=1', 'Yüksek', 'Evet'],
-    ['kuaför', 'Kadıköy, İstanbul', 'Berber Mert', '(0216) 234 56 78',
-      'Osmanağa Mah. Söğütlüçeşme Cad. No:5, Kadıköy/İstanbul', 4.2,
-      'http://berbermert-eskisite.com', 'Pasif (HTTP 404)', '-',
-      manualCheckLink('Berber Mert', 'Kadıköy, İstanbul'),
-      'https://maps.google.com/?cid=2', 'Yüksek', 'Evet'],
-    ['kuaför', 'Kadıköy, İstanbul', 'Kırtasiye Dünyası', '(0216) 345 67 89',
-      'Fenerbahçe Mah. Bağdat Cad. No:88, Kadıköy/İstanbul', 4.8,
-      'https://kirtasiyedunyasi.com.tr', 'Aktif', 'Instagram, Facebook',
-      manualCheckLink('Kırtasiye Dünyası', 'Kadıköy, İstanbul'),
-      'https://maps.google.com/?cid=3', 'Düşük', 'Hayır'],
-    ['kuaför', 'Kadıköy, İstanbul', 'Eczane Yıldız', '(0216) 456 78 90',
-      'Rasimpaşa Mah. Rıhtım Cad. No:3, Kadıköy/İstanbul', 4.5,
-      'https://eczaneyildiz.com', 'Aktif', '-',
-      manualCheckLink('Eczane Yıldız', 'Kadıköy, İstanbul'),
-      'https://maps.google.com/?cid=4', 'Orta', 'Hayır']
-  ];
-  writeLeads(rows);
-  SpreadsheetApp.getUi().alert('Örnek veri "Leads" sayfasına yazıldı. Gerçek taramayı başlatmak için önce API anahtarınızı girin.');
+  var bySector = {
+    'kuaför': [
+      ['kuaför', 'Kadıköy, İstanbul', 'Güzellik Salonu Aylin', '(0216) 123 45 67',
+        'Caferağa Mah. Moda Cad. No:12, Kadıköy/İstanbul', 4.6, '', 'Yok', '-',
+        manualCheckLink('Güzellik Salonu Aylin', 'Kadıköy, İstanbul'),
+        'https://maps.google.com/?cid=1', 'Yüksek', 'Evet'],
+      ['kuaför', 'Kadıköy, İstanbul', 'Berber Mert', '(0216) 234 56 78',
+        'Osmanağa Mah. Söğütlüçeşme Cad. No:5, Kadıköy/İstanbul', 4.2,
+        'http://berbermert-eskisite.com', 'Pasif (HTTP 404)', '-',
+        manualCheckLink('Berber Mert', 'Kadıköy, İstanbul'),
+        'https://maps.google.com/?cid=2', 'Yüksek', 'Evet']
+    ],
+    'galerici': [
+      ['galerici', 'Üsküdar, İstanbul', 'Oto Galeri Can', '(0216) 345 67 89',
+        'Altunizade Mah. Kısıklı Cad. No:88, Üsküdar/İstanbul', 4.8,
+        'https://otogaleriscan.com.tr', 'Aktif', 'Instagram, Facebook',
+        manualCheckLink('Oto Galeri Can', 'Üsküdar, İstanbul'),
+        'https://maps.google.com/?cid=3', 'Düşük', 'Hayır'],
+      ['galerici', 'Beşiktaş, İstanbul', 'Star Galeri', '(0212) 456 78 90',
+        'Levent Mah. Büyükdere Cad. No:3, Beşiktaş/İstanbul', 4.5,
+        'https://stargaleri.com', 'Aktif', '-',
+        manualCheckLink('Star Galeri', 'Beşiktaş, İstanbul'),
+        'https://maps.google.com/?cid=4', 'Orta', 'Hayır']
+    ]
+  };
+
+  var allRows = [];
+  var sectorOrder = Object.keys(bySector);
+  for (var s = 0; s < sectorOrder.length; s++) {
+    var sector = sectorOrder[s];
+    writeToSheet(sheetNameForSector(sector), bySector[sector]);
+    allRows = allRows.concat(bySector[sector]);
+  }
+  writeToSheet('Tüm Sonuçlar', allRows);
+
+  SpreadsheetApp.getUi().alert(
+    'Örnek veri yazıldı: her sektör kendi sayfasına ("Liste - kuaför", "Liste - galerici"), ' +
+    'hepsi bir arada "Tüm Sonuçlar" sayfasına.\n\n' +
+    'Gerçek taramayı başlatmak için önce API anahtarınızı girin.'
+  );
 }

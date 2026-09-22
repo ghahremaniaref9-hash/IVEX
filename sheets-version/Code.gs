@@ -512,3 +512,23 @@ function runDryRun() {
     '"Tüm Sonuçlar" sayfasına.\n\nGerçek taramayı başlatmak için önce API anahtarınızı girin.'
   );
 }
+
+function testApiKey() {
+  var apiKey = PropertiesService.getScriptProperties().getProperty('GOOGLE_MAPS_API_KEY');
+  if (!apiKey) {
+    Logger.log('API anahtari kayitli degil.');
+    return;
+  }
+  var resp = UrlFetchApp.fetch('https://places.googleapis.com/v1/places:searchText', {
+    method: 'post',
+    contentType: 'application/json',
+    headers: {
+      'X-Goog-Api-Key': apiKey,
+      'X-Goog-FieldMask': 'places.id,places.displayName'
+    },
+    payload: JSON.stringify({ textQuery: 'kuaför Kadıköy İstanbul' }),
+    muteHttpExceptions: true
+  });
+  Logger.log('HTTP Kodu: ' + resp.getResponseCode());
+  Logger.log('Yanit: ' + resp.getContentText().substring(0, 800));
+}

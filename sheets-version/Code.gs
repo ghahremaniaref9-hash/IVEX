@@ -242,79 +242,96 @@ function runLeadSearch() {
     return;
   }
 
-  var allPlaces = {};
+  // Sektörleri grupla (satır sırasını koru), her sektörü bitirir bitirmez
+  // hem kendi sayfasına hem de "Tüm Sonuçlar"a yazıyoruz. Büyük taramalarda
+  // Apps Script'in 6 dakikalık süre sınırına takılırsa bile o ana kadar
+  // taranan sektörler kaybolmaz.
+  var sectorLocations = {};
+  var sectorOrder = [];
   for (var i = 0; i < settings.pairs.length; i++) {
-    var sector = settings.pairs[i].sector;
-    var location = settings.pairs[i].location;
-    var query = sector + ' ' + location;
-    var places = textSearch(query, apiKey, settings.maxResults);
-    for (var p = 0; p < places.length; p++) {
-      var place = places[p];
-      if (place.id && !allPlaces[place.id]) {
-        allPlaces[place.id] = { place: place, sector: sector, location: location };
-      }
+    var pSector = settings.pairs[i].sector;
+    var pLocation = settings.pairs[i].location;
+    if (!sectorLocations[pSector]) {
+      sectorLocations[pSector] = [];
+      sectorOrder.push(pSector);
     }
+    sectorLocations[pSector].push(pLocation);
   }
 
   var allRows = [];
-  var bySector = {};
-  var sectorOrder = [];
-  var skippedClosed = 0;
-  var ids = Object.keys(allPlaces);
-  for (var i = 0; i < ids.length; i++) {
-    var entry = allPlaces[ids[i]];
-    var place = entry.place;
-    if (place.businessStatus === 'CLOSED_PERMANENTLY') {
-      skippedClosed++;
-      continue;
-    }
-    var website = place.websiteUri || '';
-    var check = checkWebsite(website);
-    var name = (place.displayName && place.displayName.text) || '';
-    var row = [
-      entry.sector,
-      entry.location,
-      name,
-      place.nationalPhoneNumber || place.internationalPhoneNumber || '',
-      place.formattedAddress || '',
-      place.rating || '',
-      website,
-      check.status,
-      check.socials.length ? check.socials.join(', ') : '-',
-      manualCheckLink(name, entry.location),
-      place.googleMapsUri || '',
-      scorePriority(check.status, check.socials),
-      shouldCall(check.status)
-    ];
-    allRows.push(row);
-    if (!bySector[entry.sector]) {
-      bySector[entry.sector] = [];
-      sectorOrder.push(entry.sector);
-    }
-    bySector[entry.sector].push(row);
-  }
+  var summaryLines = [];
+  var totalHigh = 0;
+  var totalSkippedClosed = 0;
 
-  writeToSheet('Tüm Sonuçlar', allRows);
   for (var s = 0; s < sectorOrder.length; s++) {
     var sector = sectorOrder[s];
-    writeToSheet(sheetNameForSector(sector), bySector[sector]);
-  }
+    var locations = sectorLocations[sector];
 
-  var high = 0;
-  for (var r = 0; r < allRows.length; r++) {
-    if (allRows[r][11] === 'Yüksek') high++;
-  }
+    var placesById = {};
+    for (var l = 0; l < locations.length; l++) {
+      var location = locations[l];
+      var query = sector + ' ' + location;
+      var places = textSearch(query, apiKey, settings.maxResults);
+      for (var p = 0; p < places.length; p++) {
+        var place = places[p];
+        if (place.id && !placesById[place.id]) {
+          placesById[place.id] = { place: place, location: location };
+        }
+      }
+    }
 
-  var sectorSummary = sectorOrder.map(function (sector) {
-    return '- ' + sector + ': ' + bySector[sector].length + ' işletme (sayfa: "' + sheetNameForSector(sector) + '")';
-  }).join('\n');
+    var sectorRows = [];
+    var skippedClosed = 0;
+    var ids = Object.keys(placesById);
+    for (var i2 = 0; i2 < ids.length; i2++) {
+      var entry = placesById[ids[i2]];
+      var place = entry.place;
+      if (place.businessStatus === 'CLOSED_PERMANENTLY') {
+        skippedClosed++;
+        continue;
+      }
+      var website = place.websiteUri || '';
+      var check = checkWebsite(website);
+      var name = (place.displayName && place.displayName.text) || '';
+      sectorRows.push([
+        sector,
+        entry.location,
+        name,
+        place.nationalPhoneNumber || place.internationalPhoneNumber || '',
+        place.formattedAddress || '',
+        place.rating || '',
+        website,
+        check.status,
+        check.socials.length ? check.socials.join(', ') : '-',
+        manualCheckLink(name, entry.location),
+        place.googleMapsUri || '',
+        scorePriority(check.status, check.socials),
+        shouldCall(check.status)
+      ]);
+    }
+
+    writeToSheet(sheetNameForSector(sector), sectorRows);
+    allRows = allRows.concat(sectorRows);
+    writeToSheet('Tüm Sonuçlar', allRows);
+
+    var sectorHigh = 0;
+    for (var r2 = 0; r2 < sectorRows.length; r2++) {
+      if (sectorRows[r2][11] === 'Yüksek') sectorHigh++;
+    }
+    totalHigh += sectorHigh;
+    totalSkippedClosed += skippedClosed;
+    summaryLines.push(
+      '- ' + sector + ': ' + sectorRows.length + ' işletme, ' + sectorHigh +
+      ' yüksek öncelikli (sayfa: "' + sheetNameForSector(sector) + '")'
+    );
+  }
 
   ui.alert(
     'Tamamlandı.\n\n' +
-    allRows.length + ' benzersiz işletme bulundu.\n' +
-    high + ' tanesi yüksek öncelikli (website yok/pasif -> aranmalı).\n' +
-    skippedClosed + ' kalıcı kapalı işletme listeden çıkarıldı.\n\n' +
-    'Sektöre göre dağılım:\n' + sectorSummary + '\n\n' +
+    allRows.length + ' benzersiz işletme bulundu (tüm sektörler).\n' +
+    totalHigh + ' tanesi yüksek öncelikli (website yok/pasif -> aranmalı).\n' +
+    totalSkippedClosed + ' kalıcı kapalı işletme listeden çıkarıldı.\n\n' +
+    'Sektöre göre dağılım:\n' + summaryLines.join('\n') + '\n\n' +
     'Hepsi bir arada: "Tüm Sonuçlar" sayfasında.'
   );
 }

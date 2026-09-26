@@ -14,6 +14,20 @@ particle hero), brand tokens and section CSS appended to `app/src/styles.css`,
 WebP images + favicons + `site.webmanifest` in `app/public/`, and
 `app/src/app-meta.json` filled (title, description, OG image, cover, icon).
 
+Follow-up (same day):
+
+- Added `/hakkimizda` (Hakkımızda) with the user's text verbatim, a shared
+  nav/footer (`app/src/components/ivex/site-chrome.tsx`) and a link from the home
+  about section. Live.
+- References section is built but hidden: fill `CLIENT_BRANDS` and
+  `CLIENT_REVIEWS` in `app/src/components/ivex/references.tsx` with the user's
+  REAL client names and reviews (never invented), then deploy.
+- Custom domain: Higgsfield offers it only on paid plans (the account is on the
+  free plan); it is set in Higgsfield's website settings, not via the tools.
+  Once connected, update `SITE_URL` in `contact.ts` and `__root.tsx`.
+- Open question to the user: switch the site name from "IVEX Medya" to
+  "IVEX & CO" everywhere?
+
 Notes for the next session:
 
 - Site access now goes through the Higgsfield connector (brokered mode):

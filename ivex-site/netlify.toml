@@ -6,6 +6,10 @@
 [build.environment]
   NODE_VERSION = "22"
 
+# submission-created.mts forwards each verified form entry to WhatsApp.
+[functions]
+  directory = "netlify/functions"
+
 [[headers]]
   for = "/assets/*"
   [headers.values]

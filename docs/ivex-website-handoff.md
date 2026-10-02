@@ -51,6 +51,16 @@ Netlify follow-ups (2026-10-02/03):
   details prefilled; fully automatic WhatsApp needs a messaging API + functions,
   which drag-and-drop deploys cannot carry.
 
+WhatsApp notifications for the form (2026-10-03, approved by the user):
+
+- The user explicitly approved sending customer form data to their WhatsApp
+  through CallMeBot. The consent checkbox names the service.
+- `ivex-site/netlify/functions/submission-created.mts` sends each verified
+  `basvuru` entry (env `CALLMEBOT_APIKEY`, optional `WHATSAPP_PHONE`, default
+  +905010623794). E-mail notifications are not used.
+- Functions do not ship with drag-and-drop deploys: link the Netlify project to
+  this repo (base directory `ivex-site`, branch `claude/cool-faraday-i465fk`).
+
 Notes for the next session:
 
 - Site access now goes through the Higgsfield connector (brokered mode):

@@ -2,7 +2,7 @@
   --ivx-ground: #07100c;
   --ivx-surface: #0b2a1d;
   --ivx-line: #123d2b;
-  --ivx-accent: #34d27b;
+  --ivx-accent: #daff2e;
   --ivx-text: #f2f5f3;
   --ivx-muted: #9fb3a8;
   --ivx-frame: 14px;
@@ -142,43 +142,18 @@ ol {
   color: var(--ivx-accent);
 }
 
-/* Wordmark: IV + three-bar Xi + X, then MEDYA */
-.ivx-wordmark {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.55em;
-  font-weight: 700;
-  font-size: 1.3rem;
-  line-height: 1;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-.ivx-wordmark__core {
-  display: inline-flex;
-  align-items: baseline;
-}
-.ivx-wordmark__sub {
-  font-weight: 400;
-  font-size: 0.66em;
-  letter-spacing: 0.34em;
-  color: var(--ivx-muted);
-}
-.ivx-xi {
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 0.6em;
-  height: 0.7em;
-  margin-inline: 0.07em;
-}
-.ivx-xi > span {
+/* Logo (supplied artwork, traced to SVG) */
+.ivx-logo {
   display: block;
-  height: 0.13em;
-  background: var(--ivx-accent);
+  height: 26px;
+  width: auto;
 }
-.ivx-xi > span:nth-child(2) {
-  width: 68%;
-  margin-inline: auto;
+.ivx-footer .ivx-logo {
+  height: 30px;
+}
+.ivx-igbadge__core .ivx-logo-x {
+  width: 1.5rem;
+  height: auto;
 }
 
 /* Nav */
@@ -345,7 +320,7 @@ ol {
   stroke: var(--ivx-accent);
 }
 .ivx-helix-cta__wave path:last-child {
-  stroke: rgb(52 210 123 / 0.45);
+  stroke: rgb(218 255 46 / 0.45);
 }
 .ivx-helix-cta:hover .ivx-helix-cta__wave svg,
 .ivx-helix-cta:focus-visible .ivx-helix-cta__wave svg {
@@ -616,7 +591,7 @@ ol {
 .ivx-phone__num {
   display: block;
   margin-top: 0.6rem;
-  font-size: clamp(1.7rem, 6vw, 6.5rem);
+  font-size: clamp(1.7rem, 5.4vw, 5.8rem);
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.035em;

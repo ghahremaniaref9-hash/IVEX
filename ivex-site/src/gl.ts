@@ -1,17 +1,18 @@
 import * as THREE from "three";
+import { X_EDGE, X_FILL } from "./x-points";
 
 // One fixed WebGL layer behind the page. A single particle cloud morphs between
 // brand shapes as the visitor scrolls through sections marked with
-// data-shape="helix|cloud|ring|stairs|xi" (+ optional data-side="left|center|right").
+// data-shape="helix|cloud|ring|stairs|mark" (+ optional data-side="left|center|right").
 // The cursor pushes particles aside; they spring back on their own.
 
-const SHAPES = ["helix", "cloud", "ring", "stairs", "xi"] as const;
+const SHAPES = ["helix", "cloud", "ring", "stairs", "mark"] as const;
 type Shape = (typeof SHAPES)[number];
 
 // Rough visual width of each shape in world units, for fitting narrow screens.
-const SHAPE_WIDTH: Record<Shape, number> = { helix: 3.4, cloud: 5.6, ring: 5.0, stairs: 7.4, xi: 4.6 };
-const SHAPE_SPIN: Record<Shape, number> = { helix: 0.32, cloud: 0.07, ring: 0, stairs: 0, xi: 0 };
-const SHAPE_SWAY: Record<Shape, number> = { helix: 0, cloud: 0, ring: 0.3, stairs: 0.28, xi: 0.24 };
+const SHAPE_WIDTH: Record<Shape, number> = { helix: 3.4, cloud: 5.6, ring: 5.0, stairs: 7.4, mark: 3.9 };
+const SHAPE_SPIN: Record<Shape, number> = { helix: 0.32, cloud: 0.07, ring: 0, stairs: 0, mark: 0 };
+const SHAPE_SWAY: Record<Shape, number> = { helix: 0, cloud: 0, ring: 0.3, stairs: 0.28, mark: 0.3 };
 
 const FOV = 45;
 const CAM_Z = 10;
@@ -152,14 +153,20 @@ function stairs(out: Float32Array, i: number) {
   set(out, i, x + jitter(0.015), y + jitter(0.015), z + jitter(0.015));
 }
 
-function xi(out: Float32Array, i: number) {
-  const k = rand();
-  const bar = k < 0.37 ? { y: 1.45, w: 4.3 } : k < 0.63 ? { y: 0, w: 2.9 } : { y: -1.45, w: 4.3 };
-  const [x, y, z] = boxPoint(0, bar.y - 0.31, bar.w, 0.62, 0.62);
-  set(out, i, x + jitter(0.012), y + jitter(0.012), z + jitter(0.012));
+// The X of the IVEX logo as a thin glass slab: outlines on both faces, a filled core.
+function mark(out: Float32Array, i: number) {
+  const depth = 0.3;
+  if (rand() < 0.58) {
+    const k = Math.floor(rand() * (X_EDGE.length / 2)) * 2;
+    const z = (rand() < 0.5 ? -depth : depth) + jitter(0.02);
+    set(out, i, X_EDGE[k] + jitter(0.012), X_EDGE[k + 1] + jitter(0.012), z);
+    return;
+  }
+  const k = Math.floor(rand() * (X_FILL.length / 2)) * 2;
+  set(out, i, X_FILL[k] + jitter(0.02), X_FILL[k + 1] + jitter(0.02), (rand() - 0.5) * depth * 2);
 }
 
-const BUILDERS: Record<Shape, (out: Float32Array, i: number) => void> = { helix, cloud, ring, stairs, xi };
+const BUILDERS: Record<Shape, (out: Float32Array, i: number) => void> = { helix, cloud, ring, stairs, mark };
 
 const vertexShader = /* glsl */ `
   uniform float uTime;
@@ -184,7 +191,7 @@ const vertexShader = /* glsl */ `
   attribute vec3 aCloud;
   attribute vec3 aRing;
   attribute vec3 aStairs;
-  attribute vec3 aXi;
+  attribute vec3 aMark;
   attribute float aRand;
   attribute float aSize;
   attribute float aTone;
@@ -197,7 +204,7 @@ const vertexShader = /* glsl */ `
     if (i == 1) return aCloud;
     if (i == 2) return aRing;
     if (i == 3) return aStairs;
-    return aXi;
+    return aMark;
   }
 
   vec3 rotY(vec3 p, float a) {
@@ -300,7 +307,7 @@ export function startScene(canvas: HTMLCanvasElement): boolean {
   geometry.setAttribute("aCloud", new THREE.BufferAttribute(shapeArrays[1], 3));
   geometry.setAttribute("aRing", new THREE.BufferAttribute(shapeArrays[2], 3));
   geometry.setAttribute("aStairs", new THREE.BufferAttribute(shapeArrays[3], 3));
-  geometry.setAttribute("aXi", new THREE.BufferAttribute(shapeArrays[4], 3));
+  geometry.setAttribute("aMark", new THREE.BufferAttribute(shapeArrays[4], 3));
   geometry.setAttribute("aRand", new THREE.BufferAttribute(rnd, 1));
   geometry.setAttribute("aSize", new THREE.BufferAttribute(size, 1));
   geometry.setAttribute("aTone", new THREE.BufferAttribute(tone, 1));
@@ -324,9 +331,9 @@ export function startScene(canvas: HTMLCanvasElement): boolean {
     uMouseForce: { value: 0 },
     uSize: { value: small ? 4.4 : 3.9 },
     uPixelRatio: { value: 1 },
-    uColorA: { value: new THREE.Color("#1a8a50") },
-    uColorB: { value: new THREE.Color("#34d27b") },
-    uColorC: { value: new THREE.Color("#dcffe9") },
+    uColorA: { value: new THREE.Color("#1f7a3f") },
+    uColorB: { value: new THREE.Color("#b6ef2a") },
+    uColorC: { value: new THREE.Color("#f3ffd2") },
     uOpacity: { value: 0.85 },
   };
 

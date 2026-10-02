@@ -28,6 +28,16 @@ Follow-up (same day):
 - Open question to the user: switch the site name from "IVEX Medya" to
   "IVEX & CO" everywhere?
 
+3D version on Netlify (2026-10-02):
+
+- Static Vite + three.js build in `ivex-site/` (this repo). Particle scene morphs
+  helix → sphere → ring/phone → steps → Xi per section; same copy and CTAs.
+- Netlify project `ivexco` (team IVEX, free plan), live at
+  https://ivexco.netlify.app (uploaded by the user via drag-and-drop zip,
+  because this environment's network policy blocks `netlify-mcp.netlify.app`).
+- Next: connect ivexco.com.tr to Netlify (add domain in Netlify; at Natro turn
+  the redirect off, A record → 75.2.60.5, CNAME www → ivexco.netlify.app).
+
 Notes for the next session:
 
 - Site access now goes through the Higgsfield connector (brokered mode):

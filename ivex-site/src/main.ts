@@ -1,5 +1,6 @@
 import "./style.css";
 import { startScene } from "./gl";
+import "./form";
 
 const canvas = document.querySelector<HTMLCanvasElement>("#gl");
 if (canvas) {

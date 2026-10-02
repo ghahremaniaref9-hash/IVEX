@@ -63,7 +63,7 @@
               <span class="ivx-helix-cta__label">WhatsApp'tan Yaz<span class="ivx-helix-cta__arrow" aria-hidden="true">→</span></span>
               <span class="ivx-helix-cta__wave" aria-hidden="true"><svg viewBox="0 0 240 12" preserveAspectRatio="none" focusable="false"><path d="M0 6.00 L4 7.63 L8 8.97 L12 9.80 L16 9.98 L20 9.46 L24 8.35 L28 6.83 L32 5.17 L36 3.65 L40 2.54 L44 2.02 L48 2.20 L52 3.03 L56 4.37 L60 6.00 L64 7.63 L68 8.97 L72 9.80 L76 9.98 L80 9.46 L84 8.35 L88 6.83 L92 5.17 L96 3.65 L100 2.54 L104 2.02 L108 2.20 L112 3.03 L116 4.37 L120 6.00 L124 7.63 L128 8.97 L132 9.80 L136 9.98 L140 9.46 L144 8.35 L148 6.83 L152 5.17 L156 3.65 L160 2.54 L164 2.02 L168 2.20 L172 3.03 L176 4.37 L180 6.00 L184 7.63 L188 8.97 L192 9.80 L196 9.98 L200 9.46 L204 8.35 L208 6.83 L212 5.17 L216 3.65 L220 2.54 L224 2.02 L228 2.20 L232 3.03 L236 4.37 L240 6.00" /><path d="M0 6.00 L4 4.37 L8 3.03 L12 2.20 L16 2.02 L20 2.54 L24 3.65 L28 5.17 L32 6.83 L36 8.35 L40 9.46 L44 9.98 L48 9.80 L52 8.97 L56 7.63 L60 6.00 L64 4.37 L68 3.03 L72 2.20 L76 2.02 L80 2.54 L84 3.65 L88 5.17 L92 6.83 L96 8.35 L100 9.46 L104 9.98 L108 9.80 L112 8.97 L116 7.63 L120 6.00 L124 4.37 L128 3.03 L132 2.20 L136 2.02 L140 2.54 L144 3.65 L148 5.17 L152 6.83 L156 8.35 L160 9.46 L164 9.98 L168 9.80 L172 8.97 L176 7.63 L180 6.00 L184 4.37 L188 3.03 L192 2.20 L196 2.02 L200 2.54 L204 3.65 L208 5.17 L212 6.83 L216 8.35 L220 9.46 L224 9.98 L228 9.80 L232 8.97 L236 7.63 L240 6.00" /></svg></span>
             </a>
-            <a href="#hizmetler" class="ivx-textlink">Hizmetler <span aria-hidden="true">↓</span></a>
+            <a href="#basvuru" class="ivx-textlink">Sizi Arayalım <span aria-hidden="true">↓</span></a>
           </div>
           <figure class="ivx-hero__fallback">
             <img src="/img/hero-1200.webp" srcset="/img/hero-1200.webp 1200w, /img/hero-2400.webp 2400w" sizes="92vw" alt="Yeşil cam basamaklardan yükselen, parçacıklara dağılan zümrüt DNA sarmalı" width="1200" height="805" loading="lazy" decoding="async" />
@@ -180,6 +180,59 @@
               <p>Sonuçları düzenli takip eder, işe yarayanı büyütür, yaramayanı değiştiririz.</p>
             </li>
           </ol>
+        </div>
+      </section>
+
+      <section id="basvuru" class="ivx-chapter ivx-apply" data-shape="ring" data-side="right" data-x="0.5" data-scale="0.9" aria-labelledby="apply-title">
+        <div class="ivx-wrap">
+          <div class="ivx-apply__col">
+            <p class="ivx-kicker">Başvuru</p>
+            <h2 id="apply-title" class="ivx-apply__title">Sizi arayalım.</h2>
+            <p class="ivx-apply__lead">Adınızı ve iletişim bilgilerinizi bırakın, ekibimiz en kısa sürede size dönsün.</p>
+            <div class="ivx-apply__panel">
+              <form name="basvuru" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="ivx-form" data-ivx-form novalidate>
+                <input type="hidden" name="form-name" value="basvuru" />
+                <p class="sr-only" aria-hidden="true"><label>Bu alanı boş bırakın <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
+                <div class="ivx-form__grid">
+                    <div class="ivx-field">
+                      <label for="f-ad">Ad</label>
+                      <input id="f-ad" name="ad" type="text" autocomplete="given-name" required aria-describedby="f-ad-err" />
+                      <p class="ivx-field__err" id="f-ad-err"></p>
+                    </div>
+                    <div class="ivx-field">
+                      <label for="f-soyad">Soyad</label>
+                      <input id="f-soyad" name="soyad" type="text" autocomplete="family-name" required aria-describedby="f-soyad-err" />
+                      <p class="ivx-field__err" id="f-soyad-err"></p>
+                    </div>
+                    <div class="ivx-field">
+                      <label for="f-telefon">Telefon</label>
+                      <input id="f-telefon" name="telefon" type="tel" autocomplete="tel" required aria-describedby="f-telefon-err" inputmode="tel" placeholder="0 5xx xxx xx xx" />
+                      <p class="ivx-field__err" id="f-telefon-err"></p>
+                    </div>
+                    <div class="ivx-field">
+                      <label for="f-eposta">E-posta</label>
+                      <input id="f-eposta" name="eposta" type="email" autocomplete="email" required aria-describedby="f-eposta-err" inputmode="email" placeholder="ornek@mail.com" />
+                      <p class="ivx-field__err" id="f-eposta-err"></p>
+                    </div>
+                </div>
+                <div class="ivx-consent">
+                  <input id="f-onay" name="onay" type="checkbox" value="evet" required aria-describedby="f-onay-err" />
+                  <label for="f-onay">Bilgilerimin benimle iletişime geçilmesi amacıyla kullanılmasını kabul ediyorum.</label>
+                  <p class="ivx-field__err" id="f-onay-err"></p>
+                </div>
+                <button type="submit" class="ivx-submit"><span data-submit-label>Beni Arayın</span><span aria-hidden="true">→</span></button>
+                <p class="ivx-form__note">Bilgileriniz yalnızca sizinle iletişime geçmek için kullanılır.</p>
+                <p class="ivx-form__status" data-status role="status" aria-live="polite"></p>
+              </form>
+              <div class="ivx-sent" data-sent hidden>
+                <svg class="ivx-sent__icon" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><circle cx="24" cy="24" r="22" /><path d="M14 24.5l7 7 13-14" /></svg>
+                <h3 class="ivx-sent__title" tabindex="-1">Teşekkürler<span data-sent-name></span>.</h3>
+                <p>Bilgileriniz bize ulaştı, en kısa sürede sizi arayacağız.</p>
+                <p>Beklemek istemezseniz bilgilerinizi WhatsApp'tan da gönderebilirsiniz.</p>
+                <a class="ivx-wa-send" data-sent-wa href="https://wa.me/905010623794" target="_blank" rel="noopener noreferrer">WhatsApp'tan Gönder <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

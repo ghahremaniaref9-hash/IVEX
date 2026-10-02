@@ -38,6 +38,19 @@ Follow-up (same day):
 - Next: connect ivexco.com.tr to Netlify (add domain in Netlify; at Natro turn
   the redirect off, A record → 75.2.60.5, CNAME www → ivexco.netlify.app).
 
+Netlify follow-ups (2026-10-02/03):
+
+- The team is on a paid Netlify subscription (the user confirmed); ignore the
+  earlier "free plan" note.
+- Supplied IVEX logo traced to SVG (`ivex-site/public/logo.svg`); accent is the
+  logo lime `#DAFF2E`; closing particle shape is the logo's X (`src/x-points.ts`).
+- "Sizi arayalım" form (`#basvuru`, Netlify Forms `basvuru`: ad, soyad, telefon,
+  eposta, onay). Forms enabled on the project. Email notification to
+  ivex.co.tr@gmail.com must be added in Netlify (Notifications → Form
+  submission notifications). WhatsApp: the sent screen opens WhatsApp with the
+  details prefilled; fully automatic WhatsApp needs a messaging API + functions,
+  which drag-and-drop deploys cannot carry.
+
 Notes for the next session:
 
 - Site access now goes through the Higgsfield connector (brokered mode):

@@ -21,10 +21,9 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
-    <link rel="preload" as="image" href="/logo.webp" type="image/webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@300..500&display=swap" />
     <style>
       :root {
         --ground: #000000;
@@ -55,14 +54,23 @@
       .wrap { width: 100%; max-width: 34rem; margin-inline: auto; padding-inline: 1.25rem; }
 
       main { flex: 1; padding-block: 1.5rem 2.5rem; text-align: center; }
-      h1 { line-height: 0; }
-      h1 img { width: min(68vw, 17.5rem); height: auto; }
+      .mark { display: flex; flex-direction: column; align-items: center; padding-top: 0.75rem; font-family: "Oswald", "Arial Narrow", sans-serif; font-weight: 350; line-height: 1; }
+      .mark-name, .mark-shop, .mark-year {
+        background: linear-gradient(180deg, #f2d9a4 0%, #d9b475 40%, #b98b4b 75%, #9c7038 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .mark-name { padding: 0.12em 0.04em 0.2em; font-size: clamp(3.6rem, 21vw, 5.5rem); letter-spacing: 0.01em; }
+      .mark-shop { display: flex; align-items: center; gap: 0.6em; margin-top: -0.3em; font-size: clamp(1.8rem, 10vw, 2.6rem); letter-spacing: 0.02em; }
+      .mark-shop svg { width: 0.55em; height: 0.55em; flex: none; }
+      .mark-year { margin-top: 0.55rem; font-family: "Oswald", "Arial Narrow", sans-serif; font-size: 1.35rem; font-weight: 350; letter-spacing: 0.06em; line-height: 1; }
 
       .status {
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        margin-top: 0.75rem;
+        margin-top: 1.1rem;
         padding: 0.4rem 0.85rem;
         border: 1px solid var(--line);
         border-radius: 999px;
@@ -145,7 +153,11 @@
   <body>
     <main>
       <div class="wrap">
-        <h1><img src="/logo.webp" width="640" height="601" alt="Dikilitaş Shop" fetchpriority="high" /></h1>
+        <h1 class="mark">
+          <span class="mark-name">DİKİLİTAŞ</span>
+          <span class="mark-shop"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="#c9a161" stroke-width="1.6"><path d="M12 2.5c2.2 2.6 2.2 4.9 0 7.5-2.2-2.6-2.2-4.9 0-7.5Z" /><path d="M12 21.5c2.2-2.6 2.2-4.9 0-7.5-2.2 2.6-2.2 4.9 0 7.5Z" /><path d="M2.5 12c2.6-2.2 4.9-2.2 7.5 0-2.6 2.2-4.9 2.2-7.5 0Z" /><path d="M21.5 12c-2.6-2.2-4.9-2.2-7.5 0 2.6 2.2 4.9 2.2 7.5 0Z" /></g><circle cx="12" cy="12" r="1.4" fill="#c9a161" /></svg><span>SHOP</span><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><g fill="none" stroke="#c9a161" stroke-width="1.6"><path d="M12 2.5c2.2 2.6 2.2 4.9 0 7.5-2.2-2.6-2.2-4.9 0-7.5Z" /><path d="M12 21.5c2.2-2.6 2.2-4.9 0-7.5-2.2 2.6-2.2 4.9 0 7.5Z" /><path d="M2.5 12c2.6-2.2 4.9-2.2 7.5 0-2.6 2.2-4.9 2.2-7.5 0Z" /><path d="M21.5 12c-2.6-2.2-4.9-2.2-7.5 0 2.6 2.2 4.9 2.2 7.5 0Z" /></g><circle cx="12" cy="12" r="1.4" fill="#c9a161" /></svg></span>
+        </h1>
+        <p class="mark-year">2025</p>
         <p class="status" data-status hidden><i aria-hidden="true"></i><span data-status-text></span></p>
         <p class="lead">Beşiktaş Dikilitaş’taki mağazamıza WhatsApp’tan kolayca ulaşabilirsiniz.</p>
 

@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dikilitaş Shop | Beşiktaş, İstanbul</title>
+    <meta name="description" content="Dikilitaş Shop, Beşiktaş Dikilitaş. Çalışma saatlerimiz ve WhatsApp iletişim hattımız." />
+    <meta name="theme-color" content="#F6F7F5" />
+    <link rel="canonical" href="https://dikilitasshop.com.tr/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Dikilitaş Shop" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:url" content="https://dikilitasshop.com.tr/" />
+    <meta property="og:title" content="Dikilitaş Shop | Beşiktaş, İstanbul" />
+    <meta property="og:description" content="Çalışma saatlerimiz ve WhatsApp iletişim hattımız." />
+    <meta property="og:image" content="https://dikilitasshop.com.tr/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" />
+    <style>
+      :root {
+        --ground: #f6f7f5;
+        --surface: #ffffff;
+        --ink: #14181f;
+        --muted: #5b6470;
+        --line: #e3e6e8;
+        --wa: #128c4a;
+        --wa-deep: #0e7a40;
+        --open: #128c4a;
+        --closed: #b4432f;
+        --radius: 18px;
+      }
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { -webkit-text-size-adjust: 100%; }
+      body {
+        min-height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        background: var(--ground);
+        color: var(--ink);
+        font-family: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      a { color: inherit; }
+      .wrap { width: 100%; max-width: 34rem; margin-inline: auto; padding-inline: 1.25rem; }
+
+      header { padding-top: 1.5rem; }
+      .brand { display: inline-flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+      .brand svg { width: 1.25rem; height: 2.5rem; color: var(--ink); }
+      .brand b { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; }
+      .brand span { display: block; font-size: 0.8rem; color: var(--muted); font-weight: 500; }
+
+      main { flex: 1; padding-block: 2.25rem 2.5rem; }
+      .status {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        background: var(--surface);
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .status[hidden] { display: none; }
+      .status i { width: 0.55rem; height: 0.55rem; border-radius: 50%; background: var(--closed); }
+      .status[data-open="true"] i { background: var(--open); box-shadow: 0 0 0 4px rgb(18 140 74 / 0.15); }
+      h1 {
+        margin-top: 1.1rem;
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
+        font-weight: 800;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+      }
+      .lead { margin-top: 0.8rem; font-size: 1.08rem; color: var(--muted); max-width: 30ch; }
+
+      .wa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        margin-top: 1.75rem;
+        padding: 1.1rem 1.25rem;
+        border-radius: 14px;
+        background: var(--wa);
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-decoration: none;
+        box-shadow: 0 10px 24px -10px rgb(18 140 74 / 0.6);
+        transition: background-color 0.2s, transform 0.15s;
+      }
+      .wa:hover { background: var(--wa-deep); }
+      .wa:active { transform: translateY(1px); }
+      .wa svg { width: 1.5rem; height: 1.5rem; flex: none; }
+      .wa-note { margin-top: 0.6rem; text-align: center; font-size: 0.85rem; color: var(--muted); }
+
+      .card {
+        margin-top: 2rem;
+        padding: 1.4rem 1.4rem 0.6rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: var(--surface);
+      }
+      .card h2 { font-size: 1.05rem; font-weight: 800; letter-spacing: -0.01em; }
+      table { width: 100%; margin-top: 0.8rem; border-collapse: collapse; font-size: 0.98rem; }
+      th, td { padding: 0.7rem 0; border-top: 1px solid var(--line); text-align: left; font-weight: 500; }
+      td { text-align: right; font-variant-numeric: tabular-nums; }
+      tr[data-today="true"] th, tr[data-today="true"] td { font-weight: 800; }
+      tr[data-today="true"] th::after {
+        content: "Bugün";
+        margin-left: 0.5rem;
+        padding: 0.1rem 0.45rem;
+        border-radius: 999px;
+        background: var(--ground);
+        font-size: 0.72rem;
+        font-weight: 700;
+        color: var(--muted);
+        vertical-align: 0.1em;
+      }
+      .where { margin-top: 1rem; padding: 1.2rem 1.4rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+      .where p { font-size: 0.95rem; color: var(--muted); }
+      .where p b { display: block; color: var(--ink); font-weight: 700; }
+      .where a { flex: none; font-size: 0.9rem; font-weight: 700; color: var(--wa); text-decoration: none; border-bottom: 1.5px solid currentColor; }
+
+      footer { padding-block: 1.5rem 2rem; font-size: 0.8rem; color: var(--muted); }
+      :focus-visible { outline: 3px solid var(--wa); outline-offset: 3px; }
+      @media (prefers-reduced-motion: reduce) { .wa { transition: none; } }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <a class="brand" href="/" aria-label="Dikilitaş Shop, ana sayfa">
+          <svg viewBox="0 0 32 64" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 2 20 9h-8z M12.2 11h7.6l1.8 43H10.4z M8 56h16v6H8z" /></svg>
+          <div><b>Dikilitaş Shop</b><span>Beşiktaş · İstanbul</span></div>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <p class="status" data-status hidden><i aria-hidden="true"></i><span data-status-text></span></p>
+        <h1>Dikilitaş Shop</h1>
+        <p class="lead">Beşiktaş Dikilitaş’taki mağazamıza WhatsApp’tan kolayca ulaşabilirsiniz.</p>
+
+        <a class="wa" href="https://wa.me/905348745237?text=Merhaba%2C%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2Zm5.8 14.03c-.24.68-1.42 1.31-1.96 1.36-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.79-4.17-4.94-4.36-.14-.19-1.18-1.57-1.18-3s.75-2.13 1.02-2.42c.27-.29.58-.36.78-.36h.56c.18 0 .42-.07.66.5.24.58.82 2.01.89 2.16.07.14.12.31.02.5-.1.19-.14.31-.29.48-.14.17-.3.38-.43.51-.14.14-.29.3-.13.59.17.29.74 1.22 1.59 1.98 1.09.97 2.01 1.27 2.3 1.42.29.14.46.12.63-.07.17-.19.72-.84.91-1.13.19-.29.38-.24.65-.14.27.1 1.7.8 1.99.95.29.14.48.22.55.34.07.12.07.7-.17 1.38Z" /></svg>
+          WhatsApp’tan Yazın
+        </a>
+        <p class="wa-note">+90 534 874 52 37</p>
+
+        <section class="card" aria-labelledby="hours-title">
+          <h2 id="hours-title">Çalışma saatleri</h2>
+          <table>
+            <tbody data-hours>
+              <tr data-day="1" data-open="" data-close=""><th scope="row">Pazartesi</th><td>-</td></tr>
+              <tr data-day="2" data-open="" data-close=""><th scope="row">Salı</th><td>-</td></tr>
+              <tr data-day="3" data-open="" data-close=""><th scope="row">Çarşamba</th><td>-</td></tr>
+              <tr data-day="4" data-open="" data-close=""><th scope="row">Perşembe</th><td>-</td></tr>
+              <tr data-day="5" data-open="" data-close=""><th scope="row">Cuma</th><td>-</td></tr>
+              <tr data-day="6" data-open="" data-close=""><th scope="row">Cumartesi</th><td>-</td></tr>
+              <tr data-day="0" data-open="" data-close=""><th scope="row">Pazar</th><td>-</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="where" aria-label="Adres">
+          <p><b>Adres</b>Dikilitaş, Emirhan Cd. 87/A, 34349 Beşiktaş/İstanbul</p>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Emirhan+Cd.+87%2FA+Dikilita%C5%9F+Be%C5%9Fikta%C5%9F+%C4%B0stanbul" target="_blank" rel="noopener noreferrer">Yol tarifi</a>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="wrap">© 2026 Dikilitaş Shop</div>
+    </footer>
+
+    <script>
+      // Highlights today's row and shows "open / closed" in Istanbul time.
+      // Hours live in the table rows: data-open / data-close as "HH:MM" (close may pass midnight).
+      (function () {
+        var parts = new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Istanbul", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false }).formatToParts(new Date());
+        var get = function (t) { var p = parts.find(function (x) { return x.type === t; }); return p ? p.value : ""; };
+        var day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(get("weekday"));
+        var now = parseInt(get("hour"), 10) % 24 * 60 + parseInt(get("minute"), 10);
+        var mins = function (s) { var m = /^(\d{1,2}):(\d{2})$/.exec(s || ""); return m ? +m[1] * 60 + +m[2] : null; };
+        var rows = {};
+        document.querySelectorAll("[data-hours] tr").forEach(function (tr) { rows[tr.dataset.day] = tr; });
+        if (rows[day]) rows[day].dataset.today = "true";
+
+        var span = function (d) {
+          var tr = rows[(d + 7) % 7];
+          if (!tr) return null;
+          var o = mins(tr.dataset.open), c = mins(tr.dataset.close);
+          if (o === null || c === null) return null;
+          return { open: o, close: c <= o ? c + 1440 : c, label: tr.dataset.open };
+        };
+        var today = span(day), yesterday = span(day - 1);
+        if (!today && !yesterday) return;
+        var isOpen = (today && now >= today.open && now < today.close) || (yesterday && now + 1440 < yesterday.close);
+        var status = document.querySelector("[data-status]");
+        var text = document.querySelector("[data-status-text]");
+        status.dataset.open = String(!!isOpen);
+        if (isOpen) {
+          text.textContent = "Şu an açık";
+        } else if (today && now < today.open) {
+          text.textContent = "Şu an kapalı · Açılış " + today.label;
+        } else {
+          text.textContent = "Şu an kapalı";
+        }
+        status.hidden = false;
+      })();
+    </script>
+  </body>
+</html>

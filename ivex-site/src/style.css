@@ -584,28 +584,6 @@ ol {
   }
 }
 
-/* CTA: phone, oversized glyph hit area */
-.ivx-phone {
-  display: block;
-  margin-top: clamp(2.5rem, 5vw, 4rem);
-}
-.ivx-phone__num {
-  display: block;
-  margin-top: 0.6rem;
-  font-size: clamp(1.7rem, 5.4vw, 5.8rem);
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.035em;
-  white-space: nowrap;
-  font-variant-numeric: tabular-nums;
-  transition: color 0.3s, letter-spacing 0.4s var(--ivx-ease);
-}
-.ivx-phone:hover .ivx-phone__num,
-.ivx-phone:focus-visible .ivx-phone__num {
-  color: var(--ivx-accent);
-  letter-spacing: -0.045em;
-}
-
 /* CTA: contact WhatsApp, the one solid slab, label rolls up */
 .ivx-wa-slab {
   display: flex;
@@ -1060,7 +1038,6 @@ ol {
   .ivx-svc__idx,
   .ivx-wa-slab__roll span,
   .ivx-viewfinder__c,
-  .ivx-phone__num,
   .ivx-arrowlink__icon {
     transition: none;
   }

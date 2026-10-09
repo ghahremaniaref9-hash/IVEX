@@ -1,6 +1,8 @@
 # Mekan Sizin – maç günü şablonları
 
-Dört şablon var. Hepsi 1080 px genişliğinde Instagram gönderisi üretir ve logoda **bira/rakı yoktur** (siyah plakalı "MEKAN SİZİN" logosu).
+Dört maç afişi şablonu ve feed için yardımcı araçlar (story, skor tahmini, menü karuseli, fotoğraf renk ayarı, Reels) var. Hepsi 1080 px genişliğinde görsel üretir ve logoda **bira/rakı yoktur**: `assets/mekan-sizin-plaka-logo.png`, mekânın gönderdiği gerçek plaka logodan kesildi.
+
+Dört afiş şablonunda `"baslik"` alanı büyük başlığı değiştirir (ör. hatırlatma için `"BU PAZAR"`); yazılmazsa varsayılan başlık kullanılır (MAÇ GÜNÜ / DEPLASMAN / AVRUPA GECESİ).
 
 ## Şablon 1 – "Maç Günü Beşiktaş'ta!" (ChatGPT tasarımı)
 
@@ -61,9 +63,48 @@ python3 avrupa.py avrupa.json
 | 21 Ocak | Beşiktaş – Union SG | İstanbul | – |
 | 28 Ocak | Omonia – Beşiktaş | Lefkoşa / GSP Stadyumu (35.13, 33.33) | {} |
 
+## Story – maç günü (1080×1920)
+
+- Üç şablonun kartını (bilet, biniş kartı, pasaport) dikey story'ye taşır. Arka planda bir fotoğraf karartılarak kullanılır.
+- `"tur"`: `"bilet"` (lig iç saha), `"kart"` (lig deplasman), `"pasaport"` (Avrupa). Kart alanları ilgili şablonun JSON alanlarıyla aynı.
+- Üst ve alt ~220 px Instagram arayüzü için boş bırakılır. `cikartma_notu` (ör. "Geliyor musun?") ve el çizimi okun gösterdiği boşluğa uygulamadan anket/soru/geri sayım çıkartması konur.
+
+```
+python3 story.py ../haftalik-feed/ayarlar/03a-kocaelispor-story.json
+```
+
+## Skor Tahmini (maç günü gönderisi)
+
+- Eski stat skorbordu: iki takım ve boş "?" plakaları; takipçi tahminini yorumlara yazar. Lig ve Avrupa maçlarında kullanılır.
+- Rakibin arma dosyası yoksa takım renklerinde harfli rozet çizilir (`kisaltma`, `renkler`).
+
+```
+python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.json
+```
+
+## Menü ve kampanya karuseli
+
+- 1. kare: kampanya adisyon fişi. Sonraki kareler: masada duran basılı menü kartı (isteğe bağlı bantlı fotoğrafla).
+- Fiyatlar, bölümler ve kampanya JSON'dan gelir. `"indirim": true` olan bölümde indirimli fiyat `indirim_yuzde` ile otomatik hesaplanır.
+- `kampanya.saat` boş bırakılırsa fişteki saat satırı kalkar. `"sadece_kapak": true` yalnızca kapağı üretir.
+
+```
+python3 menu.py ../haftalik-feed/ayarlar/04-menu-raki-kampanya.json
+```
+
+## Metinsiz fotoğraflar ve Reels
+
+- `foto.py`: Fotoğrafları 4:5'e kırpar ve hepsine aynı film görünümünü verir (soluk renkler, korunan kırmızılar, sıcak ışık, vinyet, gren). Gerçek mekân fotoğrafları da aynı dosyaya eklenebilir; ızgara tek elden çıkmış gibi durur.
+- `reel.py`: Bir fotoğraftan 7 saniyelik sessiz, yavaş yakınlaşan 1080×1920 Reels videosu üretir. Müzik Instagram'da eklenir.
+
+```
+python3 foto.py ../haftalik-feed/ayarlar/metinsiz-fotolar.json
+python3 reel.py kaynak.jpg cikti.mp4 7
+```
+
 ## Gereken paketler
 
-`pip install pillow numpy opencv-python-headless`
+`pip install pillow numpy opencv-python-headless imageio-ffmpeg`
 
 ## Klasörler
 

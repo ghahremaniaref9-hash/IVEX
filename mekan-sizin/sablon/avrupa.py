@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 from deplasman import HOME, crest, hex_rgb, km_between, km_label
-from mac_bileti import CREAM, INK, RED, font, grain, handwriting, noise, path, stamp, tracked
+from mac_bileti import CREAM, INK, RED, fit_font, font, grain, handwriting, noise, path, stamp, tracked
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 1080, 1350
@@ -191,7 +191,8 @@ def main():
     logo = logo.resize((lw, round(logo.height * lw / logo.width)), Image.LANCZOS)
     img.alpha_composite(logo, ((W - lw) // 2, 56))
     tracked(d, (W / 2, 142), cfg["ust_satir"], font("Montserrat_600SemiBold.ttf", 21), CREAM, 6, anchor_center=True)
-    d.text((W / 2, 290), "AVRUPA GECESİ", font=font("Anton_400Regular.ttf", 150), fill=(250, 248, 244), anchor="mm")
+    baslik = cfg.get("baslik", "AVRUPA GECESİ")
+    d.text((W / 2, 290), baslik, font=fit_font("Anton_400Regular.ttf", 150, baslik, 960), fill=(250, 248, 244), anchor="mm")
     hw = handwriting(cfg["el_yazisi_baslik"], 58, RED, 4)
     img.alpha_composite(hw, (W - hw.width - 90, 350))
 

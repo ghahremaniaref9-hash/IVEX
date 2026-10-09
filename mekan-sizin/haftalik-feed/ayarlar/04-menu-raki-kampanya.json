@@ -1,0 +1,260 @@
+{
+  "cikti_oneki": "../haftalik-feed/04-gun4-menu",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "kapak_foto": {
+    "kaynak": "../haftalik-feed/kaynak/raki-meze.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.62
+  },
+  "kapak_karartma": [
+    0.55,
+    0.5,
+    0.86
+  ],
+  "kampanya": {
+    "indirim_yuzde": 20,
+    "oran": "%20",
+    "ust_satir": "HAFTA İÇİ KAMPANYASI · PAZARTESİ – CUMA",
+    "baslik": "TÜM RAKILARDA",
+    "el_yazisi_baslik": "Maç öncesi tam vakti!",
+    "gun_kisa": "PZT – CUM",
+    "saat": "20:00'YE KADAR",
+    "damga_ust": "HAFTA İÇİ",
+    "damga_alt": "20:00'YE KADAR",
+    "alt_baslik": "HAFTA İÇİ HER GÜN 20:00'YE KADAR",
+    "alt_metin": "Kampanya tüm rakı çeşitlerinde ve tüm boylarda geçerlidir.",
+    "el_yazisi_alt": "Çarşı'da buluşalım!"
+  },
+  "el_yazisi_menu": "Afiyet olsun!",
+  "bolumler": {
+    "MEZELER": {
+      "not": "Her gün taze!",
+      "satir": 49,
+      "urunler": [
+        [
+          "ENGİNAR",
+          250
+        ],
+        [
+          "PİYAZ",
+          250
+        ],
+        [
+          "GİRİT EZME",
+          250
+        ],
+        [
+          "BEYİN",
+          250
+        ],
+        [
+          "ŞAKŞUKA",
+          200
+        ],
+        [
+          "SEMİZOTU",
+          200
+        ],
+        [
+          "HAVUÇ TARATOR",
+          200
+        ],
+        [
+          "KÖPOĞLU",
+          200
+        ],
+        [
+          "HUMUS",
+          200
+        ],
+        [
+          "TURŞU",
+          200
+        ],
+        [
+          "KURU CACIK",
+          200
+        ],
+        [
+          "EGE KARMASI",
+          200
+        ],
+        [
+          "ÇALI FASULYE",
+          200
+        ],
+        [
+          "ZEYTİNYAĞLI PIRASA",
+          200
+        ],
+        [
+          "RUM PİLAKİ",
+          200
+        ],
+        [
+          "PATATES SALATASI",
+          200
+        ],
+        [
+          "KISIR",
+          200
+        ]
+      ]
+    },
+    "ARA SICAK": {
+      "not": "Sıcak sıcak!",
+      "urunler": [
+        [
+          "ARNAVUT CİĞERİ",
+          400
+        ],
+        [
+          "SİGARA BÖREĞİ",
+          250
+        ],
+        [
+          "KADINBUDU",
+          250
+        ],
+        [
+          "PASTIRMALI HUMUS",
+          300
+        ]
+      ]
+    },
+    "ANA YEMEK": {
+      "urunler": [
+        [
+          "KÖFTE",
+          600
+        ],
+        [
+          "UYKULUK",
+          600
+        ]
+      ],
+      "not": "Ev usulü!"
+    },
+    "RAKILAR": {
+      "indirim": true,
+      "satir": 43,
+      "sutunlar": [
+        "FİYAT",
+        "HAFTA İÇİ*"
+      ],
+      "gruplar": [
+        {
+          "ad": "EFE GOLD",
+          "urunler": [
+            [
+              "100 CL",
+              3100
+            ],
+            [
+              "70 CL",
+              2500
+            ],
+            [
+              "50 CL",
+              2000
+            ],
+            [
+              "35 CL",
+              1500
+            ],
+            [
+              "20 CL",
+              1000
+            ]
+          ]
+        },
+        {
+          "ad": "EFE GÖBEK",
+          "urunler": [
+            [
+              "100 CL",
+              3400
+            ],
+            [
+              "70 CL",
+              2700
+            ],
+            [
+              "50 CL",
+              2200
+            ],
+            [
+              "35 CL",
+              1600
+            ],
+            [
+              "20 CL",
+              1100
+            ]
+          ]
+        }
+      ]
+    },
+    "BİRALAR": {
+      "satir": 46,
+      "urunler": [
+        [
+          "FIÇI BİRA 50 CL",
+          [
+            120,
+            150
+          ]
+        ],
+        [
+          "TUBORG ŞİŞE",
+          [
+            150,
+            200
+          ]
+        ],
+        [
+          "CARLSBERG ŞİŞE",
+          [
+            170,
+            220
+          ]
+        ]
+      ]
+    }
+  },
+  "sayfalar": [
+    {
+      "dosya": "mezeler",
+      "bolumler": [
+        "MEZELER"
+      ]
+    },
+    {
+      "dosya": "ara-sicak-ana-yemek",
+      "foto": {
+        "kaynak": "../haftalik-feed/kaynak/ara-sicak.jpg",
+        "merkez": [
+          0.5,
+          0.62
+        ]
+      },
+      "bolumler": [
+        "ARA SICAK",
+        "ANA YEMEK"
+      ],
+      "imza": false,
+      "foto_yukseklik": 340
+    },
+    {
+      "dosya": "rakilar-biralar",
+      "bolumler": [
+        "RAKILAR",
+        "BİRALAR"
+      ],
+      "dipnot": "* Hafta içi 20:00'ye kadar tüm rakılarda %20 indirim."
+    }
+  ]
+}

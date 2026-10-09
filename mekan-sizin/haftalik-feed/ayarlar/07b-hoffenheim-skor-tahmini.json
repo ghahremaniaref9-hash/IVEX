@@ -1,0 +1,17 @@
+{
+  "cikti": "../haftalik-feed/07b-gun7-mac-gunu-skor-tahmini-hoffenheim-besiktas.png",
+  "foto": {"kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg", "merkez": [0.45, 0.42], "doygunluk": 0.6, "sicaklik": 0.2, "soguk": 0.02},
+  "karartma": [0.4, 0.5, 0.82],
+  "ust_satir": "UEFA AVRUPA LİGİ · 2. HAFTA · BU GECE 22:00",
+  "baslik": "SKORUN NE?",
+  "el_yazisi_baslik": "Maç günü, Kartal!",
+  "ev_sahibi": {"ad": "HOFFENHEIM", "kisaltma": "TSG", "renkler": ["#1C63B7", "#FFFFFF"], "arma": "assets/hoffenheim.png"},
+  "deplasman": {"ad": "BEŞİKTAŞ", "arma": "assets/bjk.png"},
+  "skorbord_baslik": "SKOR TAHMİNİ · SINSHEIM",
+  "skorbord_alt": "BAŞLAMA 22:00 · TSİ",
+  "el_yazisi_orta": "Tahminini yorumlara yaz!",
+  "alt_baslik": "AVRUPA GECESİ BU AKŞAM BURADA",
+  "alt_metin": "Hoffenheim – Beşiktaş 22:00'de dev ekranda, Mekan Sizin'de.",
+  "el_yazisi_alt": "Kartal Avrupa'da!",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul"
+}

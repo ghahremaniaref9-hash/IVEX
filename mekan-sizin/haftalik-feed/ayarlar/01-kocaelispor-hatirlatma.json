@@ -1,0 +1,18 @@
+{
+  "cikti": "../haftalik-feed/01-gun1-hatirlatma-bjk-kocaelispor.png",
+  "baslik": "BU PAZAR",
+  "ev_sahibi": {"ad": "BEŞİKTAŞ JK", "arma": "assets/bjk.png"},
+  "deplasman": {"ad": "KOCAELİSPOR", "arma": "assets/kocaelispor.png"},
+  "ust_satir": "SÜPER LİG · 7. HAFTA · 11 EKİM",
+  "tarih": "11 EKİM PAZAR",
+  "saat": "19:00",
+  "tribun": "ÇARŞI",
+  "seri_no": "No 001903",
+  "el_yazisi_baslik": "Yerini şimdiden ayırt!",
+  "el_yazisi_alt": "Kartal, masan hazır!",
+  "alt_baslik": "DEV EKRANDA CANLI YAYIN",
+  "alt_metin": "Rezervasyon için DM'den yaz, masan maç saatine hazır olsun.",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "arka_plan": "assets/stadyum.jpg",
+  "logo": "assets/mekan-sizin-plaka-logo.png"
+}

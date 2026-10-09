@@ -40,6 +40,15 @@ def tracked(d, xy, text, fnt, fill, tracking, anchor_center=False):
     return width
 
 
+def fit_font(name, size, text, max_w):
+    """Largest font (up to `size`) that keeps `text` within `max_w` pixels."""
+    f = font(name, size)
+    while size > 40 and f.getlength(text) > max_w:
+        size -= 4
+        f = font(name, size)
+    return f
+
+
 def noise(size, scale, seed):
     rng = np.random.default_rng(seed)
     small = rng.random((max(1, size[1] // scale), max(1, size[0] // scale)))
@@ -196,7 +205,8 @@ def main():
     logo = logo.resize((lw, round(logo.height * lw / logo.width)), Image.LANCZOS)
     img.alpha_composite(logo, ((W - lw) // 2, 56))
     tracked(d, (W / 2, 142), cfg["ust_satir"], font("Montserrat_600SemiBold.ttf", 22), CREAM, 7, anchor_center=True)
-    d.text((W / 2, 318), "MAÇ GÜNÜ", font=font("Anton_400Regular.ttf", 190), fill=(250, 248, 244), anchor="mm")
+    baslik = cfg.get("baslik", "MAÇ GÜNÜ")
+    d.text((W / 2, 318), baslik, font=fit_font("Anton_400Regular.ttf", 190, baslik, 940), fill=(250, 248, 244), anchor="mm")
     hw = handwriting(cfg["el_yazisi_baslik"], 58, RED, 4)
     img.alpha_composite(hw, (W - hw.width - 92, 382))
 

@@ -1,0 +1,23 @@
+{
+  "cikti": "../haftalik-feed/05-gun5-hatirlatma-hoffenheim-besiktas.png",
+  "ust_satir": "UEFA AVRUPA LİGİ · 2. HAFTA · PERŞEMBE 22:00",
+  "ev_sahibi": "HOFFENHEIM",
+  "deplasman": "BEŞİKTAŞ",
+  "deplasman_mi": true,
+  "rakip": {"ad": "HOFFENHEIM", "kisaltma": "TSG", "renkler": ["#1C63B7", "#FFFFFF"], "arma": "assets/hoffenheim.png"},
+  "sehir": "SINSHEIM",
+  "ulke": "ALMANYA",
+  "bayrak": {"tip": "yatay", "renkler": ["#000000", "#DD0000", "#FFCE00"]},
+  "stadyum": "SNP ARENA",
+  "lat": 49.24,
+  "lon": 8.89,
+  "tarih": "15 EKİM 2026 · PERŞEMBE",
+  "tarih_damga": "15.10.2026",
+  "tarih_mrz": "15102026",
+  "saat": "22:00",
+  "el_yazisi_baslik": "Perşembe gecesi buradayız!",
+  "el_yazisi_alt": "Sesimiz Almanya'ya kadar!",
+  "alt_baslik": "AVRUPA GECESİ DEV EKRANDA",
+  "alt_metin": "Kartalın Avrupa yolculuğu canlı yayında, Mekan Sizin'de.",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul"
+}

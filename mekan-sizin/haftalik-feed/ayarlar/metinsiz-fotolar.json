@@ -1,0 +1,6 @@
+[
+  {"kaynak": "../haftalik-feed/kaynak/mekan-ic.jpg", "cikti": "../haftalik-feed/02-gun2-mekan-metinsiz.jpg", "merkez": [0.5, 0.5], "seed": 12},
+  {"kaynak": "../haftalik-feed/kaynak/atki-sandalye.jpg", "cikti": "../haftalik-feed/03b-gun3-estetik-metinsiz.jpg", "merkez": [0.5, 0.5], "seed": 13},
+  {"kaynak": "../haftalik-feed/kaynak/meze-masa.jpg", "cikti": "../haftalik-feed/06-gun6-detay-yakin-cekim-metinsiz.jpg", "merkez": [0.42, 0.6], "yakinlik": 1.3, "seed": 16},
+  {"kaynak": "../haftalik-feed/kaynak/pencere-sokak.jpg", "cikti": "../haftalik-feed/08-gun8-mekan-metinsiz.jpg", "merkez": [0.5, 0.5], "seed": 18}
+]

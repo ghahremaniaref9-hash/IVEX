@@ -1,0 +1,55 @@
+{
+  "cikti": "../haftalik-feed/07a-gun7-story-avrupa-hoffenheim-besiktas.png",
+  "ust_satir": "UEFA AVRUPA LİGİ · 2. HAFTA · 15 EKİM",
+  "ev_sahibi": "HOFFENHEIM",
+  "deplasman": "BEŞİKTAŞ",
+  "deplasman_mi": true,
+  "rakip": {
+    "ad": "HOFFENHEIM",
+    "kisaltma": "TSG",
+    "renkler": [
+      "#1C63B7",
+      "#FFFFFF"
+    ],
+    "arma": "assets/hoffenheim.png"
+  },
+  "sehir": "SINSHEIM",
+  "ulke": "ALMANYA",
+  "bayrak": {
+    "tip": "yatay",
+    "renkler": [
+      "#000000",
+      "#DD0000",
+      "#FFCE00"
+    ]
+  },
+  "stadyum": "SNP ARENA",
+  "lat": 49.24,
+  "lon": 8.89,
+  "tarih": "15 EKİM 2026 · PERŞEMBE",
+  "tarih_damga": "15.10.2026",
+  "tarih_mrz": "15102026",
+  "saat": "22:00",
+  "el_yazisi_baslik": "Kartal Avrupa'da!",
+  "alt_baslik": "22:00'DE DEV EKRANDA",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "tur": "pasaport",
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.6,
+    "sicaklik": 0.2,
+    "soguk": 0.02
+  },
+  "karartma": [
+    0.35,
+    0.35,
+    0.78
+  ],
+  "baslik": "BU GECE",
+  "cikartma_notu": "Skor tahminin?",
+  "damga_seed": 23
+}

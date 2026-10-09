@@ -1,0 +1,3 @@
+Bu klasördeki fontlar Google Fonts kaynaklıdır ve SIL Open Font License 1.1 ile lisanslıdır:
+Anton, Oswald, Montserrat, Caveat Brush.
+https://openfontlicense.org

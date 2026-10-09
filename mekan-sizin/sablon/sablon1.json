@@ -1,0 +1,9 @@
+{
+  "taban": "assets/sablon1-taban.webp",
+  "logo": "assets/mekan-sizin-plaka-logo.png",
+  "mod": "ekli",
+  "cikti": "../mac-gunu-afis-ekli.png",
+  "tarih": "11 EKİM PAZAR",
+  "saat": "19:00",
+  "adres_satirlari": ["Sinanpaşa, Şht. Asım Cd. No:33/2", "34022 Beşiktaş/İstanbul"]
+}

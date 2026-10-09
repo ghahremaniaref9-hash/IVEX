@@ -1,6 +1,6 @@
 # Mekan Sizin – maç günü şablonları
 
-Dört şablon var. İkisi de 1080 px genişliğinde Instagram gönderisi üretir ve logoda **bira/rakı yoktur** (siyah plakalı "MEKAN SİZİN" logosu).
+Dört şablon var. Hepsi 1080 px genişliğinde Instagram gönderisi üretir ve logoda **bira/rakı yoktur** (siyah plakalı "MEKAN SİZİN" logosu).
 
 ## Şablon 1 – "Maç Günü Beşiktaş'ta!" (ChatGPT tasarımı)
 

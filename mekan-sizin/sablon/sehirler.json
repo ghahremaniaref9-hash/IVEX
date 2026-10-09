@@ -1,0 +1,20 @@
+{
+  "_not": "2026-27 Süper Lig rakipleri. Stadyum adları sponsorla değişebilir; koordinatlar yaklaşıktır (kuş uçuşu mesafe için). 'renkler' sadece arma dosyası yoksa çizilen harf rozetinde kullanılır.",
+  "TRABZONSPOR":    {"sehir": "TRABZON",   "semt": "Akyazı",      "stadyum": "Papara Park",                       "kod": "TZX", "lat": 40.99, "lon": 39.61, "kisaltma": "TS",  "renkler": ["#7A1F3D", "#6CB4E4"]},
+  "FENERBAHÇE":     {"sehir": "İSTANBUL",  "semt": "Kadıköy",     "stadyum": "Şükrü Saracoğlu Stadyumu",          "kod": "KDK", "lat": 40.99, "lon": 29.04, "kisaltma": "FB",  "renkler": ["#0E2B5C", "#FFED00"]},
+  "GALATASARAY":    {"sehir": "İSTANBUL",  "semt": "Seyrantepe",  "stadyum": "RAMS Park",                         "kod": "SYR", "lat": 41.10, "lon": 28.99, "kisaltma": "GS",  "renkler": ["#A90432", "#FDB912"]},
+  "BAŞAKŞEHİR":     {"sehir": "İSTANBUL",  "semt": "Başakşehir",  "stadyum": "Fatih Terim Stadyumu",              "kod": "BŞK", "lat": 41.09, "lon": 28.81, "kisaltma": "İBFK","renkler": ["#E5631F", "#0B2A4A"]},
+  "KASIMPAŞA":      {"sehir": "İSTANBUL",  "semt": "Kasımpaşa",   "stadyum": "Recep Tayyip Erdoğan Stadyumu",     "kod": "KSP", "lat": 41.04, "lon": 28.97, "kisaltma": "KP",  "renkler": ["#1D3A8A", "#FFFFFF"]},
+  "EYÜPSPOR":       {"sehir": "İSTANBUL",  "semt": "Esenyurt",    "stadyum": "Necmi Kadıoğlu Stadyumu",           "kod": "EYP", "lat": 41.03, "lon": 28.67, "kisaltma": "EYP", "renkler": ["#5B2C83", "#F5C518"]},
+  "GÖZTEPE":        {"sehir": "İZMİR",     "semt": "Göztepe",     "stadyum": "Gürsel Aksel Stadyumu",             "kod": "ADB", "lat": 38.40, "lon": 27.08, "kisaltma": "GÖZ", "renkler": ["#E31E24", "#F7D117"]},
+  "SAMSUNSPOR":     {"sehir": "SAMSUN",    "semt": "Tekkeköy",    "stadyum": "Samsun Yeni 19 Mayıs Stadyumu",     "kod": "SZF", "lat": 41.23, "lon": 36.45, "kisaltma": "SAM", "renkler": ["#E30A17", "#FFFFFF"]},
+  "ÇAYKUR RİZESPOR":{"sehir": "RİZE",      "semt": "Merkez",      "stadyum": "Çaykur Didi Stadyumu",              "kod": "RZV", "lat": 41.03, "lon": 40.52, "kisaltma": "ÇRS", "renkler": ["#0A7A3E", "#1E4E9E"]},
+  "KONYASPOR":      {"sehir": "KONYA",     "semt": "Selçuklu",    "stadyum": "Konya Büyükşehir Stadyumu",         "kod": "KYA", "lat": 37.95, "lon": 32.50, "kisaltma": "KON", "renkler": ["#0B7B3E", "#FFFFFF"]},
+  "KOCAELİSPOR":    {"sehir": "KOCAELİ",   "semt": "İzmit",       "stadyum": "Kocaeli Stadyumu",                  "kod": "KCO", "lat": 40.78, "lon": 29.93, "kisaltma": "KS",  "renkler": ["#0A6E3A", "#111111"], "arma": "assets/kocaelispor.png"},
+  "ALANYASPOR":     {"sehir": "ALANYA",    "semt": "Oba",         "stadyum": "Alanya Oba Stadyumu",               "kod": "GZP", "lat": 36.56, "lon": 32.02, "kisaltma": "ALN", "renkler": ["#F58220", "#0A8F3C"]},
+  "GAZİANTEP FK":   {"sehir": "GAZİANTEP", "semt": "Şehitkamil",  "stadyum": "Gaziantep Stadyumu",                "kod": "GZT", "lat": 37.10, "lon": 37.35, "kisaltma": "GFK", "renkler": ["#D71920", "#111111"]},
+  "GENÇLERBİRLİĞİ": {"sehir": "ANKARA",    "semt": "Eryaman",     "stadyum": "Eryaman Stadyumu",                  "kod": "ESB", "lat": 39.98, "lon": 32.62, "kisaltma": "GB",  "renkler": ["#C8102E", "#111111"]},
+  "ERZURUMSPOR":    {"sehir": "ERZURUM",   "semt": "Yakutiye",    "stadyum": "Kâzım Karabekir Stadyumu",          "kod": "ERZ", "lat": 39.91, "lon": 41.27, "kisaltma": "ERZ", "renkler": ["#1E5AA8", "#FFFFFF"]},
+  "AMED SFK":       {"sehir": "DİYARBAKIR","semt": "Bağlar",      "stadyum": "Diyarbakır Stadyumu",               "kod": "DIY", "lat": 37.92, "lon": 40.18, "kisaltma": "AMED","renkler": ["#0A7A3E", "#C8102E"]},
+  "ÇORUM FK":       {"sehir": "ÇORUM",     "semt": "Merkez",      "stadyum": "Çorum Şehir Stadyumu",              "kod": "ÇRM", "lat": 40.55, "lon": 34.95, "kisaltma": "ÇFK", "renkler": ["#C8102E", "#111111"]}
+}

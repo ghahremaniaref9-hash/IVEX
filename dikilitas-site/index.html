@@ -252,5 +252,13 @@
         status.hidden = false;
       })();
     </script>
+    <script>
+      // Google Ads conversion: a visitor tapped the WhatsApp button.
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof gtag === "function") gtag("event", "conversion", { send_to: "AW-17949654112/ohr1CLStio4dEOD4h-9C" });
+        });
+      });
+    </script>
   </body>
 </html>

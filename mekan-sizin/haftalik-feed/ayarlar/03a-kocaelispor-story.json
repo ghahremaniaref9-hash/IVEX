@@ -1,12 +1,26 @@
 {
   "tur": "bilet",
   "cikti": "../haftalik-feed/03a-gun3-story-mac-gunu-bjk-kocaelispor.png",
-  "foto": {"kaynak": "../haftalik-feed/kaynak/mekan-ic.jpg", "merkez": [0.4, 0.5], "doygunluk": 0.55},
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/gercek-2.png",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.8,
+    "sicaklik": 0.6
+  },
   "ust_satir": "SÜPER LİG · 7. HAFTA · BUGÜN",
   "baslik": "MAÇ GÜNÜ",
   "el_yazisi_baslik": "Çarşı'da buluşuyoruz!",
-  "ev_sahibi": {"ad": "BEŞİKTAŞ JK", "arma": "assets/bjk.png"},
-  "deplasman": {"ad": "KOCAELİSPOR", "arma": "assets/kocaelispor.png"},
+  "ev_sahibi": {
+    "ad": "BEŞİKTAŞ JK",
+    "arma": "assets/bjk.png"
+  },
+  "deplasman": {
+    "ad": "KOCAELİSPOR",
+    "arma": "assets/kocaelispor.png"
+  },
   "tarih": "11 EKİM PAZAR",
   "saat": "19:00",
   "tribun": "ÇARŞI",

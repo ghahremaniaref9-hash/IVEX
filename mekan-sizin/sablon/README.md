@@ -1,6 +1,6 @@
 # Mekan Sizin – maç günü şablonları
 
-Dört maç afişi şablonu ve feed için yardımcı araçlar (story, skor tahmini, menü karuseli, fotoğraf renk ayarı, Reels) var. Hepsi 1080 px genişliğinde görsel üretir ve logoda **bira/rakı yoktur**: `assets/mekan-sizin-plaka-logo.png`, mekânın gönderdiği gerçek plaka logodan kesildi.
+Dört maç afişi şablonu ve feed için yardımcı araçlar (story, skor tahmini, fotoğraf renk ayarı, Reels, ızgara önizlemesi) var. Hepsi 1080 px genişliğinde görsel üretir ve logoda **bira/rakı yoktur**: `assets/mekan-sizin-plaka-logo.png`, mekânın gönderdiği gerçek plaka logodan kesildi.
 
 Dört afiş şablonunda `"baslik"` alanı büyük başlığı değiştirir (ör. hatırlatma için `"BU PAZAR"`); yazılmazsa varsayılan başlık kullanılır (MAÇ GÜNÜ / DEPLASMAN / AVRUPA GECESİ).
 
@@ -82,16 +82,6 @@ python3 story.py ../haftalik-feed/ayarlar/03a-kocaelispor-story.json
 python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.json
 ```
 
-## Menü ve kampanya karuseli
-
-- 1. kare: kampanya adisyon fişi. Sonraki kareler: masada duran basılı menü kartı (isteğe bağlı bantlı fotoğrafla).
-- Fiyatlar, bölümler ve kampanya JSON'dan gelir. `"indirim": true` olan bölümde indirimli fiyat `indirim_yuzde` ile otomatik hesaplanır.
-- `kampanya.saat` boş bırakılırsa fişteki saat satırı kalkar. `"sadece_kapak": true` yalnızca kapağı üretir.
-
-```
-python3 menu.py ../haftalik-feed/ayarlar/04-menu-raki-kampanya.json
-```
-
 ## Metinsiz fotoğraflar ve Reels
 
 - `foto.py`: Fotoğrafları 4:5'e kırpar ve hepsine aynı film görünümünü verir (soluk renkler, korunan kırmızılar, sıcak ışık, vinyet, gren). Gerçek mekân fotoğrafları da aynı dosyaya eklenebilir; ızgara tek elden çıkmış gibi durur.
@@ -101,6 +91,8 @@ python3 menu.py ../haftalik-feed/ayarlar/04-menu-raki-kampanya.json
 python3 foto.py ../haftalik-feed/ayarlar/metinsiz-fotolar.json
 python3 reel.py kaynak.jpg cikti.mp4 7
 ```
+
+- `izgara.py`: Gönderilerin profil ızgarasında (3:4 kırpma) nasıl duracağını gösterir. Dosyaları en yeniden en eskiye doğru verin.
 
 ## Gereken paketler
 

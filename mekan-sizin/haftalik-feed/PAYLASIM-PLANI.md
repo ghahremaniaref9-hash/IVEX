@@ -1,6 +1,6 @@
 # Mekan Sizin – Haftalık Feed (9–17 Ekim 2026)
 
-8 gönderi hazır (2. günün içeriği bekleniyor), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
+9 gönderi hazır (5. günde iki gönderi var, 2. günün içeriği bekleniyor), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
 
 ## Takvim
 
@@ -11,6 +11,7 @@
 | 3 | Pazar 11 Ekim | 11:00 | Gönderi: metinsiz estetik (atkı) | `03b-gun3-estetik-metinsiz.jpg` |
 | 3 | Pazar 11 Ekim | 12:00 ve 17:00 | Story: lig maç günü | `03a-gun3-story-mac-gunu-bjk-kocaelispor.png` |
 | 4 | Pazartesi 12 Ekim | 17:00 | Gönderi: metinsiz meze masası (gerçek fotoğraf) | `04-gun4-meze-masasi-metinsiz.jpg` |
+| 5 | Salı 13 Ekim | 13:00 | Karusel (3 kare): hafta içi %20 indirim + menü | `05b-gun5-menu-1…3-*.png` |
 | 5 | Salı 13 Ekim | 19:00 | Gönderi: Avrupa maçı hatırlatma (Hoffenheim–BJK) | `05-gun5-hatirlatma-hoffenheim-besiktas.png` |
 | 6 | Çarşamba 14 Ekim | 13:00 | Gönderi: metinsiz yakın çekim (meze, gerçek fotoğraf) | `06-gun6-detay-yakin-cekim-metinsiz.jpg` |
 | 7 | Perşembe 15 Ekim | 12:00 ve 20:00 | Story: Avrupa maç günü | `07a-gun7-story-avrupa-hoffenheim-besiktas.png` |
@@ -76,7 +77,23 @@ Kaydet, maç öncesi lazım olur.
 ```
 Alternatif metin: Siyah masada beyaz tabaklarda çeşit çeşit meze.
 
-### Gün 5 – Avrupa maçı hatırlatma (Salı 19:00)
+### Gün 5 – Menü karuseli (Salı 13:00) ve Avrupa maçı hatırlatma (Salı 19:00)
+
+**13:00 – Karusel:** 3 kareyi tek gönderi olarak sırayla yükleyin: kapak → mezeler → ara sıcak/ana yemek.
+```
+Hafta içi Mekan Sizin'de %20 indirim! 🦅
+
+Pazartesiden cumaya her gün seçili ürünlerde geçerli. Mezeler her gün taze, ara sıcaklar sıcak sıcak; menünün tamamı karuselde 👉
+
+Kaydet, maç öncesi lazım olur.
+
+📍 Sinanpaşa, Şht. Asım Cd. No:33/2, Beşiktaş
+
+#BeşiktaşÇarşı #Meze #MaçÖncesi #MekanSizin
+```
+Alternatif metin: Mekan Sizin hafta içi %20 indirim adisyon fişi; mezeler, ara sıcaklar ve ana yemekler menüsü.
+
+**19:00 – Gönderi (Avrupa maçı hatırlatma):**
 
 ```
 Perşembe gecesi Avrupa'dayız! 🦅
@@ -159,9 +176,10 @@ Alternatif metin: Deplasman biniş kartı tasarımı: İstanbul'dan Trabzon'a, T
 
 ## Dikkat edilmesi gerekenler
 
-1. **Alkol:** Sosyal medyanın alkol politikası nedeniyle feed'de hiçbir alkol adı, fiyatı, görseli ya da kampanyası yok. Açıklamalarda ve hashtag'lerde de alkol adı geçirmeyin.
-2. **Fotoğraflar:** 4, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 3. gündeki atkı fotoğrafı ve Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel görseller; mekânı göstermiyorlar. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
-3. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi. Canva'daki "Mekan Sizin 02 - Gün 2 meze masası (gerçek)" artık 4. günün görseli.
+1. **Alkol:** Sosyal medyanın alkol politikası nedeniyle feed'de hiçbir alkol adı, fiyatı, görseli ya da kampanyası yok. Açıklamalarda ve hashtag'lerde de alkol adı geçirmeyin. 5. gün karuselinden rakı yazısı, kampanya saati, rakı/bira fiyat sayfası ve rakı bardaklı arka plan fotoğrafı çıkarıldı; kapağın arkasında artık mekânın kendi meze fotoğrafı var.
+2. **"Seçili ürünlerde":** Rakı adı çıkınca kapakta yalnızca "%20 indirim" kalıyordu; bu, her şeyde indirim varmış gibi okunup müşteriyi yanıltabilir. Bu yüzden fişe ve alt yazıya "seçili ürünlerde geçerlidir, detaylar mekânda" ekledim. İstenirse `ayarlar/05b-menu-kampanya.json` içinden değiştirilir.
+3. **Fotoğraflar:** 4, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 5. gün menüsünün ara sıcak sayfasındaki fotoğraf yapay zekâ ile üretildi; mekânın ara sıcak fotoğrafı gelirse değiştirilir. 3. gündeki atkı fotoğrafı ve Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel görseller; mekânı göstermiyorlar. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
+4. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi. Canva'daki "Mekan Sizin 02 - Gün 2 meze masası (gerçek)" artık 4. günün görseli.
 
 ## Yeniden üretme
 
@@ -171,6 +189,7 @@ Tüm ayar dosyaları `ayarlar/` klasöründe. `sablon/` klasöründen:
 python3 mac_bileti.py ../haftalik-feed/ayarlar/01-kocaelispor-hatirlatma.json
 python3 foto.py ../haftalik-feed/ayarlar/metinsiz-fotolar.json
 python3 story.py ../haftalik-feed/ayarlar/03a-kocaelispor-story.json
+python3 menu.py ../haftalik-feed/ayarlar/05b-menu-kampanya.json
 python3 avrupa.py ../haftalik-feed/ayarlar/05-hoffenheim-hatirlatma.json
 python3 story.py ../haftalik-feed/ayarlar/07a-hoffenheim-story.json
 python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.json
@@ -181,7 +200,7 @@ python3 deplasman.py ../haftalik-feed/ayarlar/09-trabzonspor-hatirlatma.json
 Izgara önizlemesi (`haftalik-feed/` klasöründen):
 
 ```
-python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03b-*.jpg 02-*.jpg 01-*.png
+python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 05b-*-1-kapak.png 04-*.jpg 03b-*.jpg 02-*.jpg 01-*.png
 ```
 
-Şu anki `izgara-onizleme.jpg` içinde 2. günün yeri boş kutu olarak gösteriliyor; 2. günün dosyası (`02-…jpg`) eklenince komut onu da alır.
+Şu anki `izgara-onizleme.jpg` 2. gün olmadan 9 kareyi gösteriyor (5. gün iki gönderi). 2. gün de eklenirse ızgara 10 kareye çıkar ve dizilim bir kare kayar; 2. günün dosyası (`02-…jpg`) eklenince komut onu da alır.

@@ -1,0 +1,179 @@
+{
+  "cikti_oneki": "../haftalik-feed/05b-gun5-menu",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "kapak_foto": {
+    "kaynak": "../haftalik-feed/kaynak/gercek-3.png",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.8,
+    "sicaklik": 0.6
+  },
+  "kapak_karartma": [
+    0.55,
+    0.5,
+    0.86
+  ],
+  "kampanya": {
+    "indirim_yuzde": 20,
+    "oran": "%20",
+    "ust_satir": "KAMPANYA · PAZARTESİ – CUMA",
+    "baslik": "HAFTA İÇİ",
+    "el_yazisi_baslik": "Maç öncesi tam vakti!",
+    "fis_satirlari": [
+      [
+        "KAMPANYA",
+        "SEÇİLİ ÜRÜNLER"
+      ],
+      [
+        "GÜN",
+        "PZT – CUM"
+      ],
+      [
+        "MAÇ",
+        "DEV EKRAN"
+      ]
+    ],
+    "damga_ust": "HER GÜN",
+    "damga_alt": "PZT – CUM",
+    "alt_baslik": "HAFTA İÇİ HER GÜN %20 İNDİRİM",
+    "alt_metin": "Kampanya seçili ürünlerde geçerlidir, detaylar mekânda.",
+    "el_yazisi_alt": "Çarşı'da buluşalım!"
+  },
+  "el_yazisi_menu": "Afiyet olsun!",
+  "bolumler": {
+    "MEZELER": {
+      "not": "Her gün taze!",
+      "satir": 49,
+      "urunler": [
+        [
+          "ENGİNAR",
+          250
+        ],
+        [
+          "PİYAZ",
+          250
+        ],
+        [
+          "GİRİT EZME",
+          250
+        ],
+        [
+          "BEYİN",
+          250
+        ],
+        [
+          "ŞAKŞUKA",
+          200
+        ],
+        [
+          "SEMİZOTU",
+          200
+        ],
+        [
+          "HAVUÇ TARATOR",
+          200
+        ],
+        [
+          "KÖPOĞLU",
+          200
+        ],
+        [
+          "HUMUS",
+          200
+        ],
+        [
+          "TURŞU",
+          200
+        ],
+        [
+          "KURU CACIK",
+          200
+        ],
+        [
+          "EGE KARMASI",
+          200
+        ],
+        [
+          "ÇALI FASULYE",
+          200
+        ],
+        [
+          "ZEYTİNYAĞLI PIRASA",
+          200
+        ],
+        [
+          "RUM PİLAKİ",
+          200
+        ],
+        [
+          "PATATES SALATASI",
+          200
+        ],
+        [
+          "KISIR",
+          200
+        ]
+      ]
+    },
+    "ARA SICAK": {
+      "not": "Sıcak sıcak!",
+      "urunler": [
+        [
+          "ARNAVUT CİĞERİ",
+          400
+        ],
+        [
+          "SİGARA BÖREĞİ",
+          250
+        ],
+        [
+          "KADINBUDU",
+          250
+        ],
+        [
+          "PASTIRMALI HUMUS",
+          300
+        ]
+      ]
+    },
+    "ANA YEMEK": {
+      "urunler": [
+        [
+          "KÖFTE",
+          600
+        ],
+        [
+          "UYKULUK",
+          600
+        ]
+      ],
+      "not": "Ev usulü!"
+    }
+  },
+  "sayfalar": [
+    {
+      "dosya": "mezeler",
+      "bolumler": [
+        "MEZELER"
+      ]
+    },
+    {
+      "dosya": "ara-sicak-ana-yemek",
+      "foto": {
+        "kaynak": "../haftalik-feed/kaynak/ara-sicak.jpg",
+        "merkez": [
+          0.5,
+          0.62
+        ]
+      },
+      "bolumler": [
+        "ARA SICAK",
+        "ANA YEMEK"
+      ],
+      "imza": false,
+      "foto_yukseklik": 340
+    }
+  ]
+}

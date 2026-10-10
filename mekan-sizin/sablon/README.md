@@ -1,6 +1,6 @@
 # Mekan Sizin – maç günü şablonları
 
-Dört maç afişi şablonu ve feed için yardımcı araçlar (story, skor tahmini, fotoğraf renk ayarı, Reels, ızgara önizlemesi) var. Hepsi 1080 px genişliğinde görsel üretir ve logoda **bira/rakı yoktur**: `assets/mekan-sizin-plaka-logo.png`, mekânın gönderdiği gerçek plaka logodan kesildi.
+Dört maç afişi şablonu ve feed için yardımcı araçlar (story, skor tahmini, menü karuseli, fotoğraf renk ayarı, Reels, ızgara önizlemesi) var. Hepsi 1080 px genişliğinde görsel üretir ve logoda **bira/rakı yoktur**: `assets/mekan-sizin-plaka-logo.png`, mekânın gönderdiği gerçek plaka logodan kesildi.
 
 Dört afiş şablonunda `"baslik"` alanı büyük başlığı değiştirir (ör. hatırlatma için `"BU PAZAR"`); yazılmazsa varsayılan başlık kullanılır (MAÇ GÜNÜ / DEPLASMAN / AVRUPA GECESİ).
 
@@ -80,6 +80,15 @@ python3 story.py ../haftalik-feed/ayarlar/03a-kocaelispor-story.json
 
 ```
 python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.json
+```
+
+## Menü ve kampanya karuseli
+
+- 1. kare: kampanya adisyon fişi (`kampanya.fis_satirlari` ile satırlar, `oran` ile büyük yüzde). Sonraki kareler: masada duran basılı menü kartı (isteğe bağlı bantlı fotoğrafla).
+- Fiyatlar, bölümler ve kampanya JSON'dan gelir. Sosyal medya alkol politikası nedeniyle alkol adı, fiyatı ya da görseli kullanılmaz.
+
+```
+python3 menu.py ../haftalik-feed/ayarlar/05b-menu-kampanya.json
 ```
 
 ## Metinsiz fotoğraflar ve Reels

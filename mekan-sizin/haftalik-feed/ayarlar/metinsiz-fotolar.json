@@ -1,6 +1,5 @@
 [
   {"kaynak": "../haftalik-feed/kaynak/gercek-2.png", "cikti": "../haftalik-feed/04-gun4-meze-masasi-metinsiz.jpg", "doygunluk": 0.88, "sicaklik": 0.6, "soluk": 6, "vinyet": 0.32, "gren": 4.5, "seed": 12},
-  {"kaynak": "../haftalik-feed/kaynak/atki-sandalye.jpg", "cikti": "../haftalik-feed/03b-gun3-estetik-metinsiz.jpg", "merkez": [0.5, 0.5], "seed": 13},
   {"kaynak": "../haftalik-feed/kaynak/gercek-1.png", "cikti": "../haftalik-feed/06-gun6-detay-yakin-cekim-metinsiz.jpg", "doygunluk": 0.88, "sicaklik": 0.6, "soluk": 6, "vinyet": 0.32, "gren": 4.5, "seed": 16},
   {"kaynak": "../haftalik-feed/kaynak/gercek-3.png", "cikti": "../haftalik-feed/08-gun8-mekan-metinsiz.jpg", "doygunluk": 0.88, "sicaklik": 0.6, "soluk": 6, "vinyet": 0.32, "gren": 4.5, "seed": 18}
 ]

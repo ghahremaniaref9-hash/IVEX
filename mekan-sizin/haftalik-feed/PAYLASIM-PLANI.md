@@ -1,6 +1,6 @@
 # Mekan Sizin – Haftalık Feed (9–17 Ekim 2026)
 
-10 gönderi (3. günde iki gönderi var), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
+9 gönderi, 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
 
 ## Takvim
 
@@ -9,7 +9,6 @@
 | 1 | Cuma 9 Ekim | 19:30 | Gönderi: maç hatırlatma (BJK–Kocaelispor) | `01-gun1-hatirlatma-bjk-kocaelispor.png` |
 | 2 | Cumartesi 10 Ekim | 23:00'e kadar (ya da Pazar 09:30) | Gönderi: "Kartal'a Meze, Maça Bahane!" | `02-gun2-kartala-meze.jpg` |
 | 3 | Pazar 11 Ekim | 11:00 | Karusel (3 kare): hafta içi %20 indirim + menü | `03c-gun3-kampanya-menu-1…3-*.png` |
-| 3 | Pazar 11 Ekim | 15:00 | Gönderi: metinsiz estetik (atkı) | `03b-gun3-estetik-metinsiz.jpg` |
 | 3 | Pazar 11 Ekim | 12:00 ve 17:00 | Story: lig maç günü | `03a-gun3-story-mac-gunu-bjk-kocaelispor.png` |
 | 4 | Pazartesi 12 Ekim | 17:00 | Gönderi: metinsiz meze masası (gerçek fotoğraf) | `04-gun4-meze-masasi-metinsiz.jpg` |
 | 5 | Salı 13 Ekim | 19:00 | Gönderi: Avrupa maçı hatırlatma (Hoffenheim–BJK) | `05-gun5-hatirlatma-hoffenheim-besiktas.png` |
@@ -21,7 +20,7 @@
 
 `izgara-onizleme.jpg` 9 gönderi paylaşıldıktan sonra profilin nasıl görüneceğini gösterir. Tasarımlı kareler ile metinsiz fotoğraflar dönüşümlü dizilir; hepsi aynı koyu, sıcak ve siyah-beyaz-kırmızı tonda.
 
-**Paylaşım sırası önemli:** Izgaranın planlandığı gibi görünmesi için gönderileri bu sırayla atın, araya başka gönderi koymayın. 2. gün gönderisi 3. günün kampanya karuselinden, kampanya karuseli de atkı gönderisinden **önce** atılmalı. Story'ler ızgarayı etkilemez.
+**Paylaşım sırası önemli:** Izgaranın planlandığı gibi görünmesi için gönderileri bu sırayla atın, araya başka gönderi koymayın. 2. gün gönderisi 3. günün kampanya karuselinden **önce** atılmalı. Story'ler ızgarayı etkilemez.
 
 ---
 
@@ -62,7 +61,7 @@ Alternatif metin: Beyaz masada meze tabakları ve çatalla meze alan bir el; üz
 
 ### Gün 3 – Maç günü (Pazar)
 
-**11:00 – Karusel (hafta içi kampanya):** 3 kareyi tek gönderi olarak sırayla yükleyin: kapak → mezeler → ara sıcak/ana yemek. Atkı gönderisinden önce atın.
+**11:00 – Karusel (hafta içi kampanya):** 3 kareyi tek gönderi olarak sırayla yükleyin: kapak → mezeler → ara sıcak/ana yemek.
 ```
 Hafta içi Mekan Sizin'de %20 indirim! 🦅
 
@@ -75,14 +74,6 @@ Kaydet, maç öncesi lazım olur.
 #BeşiktaşÇarşı #Meze #MaçÖncesi #MekanSizin
 ```
 Alternatif metin: Mekan Sizin hafta içi %20 indirim adisyon fişi; mezeler, ara sıcaklar ve ana yemekler menüsü.
-
-**15:00 – Gönderi (metinsiz estetik):**
-```
-Pazar. Maç günü. Atkını unutma. 🦅
-
-#Beşiktaş #MaçGünü #BeşiktaşÇarşı
-```
-Alternatif metin: Ahşap sandalyenin üstüne bırakılmış siyah-beyaz çizgili atkı.
 
 **12:00 – Story:** `03a` görselini atın. "Geliyor musun?" yazısının altındaki boş alana **Anket** çıkartması koyun: "Geliyorum 🦅" / "Evden izleyeceğim".
 **17:00 – Story:** Aynı görsel + **Soru** çıkartması: "Skor tahminin?" Gelen cevaplardan birkaçını maç öncesi story'de paylaşın.
@@ -184,8 +175,8 @@ Alternatif metin: Deplasman biniş kartı tasarımı: İstanbul'dan Trabzon'a, T
 
 1. **Alkol:** Sosyal medyanın alkol politikası nedeniyle feed'de hiçbir alkol adı, fiyatı, görseli ya da kampanyası yok. Açıklamalarda ve hashtag'lerde de alkol adı geçirmeyin. 3. gün kampanya karuselinden rakı yazısı, kampanya saati, rakı/bira fiyat sayfası ve rakı bardaklı arka plan fotoğrafı çıkarıldı; kapağın arkasında artık mekânın kendi meze fotoğrafı var.
 2. **"Seçili ürünlerde":** Rakı adı çıkınca kapakta yalnızca "%20 indirim" kalıyordu; bu, her şeyde indirim varmış gibi okunup müşteriyi yanıltabilir. Bu yüzden fişe ve alt yazıya "seçili ürünlerde geçerlidir, detaylar mekânda" ekledim. İstenirse `ayarlar/03c-kampanya-menu.json` içinden değiştirilir.
-3. **Fotoğraflar:** 4, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 3. gün karuselinin ara sıcak sayfasındaki fotoğraf yapay zekâ ile üretildi; mekânın ara sıcak fotoğrafı gelirse değiştirilir. 3. gündeki atkı fotoğrafı ve Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel görseller; mekânı göstermiyorlar. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
-4. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi. Canva'daki "Mekan Sizin 02 - Gün 2 meze masası (gerçek)" artık 4. günün, "Mekan Sizin 05b-1…05b-3" ise 3. günün kampanya karuseli.
+3. **Fotoğraflar:** 4, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 3. gün karuselinin ara sıcak sayfasındaki fotoğraf yapay zekâ ile üretildi; mekânın ara sıcak fotoğrafı gelirse değiştirilir. Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel bir görsel; mekânı göstermiyor. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
+4. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları ve kaldırılan atkı gönderisi (Mekan Sizin 03b) Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi. Canva'daki "Mekan Sizin 02 - Gün 2 meze masası (gerçek)" artık 4. günün, "Mekan Sizin 05b-1…05b-3" ise 3. günün kampanya karuseli.
 
 ## Yeniden üretme
 
@@ -206,7 +197,7 @@ python3 deplasman.py ../haftalik-feed/ayarlar/09-trabzonspor-hatirlatma.json
 Izgara önizlemesi (`haftalik-feed/` klasöründen):
 
 ```
-python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03b-*.jpg 03c-*-1-kapak.png 02-*.jpg 01-*.png
+python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03c-*-1-kapak.png 02-*.jpg 01-*.png
 ```
 
-`izgara-onizleme.jpg` 10 karenin son halini gösteriyor. 10. kare (1. gün bileti) dördüncü sıraya iner; gelecek haftanın ilk iki gönderisiyle sıra yeniden tamamlanır.
+`izgara-onizleme.jpg` 9 karenin son halini gösteriyor: en alt sırada kampanya kapağı, 2. gün görseli ve 1. gün bileti.

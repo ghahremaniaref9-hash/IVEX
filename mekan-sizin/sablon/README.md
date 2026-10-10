@@ -88,7 +88,7 @@ python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.jso
 - Fiyatlar, bölümler ve kampanya JSON'dan gelir. Sosyal medya alkol politikası nedeniyle alkol adı, fiyatı ya da görseli kullanılmaz.
 
 ```
-python3 menu.py ../haftalik-feed/ayarlar/05b-menu-kampanya.json
+python3 menu.py ../haftalik-feed/ayarlar/03c-kampanya-menu.json
 ```
 
 ## Metinsiz fotoğraflar ve Reels

@@ -1,16 +1,16 @@
 # Mekan Sizin – Haftalık Feed (9–17 Ekim 2026)
 
-8 gönderi hazır (4. günün içeriği bekleniyor), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
+8 gönderi hazır (2. günün içeriği bekleniyor), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
 
 ## Takvim
 
 | Gün | Tarih | Saat | Ne paylaşılacak | Dosya |
 |---|---|---|---|---|
 | 1 | Cuma 9 Ekim | 19:30 | Gönderi: maç hatırlatma (BJK–Kocaelispor) | `01-gun1-hatirlatma-bjk-kocaelispor.png` |
-| 2 | Cumartesi 10 Ekim | 13:00 | Gönderi: metinsiz meze masası (gerçek fotoğraf) | `02-gun2-mekan-metinsiz.jpg` |
+| 2 | Cumartesi 10 Ekim | 13:00 | **Bekleniyor:** mekânla ilgili metinsiz görsel | — |
 | 3 | Pazar 11 Ekim | 11:00 | Gönderi: metinsiz estetik (atkı) | `03b-gun3-estetik-metinsiz.jpg` |
 | 3 | Pazar 11 Ekim | 12:00 ve 17:00 | Story: lig maç günü | `03a-gun3-story-mac-gunu-bjk-kocaelispor.png` |
-| 4 | Pazartesi 12 Ekim | 17:00 | **Bekleniyor:** menü ve kampanya kaldırıldı, yerine gelecek içerik belirlenecek | — |
+| 4 | Pazartesi 12 Ekim | 17:00 | Gönderi: metinsiz meze masası (gerçek fotoğraf) | `04-gun4-meze-masasi-metinsiz.jpg` |
 | 5 | Salı 13 Ekim | 19:00 | Gönderi: Avrupa maçı hatırlatma (Hoffenheim–BJK) | `05-gun5-hatirlatma-hoffenheim-besiktas.png` |
 | 6 | Çarşamba 14 Ekim | 13:00 | Gönderi: metinsiz yakın çekim (meze, gerçek fotoğraf) | `06-gun6-detay-yakin-cekim-metinsiz.jpg` |
 | 7 | Perşembe 15 Ekim | 12:00 ve 20:00 | Story: Avrupa maç günü | `07a-gun7-story-avrupa-hoffenheim-besiktas.png` |
@@ -47,14 +47,9 @@ Maçı birlikte izleyeceğin arkadaşına gönder, masayı birlikte kapın ⚫�
 Alternatif metin: Beşiktaş – Kocaelispor maç bileti, 11 Ekim Pazar 19:00, Mekan Sizin Beşiktaş Çarşı'da dev ekranda canlı yayın.
 Story: Gönderiyi story'de paylaşın ve **Geri sayım** çıkartması ekleyin (11 Ekim 19:00, adı "Beşiktaş – Kocaelispor"). Takipçiler hatırlatıcı kurabilir.
 
-### Gün 2 – Metinsiz meze masası (Cumartesi 13:00)
+### Gün 2 – İçerik bekleniyor (Cumartesi 13:00)
 
-```
-Masa kuruldu, mezeler hazır. Yarın akşam maç da, meze de bizde. ⚫⚪
-
-#BeşiktaşÇarşı #Beşiktaş #MaçKeyfi
-```
-Alternatif metin: Siyah masada beyaz tabaklarda çeşit çeşit meze.
+Buradaki meze masası fotoğrafı 4. güne taşındı. 2. gün için mekânla ilgili metinsiz bir görsel gerekiyor; en iyisi mekânın içinden ya da girişinden gerçek bir fotoğraf. Gelince aynı renk ayarıyla eklenir.
 
 ### Gün 3 – Maç günü (Pazar)
 
@@ -70,9 +65,16 @@ Alternatif metin: Ahşap sandalyenin üstüne bırakılmış siyah-beyaz çizgil
 **17:00 – Story:** Aynı görsel + **Soru** çıkartması: "Skor tahminin?" Gelen cevaplardan birkaçını maç öncesi story'de paylaşın.
 **Maç sırasında:** Mekândaki gerçek tribün havasını (gol anı, tezahürat) telefonla 10–15 saniye çekip story ve Reels olarak paylaşın. Algoritmanın en çok öne çıkardığı içerik budur.
 
-### Gün 4 – İçerik bekleniyor (Pazartesi 17:00)
+### Gün 4 – Metinsiz meze masası (Pazartesi 17:00)
 
-Menü ve kampanya karuseli, sosyal medyanın alkol politikası nedeniyle kaldırıldı. Yerine ne paylaşılacağı belli olunca bu bölüm doldurulacak. Izgaranın düzeni için 4. günün de bir gönderi olması gerekiyor.
+```
+Yeni haftaya meze masasıyla başlıyoruz. Mezeler her gün taze, Perşembe'nin Avrupa gecesi için masalar şimdiden hazır. ⚫⚪
+
+Kaydet, maç öncesi lazım olur.
+
+#BeşiktaşÇarşı #Meze #MaçÖncesi
+```
+Alternatif metin: Siyah masada beyaz tabaklarda çeşit çeşit meze.
 
 ### Gün 5 – Avrupa maçı hatırlatma (Salı 19:00)
 
@@ -158,8 +160,8 @@ Alternatif metin: Deplasman biniş kartı tasarımı: İstanbul'dan Trabzon'a, T
 ## Dikkat edilmesi gerekenler
 
 1. **Alkol:** Sosyal medyanın alkol politikası nedeniyle feed'de hiçbir alkol adı, fiyatı, görseli ya da kampanyası yok. Açıklamalarda ve hashtag'lerde de alkol adı geçirmeyin.
-2. **Fotoğraflar:** 2, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 3. gündeki atkı fotoğrafı ve Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel görseller; mekânı göstermiyorlar. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
-3. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi.
+2. **Fotoğraflar:** 4, 6 ve 8. günlerde mekânın kendi meze fotoğrafları var. 3. gündeki atkı fotoğrafı ve Avrupa story'si ile skor tahmini gönderisinin arka planındaki stat ışığı ise yapay zekâ ile üretilmiş genel görseller; mekânı göstermiyorlar. Gerçek fotoğraf gelirse aynı renk ayarıyla (`sablon/foto.py`) değiştirilir.
+3. **Canva:** Eski menü kareleri (Mekan Sizin 04-1…04-4) ile yapay zekâlı eski 02, 06, 08 ve 03a dosyaları Canva Yüklemeler'de duruyor. Canva'dan elle silin; yenileri "(gerçek)" ekiyle yüklendi. Canva'daki "Mekan Sizin 02 - Gün 2 meze masası (gerçek)" artık 4. günün görseli.
 
 ## Yeniden üretme
 
@@ -179,7 +181,7 @@ python3 deplasman.py ../haftalik-feed/ayarlar/09-trabzonspor-hatirlatma.json
 Izgara önizlemesi (`haftalik-feed/` klasöründen):
 
 ```
-python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.png 03b-*.jpg 02-*.jpg 01-*.png
+python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03b-*.jpg 02-*.jpg 01-*.png
 ```
 
-Şu anki `izgara-onizleme.jpg` içinde 4. günün yeri boş kutu olarak gösteriliyor; 4. günün dosyası (`04-…`) eklenince komut onu da alır.
+Şu anki `izgara-onizleme.jpg` içinde 2. günün yeri boş kutu olarak gösteriliyor; 2. günün dosyası (`02-…jpg`) eklenince komut onu da alır.

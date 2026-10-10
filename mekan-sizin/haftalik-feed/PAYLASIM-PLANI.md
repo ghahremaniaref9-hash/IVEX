@@ -1,13 +1,13 @@
 # Mekan Sizin – Haftalık Feed (9–17 Ekim 2026)
 
-9 gönderi (3. günde iki gönderi var, 2. gün gönderi yok), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
+10 gönderi (3. günde iki gönderi var), 2 maç günü story'si ve isteğe bağlı 1 Reels. Tüm görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels) boyutunda.
 
 ## Takvim
 
 | Gün | Tarih | Saat | Ne paylaşılacak | Dosya |
 |---|---|---|---|---|
 | 1 | Cuma 9 Ekim | 19:30 | Gönderi: maç hatırlatma (BJK–Kocaelispor) | `01-gun1-hatirlatma-bjk-kocaelispor.png` |
-| 2 | Cumartesi 10 Ekim | — | Gönderi yok (ızgaradaki yerini 3. günün kampanya karuseli alıyor) | — |
+| 2 | Cumartesi 10 Ekim | 23:00'e kadar (ya da Pazar 09:30) | Gönderi: "Kartal'a Meze, Maça Bahane!" | `02-gun2-kartala-meze.jpg` |
 | 3 | Pazar 11 Ekim | 11:00 | Karusel (3 kare): hafta içi %20 indirim + menü | `03c-gun3-kampanya-menu-1…3-*.png` |
 | 3 | Pazar 11 Ekim | 15:00 | Gönderi: metinsiz estetik (atkı) | `03b-gun3-estetik-metinsiz.jpg` |
 | 3 | Pazar 11 Ekim | 12:00 ve 17:00 | Story: lig maç günü | `03a-gun3-story-mac-gunu-bjk-kocaelispor.png` |
@@ -21,7 +21,7 @@
 
 `izgara-onizleme.jpg` 9 gönderi paylaşıldıktan sonra profilin nasıl görüneceğini gösterir. Tasarımlı kareler ile metinsiz fotoğraflar dönüşümlü dizilir; hepsi aynı koyu, sıcak ve siyah-beyaz-kırmızı tonda.
 
-**Paylaşım sırası önemli:** Izgaranın planlandığı gibi görünmesi için gönderileri bu sırayla atın, araya başka gönderi koymayın. 3. günde kampanya karuseli atkı gönderisinden **önce** atılmalı; ızgarada en alt sıranın ortasına o oturur. Story'ler ızgarayı etkilemez.
+**Paylaşım sırası önemli:** Izgaranın planlandığı gibi görünmesi için gönderileri bu sırayla atın, araya başka gönderi koymayın. 2. gün gönderisi 3. günün kampanya karuselinden, kampanya karuseli de atkı gönderisinden **önce** atılmalı. Story'ler ızgarayı etkilemez.
 
 ---
 
@@ -48,9 +48,17 @@ Maçı birlikte izleyeceğin arkadaşına gönder, masayı birlikte kapın ⚫�
 Alternatif metin: Beşiktaş – Kocaelispor maç bileti, 11 Ekim Pazar 19:00, Mekan Sizin Beşiktaş Çarşı'da dev ekranda canlı yayın.
 Story: Gönderiyi story'de paylaşın ve **Geri sayım** çıkartması ekleyin (11 Ekim 19:00, adı "Beşiktaş – Kocaelispor"). Takipçiler hatırlatıcı kurabilir.
 
-### Gün 2 – Gönderi yok (Cumartesi)
+### Gün 2 – "Kartal'a Meze, Maça Bahane!" (Cumartesi akşamı)
 
-Bu hafta 2. gün feed gönderisi yok; ızgaradaki yerini 3. günün kampanya karuseli dolduruyor. İstenirse gün içinde sadece story atılabilir (ör. 1. gün gönderisini geri sayım çıkartmasıyla tekrar paylaşmak).
+Planlanan 13:00 geçtiği için bu gece 23:00'e kadar atın. Yetişmezse Pazar 09:30'da, kampanya karuselinden önce atın ve açıklamadaki "Yarın akşam"ı "Bu akşam" yapın.
+```
+Kartal'a meze, maça bahane! 🦅
+
+Yarın akşam Beşiktaş – Kocaelispor dev ekranda. Mezeler hazır, masanı şimdiden ayırt; rezervasyon için DM'den yaz. ⚫⚪
+
+#BeşiktaşÇarşı #Meze #MaçKeyfi #MekanSizin
+```
+Alternatif metin: Beyaz masada meze tabakları ve çatalla meze alan bir el; üzerinde "Kartal'a Meze, Maça Bahane!" yazısı.
 
 ### Gün 3 – Maç günü (Pazar)
 
@@ -198,7 +206,7 @@ python3 deplasman.py ../haftalik-feed/ayarlar/09-trabzonspor-hatirlatma.json
 Izgara önizlemesi (`haftalik-feed/` klasöründen):
 
 ```
-python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03b-*.jpg 03c-*-1-kapak.png 01-*.png
+python3 ../sablon/izgara.py izgara-onizleme.jpg 09-*.png 08-*metinsiz.jpg 07b-*.png 06-*.jpg 05-*.png 04-*.jpg 03b-*.jpg 03c-*-1-kapak.png 02-*.jpg 01-*.png
 ```
 
-`izgara-onizleme.jpg` 9 karenin son halini gösteriyor: en alt sırada atkı, kampanya kapağı ve 1. gün bileti.
+`izgara-onizleme.jpg` 10 karenin son halini gösteriyor. 10. kare (1. gün bileti) dördüncü sıraya iner; gelecek haftanın ilk iki gönderisiyle sıra yeniden tamamlanır.

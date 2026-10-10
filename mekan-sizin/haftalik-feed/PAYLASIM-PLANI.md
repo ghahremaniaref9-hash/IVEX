@@ -55,7 +55,7 @@ Kartal'a meze, maça bahane! 🦅
 
 Yarın akşam Beşiktaş – Kocaelispor dev ekranda. Mezeler hazır, masanı şimdiden ayırt; rezervasyon için DM'den yaz. ⚫⚪
 
-#BeşiktaşÇarşı #Meze #MaçKeyfi #MekanSizin
+#Beşiktaş #BeşiktaşÇarşı #Meze #MaçKeyfi #MekanSizin
 ```
 Alternatif metin: Beyaz masada meze tabakları ve çatalla meze alan bir el; üzerinde "Kartal'a Meze, Maça Bahane!" yazısı.
 
@@ -71,7 +71,7 @@ Kaydet, maç öncesi lazım olur.
 
 📍 Sinanpaşa, Şht. Asım Cd. No:33/2, Beşiktaş
 
-#BeşiktaşÇarşı #Meze #MaçÖncesi #MekanSizin
+#BeşiktaşÇarşı #Meze #MaçÖncesi #HaftaİçiKampanya #MekanSizin
 ```
 Alternatif metin: Mekan Sizin hafta içi %20 indirim adisyon fişi; mezeler, ara sıcaklar ve ana yemekler menüsü.
 
@@ -86,7 +86,7 @@ Yeni haftaya meze masasıyla başlıyoruz. Mezeler her gün taze, Perşembe'nin 
 
 Yerini ayırtmak için DM'den yaz.
 
-#BeşiktaşÇarşı #Meze #MaçÖncesi
+#Beşiktaş #BeşiktaşÇarşı #Meze #MaçÖncesi #MekanSizin
 ```
 Alternatif metin: Siyah masada beyaz tabaklarda çeşit çeşit meze.
 
@@ -112,7 +112,7 @@ Bolca zeytinyağı, bir tutam kuru ot… Maç öncesi masanın olmazsa olmazı.
 
 Senin vazgeçilmez mezen hangisi? 👇
 
-#Meze #BeşiktaşÇarşı #MaçÖncesi
+#Meze #MezeKeyfi #BeşiktaşÇarşı #MaçÖncesi #MekanSizin
 ```
 Alternatif metin: Beyaz tabakta zeytinyağı ve kuru otlarla süslenmiş yoğurtlu meze.
 Yorumlara ilk bir saat içinde cevap verin; yorum zinciri gönderinin erişimini artırır.
@@ -140,7 +140,7 @@ Fotoğraf yerine **Reels** versiyonunu (`08-gun8-mekan-metinsiz-reels.mp4`) atma
 ```
 Cuma akşamı masası hazır: mezeler taze, ekran açık. ⚫⚪
 
-#BeşiktaşÇarşı #Beşiktaş #MaçKeyfi
+#Beşiktaş #BeşiktaşÇarşı #CumaAkşamı #Meze #MekanSizin
 ```
 Alternatif metin: Beyaz tabaklarda fıstıklı yoğurtlu meze ve çeşit çeşit meze.
 

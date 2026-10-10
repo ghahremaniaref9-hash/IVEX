@@ -36,7 +36,7 @@ Pazar akşamı Çarşı'da buluşuyoruz! 🦅
 Beşiktaş – Kocaelispor
 11 Ekim Pazar · 19:00 · Süper Lig 7. hafta
 
-Maçı dev ekranda, tribün havasında izlemek için yerini şimdiden ayırt. Rezervasyon için DM'den yazman yeterli.
+Maçı tribün havasında izlemek için yerini şimdiden ayırt. Rezervasyon için DM'den yazman yeterli.
 
 Maçı birlikte izleyeceğin arkadaşına gönder, masayı birlikte kapın ⚫⚪
 
@@ -44,7 +44,7 @@ Maçı birlikte izleyeceğin arkadaşına gönder, masayı birlikte kapın ⚫�
 
 #Beşiktaş #BeşiktaşKocaelispor #BeşiktaşÇarşı #MaçKeyfi #MekanSizin
 ```
-Alternatif metin: Beşiktaş – Kocaelispor maç bileti, 11 Ekim Pazar 19:00, Mekan Sizin Beşiktaş Çarşı'da dev ekranda canlı yayın.
+Alternatif metin: Beşiktaş – Kocaelispor maç bileti, 11 Ekim Pazar 19:00, Mekan Sizin Beşiktaş Çarşı'da canlı yayın.
 Story: Gönderiyi story'de paylaşın ve **Geri sayım** çıkartması ekleyin (11 Ekim 19:00, adı "Beşiktaş – Kocaelispor"). Takipçiler hatırlatıcı kurabilir.
 
 ### Gün 2 – "Kartal'a Meze, Maça Bahane!" (Cumartesi akşamı)
@@ -53,7 +53,7 @@ Planlanan 13:00 geçtiği için bu gece 23:00'e kadar atın. Yetişmezse Pazar 0
 ```
 Kartal'a meze, maça bahane! 🦅
 
-Yarın akşam Beşiktaş – Kocaelispor dev ekranda. Mezeler hazır, masanı şimdiden ayırt; rezervasyon için DM'den yaz. ⚫⚪
+Yarın akşam Beşiktaş – Kocaelispor canlı yayında. Mezeler hazır, masanı şimdiden ayırt; rezervasyon için DM'den yaz. ⚫⚪
 
 #Beşiktaş #BeşiktaşÇarşı #Meze #MaçKeyfi #MekanSizin
 ```
@@ -98,11 +98,11 @@ Perşembe gecesi Avrupa'dayız! 🦅
 Hoffenheim – Beşiktaş
 UEFA Avrupa Ligi · 2. hafta · 15 Ekim Perşembe 22:00
 
-Sinsheim'a 1.800 km var ama tribün burada. Maç dev ekranda canlı, Mekan Sizin'de. Yerini ayırtmak için DM'den yaz.
+Sinsheim'a 1.800 km var ama tribün burada. Maç canlı yayında, Mekan Sizin'de. Yerini ayırtmak için DM'den yaz.
 
 #Beşiktaş #UEFAAvrupaLigi #BeşiktaşÇarşı #MaçKeyfi #MekanSizin
 ```
-Alternatif metin: Kartal Pasaportu tasarımı: Hoffenheim – Beşiktaş, 15 Ekim Perşembe 22:00, Mekan Sizin'de dev ekranda.
+Alternatif metin: Kartal Pasaportu tasarımı: Hoffenheim – Beşiktaş, 15 Ekim Perşembe 22:00, Mekan Sizin'de canlı yayında.
 Story: Gönderiyi paylaşıp **Geri sayım** çıkartması ekleyin (15 Ekim 22:00).
 
 ### Gün 6 – Yakın çekim (Çarşamba 13:00)
@@ -124,7 +124,7 @@ Yorumlara ilk bir saat içinde cevap verin; yorum zinciri gönderinin erişimini
 ```
 Bu gece Avrupa gecesi! 🦅
 
-Hoffenheim – Beşiktaş · 22:00 · dev ekranda canlı
+Hoffenheim – Beşiktaş · 22:00 · canlı yayında
 
 Skor tahminini yorumlara yaz; maçtan sonra doğru bilenleri story'de paylaşacağız.
 
@@ -138,7 +138,7 @@ Alternatif metin: Eski stat skorbordu tasarımı: Hoffenheim ? – ? Beşiktaş,
 
 Fotoğraf yerine **Reels** versiyonunu (`08-gun8-mekan-metinsiz-reels.mp4`) atmanızı öneririm; Reels takip etmeyenlere çok daha fazla ulaşır. Instagram'da yüklerken **trend bir müzik** seçin, kapak olarak videonun ortasından bir kare seçin.
 ```
-Cuma akşamı masası hazır: mezeler taze, ekran açık. ⚫⚪
+Cuma akşamı masası hazır: mezeler taze, sohbet koyu. ⚫⚪
 
 #Beşiktaş #BeşiktaşÇarşı #CumaAkşamı #Meze #MekanSizin
 ```
@@ -152,7 +152,7 @@ Kartal yolda! 🦅
 Trabzonspor – Beşiktaş
 19 Ekim Pazartesi · 20:00 · Süper Lig 8. hafta
 
-Deplasmana gidemeyen Çarşı burada: maç dev ekranda, tribün havası Mekan Sizin'de.
+Deplasmana gidemeyen Çarşı burada: maç canlı yayında, tribün havası Mekan Sizin'de.
 
 #Beşiktaş #TrabzonsporBeşiktaş #BeşiktaşÇarşı #MaçKeyfi #MekanSizin
 ```
@@ -164,7 +164,7 @@ Alternatif metin: Deplasman biniş kartı tasarımı: İstanbul'dan Trabzon'a, T
 ## Algoritma için kısa notlar
 
 - **En güçlü sinyaller:** DM ile gönderilme (paylaşım) ve kaydetme. Açıklamalardaki "arkadaşına gönder" ve "kaydet" çağrıları bunun için.
-- **Hashtag:** Instagram artık gönderi başına en fazla 5 hashtag'e izin veriyor. Az ama ilgili etiket kullanın; asıl iş açıklamadaki anahtar kelimelerde (Beşiktaş, Çarşı, maç, dev ekran).
+- **Hashtag:** Instagram artık gönderi başına en fazla 5 hashtag'e izin veriyor. Az ama ilgili etiket kullanın; asıl iş açıklamadaki anahtar kelimelerde (Beşiktaş, Çarşı, maç, canlı yayın).
 - **İlk saat:** Gönderiden sonraki ilk 30–60 dakika yorumlara cevap verin.
 - **Her gönderiyi story'de paylaşın**, mutlaka bir çıkartma (anket, soru, geri sayım) ekleyin.
 - **Gerçek videolar:** Maç sırasında mekânda çekilen kısa tribün videoları en çok erişimi getirir. Her maçta en az bir Reels çıkarın.

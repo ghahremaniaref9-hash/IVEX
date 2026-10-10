@@ -82,7 +82,7 @@ def receipt(cfg):
             d.line((x, y, x + 8, y), fill=(120, 116, 110), width=2)
 
     dashes(150)
-    rows = k["fis_satirlari"]  # e.g. [["GÜN", "PZT – CUM"], ["MAÇ", "DEV EKRAN"]]
+    rows = k["fis_satirlari"]  # e.g. [["GÜN", "PZT – CUM"], ["MEZE", "HER GÜN TAZE"]]
     y = 188
     for left, right in rows:
         leader_row(d, 40, rw - 40, y, left, right, mono, mono, color=ink, price_color=ink, dot_color=(160, 156, 150))

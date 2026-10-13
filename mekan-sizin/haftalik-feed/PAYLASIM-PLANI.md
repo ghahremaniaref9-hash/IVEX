@@ -7,10 +7,10 @@
 | Sıra | Tarih | Saat | Ne paylaşılacak | Dosya (`onumuzdeki-6/`) |
 |---|---|---|---|---|
 | 1 | Salı 13 Ekim | 21:00 | Gönderi: Meze Kadrosu · No 01 – Enginar | `1-sali-13-ekim-meze-kadrosu-enginar.png` |
-| 2 | Çarşamba 14 Ekim | 19:00 | Gönderi: Avrupa gecesi hatırlatma (Hoffenheim–BJK) | `2-carsamba-14-ekim-avrupa-gecesi-hoffenheim.png` |
+| 2 | Çarşamba 14 Ekim | 19:00 | Gönderi: UEFA gecesi hatırlatma (Hoffenheim–BJK) | `2-carsamba-14-ekim-avrupa-gecesi-hoffenheim.png` |
 | 3 | Perşembe 15 Ekim | 12:00 | Gönderi: metinsiz meze yakın çekim | `3-persembe-15-ekim-meze-yakin-cekim.jpg` |
 | 4 | Perşembe 15 Ekim | 17:00 | Gönderi: skor tahmini (maç günü) | `4-persembe-15-ekim-skor-tahmini-hoffenheim.png` |
-| – | Perşembe 15 Ekim | 13:00 ve 20:00 | Story: Avrupa maç günü | `4-story-persembe-15-ekim-avrupa-mac-gunu.png` |
+| – | Perşembe 15 Ekim | 13:00 ve 20:00 | Story: UEFA maç günü | `4-story-persembe-15-ekim-avrupa-mac-gunu.png` |
 | 5 | Cuma 16 Ekim | 18:00 | Gönderi veya Reels: metinsiz meze tabakları | `5-cuma-16-ekim-meze-tabaklari.jpg` / `…-reels.mp4` |
 | 6 | Cumartesi 17 Ekim | 19:00 | Gönderi: deplasman hatırlatma (Trabzonspor–BJK) | `6-cumartesi-17-ekim-deplasman-trabzonspor.png` |
 
@@ -38,10 +38,10 @@ Kadronun bir sonraki yıldızı hangisi olsun? Yorumlara yaz 👇
 Alternatif metin: Elde tutulan tabakta dereotu, havuç ve limonla servis edilen enginar; üstünde "Meze Kadrosu No 01 Enginar" yazısı.
 Yorumlara ilk bir saat içinde cevap verin; en çok istenen meze serinin No 02'si olur.
 
-### 2 – Avrupa gecesi hatırlatma (Çarşamba 19:00)
+### 2 – UEFA gecesi hatırlatma (Çarşamba 19:00)
 
 ```
-Yarın gece Avrupa'dayız! 🦅
+Yarın gece UEFA gecesi! 🦅
 
 Hoffenheim – Beşiktaş
 UEFA Avrupa Ligi · 2. hafta · 15 Ekim Perşembe 22:00
@@ -58,7 +58,7 @@ Story: Gönderiyi story'de paylaşıp **Geri sayım** çıkartması ekleyin (15 
 ```
 Bolca zeytinyağı, bir tutam kuru ot… Maç öncesi masanın olmazsa olmazı.
 
-Bu akşam Avrupa gecesi; masan hazır, mezeler taze. Yerini ayırtmak için DM'den yaz.
+Bu akşam UEFA gecesi; masan hazır, mezeler taze. Yerini ayırtmak için DM'den yaz.
 
 #Meze #MezeKeyfi #BeşiktaşÇarşı #MaçÖncesi #MekanSizin
 ```
@@ -69,7 +69,7 @@ Alternatif metin: Beyaz tabakta zeytinyağı ve kuru otlarla süslenmiş yoğurt
 **13:00 – Story:** `4-story` görseli + boş alana **Soru** çıkartması: "Skor tahminin?"
 **17:00 – Gönderi:**
 ```
-Bu gece Avrupa gecesi! 🦅
+Bu gece UEFA gecesi! 🦅
 
 Hoffenheim – Beşiktaş · 22:00 · canlı yayında
 

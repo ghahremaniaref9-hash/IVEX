@@ -168,7 +168,7 @@ def passport(cfg, opp, km):
     d.text((36, ph - 80), mrz(f"P<TUR{cfg['deplasman']}<<KARTAL<<{cfg['ev_sahibi']}"), font=mono, fill=(40, 48, 58))
     d.text((36, ph - 46), mrz(f"1903<{cfg['tarih_mrz']}<{cfg['sehir']}<<CANLI<YAYIN"), font=mono, fill=(40, 48, 58))
 
-    stamp_c = circle_stamp(f"{cfg['sehir']} · {cfg['ulke']}", "GİRİŞ · ENTRY", cfg["tarih_damga"], "AVRUPA GECESİ")
+    stamp_c = circle_stamp(f"{cfg['sehir']} · {cfg['ulke']}", "GİRİŞ · ENTRY", cfg["tarih_damga"], cfg.get("damga_alt", "AVRUPA GECESİ"))
     stamp_c = stamp_c.rotate(-14, resample=Image.BICUBIC, expand=True)
     page.alpha_composite(stamp_c, (pw - stamp_c.width - 40, 70))
     corner = Image.new("L", page.size, 0)

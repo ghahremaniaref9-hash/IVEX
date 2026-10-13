@@ -88,7 +88,17 @@ python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.jso
 - Fiyatlar, bölümler ve kampanya JSON'dan gelir. Sosyal medya alkol politikası nedeniyle alkol adı, fiyatı ya da görseli kullanılmaz.
 
 ```
-python3 menu.py ../haftalik-feed/ayarlar/03c-kampanya-menu.json
+python3 menu.py menu-ornek.json
+```
+
+## Zarif konsept karuseli ("Kartal'a Meze" tarzı)
+
+- 1. kare: tam sayfa gerçek fotoğraf, iki satırlık serif başlık (ilk satır sola, ikinci satır sağa yaslı), altta küçük italik bilgi satırı ve imza.
+- Sonraki kareler: üstte fotoğraf bandı, altta krem zemin üzerinde serif menü (`iki_sutun` ile uzun listeler iki sütuna bölünür).
+- Fontlar: Gilda Display (başlık ve menü), Cormorant Garamond İtalik (alt satırlar).
+
+```
+python3 zarif.py ../haftalik-feed/ayarlar/03c-menu-zarif.json
 ```
 
 ## Metinsiz fotoğraflar ve Reels
@@ -110,4 +120,4 @@ python3 reel.py kaynak.jpg cikti.mp4 7
 ## Klasörler
 
 - `assets/`: plaka logo, orijinal logo, armalar, stadyum fotoğrafı, Şablon 1 tabanı
-- `fonts/`: Anton, Oswald, Montserrat, Caveat Brush, Space Mono (Google Fonts, SIL Open Font License 1.1)
+- `fonts/`: Anton, Oswald, Montserrat, Caveat Brush, Space Mono, Gilda Display, Cormorant Garamond (Google Fonts, SIL Open Font License 1.1)

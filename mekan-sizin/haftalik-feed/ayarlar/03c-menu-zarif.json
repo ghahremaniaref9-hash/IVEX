@@ -1,0 +1,167 @@
+{
+  "cikti_oneki": "../haftalik-feed/03c-gun3-menu",
+  "kapak": {
+    "foto": {
+      "kaynak": "../haftalik-feed/kaynak/gercek-3.png",
+      "merkez": [
+        0.5,
+        0.55
+      ],
+      "yakinlik": 1.05
+    },
+    "ust_karartma": 0.58,
+    "alt_karartma": 0.62,
+    "baslik": [
+      "Menü Masada,",
+      "Kartal Sahada!"
+    ],
+    "alt_satir": "Mezeler her gün taze, ara sıcaklar sıcak sıcak",
+    "imza": "MEKAN SİZİN · BEŞİKTAŞ ÇARŞI"
+  },
+  "bolumler": {
+    "MEZELER": {
+      "baslik": "Mezeler",
+      "alt": "Her gün taze",
+      "iki_sutun": true,
+      "urunler": [
+        [
+          "Enginar",
+          250
+        ],
+        [
+          "Piyaz",
+          250
+        ],
+        [
+          "Girit Ezme",
+          250
+        ],
+        [
+          "Beyin",
+          250
+        ],
+        [
+          "Şakşuka",
+          200
+        ],
+        [
+          "Semizotu",
+          200
+        ],
+        [
+          "Havuç Tarator",
+          200
+        ],
+        [
+          "Köpoğlu",
+          200
+        ],
+        [
+          "Humus",
+          200
+        ],
+        [
+          "Turşu",
+          200
+        ],
+        [
+          "Kuru Cacık",
+          200
+        ],
+        [
+          "Ege Karması",
+          200
+        ],
+        [
+          "Çalı Fasulye",
+          200
+        ],
+        [
+          "Zeytinyağlı Pırasa",
+          200
+        ],
+        [
+          "Rum Pilaki",
+          200
+        ],
+        [
+          "Patates Salatası",
+          200
+        ],
+        [
+          "Kısır",
+          200
+        ]
+      ]
+    },
+    "ARA SICAK": {
+      "baslik": "Ara Sıcaklar",
+      "alt": "Sıcak sıcak",
+      "satir": 52,
+      "urunler": [
+        [
+          "Arnavut Ciğeri",
+          400
+        ],
+        [
+          "Sigara Böreği",
+          250
+        ],
+        [
+          "Kadınbudu",
+          250
+        ],
+        [
+          "Pastırmalı Humus",
+          300
+        ]
+      ]
+    },
+    "ANA YEMEK": {
+      "baslik": "Ana Yemekler",
+      "satir": 52,
+      "urunler": [
+        [
+          "Köfte",
+          600
+        ],
+        [
+          "Uykuluk",
+          600
+        ]
+      ]
+    }
+  },
+  "sayfalar": [
+    {
+      "dosya": "mezeler",
+      "foto": {
+        "kaynak": "../haftalik-feed/kaynak/gercek-1.png",
+        "merkez": [
+          0.45,
+          0.45
+        ]
+      },
+      "foto_yukseklik": 450,
+      "bolumler": [
+        "MEZELER"
+      ]
+    },
+    {
+      "dosya": "ara-sicak-ana-yemek",
+      "foto": {
+        "kaynak": "../haftalik-feed/kaynak/gercek-4.png",
+        "merkez": [
+          0.5,
+          0.62
+        ]
+      },
+      "foto_yukseklik": 470,
+      "bolum_arasi": 44,
+      "bolumler": [
+        "ARA SICAK",
+        "ANA YEMEK"
+      ]
+    }
+  ]
+}

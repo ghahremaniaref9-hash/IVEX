@@ -101,6 +101,15 @@ python3 menu.py menu-ornek.json
 python3 zarif.py ../haftalik-feed/ayarlar/03c-menu-zarif.json
 ```
 
+## Meze Kadrosu (seri gönderi)
+
+- Her meze bir oyuncu gibi: üstte çizgili atkı sekmesi ve "MEZE KADROSU · NO 01", büyük serif başlık, italik içerik satırı ve "MEVKİ / FORMA" kart satırı; köşede plaka logo.
+- Fotoğraf `foto.kaynak` ile gelir, sol üst köşe yumuşakça koyulaştırılır.
+
+```
+python3 meze_kadrosu.py ../meze-kadrosu/01-enginar.json
+```
+
 ## Metinsiz fotoğraflar ve Reels
 
 - `foto.py`: Fotoğrafları 4:5'e kırpar ve hepsine aynı film görünümünü verir (soluk renkler, korunan kırmızılar, sıcak ışık, vinyet, gren). Gerçek mekân fotoğrafları da aynı dosyaya eklenebilir; ızgara tek elden çıkmış gibi durur.

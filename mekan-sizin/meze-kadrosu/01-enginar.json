@@ -1,0 +1,24 @@
+{
+  "cikti": "../meze-kadrosu/01-enginar.png",
+  "foto": {
+    "kaynak": "../meze-kadrosu/kaynak/01-enginar.png",
+    "doygunluk": 0.9
+  },
+  "ust_satir": "MEZE KADROSU · NO 01",
+  "baslik": "Enginar",
+  "alt_satirlar": [
+    "Patates, havuç ve dereotuyla,",
+    "her gün taze."
+  ],
+  "kart": [
+    [
+      "MEVKİ",
+      "Soğuk meze"
+    ],
+    [
+      "FORMA",
+      "01"
+    ]
+  ],
+  "alt_boyut": 42
+}

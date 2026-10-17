@@ -8,7 +8,9 @@ Amaç: izlenme ve etkileşim. 2 Reels + 1 karusel, hepsi müşteri işlerimizden
 | 2 | Pazartesi 19 Ekim | 18:30 | Karusel: Mekan Sizin vaka analizi (8 kare) | `gun2-vaka-mekan-sizin-1…8.png` |
 | 3 | Salı 20 Ekim | 19:30 | Reels: "Profili 15 saniyede kuruyoruz" + "Favorin hangisi?" | `gun3-profil-kurulumu-reels.mp4` + kapak `gun3-profil-kurulumu-kapak.jpg` |
 
-**Neden bu sıra:** 1. gün en geniş kitleye giden format (önce/sonra Reels) ile erişim, 2. gün kaydedilen ve DM'de paylaşılan bir karusel ile güven, 3. gün yorumla cevaplanan bir soru ile etkileşim. Karusel pazartesi 18:30'da, Mekan Sizin'in 10. gönderisi (15:00) yayınlandıktan sonra atılıyor; böylece "son hâli" gerçekten profildeki hâli oluyor.
+**Neden bu sıra:** 1. gün en geniş kitleye giden format (önce/sonra Reels) ile erişim, 2. gün kaydedilen ve DM'de paylaşılan bir karusel ile güven, 3. gün yorumla cevaplanan bir soru ile etkileşim.
+
+**Izgara:** Karuselin 3. karesindeki ve 3. gün videosundaki profil, Mekan Sizin'in 17 Ekim'deki gerçek profili: 9 Ekim'deki "Bu Pazar" biletinden 17 Ekim'deki deplasman gönderisine kadar 9 gönderi, paylaşıldıkları sürümleriyle (Avrupa Gecesi pasaportu, hafta içi kampanyası dahil).
 
 **Videolar sessiz.** Instagram'da yüklerken trend bir ses seçin (sesi düşük tutun). Uygulama içinden eklenen trend ses, erişimi dışarıdan eklenen müzikten daha çok artırıyor.
 
@@ -38,7 +40,7 @@ Kendi işletmen için ücretsiz 3 içerik fikri istiyorsan yorumlara "İÇERİK"
 ## Gün 2 – Karusel: Vaka analizi (Pazartesi 18:30)
 
 ```
-Bir taraftar mekânının feed'ini 10 günde nasıl kurduk? ⚫⚪
+Bir taraftar mekânının feed'ini 9 günde nasıl kurduk? ⚫⚪
 
 Mekan Sizin, Beşiktaş Çarşı'da maç izlemenin adresi. Hedef netti: maç günleri masaları doldurmak.
 
@@ -54,7 +56,7 @@ Kaydet 📌 kendi profilin için kontrol listesi olsun.
 #sosyalmedyaajansı #sosyalmedyayönetimi #instagramipuçları #restoranpazarlaması #ivexmedya
 ```
 - **Ortak gönderi (Collab):** @mekan.sizinn hesabını ortak olarak davet edin; kabul ederlerse gönderi iki hesabın takipçilerine birden gösterilir.
-- **Alternatif metin:** IVEX Medya vaka analizi: Mekan Sizin'in 10 günlük Instagram feed'i, uygulanan kurallar, profil ızgarası, maç günü konseptleri ve 5 maddelik algoritma kontrol listesi.
+- **Alternatif metin:** IVEX Medya vaka analizi: Mekan Sizin'in 9 günlük Instagram feed'i, uygulanan kurallar, profil ızgarası, maç günü konseptleri ve 5 maddelik algoritma kontrol listesi.
 - **Story (19:00):** Gönderiyi paylaşın + **Soru** çıkartması: "İşletmenin Instagram'ında en çok neye takılıyorsun?" Aynı story'ye **Bağlantı** çıkartmasıyla www.ivex.com.tr.
 - **Sabitle:** Karuseli profilin en üstüne sabitleyin; profile yeni gelen biri ilk bunu görsün.
 
@@ -63,7 +65,7 @@ Kaydet 📌 kendi profilin için kontrol listesi olsun.
 ```
 Bir mekânın profilini 15 saniyede kuruyoruz. ⏱️
 
-10 gün, 9 gönderi: maç bileti, UEFA pasaportu, skor tahmini, deplasman biniş kartı ve mekânın kendi meze fotoğrafları. Hepsi Mekan Sizin için tasarlandı.
+9 gün, 9 gönderi: maç bileti, Avrupa gecesi pasaportu, skor tahmini, hafta içi kampanyası, deplasman biniş kartı ve mekânın kendi meze fotoğrafları. Hepsi Mekan Sizin için tasarlandı.
 
 Favorin hangisi? Numarasını yorumlara yaz 👇 (1–9)
 

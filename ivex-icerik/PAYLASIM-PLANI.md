@@ -103,3 +103,33 @@ python3 izgara_reels.py ../ayarlar/gun3-izgara-reels.json
 ```
 
 Metinler `ayarlar/` içindeki JSON dosyalarında; IVEX logosu, renkler ve fontlar `uretim/marka.py` içinde. Yeni bir müşteri için önce/sonra videosu yapmak ya da başka bir müşterinin profilini aynı animasyonla göstermek için yalnızca JSON'daki dosya yollarını ve metinleri değiştirmek yeterli.
+
+---
+
+## Ek: IVEX tanıtım Reels'i ("Biz reklam yapmıyoruz")
+
+Dosyalar: `ivex-tanitim-reels.mp4` (36,7 sn, sesli) ve kapak `ivex-tanitim-kapak.jpg`. Ham video: `kaynak/ivex-tanitim-ham.mp4`.
+
+**Kurgu:** Video "Biz reklam yapmıyoruz." cümlesiyle açılıyor ve üstte "Reklam ajansı arıyorsan önce bunu izle." yazıyor (soğuk açılış kancası). İzleyici "peki ne yapıyorlar?" diye sonuna kadar kalıyor; cevap sonda: "Marka büyütüyoruz." Boşluklar kırpıldı, cümle başlarında yakınlaştırmalı kesmeler var. Kelime kelime altyazı (konuşulan kelime lime) sessiz izleyenler için. Hizmetler konuşmayla aynı anda menü gibi beliriyor: 01 Web tasarım, 02 Reklam yönetimi, 03 Sosyal medya. Ses temizlendi ve -14 LUFS'a getirildi. Sonda satış kartı var: "Markanı birlikte büyütelim · DM'den “BÜYÜT” yaz".
+
+**Önerilen zaman:** Hafta içi 12:30 ya da 20:00. Paylaştıktan sonra profile sabitleyin.
+
+```
+Biz reklam yapmıyoruz. Marka büyütüyoruz. 🚀
+
+Web sitesi, Meta & Google reklamları ve sosyal medya yönetimi tek ekipte:
+✔️ Modern, hızlı, dönüşüm odaklı web siteleri
+✔️ Veriye dayalı reklam stratejileri ve ROAS takibi
+✔️ Instagram, Reels, Story ve içerik planlaması
+
+Markan için ücretsiz dijital analiz istiyorsan DM'den "BÜYÜT" yaz. 📩
+www.ivex.com.tr
+
+#dijitalpazarlama #sosyalmedyaajansı #metareklam #webtasarım #ivexmedya
+```
+- **Alternatif metin:** IVEX Medya tanıtım videosu: sunucu kameraya IVEX'in web tasarım, Meta ve Google reklam yönetimi ve sosyal medya hizmetlerini anlatıyor; video "Biz reklam yapmıyoruz, marka büyütüyoruz" sözüyle açılıp kapanıyor.
+- **Müzik:** Video kendi sesiyle. Instagram'da müzik eklerseniz sesini %10–15'e indirin, konuşma önde kalsın.
+- **Satış için reklam:** Bu video doğrudan müşteri getirecek türden. Instagram'da "Öne çıkar" ile amaç **Mesajlar** seçin; konum İstanbul, yaş 25–55, ilgi alanı küçük işletme / girişimcilik. DM'den "BÜYÜT" yazanlara aynı gün dönün.
+- **Story:** Reels'i story'de paylaşın + **Soru** çıkartması: "İşletmenin dijitalde en büyük sorunu ne?"
+
+Yeniden üretme (`uretim/` klasöründen): `python3 konusma_kurgu.py ../ayarlar/ivex-tanitim-video.json`. Kesimler, yakınlaştırmalar, altyazı metni ve hizmet etiketleri `ayarlar/ivex-tanitim-video.json` içinde.

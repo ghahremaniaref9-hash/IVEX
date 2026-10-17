@@ -10,7 +10,7 @@ import sys
 from PIL import Image, ImageDraw, ImageOps
 
 from marka import (INK, LIME, WHITE, background, blend, drop_shadow, end_card, font, pill, repo, rounded,
-                   wordmark, write_video)
+                   logo, write_video)
 
 W, H, FPS = 1080, 1920, 30
 TW, TH, GAP = 270, 360, 8
@@ -72,7 +72,7 @@ def badge(n, scale=1.0):
 
 def base(bg, client):
     im = bg.copy()
-    lg = wordmark(38, WHITE, x_color=LIME)
+    lg = logo(40)
     im.alpha_composite(lg, ((W - lg.width) // 2, 118))
 
     def draw(d):

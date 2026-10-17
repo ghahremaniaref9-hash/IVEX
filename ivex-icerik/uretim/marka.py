@@ -1,7 +1,7 @@
-"""IVEX Medya - shared brand pieces: colours, fonts, the IVΞX wordmark and the dark green background.
+"""IVEX Medya - shared brand pieces: colours, fonts, the IVEX logo and the dark green background.
 
 Palette and type follow the IVEX designs in Canva (www.ivex.com.tr post): deep green, neon lime, white,
-heavy Montserrat headlines.
+heavy Montserrat headlines. The lime is sampled from the official logo (ivex-logo.png).
 """
 import os
 import subprocess
@@ -15,7 +15,7 @@ ROOT = os.path.dirname(os.path.dirname(HERE))
 
 GREEN_DARK = (5, 22, 11)
 GREEN = (12, 52, 24)
-LIME = (214, 255, 58)
+LIME = (218, 255, 46)
 WHITE = (255, 255, 255)
 SOFT = (214, 226, 214)
 INK = (10, 24, 14)
@@ -31,36 +31,12 @@ def repo(*parts):
     return os.path.join(ROOT, *parts)
 
 
-def wordmark(height, color=WHITE, x_color=None, medya=False, medya_color=None):
-    """The IVΞX logo drawn as vector shapes (cap height = `height` px), optionally with "Medya" below.
-
-    Geometry is measured from the logo in Canva: flat I, V and X, and an E made of three bars.
-    """
-    s = 4  # supersample
-    u = height * s / 210.0
-    w = round(664 * u)
-    extra = round(height * s * 0.62) if medya else 0
-    im = Image.new("RGBA", (w + 2 * s, round(210 * u) + extra + 2 * s), (0, 0, 0, 0))
-    d = ImageDraw.Draw(im)
-
-    def poly(pts, fill):
-        d.polygon([(x * u + s, y * u + s) for x, y in pts], fill=fill)
-
-    col = tuple(color) + (255,)
-    xcol = tuple(x_color or color) + (255,)
-    poly([(0, 0), (48, 0), (48, 210), (0, 210)], col)
-    poly([(74, 0), (131, 0), (181.5, 158), (232, 0), (289, 0), (208, 210), (155, 210)], col)
-    for top, bot, l, r in ((0, 40, 304, 452), (85, 125, 319, 439), (170, 210, 304, 452)):
-        poly([(l, top), (r, top), (r, bot), (l, bot)], col)
-    poly([(469, 0), (528, 0), (664, 210), (605, 210)], xcol)
-    poly([(605, 0), (664, 0), (528, 210), (469, 210)], xcol)
-    if medya:
-        f = font("Light", round(height * s * 0.36))
-        text = "Medya"
-        tw = d.textlength(text, font=f)
-        mc = tuple(medya_color or color) + (255,)
-        d.text(((im.width - tw) / 2, round(210 * u) + height * s * 0.16), text, font=f, fill=mc)
-    return im.resize((im.width // s, im.height // s), Image.LANCZOS)
+def logo(height):
+    """The official IVEX logo (white inline IVE, lime X) scaled to `height` px, on transparency."""
+    im = Image.open(os.path.join(HERE, "ivex-logo.png")).convert("RGBA")
+    # the logo file carries a 6 px margin around the letters; scale so the letters are `height` tall
+    scale = height / (im.height - 12)
+    return im.resize((round(im.width * scale), round(im.height * scale)), Image.LANCZOS)
 
 
 def tracked(d, xy, text, fnt, fill, tracking=0.0, anchor="l"):
@@ -142,7 +118,7 @@ def end_card(bg, lines, button, sub_lines):
     """Closing frame for vertical videos: logo, two-colour headline, lime button, small print."""
     w, _ = bg.size
     im = bg.copy()
-    lg = wordmark(118, WHITE, x_color=LIME, medya=True, medya_color=SOFT)
+    lg = logo(112)
     im.alpha_composite(lg, ((w - lg.width) // 2, 470))
     d = ImageDraw.Draw(im)
     f = font("Black", 66)

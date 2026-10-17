@@ -17,7 +17,7 @@ import imageio_ffmpeg
 import numpy as np
 from PIL import Image, ImageDraw, ImageEnhance, ImageFilter
 
-from marka import LIME, WHITE, end_card, font, repo, tracked, wordmark, write_video
+from marka import LIME, WHITE, end_card, font, repo, tracked, logo, write_video
 
 W, H, FPS = 1080, 1920, 30
 SR = 48000
@@ -200,7 +200,7 @@ def build(cfg):
         t_out += n / FPS
     end_n = round(cfg["son_kart"]["sure"] * FPS)
 
-    logo = wordmark(34, WHITE, x_color=LIME)
+    top_logo = logo(40)
     hook = hook_layer(cfg["kanca"])
     shade = top_shade(0.55)
     sections = []
@@ -223,7 +223,7 @@ def build(cfg):
                 z = kf[1] * (1 + 0.012 * (ts - kf[0]))
                 im = grade(zoomed(data[k], z, focus)).convert("RGBA")
                 im.alpha_composite(shade)
-                im.alpha_composite(logo, ((W - logo.width) // 2, 104))
+                im.alpha_composite(top_logo, ((W - top_logo.width) // 2, 100))
                 if p.get("kanca"):
                     im.alpha_composite(hook, (0, 170))
                 else:

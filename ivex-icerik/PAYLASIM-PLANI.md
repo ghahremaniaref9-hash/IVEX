@@ -1,6 +1,6 @@
 # IVEX Medya – 3 Günlük İçerik (18–20 Ekim 2026)
 
-Amaç: izlenme ve etkileşim. 2 Reels + 1 karusel, hepsi müşteri işlerimizden (Mutfella Catering, Mekan Sizin) ve IVEX'in Canva'daki kimliğiyle (koyu yeşil, neon lime, IVΞX logosu, Montserrat).
+Amaç: izlenme ve etkileşim. 2 Reels + 1 karusel, hepsi müşteri işlerimizden (Mutfella Catering, Mekan Sizin) ve IVEX'in kimliğiyle (koyu yeşil, neon lime, resmi IVEX logosu, Montserrat).
 
 | Gün | Tarih | Saat | Paylaşım | Dosya |
 |---|---|---|---|---|
@@ -102,7 +102,7 @@ python3 vaka_karusel.py ../ayarlar/gun2-vaka-mekan-sizin.json
 python3 izgara_reels.py ../ayarlar/gun3-izgara-reels.json
 ```
 
-Metinler `ayarlar/` içindeki JSON dosyalarında; IVEX logosu, renkler ve fontlar `uretim/marka.py` içinde. Yeni bir müşteri için önce/sonra videosu yapmak ya da başka bir müşterinin profilini aynı animasyonla göstermek için yalnızca JSON'daki dosya yollarını ve metinleri değiştirmek yeterli.
+Metinler `ayarlar/` içindeki JSON dosyalarında; IVEX logosu `uretim/ivex-logo.png`, renkler ve fontlar `uretim/marka.py` içinde. Yeni bir müşteri için önce/sonra videosu yapmak ya da başka bir müşterinin profilini aynı animasyonla göstermek için yalnızca JSON'daki dosya yollarını ve metinleri değiştirmek yeterli.
 
 ---
 

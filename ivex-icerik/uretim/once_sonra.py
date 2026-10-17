@@ -9,7 +9,7 @@ import sys
 from PIL import Image, ImageDraw, ImageOps
 
 from marka import (INK, LIME, WHITE, background, blend, drop_shadow, end_card, font, pill, repo, rounded,
-                   wordmark, write_video)
+                   logo, write_video)
 
 W, H, FPS = 1080, 1920, 30
 CW, CH = 840, 1050
@@ -105,10 +105,10 @@ def bars(n):
     return [(x0 + i * (BAR_W + BAR_GAP), CY + CH + 46) for i in range(n)]
 
 
-def static_base(bg, logo, client, n):
+def static_base(bg, mark, client, n):
     """Background + logo + client pill + progress track for one segment (no animated parts)."""
     base = bg.copy()
-    base.alpha_composite(logo, ((W - logo.width) // 2, 118))
+    base.alpha_composite(mark, ((W - mark.width) // 2, 114))
 
     def draw(d):
         pill(d, W / 2, 192, client, font("Bold", 22), (255, 255, 255, 26), LIME, pad_x=26, tracking=5, h=48,
@@ -129,12 +129,12 @@ def progress(d, idx, n, p):
 
 def frames(cfg):
     bg = background((W, H), seed=7, glow=(0.8, 0.12)).convert("RGBA")
-    logo = wordmark(38, WHITE, x_color=LIME)
+    mark = logo(40)
     segs = cfg["bolumler"]
     n = len(segs)
     prepared = []
     for s in segs:
-        prepared.append((static_base(bg, logo, s["musteri"], n), load(s["once"]), load(s["sonra"]),
+        prepared.append((static_base(bg, mark, s["musteri"], n), load(s["once"]), load(s["sonra"]),
                          headline(s["once_metin"], WHITE), headline(s["sonra_metin"], LIME)))
     end = end_card(bg, [("Sıradaki önce / sonra", WHITE), ("senin işletmen olsun.", LIME)],
                    "YORUMLARA “İÇERİK” YAZ", ["Ücretsiz 3 içerik fikrini", "DM'den gönderelim."])
@@ -176,7 +176,7 @@ def cover(cfg, path):
     """Reels cover: the first client's photo split half before / half after, with the hook."""
     s = cfg["bolumler"][0]
     bg = background((W, H), seed=7, glow=(0.8, 0.12)).convert("RGBA")
-    im = static_base(bg, wordmark(38, WHITE, x_color=LIME), s["musteri"], 0)
+    im = static_base(bg, logo(40), s["musteri"], 0)
     b, a = view(load(s["once"]), 0), view(load(s["sonra"]), 0)
     card = b.copy()
     card.paste(a.crop((0, 0, CW // 2, CH)), (0, 0))

@@ -8,7 +8,7 @@ import sys
 
 from PIL import Image, ImageDraw, ImageOps
 
-from marka import INK, LIME, SOFT, WHITE, background, blend, drop_shadow, font, pill, repo, rounded, tracked, wordmark
+from marka import INK, LIME, SOFT, WHITE, background, blend, drop_shadow, font, pill, repo, rounded, tracked, logo
 
 W, H = 1080, 1350
 M = 84  # side margin; the 3:4 profile crop removes 34 px per side
@@ -58,7 +58,7 @@ def tilted(card, angle):
 def frame(n, total, kicker):
     """Inner-slide chrome: logo, page number, kicker. Returns (image, draw)."""
     im = background((W, H), seed=20 + n, glow=(0.85, 0.08)).convert("RGBA")
-    lg = wordmark(34, WHITE, x_color=LIME)
+    lg = logo(36)
     im.alpha_composite(lg, (M, 76))
     d = ImageDraw.Draw(im)
     tracked(d, (W - M, 80), f"{n:02d} / {total:02d}", font("Bold", 22), SOFT, 3, anchor="r")
@@ -82,7 +82,7 @@ def arrow(d, x, y, color, length=46):
 def cover(cfg, total):
     k = cfg["kapak"]
     im = background((W, H), seed=11, glow=(0.75, 0.62)).convert("RGBA")
-    lg = wordmark(40, WHITE, x_color=LIME)
+    lg = logo(42)
     im.alpha_composite(lg, (M, 78))
 
     def chip(d):
@@ -194,7 +194,7 @@ def checklist_slide(cfg, n, total):
 def cta_slide(cfg, n, total):
     s = cfg["son"]
     im = background((W, H), seed=40, glow=(0.5, 0.35)).convert("RGBA")
-    lg = wordmark(110, WHITE, x_color=LIME, medya=True, medya_color=SOFT)
+    lg = logo(104)
     im.alpha_composite(lg, ((W - lg.width) // 2, 250))
     d = ImageDraw.Draw(im)
     y = 250 + lg.height + 90

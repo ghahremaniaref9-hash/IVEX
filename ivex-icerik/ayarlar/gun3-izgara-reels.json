@@ -3,13 +3,29 @@
   "kapak": "ivex-icerik/gun3-profil-kurulumu-kapak.jpg",
   "musteri": "MEKAN SİZİN · BEŞİKTAŞ ÇARŞI",
   "baslik_kurulum": [
-    "Bir mekânın profilini",
-    "15 saniyede kuruyoruz."
+    [
+      "İşletmeni IVEX Medya ile",
+      "beyaz"
+    ],
+    [
+      "sosyal medyada var et.",
+      "lime"
+    ]
   ],
   "baslik_bitti": "Profilin son hâli.",
-  "soru": [
-    "Favorin hangisi?",
-    "Numarasını yorumla."
+  "son_baslik": [
+    [
+      "Bir işletmenin",
+      "beyaz"
+    ],
+    [
+      "9 günlük içeriğini",
+      "beyaz"
+    ],
+    [
+      "1 günde oluşturduk.",
+      "lime"
+    ]
   ],
   "son": [
     "Sıradaki profil",

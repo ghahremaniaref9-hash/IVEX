@@ -6,7 +6,7 @@ Amaç: izlenme ve etkileşim. 2 Reels + 1 karusel, hepsi müşteri işlerimizden
 |---|---|---|---|---|
 | 1 | Pazar 18 Ekim | 20:00 | Reels: "Önce / Sonra" (ham fotoğraf → gönderi) | `gun1-once-sonra-reels.mp4` + kapak `gun1-once-sonra-kapak.jpg` |
 | 2 | Pazartesi 19 Ekim | 18:30 | Karusel: Mekan Sizin vaka analizi (8 kare) | `gun2-vaka-mekan-sizin-1…8.png` |
-| 3 | Salı 20 Ekim | 19:30 | Reels: "Profili 15 saniyede kuruyoruz" + "Favorin hangisi?" | `gun3-profil-kurulumu-reels.mp4` + kapak `gun3-profil-kurulumu-kapak.jpg` |
+| 3 | Salı 20 Ekim | 19:30 | Reels: "İşletmeni IVEX Medya ile sosyal medyada var et" + "9 günlük içeriği 1 günde oluşturduk" | `gun3-profil-kurulumu-reels.mp4` + kapak `gun3-profil-kurulumu-kapak.jpg` |
 
 **Neden bu sıra:** 1. gün en geniş kitleye giden format (önce/sonra Reels) ile erişim, 2. gün kaydedilen ve DM'de paylaşılan bir karusel ile güven, 3. gün yorumla cevaplanan bir soru ile etkileşim.
 
@@ -63,18 +63,18 @@ Kaydet 📌 kendi profilin için kontrol listesi olsun.
 ## Gün 3 – Reels: Profili kuruyoruz (Salı 19:30)
 
 ```
-Bir mekânın profilini 15 saniyede kuruyoruz. ⏱️
+Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk. ⏱️
 
 9 gün, 9 gönderi: maç bileti, Avrupa gecesi pasaportu, skor tahmini, hafta içi kampanyası, deplasman biniş kartı ve mekânın kendi meze fotoğrafları. Hepsi Mekan Sizin için tasarlandı.
 
-Favorin hangisi? Numarasını yorumlara yaz 👇 (1–9)
+Favorin hangisi? Gün numarasını yorumlara yaz 👇 (1–9)
 
 Sıradaki profil senin işletmenin olsun: DM'den "PROFİL" yaz, ücretsiz yol haritası çıkaralım.
 
 #sosyalmedyaajansı #instagramfeed #feedtasarımı #beşiktaşçarşı #ivexmedya
 ```
 - **Ortak gönderi (Collab):** Bunu da @mekan.sizinn ile ortak atın. Mekânın takipçileri favori numarasını yazar; yorum sayısı erişimi büyütür.
-- **Alternatif metin:** IVEX Medya videosu: Mekan Sizin'in 9 Instagram gönderisi profil ızgarasına tek tek yerleşiyor, sonunda karelere 1'den 9'a numara geliyor.
+- **Alternatif metin:** IVEX Medya videosu: Mekan Sizin'in 9 Instagram gönderisi profil ızgarasına tek tek yerleşiyor, sonunda karelere paylaşım günleri 1'den 9'a numaralanıyor. Başlıklar: "İşletmeni IVEX Medya ile sosyal medyada var et" ve "Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk".
 - **Story (19:45):** Reels'i paylaşın + **Anket**: "Maç günü tasarımı mı, meze fotoğrafı mı?"
 
 ---

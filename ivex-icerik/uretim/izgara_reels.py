@@ -2,7 +2,8 @@
 
 Kullanım:  python3 izgara_reels.py ayarlar/gun3-izgara-reels.json
 Gönderiler paylaşım sırasıyla verilir (en eski önce); her yeni gönderi sol üste girer, diğerleri kayar,
-tıpkı Instagram profilinde olduğu gibi. Sonda karelere numara gelir: "Favorin hangisi?"
+tıpkı Instagram profilinde olduğu gibi. Sonda karelere gün numaraları gelir (1 = ilk paylaşım).
+Başlık satırları [metin, "beyaz" | "lime"] çiftleridir.
 """
 import json
 import sys
@@ -42,8 +43,11 @@ def tile(path):
     return rounded(im.crop((x0, 0, x0 + cw, im.height)).resize((TW, TH), Image.LANCZOS), 14)
 
 
+COLORS = {"beyaz": WHITE, "lime": LIME}
+
+
 def headline(text_lines):
-    im = Image.new("RGBA", (W, 160), (0, 0, 0, 0))
+    im = Image.new("RGBA", (W, 230), (0, 0, 0, 0))
     d = ImageDraw.Draw(im)
     f = font("Black", 58)
     for i, (line, col) in enumerate(text_lines):
@@ -100,9 +104,9 @@ def frames(cfg):
     posts = cfg["gonderiler"]
     tiles = [tile(p["dosya"]) for p in posts]
     plate = base(bg, cfg["musteri"])
-    h_build = headline([(line, WHITE) for line in cfg["baslik_kurulum"]])
+    h_build = headline([(t, COLORS[c]) for t, c in cfg["baslik_kurulum"]])
     h_done = headline([(cfg["baslik_bitti"], LIME)])
-    h_ask = headline([(cfg["soru"][0], WHITE), (cfg["soru"][1], LIME)])
+    h_final = headline([(t, COLORS[c]) for t, c in cfg["son_baslik"]])
 
     def grid(canvas, k, t_in):
         """Grid after k posts; the newest is mid-animation with progress t_in (0..1)."""
@@ -149,12 +153,12 @@ def frames(cfg):
         c = full.copy()
         a_out, a_in = ease(f / 6), ease((f - 5) / 8)
         c.alpha_composite(fade(h_done, 1 - a_out), (0, round(262 - 30 * a_out)))
-        c.alpha_composite(fade(h_ask, a_in), (0, round(292 - 30 * a_in)))
+        c.alpha_composite(fade(h_final, a_in), (0, round(292 - 30 * a_in)))
         for i in range(9):
             t = (f - 6 - i * 2) / 8
             if t <= 0:
                 continue
-            b = badge(i + 1, max(0.05, ease_back(t)))
+            b = badge(len(tiles) - i, max(0.05, ease_back(t)))  # slot 0 holds the newest post
             x, y = slot(i)
             c.alpha_composite(b, (round(x + 18 + (64 - b.width) / 2), round(y + 18 + (64 - b.height) / 2)))
         yield c.convert("RGB")
@@ -171,8 +175,8 @@ def cover(cfg, path):
     tiles = [tile(p["dosya"]) for p in cfg["gonderiler"]]
     for i, t in enumerate(reversed(tiles)):
         drop_shadow(im, t, slot(i), blur=14, offset=(0, 8), opacity=150)
-        im.alpha_composite(badge(i + 1), (slot(i)[0] + 18, slot(i)[1] + 18))
-    im.alpha_composite(headline([(cfg["soru"][0], WHITE), (cfg["soru"][1], LIME)]), (0, 262))
+        im.alpha_composite(badge(len(tiles) - i), (slot(i)[0] + 18, slot(i)[1] + 18))
+    im.alpha_composite(headline([(t, COLORS[c]) for t, c in cfg["son_baslik"]]), (0, 262))
     im.convert("RGB").save(path, quality=93)
     print("kaydedildi:", path)
 

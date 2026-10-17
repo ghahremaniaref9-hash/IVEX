@@ -1,6 +1,6 @@
-# Mekan Sizin – Haftalık Feed (9–17 Ekim 2026)
+# Mekan Sizin – Haftalık Feed (9–19 Ekim 2026)
 
-9 gönderi, 1 maç günü story'si ve isteğe bağlı 1 Reels. Bütün dosyalar paylaşım sırasıyla `sirali/` klasöründe; dosya adları gün numarası, gün adı ve tarihle başlıyor. Görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels).
+10 gönderi, 1 maç günü story'si ve isteğe bağlı 1 Reels. Bütün dosyalar paylaşım sırasıyla `sirali/` klasöründe; dosya adları gün numarası, gün adı ve tarihle başlıyor. Görseller 1080×1350 (gönderi) veya 1080×1920 (story/Reels).
 
 ## Sıra
 
@@ -16,6 +16,7 @@
 | 7 | Perşembe 15 Ekim | 12:00 ve 20:00 | Story: UEFA maç günü | | `7-story-persembe-15-ekim-uefa-mac-gunu.png` |
 | 8 | Cuma 16 Ekim | 18:00 | Meze tabakları (fotoğraf veya Reels) | | `8-cuma-16-ekim-meze-tabaklari.jpg` / `…-reels.mp4` |
 | 9 | Cumartesi 17 Ekim | 19:00 | Deplasman hatırlatma (Trabzonspor–BJK) | | `9-cumartesi-17-ekim-deplasman-trabzonspor.png` |
+| 10 | Pazartesi 19 Ekim | 15:00 | Skor tahmini (maç günü, Trabzonspor–BJK) | | `10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png` |
 
 **Sıra önemli:** Kalan gönderileri tablodaki sırayla, araya başka gönderi koymadan atın. Story'ler ızgarayı etkilemez.
 
@@ -93,7 +94,24 @@ Deplasmana gidemeyen Çarşı burada: maç canlı yayında, tribün havası Meka
 #Beşiktaş #TrabzonsporBeşiktaş #BeşiktaşÇarşı #MaçKeyfi #MekanSizin
 ```
 Alternatif metin: Deplasman biniş kartı tasarımı: İstanbul'dan Trabzon'a, Trabzonspor – Beşiktaş, 19 Ekim Pazartesi 20:00.
-**Paylaşmadan önce tarihi teyit edin:** Kaynakların çoğu 19 Ekim Pazartesi 20:00 diyor, bazı siteler 18 Ekim gösteriyor. Kesin saat farklıysa `ayarlar/09-trabzonspor-hatirlatma.json` değiştirilip görsel yeniden üretilir.
+Tarih teyitli: maç 19 Ekim Pazartesi 20:00'de Papara Park'ta, beIN Sports 1'de.
+
+### Gün 10 – Skor tahmini (Pazartesi 15:00, maç günü)
+
+**12:00 – Story:** Gönderiyi story'de paylaşıp **Soru** çıkartması ekleyin: "Skor tahminin?"
+**15:00 – Gönderi:**
+```
+Maç günü, Kartal! 🦅
+
+Trabzonspor – Beşiktaş · 20:00 · canlı yayında
+
+Deplasmana gidemeyen Çarşı bu akşam burada. Skor tahminini yorumlara yaz; maçtan sonra doğru bilenleri story'de paylaşacağız.
+
+#Beşiktaş #TrabzonsporBeşiktaş #BeşiktaşÇarşı #MaçKeyfi #MekanSizin
+```
+Alternatif metin: Eski stat skorbordu tasarımı: Trabzonspor ? – ? Beşiktaş, skor tahmini, 19 Ekim Pazartesi 20:00, maç Mekan Sizin'de canlı yayında.
+**18:00 – Story:** Gönderiyi tekrar story'de paylaşın + **Geri sayım** çıkartması (20:00).
+**Maç sırasında / sonrasında:** Mekândaki tribün havasını kısa videolarla story ve Reels olarak paylaşın; doğru tahmin edenleri story'de etiketleyin.
 
 ---
 
@@ -127,6 +145,7 @@ python3 story.py ../haftalik-feed/ayarlar/07a-hoffenheim-story.json
 python3 skor_tahmini.py ../haftalik-feed/ayarlar/07b-hoffenheim-skor-tahmini.json
 python3 reel.py ../haftalik-feed/kaynak/gercek-3.png ../haftalik-feed/08-gun8-mekan-metinsiz-reels.mp4 7
 python3 deplasman.py ../haftalik-feed/ayarlar/09-trabzonspor-hatirlatma.json
+python3 skor_tahmini.py ../haftalik-feed/ayarlar/10-trabzonspor-skor-tahmini.json
 python3 meze_kadrosu.py ../meze-kadrosu/01-enginar.json
 ```
 

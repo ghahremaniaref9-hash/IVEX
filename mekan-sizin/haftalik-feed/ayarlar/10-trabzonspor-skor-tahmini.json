@@ -1,0 +1,40 @@
+{
+  "cikti": "../haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png",
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
+    "merkez": [
+      0.45,
+      0.42
+    ],
+    "doygunluk": 0.6,
+    "sicaklik": 0.2,
+    "soguk": 0.02
+  },
+  "karartma": [
+    0.4,
+    0.5,
+    0.82
+  ],
+  "ust_satir": "SÜPER LİG · 8. HAFTA · BU AKŞAM 20:00",
+  "baslik": "SKORUN NE?",
+  "el_yazisi_baslik": "Maç günü, Kartal!",
+  "ev_sahibi": {
+    "ad": "TRABZONSPOR",
+    "kisaltma": "TS",
+    "renkler": [
+      "#7A1F3D",
+      "#6CB4E4"
+    ]
+  },
+  "deplasman": {
+    "ad": "BEŞİKTAŞ",
+    "arma": "assets/bjk.png"
+  },
+  "skorbord_baslik": "SKOR TAHMİNİ · TRABZON",
+  "skorbord_alt": "BAŞLAMA 20:00 · TSİ",
+  "el_yazisi_orta": "Tahminini yorumlara yaz!",
+  "alt_baslik": "TRİBÜN HAVASI BU AKŞAM BURADA",
+  "alt_metin": "Trabzonspor – Beşiktaş 20:00'de canlı yayında, Mekan Sizin'de.",
+  "el_yazisi_alt": "Kartal Trabzon'da!",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul"
+}

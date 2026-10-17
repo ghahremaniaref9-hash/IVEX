@@ -1,0 +1,28 @@
+{
+  "cikti": "ivex-icerik/gun1-once-sonra-reels.mp4",
+  "kapak": "ivex-icerik/gun1-once-sonra-kapak.jpg",
+  "kapak_metin": "Ham fotoğraftan hazır gönderiye",
+  "bolumler": [
+    {
+      "musteri": "MUTFELLA CATERING",
+      "once": {"dosya": "ivex-icerik/kaynak/mutfella-paket-ham.jpg", "odak": [0.5, 0.42]},
+      "sonra": {"dosya": "mutfella-icerik/mutfella-sicak-sicak-yolda-post.jpg"},
+      "once_metin": "Müşterimiz bize bu fotoğrafı gönderdi…",
+      "sonra_metin": "…biz bunu paylaştık."
+    },
+    {
+      "musteri": "MUTFELLA CATERING",
+      "once": {"dosya": "ivex-icerik/kaynak/mutfella-menu-ham.jpg", "odak": [0.5, 0.45]},
+      "sonra": {"dosya": "mutfella-icerik/mutfella-gunun-menusu-post.jpg"},
+      "once_metin": "Mutfaktan tek bir kare…",
+      "sonra_metin": "…günün menüsü gönderisi oldu."
+    },
+    {
+      "musteri": "MEKAN SİZİN",
+      "once": {"dosya": "mekan-sizin/meze-kadrosu/kaynak/01-enginar.png", "odak": [0.5, 0.5]},
+      "sonra": {"dosya": "mekan-sizin/meze-kadrosu/01-enginar.png"},
+      "once_metin": "Bir tabak meze…",
+      "sonra_metin": "…serinin ilk oyuncusu."
+    }
+  ]
+}

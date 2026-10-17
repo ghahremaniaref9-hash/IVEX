@@ -1,0 +1,141 @@
+{
+  "cikti_oneki": "ivex-icerik/gun2-vaka-mekan-sizin",
+  "kapak": {
+    "etiket": "VAKA ANALİZİ",
+    "baslik": [
+      "Bir taraftar",
+      "mekânının feed'ini",
+      "*10 günde* kurduk."
+    ],
+    "alt": "Mekan Sizin · Beşiktaş Çarşı",
+    "gorseller": [
+      "mekan-sizin/haftalik-feed/sirali/1-cuma-9-ekim-bu-pazar-bjk-kocaelispor.png",
+      "mekan-sizin/haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png",
+      "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png"
+    ]
+  },
+  "kurallar": {
+    "ust": "STRATEJİ",
+    "baslik": [
+      "Önce kuralları",
+      "*koyduk.*"
+    ],
+    "maddeler": [
+      [
+        "Ritim: maç, meze, maç.",
+        "Takvimdeki her maç bir gönderi; aralarda mekânın kendi fotoğrafları."
+      ],
+      [
+        "Alkol yok.",
+        "Meyhane ama feed'de tek bir alkol adı, fiyatı ya da görseli yok. Hesabın erişimi kısıtlanmasın diye."
+      ],
+      [
+        "Yapay görünüm yok.",
+        "Mekânın kendi fotoğrafları; tasarımda bilet, pasaport, skorbord gibi gerçek nesneler."
+      ]
+    ]
+  },
+  "izgara": {
+    "ust": "PROFİL",
+    "baslik": [
+      "Profilin *son hâli.*"
+    ],
+    "metin": "Maç gönderileri ile meze fotoğrafları sırayla: profil hem maç havasında hem iştah açıcı.",
+    "gonderiler": [
+      "mekan-sizin/haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png",
+      "mekan-sizin/haftalik-feed/sirali/9-cumartesi-17-ekim-deplasman-trabzonspor.png",
+      "mekan-sizin/haftalik-feed/sirali/8-cuma-16-ekim-meze-tabaklari.jpg",
+      "mekan-sizin/haftalik-feed/sirali/7-persembe-15-ekim-skor-tahmini-hoffenheim.png",
+      "mekan-sizin/haftalik-feed/sirali/6-carsamba-14-ekim-meze-yakin-cekim.jpg",
+      "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png",
+      "mekan-sizin/haftalik-feed/sirali/4-pazartesi-12-ekim-kartala-meze.jpg",
+      "mekan-sizin/haftalik-feed/sirali/3-pazar-11-ekim-meze-kadrosu-enginar.png",
+      "mekan-sizin/haftalik-feed/sirali/2-cumartesi-10-ekim-meze-masasi.jpg"
+    ]
+  },
+  "konseptler": {
+    "ust": "MAÇ GÜNLERİ",
+    "baslik": [
+      "Her maçın kendi",
+      "*konsepti var.*"
+    ],
+    "kartlar": [
+      [
+        "İÇ SAHA",
+        "Maç bileti",
+        "mekan-sizin/haftalik-feed/sirali/1-cuma-9-ekim-bu-pazar-bjk-kocaelispor.png"
+      ],
+      [
+        "UEFA",
+        "Kartal Pasaportu",
+        "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png"
+      ],
+      [
+        "DEPLASMAN",
+        "Biniş kartı",
+        "mekan-sizin/haftalik-feed/sirali/9-cumartesi-17-ekim-deplasman-trabzonspor.png"
+      ],
+      [
+        "MAÇ GÜNÜ",
+        "Skor tahmini",
+        "mekan-sizin/haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png"
+      ]
+    ]
+  },
+  "ozellikler": [
+    {
+      "ust": "SERİ",
+      "baslik": [
+        "Her meze *bir oyuncu.*"
+      ],
+      "metin": "\"Meze Kadrosu\" serisinde her tabak mevkisi ve forma numarasıyla tanıtılıyor. Seri, takipçiye \"sıradaki hangisi?\" dedirtip profile geri getiriyor.",
+      "gorsel": "mekan-sizin/haftalik-feed/sirali/3-pazar-11-ekim-meze-kadrosu-enginar.png"
+    },
+    {
+      "ust": "ETKİLEŞİM",
+      "baslik": [
+        "Yorum *= erişim.*"
+      ],
+      "metin": "Maç günü \"Skorun ne?\" diye soruyoruz, doğru bilenleri story'de etiketliyoruz. Etiketlenen paylaşıyor, hesap yeni kitleye ulaşıyor.",
+      "gorsel": "mekan-sizin/haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png"
+    }
+  ],
+  "algoritma": {
+    "ust": "ALGORİTMA",
+    "baslik": [
+      "Her gönderide",
+      "*5 kural.*"
+    ],
+    "maddeler": [
+      [
+        "En fazla 5 hashtag",
+        "Az ama alakalı; asıl iş açıklamadaki anahtar kelimelerde."
+      ],
+      [
+        "Her gönderi story'de",
+        "Mutlaka çıkartmayla: anket, soru ya da geri sayım."
+      ],
+      [
+        "İlk 60 dakika",
+        "Gelen her yoruma cevap veriyoruz."
+      ],
+      [
+        "\"Arkadaşına gönder\"",
+        "DM ile paylaşım ve kaydetme en güçlü sinyaller."
+      ],
+      [
+        "Haftada en az 1 Reels",
+        "Takip etmeyenlere ulaşmanın en hızlı yolu."
+      ]
+    ]
+  },
+  "son": {
+    "baslik": [
+      "Senin işletmenin",
+      "feed'ini de *kuralım.*"
+    ],
+    "buton": "YORUMLARA “FEED” YAZ",
+    "metin": "Profilini inceleyip işletmene özel 3 içerik fikrini DM'den gönderelim.",
+    "not": "Kaydet: kendi profilin için kontrol listesi olsun."
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "cikti": "ivex-icerik/gun3-profil-kurulumu-reels.mp4",
+  "kapak": "ivex-icerik/gun3-profil-kurulumu-kapak.jpg",
+  "musteri": "MEKAN SİZİN · BEŞİKTAŞ ÇARŞI",
+  "baslik_kurulum": ["Bir mekânın profilini", "15 saniyede kuruyoruz."],
+  "baslik_bitti": "Profilin son hâli.",
+  "soru": ["Favorin hangisi?", "Numarasını yorumla."],
+  "son": ["Sıradaki profil", "senin işletmenin olsun."],
+  "buton": "DM'DEN “PROFİL” YAZ",
+  "alt": ["Profilini inceleyip", "ücretsiz yol haritası çıkaralım."],
+  "gonderiler": [
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/2-cumartesi-10-ekim-meze-masasi.jpg", "etiket": "GÜN 2 · MEZE MASASI"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/3-pazar-11-ekim-meze-kadrosu-enginar.png", "etiket": "GÜN 3 · MEZE KADROSU"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/4-pazartesi-12-ekim-kartala-meze.jpg", "etiket": "GÜN 4 · KARTAL'A MEZE"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png", "etiket": "GÜN 5 · UEFA GECESİ"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/6-carsamba-14-ekim-meze-yakin-cekim.jpg", "etiket": "GÜN 6 · YAKIN ÇEKİM"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/7-persembe-15-ekim-skor-tahmini-hoffenheim.png", "etiket": "GÜN 7 · SKOR TAHMİNİ"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/8-cuma-16-ekim-meze-tabaklari.jpg", "etiket": "GÜN 8 · MEZE TABAKLARI"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/9-cumartesi-17-ekim-deplasman-trabzonspor.png", "etiket": "GÜN 9 · DEPLASMAN"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/10-pazartesi-19-ekim-skor-tahmini-trabzonspor.png", "etiket": "GÜN 10 · SKOR TAHMİNİ"}
+  ]
+}

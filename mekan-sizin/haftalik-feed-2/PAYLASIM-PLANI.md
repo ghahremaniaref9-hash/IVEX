@@ -19,14 +19,14 @@
 
 **Fikstür:** Trabzonspor – Beşiktaş 19 Ekim Pazartesi 20:00 (Süper Lig 8. hafta, Papara Park); Beşiktaş – Crystal Palace 22 Ekim Perşembe 22:00 (UEFA Avrupa Ligi 3. hafta, Tüpraş Stadyumu); Beşiktaş – Başakşehir 26 Ekim Pazartesi 19:00 (Süper Lig 9. hafta, Tüpraş Stadyumu). Başakşehir maçının saati yayın programı sitelerinden; Cumartesi paylaşmadan önce resmi programdan teyit edin.
 
-## Eksikler (gelince tek komutla üretilir)
+## Eksikler
 
-| Dosya | Nereye | Kullanıldığı gönderiler |
+Armalar geldi (`sablon/assets/trabzonspor.png`, `crystal-palace.png`, `basaksehir.png`); bütün afiş ve story'ler hazır.
+
+| Eksik | Nereye | Kullanıldığı gönderiler |
 |---|---|---|
-| Trabzonspor arması (PNG, şeffaf arka plan) | `sablon/assets/trabzonspor.png` | Gün 1 story |
-| Crystal Palace arması | `sablon/assets/crystal-palace.png` | Gün 2 bilet, Gün 4 skor tahmini ve story |
-| Başakşehir arması | `sablon/assets/basaksehir.png` | Gün 6 bilet |
-| 3 yeni mekan / meze görseli | `haftalik-feed-2/kaynak/yeni-2.jpg` … `yeni-4.jpg` | Gün 3, 5, 7 (Gün 1 için fıstıklı meze hazır) |
+| Maç sonu skoru (bu akşam) | `python3 mac_sonu.py … TS_SKOR BJK_SKOR` | Gün 1 maç sonu story'si |
+| 3 yeni mekan / meze görseli | `haftalik-feed-2/kaynak/yeni-2.jpg` … `yeni-4.jpg` | Gün 3, 5, 7 |
 
 ---
 

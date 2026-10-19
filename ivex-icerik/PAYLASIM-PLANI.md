@@ -60,19 +60,25 @@ Kaydet 📌 kendi profilin için kontrol listesi olsun.
 - **Story (19:00):** Gönderiyi paylaşın + **Soru** çıkartması: "İşletmenin Instagram'ında en çok neye takılıyorsun?" Aynı story'ye **Bağlantı** çıkartmasıyla www.ivex.com.tr.
 - **Sabitle:** Karuseli profilin en üstüne sabitleyin; profile yeni gelen biri ilk bunu görsün.
 
-## Gün 3 – Reels: Profili kuruyoruz (Salı 19:30)
+## Gün 3 – Reels: 9 günlük içerik, 1 günde (Salı 19:30)
 
 ```
 Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk. ⏱️
 
-9 gün, 9 gönderi: maç bileti, Avrupa gecesi pasaportu, skor tahmini, hafta içi kampanyası, deplasman biniş kartı ve mekânın kendi meze fotoğrafları. Hepsi Mekan Sizin için tasarlandı.
+Mekan Sizin için tek günde hazırladık:
+📅 9 günlük paylaşım takvimi
+🎟️ Maç bileti, Avrupa gecesi pasaportu, deplasman biniş kartı
+🔥 Skor tahmini ve hafta içi kampanyası
+📸 Mekânın kendi fotoğraflarıyla meze paylaşımları
 
 Favorin hangisi? Gün numarasını yorumlara yaz 👇 (1–9)
 
-Sıradaki profil senin işletmenin olsun: DM'den "PROFİL" yaz, ücretsiz yol haritası çıkaralım.
+İşletmeni sosyal medyada var etmek ister misin? DM'den "PROFİL" yaz, ücretsiz yol haritanı çıkaralım. 📩
+🌐 www.ivex.com.tr
 
-#sosyalmedyaajansı #instagramfeed #feedtasarımı #beşiktaşçarşı #ivexmedya
+#sosyalmedyaajansı #sosyalmedyayönetimi #instagramfeed #içerikplanlama #ivexmedya
 ```
+- **Sabit ilk yorum:** Paylaşır paylaşmaz IVEX hesabından yorum yazıp sabitleyin: "1–9 arası favorini yaz 👇 En çok oy alan gün yarın story'de! 🏆"
 - **Ortak gönderi (Collab):** Bunu da @mekan.sizinn ile ortak atın. Mekânın takipçileri favori numarasını yazar; yorum sayısı erişimi büyütür.
 - **Alternatif metin:** IVEX Medya videosu: Mekan Sizin'in 9 Instagram gönderisi profil ızgarasına tek tek yerleşiyor, sonunda karelere paylaşım günleri 1'den 9'a numaralanıyor. Başlıklar: "İşletmeni IVEX Medya ile sosyal medyada var et" ve "Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk".
 - **Story (19:45):** Reels'i paylaşın + **Anket**: "Maç günü tasarımı mı, meze fotoğrafı mı?"

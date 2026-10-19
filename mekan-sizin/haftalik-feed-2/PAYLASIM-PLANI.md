@@ -8,7 +8,7 @@
 
 | Gün | Tarih | Saat | Paylaşım | Tür | Dosya (`sirali/`) |
 |---|---|---|---|---|---|
-| 1 | Pazartesi 19 Ekim | maçtan önce | Arnavut ciğeri + şakşuka | Fotoğraf | `1-pazartesi-19-ekim-arnavut-cigeri-saksuka.jpg` |
+| 1 | Pazartesi 19 Ekim | 23:00 (maçtan sonra) | Arnavut ciğeri + şakşuka | Fotoğraf | `1-pazartesi-19-ekim-arnavut-cigeri-saksuka.jpg` |
 | 1 | Pazartesi 19 Ekim | 14:00 ve 19:30 | Story: Trabzonspor – BJK maç günü + Geri sayım | Story | `1-story-pazartesi-19-ekim-trabzonspor-mac-gunu.png` |
 | 1 | Pazartesi 19 Ekim | maçtan hemen sonra | Story: Maç sonu (gerçek skor, sonuca göre mesaj) | Story | `1-story-pazartesi-19-ekim-mac-sonu-trabzonspor.png` |
 | 2 | Salı 20 Ekim | 19:00 | "BU PERŞEMBE" maç bileti: Beşiktaş – Crystal Palace (UEFA) | Afiş | `2-sali-20-ekim-uefa-gecesi-crystal-palace.png` |
@@ -33,17 +33,17 @@ Mekânın gönderdiği kareler tabak tabak ayrıldı, her tabağın en net kares
 
 Her gönderide konum: **Mekan Sizin / Beşiktaş Çarşı**. Hashtag en fazla 5.
 
-### Gün 1 – Arnavut ciğeri + şakşuka (Pazartesi, maçtan önce)
+### Gün 1 – Arnavut ciğeri + şakşuka (Pazartesi, maçtan sonra paylaşıldı)
 ```
-Ciğer sıcak, şakşuka zeytinyağında, Kartal Trabzon'da. 🦅
+Skor canımızı sıktı ama masa hâlâ kurulu. 🦅
 
-Bu akşam 20:00'de Trabzonspor – Beşiktaş Mekan Sizin'de canlı yayında. Masa kurulu, gelen gelsin.
+Arnavut ciğeri sıcak, şakşuka zeytinyağında; gece 02:00'ye kadar Çarşı'dayız.
+Perşembe 22:00'de Beşiktaş – Crystal Palace, UEFA gecesi yine burada.
 
 📍 Beşiktaş Çarşı · Rezervasyon için DM
 
-#Beşiktaş #BeşiktaşÇarşı #ArnavutCiğeri #MaçGünü #MekanSizin
+#Beşiktaş #BeşiktaşÇarşı #ArnavutCiğeri #Meze #MekanSizin
 ```
-Maç başladıktan sonra paylaşırsanız ikinci satırı şöyle değiştirin: "Maç başladı, Trabzonspor – Beşiktaş Mekan Sizin'de canlı yayında."
 Alternatif metin: Gazete kupürlü masada iki tabak: soğan salatalı Arnavut ciğeri ve sivri biberli şakşuka.
 
 **Story (14:00 ve 19:30):** maç günü story'si + **Geri sayım** çıkartması (20:00) + konum.

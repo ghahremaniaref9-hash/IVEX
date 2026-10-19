@@ -1,0 +1,32 @@
+[
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-1-pazartesi-19-ekim-arnavut-cigeri-saksuka.jpg",
+    "cikti": "../haftalik-feed-2/sirali/1-pazartesi-19-ekim-arnavut-cigeri-saksuka.jpg",
+    "seed": 51
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-3-carsamba-21-ekim-labne.jpg",
+    "cikti": "../haftalik-feed-2/sirali/3-carsamba-21-ekim-labne.jpg",
+    "seed": 53
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-5-cuma-23-ekim-yesil-meze.jpg",
+    "cikti": "../haftalik-feed-2/sirali/5-cuma-23-ekim-yesil-meze.jpg",
+    "seed": 55
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-7-pazar-25-ekim-cacik.jpg",
+    "cikti": "../haftalik-feed-2/sirali/7-pazar-25-ekim-cacik.jpg",
+    "seed": 57
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-yedek-arnavut-cigeri.jpg",
+    "cikti": "../haftalik-feed-2/yedek-arnavut-cigeri.jpg",
+    "seed": 59
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/hazir-yedek-saksuka.jpg",
+    "cikti": "../haftalik-feed-2/yedek-saksuka.jpg",
+    "seed": 61
+  }
+]

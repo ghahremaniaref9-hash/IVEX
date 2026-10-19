@@ -25,7 +25,7 @@
 
 ## Fotoğraflar
 
-Mekânın gönderdiği kareler tabak tabak ayrıldı, her tabağın en net karesi seçildi (`kaynak/ham/`). Şakşuka tabağının kenarındaki iki yağ damlası tabağın kendi dokusundan kopyalanarak temizlendi (`ayarlar/rotus.json`), başka hiçbir yere dokunulmadı. Sonra ilk haftanın renk ayarı ve greni uygulandı; cacık karesinde köşeye taşan logo parçası kadrajdan çıkarıldı.
+Mekânın gönderdiği kareler tabak tabak ayrıldı, her tabağın en net karesi seçildi (`kaynak/ham/`). Şakşuka tabağının kenarındaki iki yağ damlası tabağın kendi dokusundan kopyalanarak temizlendi (`ayarlar/rotus.json`), başka hiçbir yere dokunulmadı. Sonra ilk haftanın renk ayarı uygulandı; cacık karesinde köşeye taşan logo parçası kadrajdan çıkarıldı. Son olarak fotoğraflar afişlerle aynı dile sokuldu (`sablon/cerceve.py`): kenarlar afişlerdeki koyu beton zemine doğru soluyor, dışta ince krem çerçeve çizgisi ve alt ortada çizgiyi kesen küçük plaka logo var. Çerçeve, profil ızgarasının 3:4 kırpmasında da görünecek kadar içeride.
 
 ---
 
@@ -134,6 +134,7 @@ Alternatif metin: Zeytinyağlı ve ince kıyılmış salatalıklı cacık, gazet
 ```
 python3 rotus.py ../haftalik-feed-2/ayarlar/rotus.json
 python3 foto.py ../haftalik-feed-2/ayarlar/fotograflar.json
+python3 cerceve.py ../haftalik-feed-2/ayarlar/cerceve.json
 python3 story.py ../haftalik-feed-2/ayarlar/1a-trabzonspor-story.json
 python3 mac_sonu.py ../haftalik-feed-2/ayarlar/1b-trabzonspor-mac-sonu.json TS_SKOR BJK_SKOR
 python3 mac_bileti.py ../haftalik-feed-2/ayarlar/2-crystal-palace-hatirlatma.json

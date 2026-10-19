@@ -1,0 +1,38 @@
+[
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/ciger-saksuka.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yeni-1.jpg",
+    "lekeler": [
+      [
+        683,
+        1410,
+        17
+      ],
+      [
+        278,
+        1269,
+        9
+      ]
+    ]
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/labne.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yeni-2.jpg"
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/yesil-meze.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yeni-3.jpg"
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/cacik.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yeni-4.jpg"
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/arnavut-cigeri.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yedek-arnavut-cigeri.jpg"
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/ham/saksuka.jpg",
+    "cikti": "../haftalik-feed-2/kaynak/yedek-saksuka.jpg"
+  }
+]

@@ -1,5 +1,5 @@
 {
-  "cikti": "../haftalik-feed-2/sirali/4-persembe-22-ekim-skor-tahmini-crystal-palace.png",
+  "cikti": "../haftalik-feed-2/sirali/4-persembe-22-ekim-mac-gunu-crystal-palace.png",
   "foto": {
     "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
     "merkez": [
@@ -15,20 +15,22 @@
     0.5,
     0.82
   ],
-  "ust_satir": "UEFA AVRUPA LİGİ · 3. HAFTA · BU GECE 22:00",
-  "baslik": "SKORUN NE?",
+  "ust_satir": "UEFA AVRUPA LİGİ · 3. HAFTA · 22 EKİM PERŞEMBE",
+  "baslik": "BU GECE",
   "el_yazisi_baslik": "Maç günü, Kartal!",
   "ev_sahibi": {
     "ad": "BEŞİKTAŞ",
-    "arma": "assets/bjk.png"
+    "arma": "assets/bjk.png",
+    "skor": 0
   },
   "deplasman": {
     "ad": "CRYSTAL PALACE",
-    "arma": "assets/crystal-palace.png"
+    "arma": "assets/crystal-palace.png",
+    "skor": 0
   },
-  "skorbord_baslik": "SKOR TAHMİNİ · İSTANBUL",
+  "skorbord_baslik": "UEFA GECESİ · İSTANBUL",
   "skorbord_alt": "BAŞLAMA 22:00 · TSİ",
-  "el_yazisi_orta": "Tahminini yorumlara yaz!",
+  "el_yazisi_orta": "Mezeler hazır, düdük 22:00'de!",
   "alt_baslik": "UEFA GECESİ BU AKŞAM BURADA",
   "alt_metin": "Beşiktaş – Crystal Palace 22:00'de canlı yayında, Mekan Sizin'de.",
   "el_yazisi_alt": "Kartal evinde!",

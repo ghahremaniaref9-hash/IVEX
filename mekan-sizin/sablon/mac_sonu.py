@@ -3,8 +3,7 @@
 Kullanım:  python3 mac_sonu.py mac-sonu.json EV_SKOR DEPLASMAN_SKOR
 Örnek:     python3 mac_sonu.py ../haftalik-feed-2/ayarlar/1b-trabzonspor-mac-sonu.json 1 2
 "bjk" alanı Beşiktaş'ın hangi satırda olduğunu söyler ("ev_sahibi" ya da "deplasman"); mesaj buna göre
-"galibiyet", "beraberlik" ya da "maglubiyet" olarak seçilir. Alttaki boşluk doğru tahmin edenleri
-etiketlemek için bırakıldı (Instagram'da "Bahset" çıkartması).
+"galibiyet", "beraberlik" ya da "maglubiyet" olarak seçilir. En alttaki el yazısı satırı "cikartma_notu"; "ok": false ise yanına ok çizilmez.
 """
 import json
 import sys
@@ -83,7 +82,8 @@ def main():
     note = handwriting(cfg["cikartma_notu"], 60, CREAM, 3)
     ny = by2 + 218
     img.alpha_composite(note, (86, ny))
-    img.alpha_composite(hand_arrow((210, 120), CREAM), (96 + note.width - 60, ny + note.height // 2))
+    if cfg.get("ok", True):  # arrow pointing at the empty sticker space
+        img.alpha_composite(hand_arrow((210, 120), CREAM), (96 + note.width - 60, ny + note.height // 2))
 
     out = film_grain(img.convert("RGB"), 7.5, seed=9)
     out.save(path(cfg["cikti"]))

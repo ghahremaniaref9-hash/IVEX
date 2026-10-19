@@ -1,42 +1,88 @@
 [
   {
-    "kaynak": "../haftalik-feed/kaynak/gercek-3.png",
-    "cikti": "../haftalik-feed-2/sirali/1-pazartesi-19-ekim-meze-fistikli.jpg",
+    "kaynak": "../haftalik-feed-2/kaynak/yeni-1.jpg",
+    "cikti": "../haftalik-feed-2/sirali/1-pazartesi-19-ekim-arnavut-cigeri-saksuka.jpg",
+    "merkez": [
+      0.5,
+      0.41
+    ],
+    "seed": 21,
     "doygunluk": 0.88,
     "sicaklik": 0.6,
     "soluk": 6,
     "vinyet": 0.32,
-    "gren": 4.5,
-    "seed": 21
+    "gren": 4.5
   },
   {
     "kaynak": "../haftalik-feed-2/kaynak/yeni-2.jpg",
-    "cikti": "../haftalik-feed-2/sirali/3-carsamba-21-ekim-mekan-fotografi.jpg",
+    "cikti": "../haftalik-feed-2/sirali/3-carsamba-21-ekim-labne.jpg",
+    "merkez": [
+      0.5,
+      0.46
+    ],
+    "seed": 23,
     "doygunluk": 0.88,
     "sicaklik": 0.6,
     "soluk": 6,
     "vinyet": 0.32,
-    "gren": 4.5,
-    "seed": 23
+    "gren": 4.5
   },
   {
     "kaynak": "../haftalik-feed-2/kaynak/yeni-3.jpg",
-    "cikti": "../haftalik-feed-2/sirali/5-cuma-23-ekim-mekan-fotografi.jpg",
+    "cikti": "../haftalik-feed-2/sirali/5-cuma-23-ekim-yesil-meze.jpg",
+    "merkez": [
+      0.507,
+      0.453
+    ],
+    "yakinlik": 1.25,
+    "seed": 25,
     "doygunluk": 0.88,
     "sicaklik": 0.6,
     "soluk": 6,
     "vinyet": 0.32,
-    "gren": 4.5,
-    "seed": 25
+    "gren": 4.5
   },
   {
     "kaynak": "../haftalik-feed-2/kaynak/yeni-4.jpg",
-    "cikti": "../haftalik-feed-2/sirali/7-pazar-25-ekim-mekan-fotografi.jpg",
+    "cikti": "../haftalik-feed-2/sirali/7-pazar-25-ekim-cacik.jpg",
+    "merkez": [
+      0.36,
+      0.5
+    ],
+    "yakinlik": 1.1,
+    "seed": 27,
     "doygunluk": 0.88,
     "sicaklik": 0.6,
     "soluk": 6,
     "vinyet": 0.32,
-    "gren": 4.5,
-    "seed": 27
+    "gren": 4.5
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yedek-arnavut-cigeri.jpg",
+    "cikti": "../haftalik-feed-2/yedek-arnavut-cigeri.jpg",
+    "merkez": [
+      0.5,
+      0.52
+    ],
+    "seed": 29,
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yedek-saksuka.jpg",
+    "cikti": "../haftalik-feed-2/yedek-saksuka.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "seed": 31,
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5
   }
 ]

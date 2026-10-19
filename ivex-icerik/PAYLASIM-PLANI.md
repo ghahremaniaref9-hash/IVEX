@@ -40,23 +40,25 @@ Kendi işletmen için ücretsiz 3 içerik fikri istiyorsan yorumlara "İÇERİK"
 ## Gün 2 – Karusel: Vaka analizi (Pazartesi 18:30)
 
 ```
-Bir işletmenin 9 günlük içeriğini 1 günde nasıl oluşturduk? ⚫⚪
+Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk. ⏱️
 
-Mekan Sizin, Beşiktaş Çarşı'da maç izlemenin adresi. Hedef netti: maç günleri masaları doldurmak.
+Beşiktaş Çarşı'daki Mekan Sizin için sıfırdan bir Instagram sistemi kurduk. Kaydır, adım adım gör 👉
 
-Kaydır, uyguladığımız sistemi gör:
-→ Önce strateji: tek hedef dolu masa, takvim fikstüre göre, Çarşı'nın diliyle
-→ Maç, meze, maç ritmi
-→ Her maçın kendi konsepti: bilet, pasaport, biniş kartı, skorbord
-→ Yorum toplayan gönderiler ve algoritma notları
+1️⃣ Tek hedef: dolu masa. Beğeni değil, rezervasyon.
+2️⃣ Takvim fikstüre göre: maçtan önce hatırlatma, maç günü skor tahmini.
+3️⃣ Her maçın kendi konsepti: bilet, pasaport, biniş kartı, skorbord.
+4️⃣ Yorum toplayan gönderiler ve 5 maddelik algoritma listesi.
 
-Kaydet 📌 kendi profilin için kontrol listesi olsun.
-İşletmen için 3 içerik fikri istiyorsan yorumlara "FEED" yaz.
+📌 Kendi işletmen için kontrol listesi olarak kaydet.
+📲 İşletmesi olan bir arkadaşına gönder, işine yarayacak.
+
+Senin işletmen için de yapalım mı? Yorumlara "FEED" yaz; profilini inceleyip 3 içerik fikrini DM'den gönderelim.
 
 #sosyalmedyaajansı #sosyalmedyayönetimi #instagramipuçları #restoranpazarlaması #ivexmedya
 ```
+- **Sabit ilk yorum:** "Hangi kare en çok işine yaradı? 2, 3, 4… numarasını yaz 👇 Kendi profilin için soruların varsa burada cevaplıyoruz."
 - **Ortak gönderi (Collab):** @mekan.sizinn hesabını ortak olarak davet edin; kabul ederlerse gönderi iki hesabın takipçilerine birden gösterilir.
-- **Alternatif metin:** IVEX Medya vaka analizi: Mekan Sizin'in 9 günlük Instagram feed'i, uygulanan kurallar, profil ızgarası, maç günü konseptleri ve 5 maddelik algoritma kontrol listesi.
+- **Alternatif metin:** IVEX Medya vaka analizi karuseli: "Bir işletmenin 9 günlük içeriğini 1 günde oluşturduk." Mekan Sizin'in Instagram stratejisi, profil ızgarası, maç günü konseptleri ve 5 maddelik algoritma kontrol listesi.
 - **Story (19:00):** Gönderiyi paylaşın + **Soru** çıkartması: "İşletmenin Instagram'ında en çok neye takılıyorsun?" Aynı story'ye **Bağlantı** çıkartmasıyla www.ivex.com.tr.
 - **Sabitle:** Karuseli profilin en üstüne sabitleyin; profile yeni gelen biri ilk bunu görsün.
 

@@ -40,7 +40,7 @@ Kendi işletmen için ücretsiz 3 içerik fikri istiyorsan yorumlara "İÇERİK"
 ## Gün 2 – Karusel: Vaka analizi (Pazartesi 18:30)
 
 ```
-Bir taraftar mekânının feed'ini 9 günde nasıl kurduk? ⚫⚪
+Bir işletmenin 9 günlük içeriğini 1 günde nasıl oluşturduk? ⚫⚪
 
 Mekan Sizin, Beşiktaş Çarşı'da maç izlemenin adresi. Hedef netti: maç günleri masaları doldurmak.
 

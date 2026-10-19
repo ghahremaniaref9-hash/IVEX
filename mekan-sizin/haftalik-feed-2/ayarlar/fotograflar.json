@@ -1,0 +1,42 @@
+[
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yeni-1.jpg",
+    "cikti": "../haftalik-feed-2/sirali/1-pazartesi-19-ekim-mekan-fotografi.jpg",
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5,
+    "seed": 21
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yeni-2.jpg",
+    "cikti": "../haftalik-feed-2/sirali/3-carsamba-21-ekim-mekan-fotografi.jpg",
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5,
+    "seed": 23
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yeni-3.jpg",
+    "cikti": "../haftalik-feed-2/sirali/5-cuma-23-ekim-mekan-fotografi.jpg",
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5,
+    "seed": 25
+  },
+  {
+    "kaynak": "../haftalik-feed-2/kaynak/yeni-4.jpg",
+    "cikti": "../haftalik-feed-2/sirali/7-pazar-25-ekim-mekan-fotografi.jpg",
+    "doygunluk": 0.88,
+    "sicaklik": 0.6,
+    "soluk": 6,
+    "vinyet": 0.32,
+    "gren": 4.5,
+    "seed": 27
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "tur": "kart",
+  "cikti": "../haftalik-feed-2/sirali/1-story-pazartesi-19-ekim-trabzonspor-mac-gunu.png",
+  "rakip": "TRABZONSPOR",
+  "ust_satir": "SÜPER LİG · 8. HAFTA · BUGÜN",
+  "baslik": "MAÇ GÜNÜ",
+  "el_yazisi_baslik": "Kartal Trabzon'da!",
+  "kicker_sag": "SEFER 8 · 2026/27",
+  "sefer": "8. HFT",
+  "tarih": "19 EKİM PZT",
+  "saat": "20:00",
+  "cikartma_notu": "Skor tahminin?",
+  "alt_baslik": "20:00'DE YERİN HAZIR",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.6,
+    "sicaklik": 0.2,
+    "soguk": 0.02
+  },
+  "karartma": [
+    0.35,
+    0.35,
+    0.78
+  ],
+  "damga_seed": 31
+}

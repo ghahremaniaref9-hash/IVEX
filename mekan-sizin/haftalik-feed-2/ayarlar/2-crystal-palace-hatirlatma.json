@@ -1,0 +1,24 @@
+{
+  "cikti": "../haftalik-feed-2/sirali/2-sali-20-ekim-uefa-gecesi-crystal-palace.png",
+  "baslik": "BU PERŞEMBE",
+  "ev_sahibi": {
+    "ad": "BEŞİKTAŞ JK",
+    "arma": "assets/bjk.png"
+  },
+  "deplasman": {
+    "ad": "CRYSTAL PALACE",
+    "arma": "assets/crystal-palace.png"
+  },
+  "ust_satir": "UEFA AVRUPA LİGİ · 3. HAFTA · 22 EKİM",
+  "tarih": "22 EKİM PER",
+  "saat": "22:00",
+  "tribun": "ÇARŞI",
+  "seri_no": "No 001904",
+  "el_yazisi_baslik": "Kartal evinde!",
+  "el_yazisi_alt": "Sesimiz Londra'ya kadar!",
+  "alt_baslik": "UEFA GECESİ ÇARŞI'DA",
+  "alt_metin": "Rezervasyon için DM'den yaz, masan maç saatine hazır olsun.",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "arka_plan": "assets/stadyum.jpg",
+  "logo": "assets/mekan-sizin-plaka-logo.png"
+}

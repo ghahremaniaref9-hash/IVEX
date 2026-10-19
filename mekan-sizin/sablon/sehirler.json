@@ -1,6 +1,6 @@
 {
   "_not": "2026-27 Süper Lig rakipleri. Stadyum adları sponsorla değişebilir; koordinatlar yaklaşıktır (kuş uçuşu mesafe için). 'renkler' sadece arma dosyası yoksa çizilen harf rozetinde kullanılır.",
-  "TRABZONSPOR":    {"sehir": "TRABZON",   "semt": "Akyazı",      "stadyum": "Papara Park",                       "kod": "TZX", "lat": 40.99, "lon": 39.61, "kisaltma": "TS",  "renkler": ["#7A1F3D", "#6CB4E4"]},
+  "TRABZONSPOR":    {"sehir": "TRABZON",   "semt": "Akyazı",      "stadyum": "Papara Park",                       "kod": "TZX", "lat": 40.99, "lon": 39.61, "kisaltma": "TS",  "renkler": ["#7A1F3D", "#6CB4E4"], "arma": "assets/trabzonspor.png"},
   "FENERBAHÇE":     {"sehir": "İSTANBUL",  "semt": "Kadıköy",     "stadyum": "Şükrü Saracoğlu Stadyumu",          "kod": "KDK", "lat": 40.99, "lon": 29.04, "kisaltma": "FB",  "renkler": ["#0E2B5C", "#FFED00"]},
   "GALATASARAY":    {"sehir": "İSTANBUL",  "semt": "Seyrantepe",  "stadyum": "RAMS Park",                         "kod": "SYR", "lat": 41.10, "lon": 28.99, "kisaltma": "GS",  "renkler": ["#A90432", "#FDB912"]},
   "BAŞAKŞEHİR":     {"sehir": "İSTANBUL",  "semt": "Başakşehir",  "stadyum": "Fatih Terim Stadyumu",              "kod": "BŞK", "lat": 41.09, "lon": 28.81, "kisaltma": "İBFK","renkler": ["#E5631F", "#0B2A4A"]},

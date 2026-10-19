@@ -1,0 +1,38 @@
+{
+  "tur": "bilet",
+  "cikti": "../haftalik-feed-2/sirali/4-story-persembe-22-ekim-uefa-mac-gunu.png",
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.6,
+    "sicaklik": 0.2,
+    "soguk": 0.02
+  },
+  "karartma": [
+    0.35,
+    0.35,
+    0.78
+  ],
+  "ust_satir": "UEFA AVRUPA LİGİ · 3. HAFTA · BUGÜN",
+  "baslik": "BU GECE",
+  "el_yazisi_baslik": "UEFA gecesi Çarşı'da!",
+  "ev_sahibi": {
+    "ad": "BEŞİKTAŞ JK",
+    "arma": "assets/bjk.png"
+  },
+  "deplasman": {
+    "ad": "CRYSTAL PALACE",
+    "arma": "assets/crystal-palace.png"
+  },
+  "tarih": "22 EKİM PER",
+  "saat": "22:00",
+  "tribun": "ÇARŞI",
+  "seri_no": "No 001904",
+  "cikartma_notu": "Skor tahminin?",
+  "alt_baslik": "22:00'DE YERİN HAZIR",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul",
+  "damga_seed": 33
+}

@@ -26,8 +26,9 @@ def rich(d, x, y, text, fnt, color=WHITE, hi=LIME, anchor="l"):
 
 
 def wrap(d, text, fnt, max_w):
+    """Greedy word wrap on plain spaces; a no-break space (U+00A0) keeps words on one line."""
     lines, cur = [], ""
-    for word in text.split():
+    for word in text.split(" "):
         t = (cur + " " + word).strip()
         if d.textlength(t.replace("*", ""), font=fnt) <= max_w or not cur:
             cur = t

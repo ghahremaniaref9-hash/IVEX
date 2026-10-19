@@ -22,16 +22,16 @@
     ],
     "maddeler": [
       [
-        "Ritim: maç, meze, maç.",
-        "Takvimdeki her maç bir gönderi; aralarda mekânın kendi fotoğrafları."
+        "Tek hedef: dolu masa.",
+        "Beğeni değil rezervasyon. Her gönderi tek bir çağrıyla bitiyor: yerini ayırtmak için DM'den yaz."
       ],
       [
-        "Alkol yok.",
-        "Meyhane ama feed'de tek bir alkol adı, fiyatı ya da görseli yok. Hesabın erişimi kısıtlanmasın diye."
+        "Takvim fikstüre göre.",
+        "Maçtan önce hatırlatma, maç günü skor tahmini; aralarda mekânın kendi fotoğrafları."
       ],
       [
-        "Yapay görünüm yok.",
-        "Mekânın kendi fotoğrafları; tasarımda bilet, pasaport, skorbord gibi gerçek nesneler."
+        "Çarşı'nın diliyle.",
+        "Taraftar gibi konuşuyoruz: \"Kartal yolda!\", \"Ses bizden, gol Kartal'dan!\""
       ]
     ]
   },

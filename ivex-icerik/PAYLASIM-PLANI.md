@@ -45,7 +45,7 @@ Bir işletmenin 9 günlük içeriğini 1 günde nasıl oluşturduk? ⚫⚪
 Mekan Sizin, Beşiktaş Çarşı'da maç izlemenin adresi. Hedef netti: maç günleri masaları doldurmak.
 
 Kaydır, uyguladığımız sistemi gör:
-→ Önce kurallar: alkol yok, yapay görünüm yok
+→ Önce strateji: tek hedef dolu masa, takvim fikstüre göre, Çarşı'nın diliyle
 → Maç, meze, maç ritmi
 → Her maçın kendi konsepti: bilet, pasaport, biniş kartı, skorbord
 → Yorum toplayan gönderiler ve algoritma notları

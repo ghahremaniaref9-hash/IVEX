@@ -46,10 +46,9 @@
     "kaynak": "../haftalik-feed-2/kaynak/yeni-4.jpg",
     "cikti": "../haftalik-feed-2/kaynak/hazir-7-pazar-25-ekim-cacik.jpg",
     "merkez": [
-      0.36,
-      0.5
+      0.5,
+      0.47
     ],
-    "yakinlik": 1.1,
     "seed": 27,
     "doygunluk": 0.88,
     "sicaklik": 0.6,

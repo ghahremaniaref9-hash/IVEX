@@ -1,7 +1,9 @@
 """Mekan Sizin - ham fotoğraflarda küçük leke temizliği (yağ damlası, kırıntı), doğallığı bozmadan.
 
 Kullanım:  python3 rotus.py rotus.json
-Her kayıt: {"kaynak": ham foto, "cikti": temiz foto, "lekeler": [[x, y, yarıçap], ...]} (piksel, kaynak üzerinde).
+Her kayıt: {"kaynak": ham foto, "cikti": temiz foto, "lekeler": [[x, y, yarıçap], ...], "dondur": 90}
+"lekeler" piksel cinsinden ve döndürülmüş fotoğraf üzerindedir; "dondur" yan çekilmiş kareyi saat yönünde
+90/180/270 derece çevirir.
 Her leke için yakındaki en uygun temiz doku aranır (çevre halkası en çok benzeyen yer) ve yumuşak kenarla
 üstüne kopyalanır; tabak sırrının benekli dokusu korunur, geri kalan her piksel aynen kalır.
 """
@@ -58,6 +60,9 @@ def main():
         items = json.load(fh)
     for item in items:
         img = Image.open(path(item["kaynak"]))
+        turn = {90: Image.ROTATE_270, 180: Image.ROTATE_180, 270: Image.ROTATE_90}.get(item.get("dondur", 0))
+        if turn is not None:
+            img = img.transpose(turn)
         out = clean(img, item.get("lekeler", [])) if item.get("lekeler") else img.convert("RGB")
         out.save(path(item["cikti"]), quality=95, subsampling=0)
         print("kaydedildi:", path(item["cikti"]), f"({len(item.get('lekeler', []))} leke)")

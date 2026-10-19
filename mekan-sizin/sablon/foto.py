@@ -86,6 +86,9 @@ def main():
     with open(cfg_path, encoding="utf-8") as fh:
         items = json.load(fh)
     for item in items:
+        if not os.path.exists(path(item["kaynak"])):  # photo not delivered yet
+            print("atlandı, kaynak yok:", item["kaynak"])
+            continue
         out = process(item)
         out.save(path(item["cikti"]), quality=93, subsampling=0)
         print("kaydedildi:", path(item["cikti"]))

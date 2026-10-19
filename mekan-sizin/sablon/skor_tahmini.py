@@ -63,7 +63,7 @@ def scoreboard(cfg):
         c = team_crest(team, 116)
         board.alpha_composite(c, (64 + (116 - c.width) // 2, y + 16))
         d.text((214, y + 74), team["ad"], font=fit_font("Oswald_700Bold.ttf", 60, team["ad"], 440), fill=(240, 236, 226), anchor="lm")
-        fc = flip_card(150, 150, "?")
+        fc = flip_card(150, 150, str(team.get("skor", "?")))  # "?" until the match is played
         board.alpha_composite(fc, (bw - 64 - 150, y))
         if i == 0:
             d.line((64, y + 162, bw - 64, y + 162), fill=(50, 54, 50), width=2)

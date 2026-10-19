@@ -1,13 +1,14 @@
 # Mekan Sizin – Haftalık Feed 2 (19–25 Ekim 2026)
 
-İlk haftanın düzeni aynen devam ediyor: profilde afiş ve fotoğraf birebir sırayla geliyor (son gönderi Deplasman afişiydi, bu hafta fotoğrafla başlıyor). 7 gönderi + 2 maç günü story'si. Afişler ilk haftanın şablonlarıyla; fotoğraf günleri mekânın yeni görselleriyle doldurulacak.
+İlk haftanın düzeni aynen devam ediyor: profilde afiş ve fotoğraf birebir sırayla geliyor (son gönderi Deplasman afişiydi, bu hafta fotoğrafla başlıyor). Maç sonu gönderisi ızgarayı bozmasın diye story olarak paylaşılıyor. 7 gönderi + maç günü ve maç sonu story'leri. Afişler ilk haftanın şablonlarıyla; fotoğraf günleri mekânın yeni görselleriyle doldurulacak.
 
 ## Sıra
 
 | Gün | Tarih | Saat | Paylaşım | Tür | Dosya (`sirali/`) |
 |---|---|---|---|---|---|
-| 1 | Pazartesi 19 Ekim | 13:00 | Mekan / meze fotoğrafı (yeni görsel 1) | Fotoğraf | `1-pazartesi-19-ekim-mekan-fotografi.jpg` |
+| 1 | Pazartesi 19 Ekim | 13:00 | Fıstıklı meze fotoğrafı (profilde henüz yok) | Fotoğraf | `1-pazartesi-19-ekim-meze-fistikli.jpg` |
 | 1 | Pazartesi 19 Ekim | 14:00 ve 19:30 | Story: Trabzonspor – BJK maç günü + "Skor tahminin?" | Story | `1-story-pazartesi-19-ekim-trabzonspor-mac-gunu.png` |
+| 1 | Pazartesi 19 Ekim | maçtan hemen sonra | Story: Maç sonu (skorbordda gerçek skor, sonuca göre mesaj) | Story | `1-story-pazartesi-19-ekim-mac-sonu-trabzonspor.png` |
 | 2 | Salı 20 Ekim | 19:00 | "BU PERŞEMBE" maç bileti: Beşiktaş – Crystal Palace (UEFA) | Afiş | `2-sali-20-ekim-uefa-gecesi-crystal-palace.png` |
 | 3 | Çarşamba 21 Ekim | 13:00 | Mekan / meze fotoğrafı (yeni görsel 2) | Fotoğraf | `3-carsamba-21-ekim-mekan-fotografi.jpg` |
 | 4 | Perşembe 22 Ekim | 17:00 | Skor tahmini: Beşiktaş – Crystal Palace (maç günü) | Afiş | `4-persembe-22-ekim-skor-tahmini-crystal-palace.png` |
@@ -25,7 +26,7 @@
 | Trabzonspor arması (PNG, şeffaf arka plan) | `sablon/assets/trabzonspor.png` | Gün 1 story |
 | Crystal Palace arması | `sablon/assets/crystal-palace.png` | Gün 2 bilet, Gün 4 skor tahmini ve story |
 | Başakşehir arması | `sablon/assets/basaksehir.png` | Gün 6 bilet |
-| 4 yeni mekan / meze görseli | `haftalik-feed-2/kaynak/yeni-1.jpg` … `yeni-4.jpg` | Gün 1, 3, 5, 7 |
+| 3 yeni mekan / meze görseli | `haftalik-feed-2/kaynak/yeni-2.jpg` … `yeni-4.jpg` | Gün 3, 5, 7 (Gün 1 için fıstıklı meze hazır) |
 
 ---
 
@@ -42,6 +43,7 @@ Bu akşam 20:00'de Trabzonspor – Beşiktaş canlı yayında. Yerini ayırtmak 
 #Beşiktaş #BeşiktaşÇarşı #Meze #MaçGünü #MekanSizin
 ```
 **Story (14:00):** maç günü story'si + **Soru** çıkartması "Skor tahminin?" · **(19:30):** aynı story + **Geri sayım** (20:00).
+**Maç sonu story'si:** Maç biter bitmez skoru yazın, story hemen üretilir (galibiyet: "Kartal kazandı!", beraberlik: "Bir puan cepte!", mağlubiyet: "Kafamız dik, Çarşı burada!"). Alttaki "Skoru bilenler:" boşluğuna **Bahset** çıkartmasıyla doğru tahmin edenleri ekleyin.
 
 ### Gün 2 – UEFA hatırlatma (Salı 19:00)
 ```
@@ -121,6 +123,7 @@ Yarın 19:00'da Beşiktaş – Başakşehir; masan hazır.
 
 ```
 python3 story.py ../haftalik-feed-2/ayarlar/1a-trabzonspor-story.json
+python3 mac_sonu.py ../haftalik-feed-2/ayarlar/1b-trabzonspor-mac-sonu.json TS_SKOR BJK_SKOR
 python3 mac_bileti.py ../haftalik-feed-2/ayarlar/2-crystal-palace-hatirlatma.json
 python3 skor_tahmini.py ../haftalik-feed-2/ayarlar/4-crystal-palace-skor-tahmini.json
 python3 story.py ../haftalik-feed-2/ayarlar/4a-crystal-palace-story.json

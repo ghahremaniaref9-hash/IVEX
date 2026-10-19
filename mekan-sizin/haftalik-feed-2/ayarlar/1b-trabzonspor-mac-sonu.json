@@ -1,0 +1,46 @@
+{
+  "cikti": "../haftalik-feed-2/sirali/1-story-pazartesi-19-ekim-mac-sonu-trabzonspor.png",
+  "bjk": "deplasman",
+  "foto": {
+    "kaynak": "../haftalik-feed/kaynak/stadyum-isik.jpg",
+    "merkez": [
+      0.5,
+      0.5
+    ],
+    "doygunluk": 0.6,
+    "sicaklik": 0.2,
+    "soguk": 0.02
+  },
+  "karartma": [
+    0.35,
+    0.35,
+    0.78
+  ],
+  "ust_satir": "SÜPER LİG · 8. HAFTA · TRABZONSPOR – BEŞİKTAŞ",
+  "baslik": "MAÇ SONU",
+  "mesajlar": {
+    "galibiyet": "Kartal kazandı!",
+    "beraberlik": "Bir puan cepte!",
+    "maglubiyet": "Kafamız dik, Çarşı burada!"
+  },
+  "ev_sahibi": {
+    "ad": "TRABZONSPOR",
+    "arma": "assets/trabzonspor.png",
+    "kisaltma": "TS",
+    "renkler": [
+      "#7A1F3D",
+      "#6CB4E4"
+    ]
+  },
+  "deplasman": {
+    "ad": "BEŞİKTAŞ",
+    "arma": "assets/bjk.png"
+  },
+  "skorbord_baslik": "MAÇ SONU · TRABZON",
+  "skorbord_alt": "SÜPER LİG · 8. HAFTA · PAPARA PARK",
+  "damga_ust": "TAM SKOR",
+  "cikartma_notu": "Skoru bilenler:",
+  "alt_baslik": "SIRADAKİ: PERŞEMBE 22:00",
+  "alt_metin": "Beşiktaş – Crystal Palace · UEFA gecesi Çarşı'da",
+  "adres": "Sinanpaşa, Şht. Asım Cd. No:33/2, 34022 Beşiktaş/İstanbul"
+}

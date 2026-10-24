@@ -12,7 +12,7 @@ Trendyol bir dosyada en fazla 8 kategori kabul ediyor, bu yüzden 12 kategori ik
 
 İki dosya:
 
-- **`minah-trendyol-dosya-1.xlsx`** – 5 kategori, 61 satır. Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
+- **`minah-trendyol-dosya-1.xlsx`** – 5 kategori, 61 satır. **Yüklendi** (24.10.2026 22:14, "Tamamlandı"). Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
 - **`minah-trendyol-dosya-2.xlsx`** – 7 kategori, 73 satır. Betiğin açtığı kategoriler (aşağıda * ile işaretli). Bu kategorilerin özellik sayfaları da betik tarafından eklendi; listelerde yalnızca bilinen 6 kategorinin hepsinde ortak olan değerler var.
 
 Boş gelen Polo Yaka T-shirt kategorisi iki dosyaya da konmadı.
@@ -35,6 +35,8 @@ Boş gelen Polo Yaka T-shirt kategorisi iki dosyaya da konmadı.
 \* İndirilen şablonda olmayan kategoriler. Sayfaları betik açtı.
 
 **Kategori kodları:** [ArillaSoftOrg/arilla](https://github.com/ArillaSoftOrg/arilla) deposundaki `docs/reference/trendyol/product-categories.raw.json` dökümünden alındı. Bu döküm, şablondaki 6 bilinen kodun (531, 597, 601, 3189, 2949, 3902) hepsiyle birebir eşleşiyor.
+
+**Sütun kontrolü:** Trendyol, kategorinin bir özelliğinin sütunu dosyada yoksa dosyanın tamamını reddediyor. İlk denemede "Kategori özelliği: `Baskı/Nakış Tekniği` yüklenen dosyada mevcut değil" hatası geldi. Bu yüzden yeni sayfalara bilinen 6 kategoride geçen bütün özellik sütunları (50 sütun) konuyor. Yine bir "mevcut değil" hatası gelirse, en sağlam yol panelden bu 7 kategorinin şablonunu indirmek. O şablon `kaynak` olarak verilip ürünler içine yazılır.
 
 **Bu sayfaların sınırı:** Sütunlar Trendyol'dan gelmedi, tahmine dayanıyor:
 - Bilinen 6 kategorinin hepsinde ortak olan özellikler alındı.

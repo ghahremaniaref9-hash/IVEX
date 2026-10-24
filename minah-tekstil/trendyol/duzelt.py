@@ -10,7 +10,8 @@ kategori sayfasına taşır ve ürün bazında şunları yapar:
 - İlk bedenin görsellerini diğer bedenlere kopyalar.
 - Zorunlu özellikleri, şablondaki izinli değerlere göre kontrol eder.
 İndirilen şablonda olmayan kategoriler için "yeni_kategoriler" sayfası açılır: Trendyol'un sayfa düzeninde,
-temel sütunlar + bilinen bütün kategorilerde ortak olan özellikler + "ek" ile verilenler. Bu sayfalarda bir
+temel sütunlar + bilinen kategorilerin herhangi birinde geçen bütün özellikler (Trendyol, kategorinin bir
+özelliğinin sütunu yoksa dosyayı reddediyor) + "ek" ile verilenler. Bu sayfalarda bir
 değer ancak bilinen bütün kategorilerin listesinde varsa kabul edilir.
 Trendyol bir dosyada en fazla 8 kategori kabul ettiği için çıktı "dosyalar" listesine göre bölünür. Her dosya
 indirilen şablonun kendisidir (paket.py): diğer kategoriler çıkarılır, yeni kategoriler eklenir.
@@ -63,8 +64,8 @@ def add_category_sheet(wb, kategori, spec):
     known = category_sheets(wb)
     tpl = known[0]
     headers = [[c.value for c in ws[1]] for ws in known]
-    common = [h for h in headers[0][BASE_COLUMNS:] if all(h in hs for hs in headers) and h != "Beden"]
-    attrs = ["Beden"] + common + spec.get("ek", [])
+    union = list(dict.fromkeys(h for hs in headers for h in hs[BASE_COLUMNS:] if h != "Beden"))
+    attrs = ["Beden"] + union + [h for h in spec.get("ek", []) if h not in union]
     required = set(COMMON_REQUIRED + spec.get("ek", []))
     tpl_attrs = tpl[1][BASE_COLUMNS:]
     styles = {

@@ -1,0 +1,105 @@
+{
+  "kaynak": "kaynak/urun-olusturma-1489888_1.xlsx",
+  "kaynak_sayfa": "Tayt(531)",
+  "cikti": "minah-trendyol-yukleme-1.xlsx",
+  "urunler": [
+    {
+      "satirlar": [35, 38], "kategori": "531", "model": "MNH-TAYT", "renk_kodu": "ANTRASIT",
+      "renk": "Gri", "web_color": "Gri",
+      "ozellik": {"Bel": "Yüksek Bel", "Boy": "Uzun"},
+      "aciklama": "Detaylar: Yüksek bel, uzun paça, vücuda oturan kesim, melanj görünüm\nMelanj gri yüzeyiyle spor ve günlük kombinlerde kullanılabilen basic uzun tayt.\nPaket: Yalnızca tayt."
+    },
+    {
+      "satirlar": [39, 42], "kategori": "531", "model": "MNH-TAYT", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Bel": "Yüksek Bel", "Boy": "Uzun"},
+      "aciklama": "Detaylar: Yüksek bel, uzun boy, düz siyah renk, dar kesim\nDüz siyah rengi ve uzun paça formuyla çok yönlü günlük tayt; sweatshirt, gömlek ve uzun üstlerle kolayca kombinlenir.\nPaket: Yalnızca tayt."
+    },
+    {
+      "satirlar": [86, 90], "kategori": "597", "model": "MNH-EKOSE-GOMLEK", "renk_kodu": "EKRU",
+      "renk": "Ekru", "web_color": "Ekru",
+      "ozellik": {"Kalıp": "Oversize", "Materyal": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Ön düğmeler, gömlek yaka, uzun kol, ekose desen\nPembe-ekru ekose desenli oversize gömlek; rahat kesimiyle jean ve taytlarla kullanılabilir.\nPaket: Yalnızca gömlek; fotoğraftaki atlet ve alt giyim dahil değildir."
+    },
+    {
+      "satirlar": [103, 107], "kategori": "597", "model": "MNH-GOMLEK-CEKET", "renk_kodu": "EKRU",
+      "renk": "Ekru", "web_color": "Ekru",
+      "ozellik": {"Kalıp": "Overshirt", "Materyal": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Ekose desen, düğmeli ön kapama, gömlek yaka\nMint yeşili ve siyah tonlardaki ekose deseniyle öne çıkan gömlek ceket; açık ya da düğmeli kullanılabilir.\nJeanlerle gündelik-sokak stili için uygun."
+    },
+    {
+      "satirlar": [108, 112], "kategori": "597", "model": "MNH-GOMLEK-CEKET", "renk_kodu": "SARI",
+      "ad": "Kadın Sarı Siyah Ekose Desenli Düğmeli Gömlek Ceket",
+      "renk": "Sarı", "web_color": "Sarı",
+      "ozellik": {"Kalıp": "Overshirt", "Materyal": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Sarı-siyah ekose desen, düğmeli ön kapama, gömlek yaka\nSarı, siyah ve beyaz tonlarını bir araya getiren ekose desenli gömlek ceket; rahat kesimiyle günlük kombinlere modern bir dokunuş katar.\nSiyah pantolon, jean ve basic tişörtlerle kolayca kombinlenir."
+    },
+    {
+      "satirlar": [121, 125], "kategori": "597", "model": "MNH-CROP-GOMLEK-CEKET", "renk_kodu": "BORDO",
+      "ad": "Kadın Pembe Ekose Desenli Fermuarlı Crop Gömlek Ceket",
+      "renk": "Bordo", "web_color": "Bordo",
+      "ozellik": {"Kalıp": "Crop", "Boy": "Crop", "Materyal": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Ön fermuar, iki kapaklı cep, gömlek yaka, ekose\nPembe-bordo ekose deseni ve fermuarlı ön kapamasıyla kısa kesim gömlek ceket.\nJeanlerle gündelik-sokak stili için uygun."
+    },
+    {
+      "satirlar": [126, 130], "kategori": "597", "model": "MNH-CROP-GOMLEK-CEKET", "renk_kodu": "MOR",
+      "ad": "Kadın Mor Ekose Desenli Fermuarlı Crop Gömlek Ceket",
+      "renk": "Mor", "web_color": "Mor",
+      "ozellik": {"Kalıp": "Crop", "Boy": "Crop", "Materyal": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Ön fermuar, iki kapaklı cep, gömlek yaka, lastikli manşet, ekose\nLila tonlu ekose deseni ve fermuarlı ön kapamasıyla kısa kesim gömlek ceket.\nJeanlerle gündelik-sokak stili için uygun."
+    },
+    {
+      "satirlar": [82, 85], "kategori": "601", "model": "MNH-KAPUSONLU-SWEATSHIRT", "renk_kodu": "TURUNCU",
+      "renk": "Turuncu", "web_color": "Turuncu",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Kapüşon, kanguru cep, büzgü ipi, renkli soyut desen\nTuruncu ve pembe tonlarındaki baskısıyla enerjik bir görünüm sunan kapüşonlu sweatshirt.\nDüz tayt ve jeanlerle kombinlenebilir."
+    },
+    {
+      "satirlar": [74, 77], "kategori": "601", "model": "MNH-YARIM-FERMUARLI", "renk_kodu": "GRI",
+      "renk": "Gri", "web_color": "Gri",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Yarım fermuar, ekose desen, uzun kol, lastikli manşet\nGri ve ekru ekose desenini yarım fermuarlı yaka ile birleştiren günlük üst.\nPaket: Yalnızca üst."
+    },
+    {
+      "satirlar": [78, 81], "kategori": "601", "model": "MNH-YARIM-FERMUARLI", "renk_kodu": "KAHVE",
+      "renk": "Kahverengi", "web_color": "Kahverengi",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Halka uçlu yarım fermuar, büyük ekose desen, uzun kol\nKahverengi ve ekru tonlarındaki ekose deseniyle öne çıkan yarım fermuarlı casual üst.\nPaket: Yalnızca üst."
+    },
+    {
+      "satirlar": [48, 53], "kategori": "3902", "model": "MNH-PANTOLON", "renk_kodu": "TURUNCU",
+      "renk": "Turuncu", "web_color": "Turuncu",
+      "ozellik": {"Bel": "Lastikli"},
+      "aciklama": "Detaylar: Bol paça, bağcıklı lastikli bel, hafif dokulu görünüm\nCanlı turuncu rengi ve salaş kesimiyle gündelik ve yazlık kombinler için uygun pantolon.\nPaket: Yalnızca pantolon."
+    },
+    {
+      "satirlar": [64, 69], "kategori": "3902", "model": "MNH-PANTOLON-PEMBE", "renk_kodu": "FUSYA",
+      "renk": "Fuşya", "web_color": "Pembe",
+      "ozellik": {"Bel": "Lastikli"},
+      "aciklama": "Detaylar: Lastikli bel, bağcık, bol paça, rahat görünüm\nCanlı fuşya rengiyle sade üstleri öne çıkaran salaş pantolon; dar üst ve spor ayakkabıyla günlük kombinlenebilir.\nPaket: Yalnızca pantolon."
+    },
+    {
+      "satirlar": [6, 9], "kategori": "3189", "model": "MNH-IKILI-TAKIM", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Kalıp": "Relaxed", "Kumaş Tipi": "Örme"},
+      "aciklama": "Detaylar: Fermuarlı crop üst, lastikli bel, bağcık, geniş paça\nDokulu yüzey görünümü ve rahat kalıbı bir araya getiren iki parçalı takım; üst ve pantolon birlikte satılır.\nPaket: Fermuarlı üst + pantolon."
+    }
+  ],
+  "bekleyen": [
+    {"satirlar": [2, 5], "kategori_adi": "Kazak", "not": "Polo yaka çizgili triko kazaklar (4 renk)"},
+    {"satirlar": [16, 18], "kategori_adi": "Kazak", "not": "Fularlı triko kazak; ürün adı sadece 'TRIKO KAZAK', düzgün ad yazılmalı; fuların pakete dahil olup olmadığı belli değil"},
+    {"satirlar": [91, 92], "kategori_adi": "Kazak", "not": "Ajurlu triko kazak (kırmızı, lacivert); renk yazımı 'KIEMIZI' düzeltilmeli"},
+    {"satirlar": [131, 133], "kategori_adi": "Kazak", "not": "Bloklu triko kazak; turuncu olanın ön görseli eksik"},
+    {"satirlar": [60, 63], "kategori_adi": "Hırka", "not": "Kapüşonlu fermuarlı ekose üst hırka"},
+    {"satirlar": [93, 102], "kategori_adi": "Hırka", "not": "V yaka triko hırka (ekru, turuncu)"},
+    {"satirlar": [19, 23], "kategori_adi": "Bluz", "not": "Kolsuz slim fit bluz"},
+    {"satirlar": [30, 34], "kategori_adi": "Bluz", "not": "Uzun kollu slim fit bluz"},
+    {"satirlar": [43, 47], "kategori_adi": "Bluz", "not": "Kolsuz crop bluz"},
+    {"satirlar": [10, 15], "kategori_adi": "Eşofman Altı", "not": "Siyah geniş paça eşofman altı"},
+    {"satirlar": [24, 29], "kategori_adi": "Eşofman Altı", "not": "Lacivert bol paça eşofman altı"},
+    {"satirlar": [54, 59], "kategori_adi": "Eşofman Altı", "not": "Siyah-beyaz biyeli eşofman altı"},
+    {"satirlar": [70, 73], "kategori_adi": "Atlet", "not": "Fitilli crop atlet"},
+    {"satirlar": [113, 120], "kategori_adi": "Ceket", "not": "Kolej ceket (sarı, turuncu); turuncunun açıklaması yarıda kesilmiş"},
+    {"satirlar": [134, 135], "kategori_adi": "Takım", "not": "Simli bluz + maxi etek ikili takım"}
+  ]
+}

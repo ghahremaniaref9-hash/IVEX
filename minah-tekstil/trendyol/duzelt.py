@@ -167,6 +167,9 @@ def main():
     for kategori, spec in cfg.get("yeni_kategoriler", {}).items():
         add_category_sheet(wb, kategori, spec)
 
+    if cfg.get("marka"):  # must be written exactly as the brand is defined on Trendyol
+        for item in cfg["urunler"]:
+            item["ozellik"] = {**item.get("ozellik", {}), "Marka": cfg["marka"]}
     by_sheet = {}
     for item in cfg["urunler"]:
         ws = sheet_for(wb, item["kategori"])

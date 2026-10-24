@@ -62,6 +62,10 @@ Trendyol bu kategorilerde başka bir zorunlu özellik isterse ilgili satırlar h
   - Turuncu kolej ceketin yarıda kesilmiş açıklaması tamamlandı.
 - **Fazla satır:** 141. satırdaki tek tırnak silindi.
 
+## Marka
+
+Kaynak dosyada marka "minah tekstil" yazıyordu. Trendyol bu adı çözemedi: "Excel satırı 2 için marka kimliği çözülemedi". "Minah Tekstil" mağazanın (satıcının) adı, marka değil. Mağazadaki mevcut ürünler **ixoskids club** markasıyla satılıyor, bu yüzden `urunler.json` dosyasında `"marka": "ixoskids club"` var. Ürünler "Minah Tekstil" markasıyla açılacaksa önce markanın panelde "Marka Ara ve Tanımla" ekranından tanımlatılması gerekiyor. Onaydan sonra `marka` değiştirilip dosyalar yeniden üretilir.
+
 ## Mağazaya sorulacaklar
 
 - Fularlı kazaklarda fular ürünle birlikte mi gönderiliyor? Açıklamada fular detayı geçiyor.

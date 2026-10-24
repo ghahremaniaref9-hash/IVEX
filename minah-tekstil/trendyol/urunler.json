@@ -1,6 +1,7 @@
 {
   "kaynak": "kaynak/urun-olusturma-1489888_1.xlsx",
   "kaynak_sayfa": "Tayt(531)",
+  "marka": "ixoskids club",
   "dosyalar": [
     {"cikti": "minah-trendyol-dosya-1.xlsx", "kategoriler": ["531", "3189", "597", "3902", "601"]},
     {"cikti": "minah-trendyol-dosya-2.xlsx", "kategoriler": ["599", "598", "590", "525", "603", "594", "2160"]}

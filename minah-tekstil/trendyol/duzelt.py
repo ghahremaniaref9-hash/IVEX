@@ -59,13 +59,13 @@ def category_sheets(wb):
     return [wb[n] for n in wb.sheetnames if re.search(r"\(\d+\)$", n)]
 
 
-def add_category_sheet(wb, kategori, spec):
+def add_category_sheet(wb, kategori, spec, extra=()):
     """A sheet for a category the downloaded template lacks, laid out and styled like Trendyol's own."""
     known = category_sheets(wb)
     tpl = known[0]
     headers = [[c.value for c in ws[1]] for ws in known]
     union = list(dict.fromkeys(h for hs in headers for h in hs[BASE_COLUMNS:] if h != "Beden"))
-    attrs = ["Beden"] + union + [h for h in spec.get("ek", []) if h not in union]
+    attrs = ["Beden"] + union + [h for h in [*spec.get("ek", []), *extra] if h not in union]
     required = set(COMMON_REQUIRED + spec.get("ek", []))
     tpl_attrs = tpl[1][BASE_COLUMNS:]
     styles = {
@@ -166,7 +166,7 @@ def main():
     src.cell(row=1, column=11, value="Stok Kodu")
     originals = [ws.title for ws in category_sheets(wb)]
     for kategori, spec in cfg.get("yeni_kategoriler", {}).items():
-        add_category_sheet(wb, kategori, spec)
+        add_category_sheet(wb, kategori, spec, cfg.get("ek_sutunlar", []))
 
     if cfg.get("marka"):  # must be written exactly as the brand is defined on Trendyol
         for item in cfg["urunler"]:

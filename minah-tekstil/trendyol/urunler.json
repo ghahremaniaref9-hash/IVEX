@@ -238,16 +238,17 @@
     {
       "satirlar": [134, 134], "kategori": "2160", "model": "MNH-ETEKLI-TAKIM", "renk_kodu": "GRI",
       "renk": "Gri", "web_color": "Gri",
-      "ozellik": {"Kalıp": "Regular"},
+      "ozellik": {"Kalıp": "Regular", "Parça Sayısı": "2"},
       "aciklama": "Detaylar: Simli fitilli görünüm, uzun kol üst, önden yırtmaçlı maxi etek\nİnce ışıltılı dokusu ve uzun etek siluetiyle günlük-şık kombinlere yönelik iki parçalı takım. Üst ve etek birlikte satılır.\nPaket: Bluz + maxi etek."
     },
     {
       "satirlar": [135, 135], "kategori": "2160", "model": "MNH-ETEKLI-TAKIM", "renk_kodu": "BEJ",
       "renk": "Bej", "web_color": "Bej",
-      "ozellik": {"Kalıp": "Regular"},
+      "ozellik": {"Kalıp": "Regular", "Parça Sayısı": "2"},
       "aciklama": "Detaylar: Simli fitil görünümü, uzun kol, yırtmaçlı maxi etek\nBej-gold ışıltılı yüzeyi ve uzun etek formuyla özel günlerden günlük şıklığa uzanan iki parçalı takım. Üst ve etek birlikte satılır.\nPaket: Bluz + maxi etek."
     }
   ],
+  "ek_sutunlar": ["Parça Sayısı", "Astar Durumu", "Kalınlık"],
   "yeni_kategoriler": {
     "599": {"ad": "Kazak", "ek": ["Kalıp"]},
     "598": {"ad": "Hırka", "ek": ["Kalıp"]},

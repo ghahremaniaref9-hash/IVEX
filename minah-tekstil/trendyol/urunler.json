@@ -1,7 +1,7 @@
 {
   "kaynak": "kaynak/urun-olusturma-1489888_1.xlsx",
   "kaynak_sayfa": "Tayt(531)",
-  "cikti": "minah-trendyol-yukleme-1.xlsx",
+  "cikti": "minah-trendyol-tum-urunler.xlsx",
   "urunler": [
     {
       "satirlar": [35, 38], "kategori": "531", "model": "MNH-TAYT", "renk_kodu": "ANTRASIT",
@@ -83,23 +83,174 @@
       "renk": "Siyah", "web_color": "Siyah",
       "ozellik": {"Kalıp": "Relaxed", "Kumaş Tipi": "Örme"},
       "aciklama": "Detaylar: Fermuarlı crop üst, lastikli bel, bağcık, geniş paça\nDokulu yüzey görünümü ve rahat kalıbı bir araya getiren iki parçalı takım; üst ve pantolon birlikte satılır.\nPaket: Fermuarlı üst + pantolon."
+    },
+    {
+      "satirlar": [2, 2], "kategori": "599", "model": "MNH-POLO-TRIKO-KAZAK", "renk_kodu": "TURUNCU",
+      "renk": "Turuncu / Ekru / Siyah", "web_color": "Turuncu",
+      "ozellik": {"Kalıp": "Regular", "Kumaş Tipi": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Polo yaka, düğmeli ön detay, kontrast ribana, çizgili desen\nTuruncu yaka ve etek ucu detaylarıyla hareket kazanan çizgili triko kazak. Jean ve düz renk altlarla günlük kombinler için uygun.\nPaket: Yalnızca kazak; pantolon dahil değildir."
+    },
+    {
+      "satirlar": [3, 3], "kategori": "599", "model": "MNH-POLO-TRIKO-KAZAK", "renk_kodu": "SARI",
+      "renk": "Sarı / Ekru / Siyah", "web_color": "Sarı",
+      "ozellik": {"Kalıp": "Regular", "Kumaş Tipi": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Sarı ribana yaka ve manşet, çizgili desen, düğmeli ön\nKlasik siyah-beyaz çizgileri sarı yaka ile tamamlayan polo yaka triko kazak. Spor ve casual kombinlerde dikkat çekici bir seçenek.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [4, 4], "kategori": "599", "model": "MNH-POLO-TRIKO-KAZAK", "renk_kodu": "SAKS",
+      "renk": "Saks Mavi / Beyaz / Siyah", "web_color": "Mavi",
+      "ozellik": {"Kalıp": "Regular", "Kumaş Tipi": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Geniş çizgiler, polo yaka, üç düğme, rahat kesim\nSaks mavi ve beyaz geniş yatay çizgili, polo yaka detayıyla sportif görünümlü triko kazak. Jeanlerle kolay kombinlenir.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [5, 5], "kategori": "599", "model": "MNH-POLO-TRIKO-KAZAK", "renk_kodu": "LACIVERT",
+      "renk": "Lacivert / Kırmızı / Ekru", "web_color": "Lacivert",
+      "ozellik": {"Kalıp": "Regular", "Kumaş Tipi": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Yatay kalın çizgiler, düğmeli polo yaka, uzun kol\nLacivert, kırmızı ve ekru yatay şeritleriyle klasik rugby stilini yansıtan polo yaka triko kazak. Günlük kombinler için uygun.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [16, 16], "kategori": "599", "model": "MNH-FULARLI-TRIKO-KAZAK", "renk_kodu": "TARCIN",
+      "ad": "Kadın Tarçın Polo Yaka Fular Detaylı Triko Kazak",
+      "renk": "Tarçın", "web_color": "Kahverengi",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Polo yaka, desenli fular detayı, düz renk triko\nKiremit tonundaki triko kazak, yaka bölgesindeki desenli fular detayıyla farklılaşır. Jean ve kumaş pantolonlarla günlük-şık kombinler oluşturur."
+    },
+    {
+      "satirlar": [17, 17], "kategori": "599", "model": "MNH-FULARLI-TRIKO-KAZAK", "renk_kodu": "PEMBE",
+      "ad": "Kadın Pembe Polo Yaka Fular Detaylı Triko Kazak",
+      "renk": "Pembe", "web_color": "Pembe",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Polo yaka, desenli fular detayı, düz renk triko\nPembe triko kazak, yaka bölgesindeki desenli fular detayıyla farklılaşır. Jean ve kumaş pantolonlarla günlük-şık kombinler oluşturur."
+    },
+    {
+      "satirlar": [18, 18], "kategori": "599", "model": "MNH-FULARLI-TRIKO-KAZAK", "renk_kodu": "YESIL",
+      "ad": "Kadın Yeşil Polo Yaka Fular Detaylı Triko Kazak",
+      "renk": "Yeşil", "web_color": "Yeşil",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Polo yaka, desenli fular detayı, düz renk triko\nYeşil triko kazak, yaka bölgesindeki desenli fular detayıyla farklılaşır. Jean ve kumaş pantolonlarla günlük-şık kombinler oluşturur."
+    },
+    {
+      "satirlar": [91, 91], "kategori": "599", "model": "MNH-AJURLU-TRIKO", "renk_kodu": "KIRMIZI",
+      "renk": "Kırmızı", "web_color": "Kırmızı",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Ajurlu geometrik örgü, ribana uçlar, bisiklet yaka\nCanlı kırmızı renkteki ajurlu örgü deseniyle dikkat çeken uzun kollu kazak. Ajurlu dokusu sayesinde atlet ya da gömlek üzerine katmanlı kullanıma uygundur.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [92, 92], "kategori": "599", "model": "MNH-AJURLU-TRIKO", "renk_kodu": "LACIVERT",
+      "renk": "Lacivert", "web_color": "Lacivert",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Geometrik ajurlu örgü, bisiklet yaka, uzun kol\nAjurlu örgü yüzeyi sayesinde dokusal bir görünüm sunan lacivert triko kazak. Jean pantolonlarla ve nötr renklerle uyumludur.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [131, 131], "kategori": "599", "model": "MNH-BLOKLU-TRIKO", "renk_kodu": "MAVI-PEMBE",
+      "renk": "Mavi / Pembe / Neon Sarı", "web_color": "Çok Renkli",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Kare blok desen, bisiklet yaka, ribanalı kol ve etek\nMavi, pastel pembe ve neon sarı karelerle hareketli görünüm sunan örgü kazak. Açık renk jeanlerle renkli sokak kombinlerine uygundur.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [132, 132], "kategori": "599", "model": "MNH-BLOKLU-TRIKO", "renk_kodu": "TURUNCU-YESIL",
+      "renk": "Turuncu / Yeşil / Pembe", "web_color": "Çok Renkli",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Kare blok desen, bisiklet yaka, ribanalı uçlar\nTuruncu, yeşil ve pembe blok desenli triko kazak; canlı renkleriyle sade altları öne çıkarır.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [133, 133], "kategori": "599", "model": "MNH-BLOKLU-TRIKO", "renk_kodu": "MAVI-FUSYA",
+      "renk": "Mavi / Fuşya / Yeşil", "web_color": "Çok Renkli",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Renkli kare bloklar, bisiklet yaka, ribana detaylar\nMavi, fuşya ve yeşil karelerden oluşan çarpıcı desenli triko kazak. Basic jean ve nötr aksesuarlarla öne çıkar.\nPaket: Yalnızca kazak."
+    },
+    {
+      "satirlar": [60, 63], "kategori": "598", "model": "MNH-KAPUSONLU-HIRKA", "renk_kodu": "YESIL",
+      "renk": "Yeşil", "web_color": "Yeşil",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Tam boy fermuar, kapüşon, ekose desen, uzun kol\nCanlı yeşil-sarı ekose deseni ve kapüşonlu yapısıyla sportif bir dış katman.\nPaket: Yalnızca hırka; fotoğraftaki iç bluz ve tayt dahil değildir."
+    },
+    {
+      "satirlar": [93, 97], "kategori": "598", "model": "MNH-TRIKO-HIRKA", "renk_kodu": "EKRU",
+      "renk": "Ekru", "web_color": "Ekru",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: V yaka, büyük düğmeler, kontrast siyah şerit, desenli örgü\nMint renkli geometrik desen ve siyah düğme bandıyla öne çıkan triko hırka. Açık ya da düğmeli kullanılabilen günlük-şık bir parça.\nPaket: Yalnızca hırka."
+    },
+    {
+      "satirlar": [98, 102], "kategori": "598", "model": "MNH-TRIKO-HIRKA", "renk_kodu": "TURUNCU",
+      "renk": "Turuncu", "web_color": "Turuncu",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Desenli örgü, turuncu kontrast bant, düğmeli V yaka\nSiyah-beyaz tekrarlı deseni turuncu ribana çizgileriyle tamamlayan düğmeli triko hırka. Düz siyah alt giyimle kolay eşleşir.\nPaket: Yalnızca hırka."
+    },
+    {
+      "satirlar": [19, 23], "kategori": "590", "model": "MNH-KOLSUZ-BLUZ", "renk_kodu": "EKRU",
+      "renk": "Ekru", "web_color": "Ekru",
+      "ozellik": {"Kalıp": "Slim Fit"},
+      "aciklama": "Detaylar: Yarım balıkçı yaka, kolsuz, vücuda yakın kesim\nMinimal görünümüyle eşofman, pantolon ve ceketlerle kombinlenebilen kolsuz bluz.\nPaket: Yalnızca bluz; alt giyim dahil değildir."
+    },
+    {
+      "satirlar": [30, 34], "kategori": "590", "model": "MNH-UZUN-KOLLU-BLUZ", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Kalıp": "Slim Fit"},
+      "aciklama": "Detaylar: Yarım balıkçı yaka, düz renk, dar kesim, uzun kol\nZamansız siyah rengi ve yüksek yaka formuyla katmanlı kombinlere uygun uzun kollu basic bluz.\nPaket: Yalnızca bluz."
+    },
+    {
+      "satirlar": [43, 47], "kategori": "590", "model": "MNH-KOLSUZ-CROP-BLUZ", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Yarım balıkçı yaka, kolsuz, düz renk, kısa boy\nTek başına veya ceket altında kombinlenebilen siyah kolsuz crop bluz. Sade kesimi farklı tarzlara uyum sağlar.\nPaket: Yalnızca bluz."
+    },
+    {
+      "satirlar": [10, 15], "kategori": "525", "model": "MNH-ESOFMAN-ALTI", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Bel": "Lastikli", "Kumaş Tipi": "Belirtilmemiş"},
+      "aciklama": "Detaylar: Bağcıklı lastik bel, cepler, düz geniş paça\nGünlük ve spor kombinlerde kullanılabilecek rahat eşofman altı. Beyaz, renkli veya basic üstlerle kolayca eşleşir.\nPaket: Yalnızca eşofman altı."
+    },
+    {
+      "satirlar": [24, 29], "kategori": "525", "model": "MNH-ESOFMAN", "renk_kodu": "LACIVERT",
+      "renk": "Lacivert", "web_color": "Lacivert",
+      "ozellik": {"Bel": "Lastikli"},
+      "aciklama": "Detaylar: Geniş paça, cepler, bağcık ve lastikli bel\nRahat kesimiyle günlük giyime yönelik lacivert eşofman altı. Basic tişört, sweatshirt ve spor ayakkabılarla uyum sağlar.\nPaket: Yalnızca eşofman altı."
+    },
+    {
+      "satirlar": [54, 59], "kategori": "525", "model": "MNH-ESOFMAN", "renk_kodu": "SIYAH",
+      "renk": "Siyah", "web_color": "Siyah",
+      "ozellik": {"Bel": "Lastikli"},
+      "aciklama": "Detaylar: Beyaz yan biye, cep çizgisi, lastikli bel, bol paça\nYanlarda boydan boya uzanan beyaz biye detayıyla sportif görünüm sunan siyah eşofman altı.\nPaket: Yalnızca eşofman altı; fotoğraftaki beyaz üst dahil değildir."
+    },
+    {
+      "satirlar": [70, 73], "kategori": "603", "model": "MNH-CROP-ATLET", "renk_kodu": "EKRU",
+      "renk": "Ekru", "web_color": "Ekru",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: U yaka, kalın askı, fitilli doku, kısa boy\nGünlük kombinler için sade ve çok yönlü ekru crop atlet. Tek başına veya gömlek ve hırka altında kullanılabilir.\nPaket: Yalnızca atlet; alt giyim dahil değildir."
+    },
+    {
+      "satirlar": [113, 116], "kategori": "594", "model": "MNH-KOLEJ-CEKET", "renk_kodu": "SARI",
+      "renk": "Sarı", "web_color": "Sarı",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Çıtçıtlı ön, kontrast kollar, ribanalı yaka, aplike\nSarı gövde ve siyah kollu kolej ceket; aplike harf ve cep detaylarıyla spor-sokak kombinleri için dikkat çekici bir dış katman.\nPaket: Yalnızca ceket."
+    },
+    {
+      "satirlar": [117, 120], "kategori": "594", "model": "MNH-KOLEJ-CEKET", "renk_kodu": "TURUNCU",
+      "renk": "Turuncu", "web_color": "Turuncu",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Çıtçıtlı kapama, kontrast kollar, büyük harf aplike\nTuruncu gövde ve siyah kollu kolej ceket; ribana çizgileri ve harf aplikesiyle spor-sokak stiline canlılık katar.\nPaket: Yalnızca ceket."
+    },
+    {
+      "satirlar": [134, 134], "kategori": "2160", "model": "MNH-ETEKLI-TAKIM", "renk_kodu": "GRI",
+      "renk": "Gri", "web_color": "Gri",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Simli fitilli görünüm, uzun kol üst, önden yırtmaçlı maxi etek\nİnce ışıltılı dokusu ve uzun etek siluetiyle günlük-şık kombinlere yönelik iki parçalı takım. Üst ve etek birlikte satılır.\nPaket: Bluz + maxi etek."
+    },
+    {
+      "satirlar": [135, 135], "kategori": "2160", "model": "MNH-ETEKLI-TAKIM", "renk_kodu": "BEJ",
+      "renk": "Bej", "web_color": "Bej",
+      "ozellik": {"Kalıp": "Regular"},
+      "aciklama": "Detaylar: Simli fitil görünümü, uzun kol, yırtmaçlı maxi etek\nBej-gold ışıltılı yüzeyi ve uzun etek formuyla özel günlerden günlük şıklığa uzanan iki parçalı takım. Üst ve etek birlikte satılır.\nPaket: Bluz + maxi etek."
     }
   ],
-  "bekleyen": [
-    {"satirlar": [2, 5], "kategori_adi": "Kazak", "not": "Polo yaka çizgili triko kazaklar (4 renk)"},
-    {"satirlar": [16, 18], "kategori_adi": "Kazak", "not": "Fularlı triko kazak; ürün adı sadece 'TRIKO KAZAK', düzgün ad yazılmalı; fuların pakete dahil olup olmadığı belli değil"},
-    {"satirlar": [91, 92], "kategori_adi": "Kazak", "not": "Ajurlu triko kazak (kırmızı, lacivert); renk yazımı 'KIEMIZI' düzeltilmeli"},
-    {"satirlar": [131, 133], "kategori_adi": "Kazak", "not": "Bloklu triko kazak; turuncu olanın ön görseli eksik"},
-    {"satirlar": [60, 63], "kategori_adi": "Hırka", "not": "Kapüşonlu fermuarlı ekose üst hırka"},
-    {"satirlar": [93, 102], "kategori_adi": "Hırka", "not": "V yaka triko hırka (ekru, turuncu)"},
-    {"satirlar": [19, 23], "kategori_adi": "Bluz", "not": "Kolsuz slim fit bluz"},
-    {"satirlar": [30, 34], "kategori_adi": "Bluz", "not": "Uzun kollu slim fit bluz"},
-    {"satirlar": [43, 47], "kategori_adi": "Bluz", "not": "Kolsuz crop bluz"},
-    {"satirlar": [10, 15], "kategori_adi": "Eşofman Altı", "not": "Siyah geniş paça eşofman altı"},
-    {"satirlar": [24, 29], "kategori_adi": "Eşofman Altı", "not": "Lacivert bol paça eşofman altı"},
-    {"satirlar": [54, 59], "kategori_adi": "Eşofman Altı", "not": "Siyah-beyaz biyeli eşofman altı"},
-    {"satirlar": [70, 73], "kategori_adi": "Atlet", "not": "Fitilli crop atlet"},
-    {"satirlar": [113, 120], "kategori_adi": "Ceket", "not": "Kolej ceket (sarı, turuncu); turuncunun açıklaması yarıda kesilmiş"},
-    {"satirlar": [134, 135], "kategori_adi": "Takım", "not": "Simli bluz + maxi etek ikili takım"}
-  ]
+  "yeni_kategoriler": {
+    "599": {"ad": "Kazak", "ek": ["Kalıp"]},
+    "598": {"ad": "Hırka", "ek": ["Kalıp"]},
+    "590": {"ad": "Bluz", "ek": ["Kalıp"]},
+    "525": {"ad": "Eşofman Altı", "ek": ["Bel"]},
+    "603": {"ad": "Atlet", "ek": ["Kalıp"]},
+    "594": {"ad": "Ceket", "ek": ["Kalıp"]},
+    "2160": {"ad": "Alt - Üst Takım", "ek": ["Kalıp"]}
+  }
 }

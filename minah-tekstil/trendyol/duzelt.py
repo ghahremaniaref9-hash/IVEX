@@ -9,11 +9,14 @@ kategori sayfasına taşır ve ürün bazında şunları yapar:
 - Ürün adını tek satıra indirir.
 - İlk bedenin görsellerini diğer bedenlere kopyalar.
 - Zorunlu özellikleri, şablondaki izinli değerlere göre kontrol eder.
-"bekleyen" listesindeki ürünler, şablonda kategorileri olmadığı için bu dosyaya girmez; sadece listelenir.
+İndirilen şablonda olmayan kategoriler için "yeni_kategoriler" sayfası açılır: Trendyol'un sayfa düzeninde,
+temel sütunlar + bilinen bütün kategorilerde ortak olan özellikler + "ek" ile verilenler. Bu sayfalarda bir
+değer ancak bilinen bütün kategorilerin listesinde varsa kabul edilir.
 """
 import json
 import re
 import sys
+from copy import copy
 from pathlib import Path
 
 import openpyxl
@@ -24,6 +27,9 @@ SIZES = {"STANDART": "Standart", "XXL": "2XL"}
 BASE_REQUIRED = ["Barkod", "Model Kodu", "Marka", "Kategori", "Para Birimi", "Ürün Adı", "Ürün Açıklaması",
                  "Piyasa Satış Fiyatı (KDV Dahil)", "Trendyol'da Satılacak Fiyat (KDV Dahil)", "Ürün Stok Adedi",
                  "KDV Oranı", "Görsel 1"]
+BASE_COLUMNS = 24  # Barkod ... Sevkiyat Süresi; the category's attributes follow
+# mandatory in every category of the downloaded template
+COMMON_REQUIRED = ["Beden", "Renk", "Web Color", "Yaş Grubu", "Cinsiyet", "Menşei", "Kumaş Tipi", "Boy"]
 
 
 def one_line(v):
@@ -43,8 +49,41 @@ def sheet_for(wb, kategori):
     return next(wb[n] for n in wb.sheetnames if n.endswith(f"({kategori})"))
 
 
+def category_sheets(wb):
+    return [wb[n] for n in wb.sheetnames if re.search(r"\(\d+\)$", n)]
+
+
+def add_category_sheet(wb, kategori, spec):
+    """A sheet for a category the downloaded template lacks, laid out and styled like Trendyol's own."""
+    known = category_sheets(wb)
+    tpl = known[0]
+    headers = [[c.value for c in ws[1]] for ws in known]
+    common = [h for h in headers[0][BASE_COLUMNS:] if all(h in hs for hs in headers) and h != "Beden"]
+    attrs = ["Beden"] + common + spec.get("ek", [])
+    required = set(COMMON_REQUIRED + spec.get("ek", []))
+    tpl_attrs = tpl[1][BASE_COLUMNS:]
+    styles = {
+        "Beden": next(c for c in tpl_attrs if c.value == "Beden"),
+        True: next(c for c in tpl_attrs if c.font.b and c.value != "Beden"),
+        False: next(c for c in tpl_attrs if not c.font.b),
+    }
+    ws = wb.create_sheet(f"{spec['ad']}({kategori})", index=wb.sheetnames.index("Menşei Ülke Kısaltmaları"))
+    for j, h in enumerate(headers[0][:BASE_COLUMNS] + attrs, start=1):
+        src = tpl[1][j - 1] if j <= BASE_COLUMNS else styles["Beden" if h == "Beden" else h in required]
+        c = ws.cell(row=1, column=j, value=h)
+        c._style = copy(src._style)
+        ws.column_dimensions[c.column_letter].width = tpl.column_dimensions[src.column_letter].width or 20
+    return ws
+
+
 def allowed_values(wb, kategori):
-    at = wb[f"Urun_Ozellik_Bilgileri_{kategori}"]
+    name = f"Urun_Ozellik_Bilgileri_{kategori}"
+    if name not in wb.sheetnames:
+        # a category we added has no list: accept only values that every known category allows
+        lists = [allowed_values(wb, n.rsplit("_", 1)[1]) for n in wb.sheetnames
+                 if n.startswith("Urun_Ozellik_Bilgileri_")]
+        return {h: set.intersection(*[l[h] for l in lists if h in l]) for h in set().union(*lists)}
+    at = wb[name]
     cols = [c.value for c in at[1]]
     vals = {h: set() for h in cols}
     for row in at.iter_rows(min_row=2, values_only=True):
@@ -119,6 +158,8 @@ def main():
 
     # the template's 11th column is "Stok Kodu"; it had been renamed to a second "Ürün Stok Adedi"
     src.cell(row=1, column=11, value="Stok Kodu")
+    for kategori, spec in cfg.get("yeni_kategoriler", {}).items():
+        add_category_sheet(wb, kategori, spec)
 
     by_sheet = {}
     for item in cfg["urunler"]:

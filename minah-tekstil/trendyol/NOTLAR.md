@@ -4,10 +4,18 @@
 
 ## Dosyalar
 
-Trendyol bir yüklemede en fazla 8 sayfa kabul ediyor. Bu yüzden 12 kategori iki dosyaya bölündü. Dosyalarda sadece kategori sayfaları var; özellik listeleri, ülke kodları ve yardım sayfaları çıkarıldı.
+Trendyol bir dosyada en fazla 8 kategori kabul ediyor, bu yüzden 12 kategori iki dosyaya bölündü. Her dosya indirilen şablonun kendisi; yazma işini `paket.py` XML düzeyinde yapıyor:
 
-- **`minah-trendyol-dosya-1.xlsx`** – 5 sayfa, 61 satır. Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
-- **`minah-trendyol-dosya-2.xlsx`** – 7 sayfa, 73 satır. Betiğin açtığı kategoriler (aşağıda * ile işaretli).
+- **Korunanlar:** Stiller, açılır listeler, özellik sayfaları, ülke kodları ve yardım sayfası olduğu gibi kalıyor. Yalnızca ürün satırları değişiyor.
+- **Metinler:** Excel'in kendi yaptığı gibi `sharedStrings.xml` tablosuna yazılıyor.
+- **Neden:** İlk sürüm openpyxl ile kaydedilmişti. openpyxl metinleri satır içi (inlineStr) yazdığı için Trendyol "Excel dosyasında kayıt edilecek satır bulunamadı" hatası verdi.
+
+İki dosya:
+
+- **`minah-trendyol-dosya-1.xlsx`** – 5 kategori, 61 satır. Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
+- **`minah-trendyol-dosya-2.xlsx`** – 7 kategori, 73 satır. Betiğin açtığı kategoriler (aşağıda * ile işaretli). Bu kategorilerin özellik sayfaları da betik tarafından eklendi; listelerde yalnızca bilinen 6 kategorinin hepsinde ortak olan değerler var.
+
+Boş gelen Polo Yaka T-shirt kategorisi iki dosyaya da konmadı.
 
 | Sayfa | Satır | Ürünler |
 |---|---|---|

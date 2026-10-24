@@ -4,8 +4,10 @@
 
 ## Dosyalar
 
-- **`minah-trendyol-tum-urunler.xlsx`** – 134 satırın hepsi. Her ürün kendi kategori sayfasında.
-- **`minah-trendyol-yukleme-1.xlsx`** – İlk teslim edilen dosya. Sadece Trendyol'un kendi şablonunda kategorisi olan 61 satırı içerir. Bu dosya artık betikle üretilmiyor; tüm-ürünler dosyası yüklenmezse yedek olarak kullanılır.
+Trendyol bir yüklemede en fazla 8 sayfa kabul ediyor. Bu yüzden 12 kategori iki dosyaya bölündü. Dosyalarda sadece kategori sayfaları var; özellik listeleri, ülke kodları ve yardım sayfaları çıkarıldı.
+
+- **`minah-trendyol-dosya-1.xlsx`** – 5 sayfa, 61 satır. Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
+- **`minah-trendyol-dosya-2.xlsx`** – 7 sayfa, 73 satır. Betiğin açtığı kategoriler (aşağıda * ile işaretli).
 
 | Sayfa | Satır | Ürünler |
 |---|---|---|

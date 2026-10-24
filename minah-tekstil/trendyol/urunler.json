@@ -1,7 +1,10 @@
 {
   "kaynak": "kaynak/urun-olusturma-1489888_1.xlsx",
   "kaynak_sayfa": "Tayt(531)",
-  "cikti": "minah-trendyol-tum-urunler.xlsx",
+  "dosyalar": [
+    {"cikti": "minah-trendyol-dosya-1.xlsx", "kategoriler": ["531", "3189", "597", "3902", "601"]},
+    {"cikti": "minah-trendyol-dosya-2.xlsx", "kategoriler": ["599", "598", "590", "525", "603", "594", "2160"]}
+  ],
   "urunler": [
     {
       "satirlar": [35, 38], "kategori": "531", "model": "MNH-TAYT", "renk_kodu": "ANTRASIT",

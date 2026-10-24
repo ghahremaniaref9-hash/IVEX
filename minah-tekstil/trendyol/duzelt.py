@@ -12,7 +12,10 @@ kategori sayfasına taşır ve ürün bazında şunları yapar:
 İndirilen şablonda olmayan kategoriler için "yeni_kategoriler" sayfası açılır: Trendyol'un sayfa düzeninde,
 temel sütunlar + bilinen bütün kategorilerde ortak olan özellikler + "ek" ile verilenler. Bu sayfalarda bir
 değer ancak bilinen bütün kategorilerin listesinde varsa kabul edilir.
+Trendyol bir dosyada en fazla 8 sayfa kabul ettiği için çıktı "dosyalar" listesine göre bölünür; her dosyada
+yalnızca o dosyanın kategori sayfaları kalır.
 """
+import io
 import json
 import re
 import sys
@@ -197,13 +200,21 @@ def main():
         src.cell(row=2, column=4, value=src.title.split("(")[1].rstrip(")"))
         src.cell(row=2, column=5, value="TRY")
 
-    out = base / cfg["cikti"]
-    wb.save(out)
-    print("kaydedildi:", out, f"({len(barcodes)} ürün satırı)")
-    waiting = sum(b["satirlar"][1] - b["satirlar"][0] + 1 for b in cfg.get("bekleyen", []))
-    if waiting:
-        print(f"bekleyen: {waiting} satır, gereken kategoriler:",
-              ", ".join(dict.fromkeys(b["kategori_adi"] for b in cfg["bekleyen"])))
+    # Trendyol takes at most 8 sheets per upload: each file keeps only its own category sheets
+    # (the attribute lists, country codes and help sheets are reference only)
+    full = io.BytesIO()
+    wb.save(full)
+    for spec in cfg["dosyalar"]:
+        part = openpyxl.load_workbook(io.BytesIO(full.getvalue()))
+        keep = [sheet_for(part, k).title for k in spec["kategoriler"]]
+        for name in part.sheetnames:
+            if name not in keep:
+                del part[name]
+        part.active = 0
+        out = base / spec["cikti"]
+        part.save(out)
+        n = sum(len(by_sheet[t][2]) for t in keep)
+        print("kaydedildi:", out, f"({len(keep)} sayfa, {n} ürün satırı)")
 
 
 if __name__ == "__main__":

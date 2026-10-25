@@ -4,16 +4,12 @@
 
 ## Dosyalar
 
-Trendyol bir dosyada en fazla 8 kategori kabul ediyor, bu yüzden 12 kategori iki dosyaya bölündü. Her dosya indirilen şablonun kendisi; yazma işini `paket.py` XML düzeyinde yapıyor:
+Trendyol bir dosyada en fazla 8 kategori kabul ediyor, bu yüzden 12 kategori iki dosyaya bölündü. Her dosya Trendyol'dan indirilmiş bir şablonun kendisi. Yazma işini `paket.py` XML düzeyinde yapıyor: yalnızca ürün satırları değişiyor, stiller, açılır listeler, özellik sayfaları, ülke kodları ve yardım sayfası olduğu gibi kalıyor.
 
-- **Korunanlar:** Stiller, açılır listeler, özellik sayfaları, ülke kodları ve yardım sayfası olduğu gibi kalıyor. Yalnızca ürün satırları değişiyor.
-- **Metinler:** Excel'in kendi yaptığı gibi `sharedStrings.xml` tablosuna yazılıyor.
-- **Neden:** İlk sürüm openpyxl ile kaydedilmişti. openpyxl metinleri satır içi (inlineStr) yazdığı için Trendyol "Excel dosyasında kayıt edilecek satır bulunamadı" hatası verdi.
-
-İki dosya:
-
-- **`minah-trendyol-dosya-1.xlsx`** – 5 kategori, 61 satır. **Yüklendi** (24.10.2026 22:14, "Tamamlandı"). Trendyol'un kendi şablonundaki kategoriler: Tayt, Spor Eşofman Takımı, Gömlek, Kumaş Pantolon, Sweatshirt. Önce bu dosya yüklenir.
-- **`minah-trendyol-dosya-2.xlsx`** – 7 kategori, 73 satır. Betiğin açtığı kategoriler (aşağıda * ile işaretli). Bu kategorilerin özellik sayfaları da betik tarafından eklendi; listelerde yalnızca bilinen 6 kategorinin hepsinde ortak olan değerler var.
+| Dosya | Şablon | Kategori | Satır | Durum |
+|---|---|---|---|---|
+| `minah-trendyol-dosya-1.xlsx` | `kaynak/urun-olusturma-1489888_1.xlsx` (mağazanın ilk şablonu) | 5 | 61 | Yüklendi, 24.10.2026 22:14, "Tamamlandı" |
+| `minah-trendyol-dosya-2.xlsx` | `kaynak/urun-olusturma-1492978.xlsx` (bu 7 kategori için indirilen şablon) | 7 | 73 | Yüklenecek |
 
 Boş gelen Polo Yaka T-shirt kategorisi iki dosyaya da konmadı.
 
@@ -24,26 +20,20 @@ Boş gelen Polo Yaka T-shirt kategorisi iki dosyaya da konmadı.
 | Sweatshirt (601) | 12 | Kapüşonlu sweatshirt; gri ve kahve yarım fermuarlı üst |
 | Kumaş Pantolon (3902) | 12 | Turuncu ve fuşya bol paça pantolon |
 | Spor Eşofman Takımı (3189) | 4 | Siyah fermuarlı crop üst + bol paça pantolon takım |
-| Kazak (599)* | 12 | Polo yaka çizgili, fularlı, ajurlu ve bloklu triko kazaklar |
-| Hırka (598)* | 14 | Kapüşonlu ekose hırka; V yaka triko hırka (ekru, turuncu) |
-| Bluz (590)* | 15 | Kolsuz, uzun kollu ve kolsuz crop bluz |
-| Eşofman Altı (525)* | 18 | Siyah, lacivert ve siyah-beyaz biyeli eşofman altı |
-| Atlet (603)* | 4 | Fitilli crop atlet |
-| Ceket (594)* | 8 | Kolej ceket (sarı, turuncu) |
-| Alt - Üst Takım (2160)* | 2 | Simli bluz + maxi etek takım (gri, bej) |
+| Kazak (599) | 12 | Polo yaka çizgili, fularlı, ajurlu ve bloklu triko kazaklar |
+| Hırka (598) | 14 | Kapüşonlu ekose hırka; V yaka triko hırka (ekru, turuncu) |
+| Bluz (590) | 15 | Kolsuz, uzun kollu ve kolsuz crop bluz |
+| Eşofman Altı (525) | 18 | Siyah, lacivert ve siyah-beyaz biyeli eşofman altı |
+| Atlet (603) | 4 | Fitilli crop atlet |
+| Ceket (594) | 8 | Kolej ceket (sarı, turuncu) |
+| Alt - Üst Takım (2160) | 2 | Simli bluz + maxi etek takım (gri, bej) |
 
-\* İndirilen şablonda olmayan kategoriler. Sayfaları betik açtı.
+## Trendyol'un yükleme ekranında öğrenilenler
 
-**Kategori kodları:** [ArillaSoftOrg/arilla](https://github.com/ArillaSoftOrg/arilla) deposundaki `docs/reference/trendyol/product-categories.raw.json` dökümünden alındı. Bu döküm, şablondaki 6 bilinen kodun (531, 597, 601, 3189, 2949, 3902) hepsiyle birebir eşleşiyor.
-
-**Sütun kontrolü:** Trendyol, kategorinin bir özelliğinin sütunu dosyada yoksa dosyanın tamamını reddediyor. İlk denemede "Kategori özelliği: `Baskı/Nakış Tekniği` yüklenen dosyada mevcut değil" hatası geldi. Bu yüzden yeni sayfalara bilinen 6 kategoride geçen bütün özellik sütunları (50 sütun) konuyor. Yine bir "mevcut değil" hatası gelirse, en sağlam yol panelden bu 7 kategorinin şablonunu indirmek. O şablon `kaynak` olarak verilip ürünler içine yazılır.
-
-**Bu sayfaların sınırı:** Sütunlar Trendyol'dan gelmedi, tahmine dayanıyor:
-- Bilinen 6 kategorinin hepsinde ortak olan özellikler alındı.
-- Üst giyime "Kalıp", eşofman altına "Bel" eklendi.
-- Değerler, 6 kategorinin hepsinin izinli listesinde olanlardan seçildi.
-
-Trendyol bu kategorilerde başka bir zorunlu özellik isterse ilgili satırlar hata raporunda çıkar.
+- **Kategori sınırı:** Bir dosyada en fazla 8 kategori olabiliyor. Bu sınır sayfa sayısı için değil.
+- **Yapının korunması:** Dosya openpyxl ile yeniden kaydedilip yardımcı sayfaları çıkarılınca Trendyol "Excel dosyasında kayıt edilecek satır bulunamadı" hatası verdi. Şablonun bütün parçaları korununca dosya kabul edildi. Metinlerin satır içi (inlineStr) yazılması sorun değil; Trendyol'un yeni şablonları da metinleri böyle yazıyor.
+- **Sütun listesi:** Her kategorinin sütun listesi birebir kontrol ediliyor. Eksik sütunda "Kategori özelliği: `…` yüklenen dosyada mevcut değil", fazla sütunda "Sütun sayısı beklenenden fazla" hatası geliyor. Bu yüzden şablonu olmayan bir kategori elle kurulamıyor; o kategorinin şablonu panelden (Ürün > Toplu Ürün İşlemleri > Şablon İndir) indirilip `dosyalar` içinde `sablon` olarak verilmeli.
+- **Marka:** Marka adının Trendyol'da tanımlı haliyle yazılması gerekiyor (aşağıdaki "Marka" bölümüne bakın).
 
 ## Yapılan düzeltmeler
 

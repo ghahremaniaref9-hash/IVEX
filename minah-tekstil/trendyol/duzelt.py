@@ -9,21 +9,16 @@ kategori sayfasına taşır ve ürün bazında şunları yapar:
 - Ürün adını tek satıra indirir.
 - İlk bedenin görsellerini diğer bedenlere kopyalar.
 - Zorunlu özellikleri, şablondaki izinli değerlere göre kontrol eder.
-İndirilen şablonda olmayan kategoriler için "yeni_kategoriler" sayfası açılır: Trendyol'un sayfa düzeninde,
-temel sütunlar + bilinen kategorilerin herhangi birinde geçen bütün özellikler (Trendyol, kategorinin bir
-özelliğinin sütunu yoksa dosyayı reddediyor) + "ek" ile verilenler. Bu sayfalarda bir
-değer ancak bilinen bütün kategorilerin listesinde varsa kabul edilir.
-Trendyol bir dosyada en fazla 8 kategori kabul ettiği için çıktı "dosyalar" listesine göre bölünür. Her dosya
-indirilen şablonun kendisidir (paket.py): diğer kategoriler çıkarılır, yeni kategoriler eklenir.
+Trendyol bir dosyada en fazla 8 kategori kabul ettiği için çıktı "dosyalar" listesine göre bölünür. Her dosya,
+"sablon" ile verilen (verilmezse kaynak) Trendyol şablonunun kendisidir (paket.py): sütunlar, zorunlu alanlar ve
+izinli değerler doğrudan şablondan gelir, dosyada kullanılmayan kategoriler çıkarılır.
 """
 import json
 import re
 import sys
-from copy import copy
 from pathlib import Path
 
 import openpyxl
-from openpyxl.utils import get_column_letter
 
 import paket
 
@@ -33,9 +28,6 @@ SIZES = {"STANDART": "Standart", "XXL": "2XL"}
 BASE_REQUIRED = ["Barkod", "Model Kodu", "Marka", "Kategori", "Para Birimi", "Ürün Adı", "Ürün Açıklaması",
                  "Piyasa Satış Fiyatı (KDV Dahil)", "Trendyol'da Satılacak Fiyat (KDV Dahil)", "Ürün Stok Adedi",
                  "KDV Oranı", "Görsel 1"]
-BASE_COLUMNS = 24  # Barkod ... Sevkiyat Süresi; the category's attributes follow
-# mandatory in every category of the downloaded template
-COMMON_REQUIRED = ["Beden", "Renk", "Web Color", "Yaş Grubu", "Cinsiyet", "Menşei", "Kumaş Tipi", "Boy"]
 
 
 def one_line(v):
@@ -59,37 +51,8 @@ def category_sheets(wb):
     return [wb[n] for n in wb.sheetnames if re.search(r"\(\d+\)$", n)]
 
 
-def add_category_sheet(wb, kategori, spec, extra=()):
-    """A sheet for a category the downloaded template lacks, laid out and styled like Trendyol's own."""
-    known = category_sheets(wb)
-    tpl = known[0]
-    headers = [[c.value for c in ws[1]] for ws in known]
-    union = list(dict.fromkeys(h for hs in headers for h in hs[BASE_COLUMNS:] if h != "Beden"))
-    attrs = ["Beden"] + union + [h for h in [*spec.get("ek", []), *extra] if h not in union]
-    required = set(COMMON_REQUIRED + spec.get("ek", []))
-    tpl_attrs = tpl[1][BASE_COLUMNS:]
-    styles = {
-        "Beden": next(c for c in tpl_attrs if c.value == "Beden"),
-        True: next(c for c in tpl_attrs if c.font.b and c.value != "Beden"),
-        False: next(c for c in tpl_attrs if not c.font.b),
-    }
-    ws = wb.create_sheet(f"{spec['ad']}({kategori})", index=wb.sheetnames.index("Menşei Ülke Kısaltmaları"))
-    for j, h in enumerate(headers[0][:BASE_COLUMNS] + attrs, start=1):
-        src = tpl[1][j - 1] if j <= BASE_COLUMNS else styles["Beden" if h == "Beden" else h in required]
-        c = ws.cell(row=1, column=j, value=h)
-        c._style = copy(src._style)
-        ws.column_dimensions[c.column_letter].width = tpl.column_dimensions[src.column_letter].width or 20
-    return ws
-
-
 def allowed_values(wb, kategori):
-    name = f"Urun_Ozellik_Bilgileri_{kategori}"
-    if name not in wb.sheetnames:
-        # a category we added has no list: accept only values that every known category allows
-        lists = [allowed_values(wb, n.rsplit("_", 1)[1]) for n in wb.sheetnames
-                 if n.startswith("Urun_Ozellik_Bilgileri_")]
-        return {h: set.intersection(*[l[h] for l in lists if h in l]) for h in set().union(*lists)}
-    at = wb[name]
+    at = wb[f"Urun_Ozellik_Bilgileri_{kategori}"]
     cols = [c.value for c in at[1]]
     vals = {h: set() for h in cols}
     for row in at.iter_rows(min_row=2, values_only=True):
@@ -164,23 +127,28 @@ def main():
 
     # the template's 11th column is "Stok Kodu"; it had been renamed to a second "Ürün Stok Adedi"
     src.cell(row=1, column=11, value="Stok Kodu")
-    originals = [ws.title for ws in category_sheets(wb)]
-    for kategori, spec in cfg.get("yeni_kategoriler", {}).items():
-        add_category_sheet(wb, kategori, spec, cfg.get("ek_sutunlar", []))
+
+    # each category is read from the template of the file it goes into
+    templates = {cfg["kaynak"]: wb}
+    template_of = {}
+    for spec in cfg["dosyalar"]:
+        name = spec.get("sablon", cfg["kaynak"])
+        if name not in templates:
+            templates[name] = openpyxl.load_workbook(base / name)
+        template_of.update(dict.fromkeys(spec["kategoriler"], name))
 
     if cfg.get("marka"):  # must be written exactly as the brand is defined on Trendyol
         for item in cfg["urunler"]:
             item["ozellik"] = {**item.get("ozellik", {}), "Marka": cfg["marka"]}
-    by_sheet = {}
+    by_category = {}
     for item in cfg["urunler"]:
-        ws = sheet_for(wb, item["kategori"])
+        ws = sheet_for(templates[template_of[item["kategori"]]], item["kategori"])
         tgt_hdr = [c.value for c in ws[1]]
-        by_sheet.setdefault(ws.title, (item["kategori"], ws, []))[2].extend(
-            build_rows(src_hdr, src_rows, item, tgt_hdr))
+        by_category.setdefault(item["kategori"], (ws, []))[1].extend(build_rows(src_hdr, src_rows, item, tgt_hdr))
 
     problems, barcodes = [], []
-    for title, (kategori, ws, rows) in by_sheet.items():
-        problems += check(wb, kategori, ws, rows)
+    for kategori, (ws, rows) in by_category.items():
+        problems += check(templates[template_of[kategori]], kategori, ws, rows)
         barcodes += [r[0] for r in rows]
     dup = {b for b in barcodes if barcodes.count(b) > 1}
     problems += [f"{b}: barkod tekrar ediyor" for b in sorted(dup)]
@@ -188,49 +156,29 @@ def main():
         print("\n".join(problems))
         sys.exit("Düzeltilmesi gereken alanlar var, dosya kaydedilmedi.")
 
-    # Trendyol takes at most 8 categories per upload. Each file is the downloaded template itself with the
-    # other categories (and their attribute lists) taken out; new categories get a sheet and a list sheet.
+    # Trendyol takes at most 8 categories per upload. Each file is its template package itself, with the
+    # categories it does not use (and their attribute lists) taken out.
     for spec in cfg["dosyalar"]:
-        pkg = paket.Package(base / cfg["kaynak"])
-        data_styles = paket.row_styles(pkg, src.title)
-        cols = paket.cols_xml(pkg, src.title)  # read before the source sheet may be taken out
-        base_styles = {**paket.header_styles(pkg, src.title), "K": paket.BASE_OPTIONAL}  # K is Stok Kodu
-        keep = [sheet_for(wb, k).title for k in spec["kategoriler"]]
-        for name in originals:
-            if name not in keep:
-                pkg.remove_sheet(name)
-                pkg.remove_sheet(f"Urun_Ozellik_Bilgileri_{name.rsplit('(', 1)[1][:-1]}")
-        for title in keep:
-            kategori, ws, rows = by_sheet[title]
-            header = [c.value for c in ws[1]]
-            if title in originals:
-                styles = paket.header_styles(pkg, title)
-                if title == src.title:
-                    styles["K"] = paket.BASE_OPTIONAL
-                pkg.fill_sheet(title, header, styles, rows, data_styles)
-            else:
-                required = set(required_attributes(ws))
-                styles = {get_column_letter(j): base_styles[get_column_letter(j)] if j <= BASE_COLUMNS else
-                          paket.BEDEN if h == "Beden" else
-                          paket.ATTR_REQUIRED if h in required else paket.ATTR_OPTIONAL
-                          for j, h in enumerate(header, start=1)}
-                pkg.new_sheet(title, header, styles, rows, data_styles, cols,
-                              before="Menşei Ülke Kısaltmaları")
-                allowed = allowed_values(wb, kategori)
-                lists = [h for h in header[BASE_COLUMNS:] if allowed.get(h)] + ["Para Birimi", "KDV Oranı"]
-                values = [sorted(allowed[h]) for h in lists]
-                list_rows = [[col[i] if i < len(col) else None for col in values]
-                             for i in range(max(map(len, values)))]
-                pkg.new_sheet(f"Urun_Ozellik_Bilgileri_{kategori}", lists,
-                              {get_column_letter(j): paket.LIST_HEADER for j in range(1, len(lists) + 1)},
-                              list_rows, {}, '<cols><col min="1" max="1" width="45.140625" customWidth="1"/></cols>',
-                              before="Menşei Ülke Kısaltmaları")
-            print(f"{title}: {len(rows)} satır")
+        name = spec.get("sablon", cfg["kaynak"])
+        pkg = paket.Package(base / name)
+        # style ids index the package's own styles.xml; only the source template has product-row styles
+        data_styles = paket.row_styles(pkg, src.title) if name == cfg["kaynak"] else {}
+        for ws in category_sheets(templates[name]):
+            kategori = ws.title.rsplit("(", 1)[1][:-1]
+            if kategori not in spec["kategoriler"]:
+                pkg.remove_sheet(ws.title)
+                pkg.remove_sheet(f"Urun_Ozellik_Bilgileri_{kategori}")
+        for kategori in spec["kategoriler"]:
+            ws, rows = by_category[kategori]
+            styles = paket.header_styles(pkg, ws.title)
+            if ws is src:
+                styles["K"] = paket.BASE_OPTIONAL
+            pkg.fill_sheet(ws.title, [c.value for c in ws[1]], styles, rows, data_styles)
+            print(f"{ws.title}: {len(rows)} satır")
         out = base / spec["cikti"]
         pkg.save(out)
-        n = sum(len(by_sheet[t][2]) for t in keep)
-        print("kaydedildi:", out, f"({len(keep)} kategori, {n} ürün satırı)")
-
+        n = sum(len(by_category[k][1]) for k in spec["kategoriler"])
+        print("kaydedildi:", out, f"({len(spec['kategoriler'])} kategori, {n} ürün satırı)")
 
 if __name__ == "__main__":
     main()

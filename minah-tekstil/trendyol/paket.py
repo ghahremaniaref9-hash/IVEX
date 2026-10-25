@@ -1,9 +1,10 @@
 """Trendyol şablonunu XML düzeyinde yazar. Yalnızca ürün satırları değişir; indirilen dosyanın geri kalanı
 olduğu gibi kalır: stiller, açılır listeler, özellik sayfaları, yardım sayfası.
 
-openpyxl metinleri satır içi (inlineStr) yazıyor. Trendyol'un yükleme ekranı bu hücreleri boş okuyup
-"Excel dosyasında kayıt edilecek satır bulunamadı" hatası veriyor. Bu yüzden burada bütün metinler, Excel'in
-kendi yaptığı gibi, paylaşılan metin tablosuna (sharedStrings.xml) yazılır.
+openpyxl ile yeniden kaydedilip yardımcı sayfaları çıkarılan dosyayı Trendyol "Excel dosyasında kayıt edilecek
+satır bulunamadı" diye reddetti; şablonun bütün parçaları korununca dosya kabul edildi. Metinler paylaşılan metin
+tablosuna (sharedStrings.xml) yazılır. Şablonlar farklı araçlarla üretildiği için (Excel, Trendyol'un kendi
+üreticisi) XML öznitelikleri sıradan bağımsız okunur.
 """
 import re
 import zipfile
@@ -12,13 +13,7 @@ from xml.sax.saxutils import escape
 
 from openpyxl.utils import get_column_letter
 
-MAIN = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
-REL = "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-WS_TYPE = REL + "/worksheet"
-WS_CT = "application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"
-# header styles used by Trendyol's template
-BEDEN, ATTR_OPTIONAL, ATTR_REQUIRED, LIST_HEADER = "40", "41", "42", "43"
-BASE_REQUIRED, BASE_OPTIONAL = "36", "37"
+BASE_OPTIONAL = "37"  # header style of an optional base column (Stok Kodu) in the first template
 
 
 class Package:
@@ -51,43 +46,26 @@ class Package:
     # --- workbook structure -------------------------------------------------------------------------
     def sheets(self):
         """[(name, rId, part)] in tab order."""
-        rels = dict(re.findall(r'<Relationship Id="([^"]+)" Type="[^"]+/worksheet" Target="([^"]+)"',
-                               self.text("xl/_rels/workbook.xml.rels")))
-        return [(unescape(n), rid, "xl/" + rels[rid])
-                for n, rid in re.findall(r'<sheet name="([^"]+)" sheetId="\d+" r:id="([^"]+)"/>',
-                                         self.text("xl/workbook.xml"))]
+        rels = {a["Id"]: a["Target"] for a in tags(self.text("xl/_rels/workbook.xml.rels"), "Relationship")
+                if a["Type"].endswith("/worksheet")}
+        return [(unescape(a["name"]), a["r:id"], target_part(rels[a["r:id"]]))
+                for a in tags(self.text("xl/workbook.xml"), "sheet")]
 
     def part(self, name):
         return next(p for n, _, p in self.sheets() if n == name)
 
     def remove_sheet(self, name):
         _, rid, part = next(s for s in self.sheets() if s[0] == name)
-        wb = re.sub(rf'<sheet name="[^"]+" sheetId="\d+" r:id="{rid}"/>', "", self.text("xl/workbook.xml"))
-        self.put("xl/workbook.xml", wb)
-        rels = re.sub(rf'<Relationship Id="{rid}" [^>]*/>', "", self.text("xl/_rels/workbook.xml.rels"))
-        self.put("xl/_rels/workbook.xml.rels", rels)
-        ct = self.text("[Content_Types].xml").replace(f'<Override PartName="/{part}" ContentType="{WS_CT}"/>', "")
-        self.put("[Content_Types].xml", ct)
+        for xml, tag, key, value in (("xl/workbook.xml", "sheet", "r:id", rid),
+                                     ("xl/_rels/workbook.xml.rels", "Relationship", "Id", rid),
+                                     ("[Content_Types].xml", "Override", "PartName", "/" + part)):
+            text = self.text(xml)
+            for raw in re.findall(rf"<{tag} [^>]*/>", text):
+                if attrs(raw).get(key) == value:
+                    text = text.replace(raw, "")
+            self.put(xml, text)
         self.drop(part)
         self.drop(part.replace("worksheets/", "worksheets/_rels/") + ".rels")
-
-    def add_sheet(self, name, xml, before):
-        wb = self.text("xl/workbook.xml")
-        rels = self.text("xl/_rels/workbook.xml.rels")
-        n = 1 + max(int(x) for x in re.findall(r"worksheets/sheet(\d+)\.xml", " ".join(self.names)))
-        rid = "rId" + str(1 + max(int(x) for x in re.findall(r'Id="rId(\d+)"', rels)))
-        sheet_id = 1 + max(int(x) for x in re.findall(r'sheetId="(\d+)"', wb))
-        part = f"xl/worksheets/sheet{n}.xml"
-        self.put(part, xml)
-        _, before_rid, _ = next(s for s in self.sheets() if s[0] == before)
-        anchor = re.search(rf'<sheet name="[^"]+" sheetId="\d+" r:id="{before_rid}"/>', wb).group(0)
-        self.put("xl/workbook.xml", wb.replace(
-            anchor, f'<sheet name="{escape(name)}" sheetId="{sheet_id}" r:id="{rid}"/>' + anchor))
-        self.put("xl/_rels/workbook.xml.rels", rels.replace(
-            "</Relationships>", f'<Relationship Id="{rid}" Type="{WS_TYPE}" Target="worksheets/sheet{n}.xml"/>'
-                                "</Relationships>"))
-        self.put("[Content_Types].xml", self.text("[Content_Types].xml").replace(
-            "</Types>", f'<Override PartName="/{part}" ContentType="{WS_CT}"/></Types>'))
 
     # --- cells --------------------------------------------------------------------------------------
     def string(self, text):
@@ -134,16 +112,6 @@ class Package:
             else:
                 self.drop(rels)
 
-    def new_sheet(self, name, header, header_styles, rows, data_styles, cols, before):
-        xml = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
-               f'<worksheet xmlns="{MAIN}" xmlns:r="{REL}">'
-               f'<dimension ref="A1:{get_column_letter(len(header))}{len(rows) + 1}"/>'
-               '<sheetViews><sheetView workbookViewId="0"/></sheetViews><sheetFormatPr defaultRowHeight="15"/>'
-               f"{cols}{self.sheet_data(header, header_styles, rows, data_styles)}"
-               '<pageMargins left="0.7" right="0.7" top="0.75" bottom="0.75" header="0.3" footer="0.3"/>'
-               "</worksheet>")
-        self.add_sheet(name, xml, before)
-
     def save(self, path):
         refs = sum(len(re.findall(r't="s"', self.text(n))) for n in self.names if n.startswith("xl/worksheets/s"))
         head = re.sub(r'count="\d+" uniqueCount="\d+"', f'count="{refs}" uniqueCount="{len(self.si)}"',
@@ -154,23 +122,37 @@ class Package:
                 z.writestr(n, self.parts[n])
 
 
+def attrs(tag):
+    return dict(re.findall(r'([\w:]+)="([^"]*)"', tag))
+
+
+def tags(xml, name):
+    """Attributes of every <name .../> element, in document order."""
+    return [attrs(t) for t in re.findall(rf"<{name} [^>]*/>", xml)]
+
+
+def target_part(target):
+    return target.lstrip("/") if target.startswith("/") else "xl/" + target
+
+
+def cell_styles(pkg, name, r):
+    """Column letter -> style id of the cells in row r of a sheet."""
+    m = re.search(rf'<row r="{r}"[^>]*>(.*?)</row>', pkg.text(pkg.part(name)), re.S)
+    styles = {}
+    for c in re.findall(r"<c [^>]*>", m.group(1) if m else ""):
+        a = attrs(c)
+        if "s" in a:
+            styles[re.match(r"[A-Z]+", a["r"]).group(0)] = a["s"]
+    return styles
+
+
 def header_styles(pkg, name):
-    """Column letter -> style id of the header row in a template sheet."""
-    xml = pkg.text(pkg.part(name))
-    row = re.search(r'<row r="1"[^>]*>(.*?)</row>', xml, re.S).group(1)
-    return dict(re.findall(r'<c r="([A-Z]+)1" s="(\d+)"', row))
-
-
-def cols_xml(pkg, name):
-    m = re.search(r"<cols>.*?</cols>", pkg.text(pkg.part(name)), re.S)
-    return m.group(0) if m else ""
+    return cell_styles(pkg, name, 1)
 
 
 def row_styles(pkg, name):
-    """Column letter -> style id of the first product row; every image column takes Görsel 1's style."""
-    xml = pkg.text(pkg.part(name))
-    row = re.search(r'<row r="2"[^>]*>(.*?)</row>', xml, re.S).group(1)
-    styles = dict(re.findall(r'<c r="([A-Z]+)2" s="(\d+)"', row))
+    """Style ids of the first product row; every image column takes Görsel 1's style."""
+    styles = cell_styles(pkg, name, 2)
     if "P" in styles:  # Görsel 1 ... Görsel 8 are P ... W
         styles.update({get_column_letter(j): styles["P"] for j in range(16, 24)})
     return styles

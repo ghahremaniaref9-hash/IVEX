@@ -1,0 +1,34 @@
+{
+  "cikti": "ivex-icerik/ivex-goz-testi-reels.mp4",
+  "kapak": "ivex-icerik/ivex-goz-testi-kapak.jpg",
+  "gorsel_suru": "ivex-icerik/kaynak/goz-testi-suru.jpg",
+  "gorsel_yakin": "ivex-icerik/kaynak/goz-testi-yakin.jpg",
+  "odak": [0.36, 0.47],
+  "ses_klasoru": "ivex-icerik/kaynak/goz-testi-ses",
+  "ses_modeli": "vits-piper-tr_TR-dfki-medium",
+  "satirlar": [
+    {"ad": "anlatici-1", "kim": "anlatici", "metin": "Göz testi. Bu sürüde ilk neyi gördün?", "hiz": 0.95, "basla": 0.4},
+    {"ad": "anlatici-2", "kim": "anlatici", "metin": "Gri, normal. Beyaz, gözlük zamanı. Ya yeşil?", "hiz": 0.92, "basla": 3.2},
+    {"ad": "koyun-1", "kim": "koyun", "metin": "Beni dikkatle dinle.", "hiz": 0.85, "basla": 8.0},
+    {"ad": "koyun-2", "kim": "koyun", "metin": "Artık çok geç. Herkes önce beni fark etti.", "hiz": 0.88, "basla": 9.8},
+    {"ad": "koyun-3", "kim": "koyun", "metin": "Senin işletmen de böyle fark edilsin mi?", "hiz": 0.9, "basla": 13.2},
+    {"ad": "koyun-4", "kim": "koyun", "metin": "Di em den, yeşil yaz. Yoksa...", "hiz": 0.85, "basla": 16.0}
+  ],
+  "kesme": 7.6,
+  "logo": 18.5,
+  "sure": 22.2,
+  "yazilar": [
+    {"t": 0.4, "bitis": 7.6, "tur": "baslik", "metin": "GÖZ TESTİ"},
+    {"t": 1.1, "bitis": 7.6, "tur": "alt", "metin": "bu sürüde ilk neyi gördün?"},
+    {"t": 3.2, "bitis": 7.6, "tur": "liste", "satir": 0, "renk": "GRİ", "metin": "GRİ –", "sonuc_t": 3.6, "sonuc": "NORMAL"},
+    {"t": 4.3, "bitis": 7.6, "tur": "liste", "satir": 1, "renk": "BEYAZ", "metin": "BEYAZ –", "sonuc_t": 4.85, "sonuc": "GÖZLÜK ZAMANI"},
+    {"t": 5.95, "bitis": 7.6, "tur": "liste", "satir": 2, "renk": "YEŞİL", "metin": "YEŞİL –", "sonuc_t": 6.5, "sonuc": "ÇOK GEÇ"},
+    {"t": 8.0, "bitis": 9.8, "tur": "buyuk", "metin": ["BENİ", "DİKKATLE"], "ek": "dinle", "lime": true},
+    {"t": 10.05, "bitis": 11.15, "tur": "buyuk", "metin": ["ÇOK GEÇ"]},
+    {"t": 11.15, "bitis": 13.1, "tur": "buyuk", "metin": ["HERKES ÖNCE", "BENİ FARK", "ETTİ"]},
+    {"t": 13.2, "bitis": 15.9, "tur": "buyuk", "metin": ["İŞLETMEN DE", "BÖYLE FARK", "EDİLSİN Mİ?"]},
+    {"t": 16.0, "bitis": 17.8, "tur": "dm", "metin": ["DM'DEN", "YEŞİL", "YAZ"], "zamanlar": [16.0, 16.65, 17.15]},
+    {"t": 17.83, "bitis": 18.5, "tur": "buyuk", "metin": ["YOKSA..."]}
+  ],
+  "son": {"unvan": "SOSYAL MEDYA · REKLAM · WEB", "buton": "DM'DEN “YEŞİL” YAZ"}
+}

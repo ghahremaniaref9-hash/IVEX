@@ -44,6 +44,14 @@ def shadowed(layer, blur=14, strength=0.75):
     return out
 
 
+def baseline_img(text, fnt, fill):
+    """One line on a fixed ascent/descent box, so pieces set side by side share the same baseline."""
+    asc, desc = fnt.getmetrics()
+    im = Image.new("RGBA", (round(fnt.getlength(text)) + 8, asc + desc + 8), (0, 0, 0, 0))
+    ImageDraw.Draw(im).text((4, asc + 4), text, font=fnt, fill=fill, anchor="ls")
+    return im
+
+
 def pop(canvas, layer, cx, y, lt, start, end=None):
     """Pop in (scale 1.12 -> 1 with fade) at `start`, cut out at `end`."""
     if lt < start or (end is not None and lt >= end):
@@ -107,8 +115,8 @@ class GozTesti:
             out = shadowed(text_img(item["metin"], font("SemiBold", 40)), 10)
         elif kind == "liste":
             col = {"GRİ": GREY, "BEYAZ": WHITE, "YEŞİL": LIME}[item["renk"]]
-            a = text_img(item["metin"], font("ExtraBold", 54), col)
-            b = text_img(item["sonuc"], font("ExtraBold", 54), WHITE)
+            a = baseline_img(item["metin"], font("ExtraBold", 54), col)
+            b = baseline_img(item["sonuc"], font("ExtraBold", 54), WHITE)
             out = (shadowed(a, 10), shadowed(b, 10), a.width + 34)
         else:
             lines = item["metin"]

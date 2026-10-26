@@ -204,3 +204,57 @@ python3 marka_filmi.py ../ayarlar/marka-filmi.json            # müzikli video +
 python3 marka_filmi.py ../ayarlar/marka-filmi.json 5 9.5 26   # yalnızca bu saniyelerin önizleme kareleri
 ```
 Metinler, görseller ve hizmet listesi `ayarlar/marka-filmi.json` dosyasında. Sahne ve vuruş zamanları `marka_filmi.py`'nin başında tanımlı; müzik aynı zamanlardan üretildiği için bir zamanlama değişince ses de kendiliğinden kayar.
+
+---
+
+## Ek: "Göz testi" Reels'i (lime koyun)
+
+**Dosyalar:**
+- `ivex-goz-testi-reels.mp4`: 22 sn, 1080×1920, seslendirmeli ve müzikli.
+- Kapak: `ivex-goz-testi-kapak.jpg`.
+- Görseller: `kaynak/goz-testi-suru.jpg` ve `kaynak/goz-testi-yakin.jpg`, Canva'nın görsel üreticisiyle yapıldı.
+
+**Çıkış noktası:** Rast Creative'in bukalemun videosu. Mekanizma aynı, içerik IVEX'e özgü:
+- **Açılış:** Video ilk 18 saniye bir göz testi oyunu gibi duruyor.
+- **Logo:** IVEX logosu yalnızca sonda çıkıyor.
+- **Mesaj:** "Sürüde fark edilen hep farklı olandır." Lime, IVEX'in rengi.
+
+**Kurgu:**
+
+| Süre | Görüntü | Ses |
+|---|---|---|
+| 0–7,6 sn | Gri sürünün ortasında lime koyun, yavaş yakınlaşma. "GÖZ TESTİ", altında "Gri – normal · Beyaz – gözlük zamanı · **Yeşil – çok geç**" | Anlatıcı: "Göz testi. Bu sürüde ilk neyi gördün? Gri, normal. Beyaz, gözlük zamanı. Ya yeşil?" Hızlanan kalp atışı, yükselen ses |
+| 7,6 sn | Sert kesme: lime koyun kameraya bakıyor, vuruş ve parlama | — |
+| 8–18,2 sn | Konuşmayla birlikte çıkan iri yazılar | Koyun, kalınlaştırılmış sesle: "Beni dikkatle dinle. Artık çok geç. Herkes önce beni fark etti. Senin işletmen de böyle fark edilsin mi? DM'den yeşil yaz. Yoksa…" |
+| 18,5–22,2 sn | Siyah ekran, lime nokta büyüyüp IVEX logosunun X'ine dönüşüyor. "Sosyal medya · reklam · web", "DM'den “YEŞİL” yaz" | Final vuruşu ve uzayan akor |
+
+**Ses:**
+- **Seslendirme:** `seslendir.py` ile bilgisayarda Türkçe metin okuma motoruyla üretildi. Koyunun sesi, anlatıcının yaklaşık 4 yarım ton kalınlaştırılmış ve yankılı hâli.
+- **Kontrol:** Videonun kendi sesi yazıya döküldüğünde bütün cümleler doğru çıkıyor.
+- **Müzik:** `ses.py`'den üretildi; konuşma sırasında kısılıyor. Ses seviyesi -14 LUFS.
+- **Instagram'da ekleme:** Instagram'dan ayrıca müzik eklemeyin.
+
+**Önerilen zaman:** Hafta içi 12:30 ya da 21:00. Bu video keşfet için yapıldı; marka filmini sabitlediyseniz bunu sabitlemeye gerek yok.
+
+```
+Göz testi 👀 Dürüst ol: bu sürüde ilk neyi gördün?
+
+Sürüde fark edilen hep farklı olandır. İşletmen de kalabalıkta fark edilsin istiyorsan DM'den "YEŞİL" yaz. 🟢
+
+#göztesti #sosyalmedyaajansı #dijitalpazarlama #reklamajansı #ivexmedya
+```
+- **Kapak:** Göz testi karesi (liste dolu hâli). Kapakta logo yok; video ızgarada da reklam gibi durmuyor.
+- **Alternatif metin:** Sisli bir tepede gri koyun sürüsü, ortada parlak lime yeşili tek bir koyun ve "Göz testi" yazısı. Ardından lime koyun kameraya bakıp konuşuyor; video IVEX Medya logosuyla bitiyor.
+- **DM:** "YEŞİL" yazanlara aynı gün dönün. Yanıtta ücretsiz profil analizi teklifi ve marka filmine bir bağlantı gönderin.
+- **Yorum:** Rast'ın videosundaki gibi "yorumlara yaz" isteği eklenebilir. Takipçi sayısı azken yorum az gelebilir, bu yüzden açıklamada yalnızca soru bırakıldı.
+
+**Yeniden üretme** (`ivex-icerik/uretim/` klasöründen):
+```
+python3 goz_testi.py ../ayarlar/goz-testi.json            # video + kapak
+python3 goz_testi.py ../ayarlar/goz-testi.json 3 8.5 19   # önizleme kareleri
+```
+- **Ayar dosyası:** Metinler, yazıların zamanları ve seslendirme satırları `ayarlar/goz-testi.json` içinde.
+- **Metin değişirse:**
+  1. Seslendirmeyi `seslendir.py` ile yeniden üretin (kurulumu dosyanın başında yazıyor).
+  2. Yazıların zamanlarını yeni sesin duraklarına göre ayarlayın.
+  3. Motor her seferinde biraz farklı okur; "gri" gibi kısa kelimeleri birkaç denemeyle kontrol edin.

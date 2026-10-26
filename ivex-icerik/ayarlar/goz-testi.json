@@ -3,7 +3,7 @@
   "kapak": "ivex-icerik/ivex-goz-testi-kapak.jpg",
   "gorsel_suru": "ivex-icerik/kaynak/goz-testi-suru.jpg",
   "gorsel_yakin": "ivex-icerik/kaynak/goz-testi-yakin.jpg",
-  "odak": [0.36, 0.47],
+  "odak": [0.48, 0.48],
   "ses_klasoru": "ivex-icerik/kaynak/goz-testi-ses",
   "ses_modeli": "vits-piper-tr_TR-dfki-medium",
   "satirlar": [

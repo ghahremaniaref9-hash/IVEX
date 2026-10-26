@@ -1,0 +1,52 @@
+{
+  "cikti": "ivex-icerik/ivex-marka-filmi-reels.mp4",
+  "kapak": "ivex-icerik/ivex-marka-filmi-kapak.jpg",
+  "kanca": ["HER İŞLETME", "BOŞ BİR PROFİLLE", "BAŞLAR."],
+  "izgara_baslik": "AKIŞI KURUYORUZ.",
+  "izgara_profil": "senin işletmen",
+  "izgara_alt": "9 GÜNLÜK İÇERİK · 1 GÜNDE",
+  "izgara": [
+    "mekan-sizin/haftalik-feed/sirali/1-cuma-9-ekim-bu-pazar-bjk-kocaelispor.png",
+    "mutfella-icerik/mutfella-gunun-menusu-post.jpg",
+    "mekan-sizin/haftalik-feed-2/sirali/3-carsamba-21-ekim-labne.jpg",
+    "mekan-sizin/haftalik-feed-2/sirali/2-sali-20-ekim-uefa-gecesi-crystal-palace.png",
+    "mekan-sizin/haftalik-feed/sirali/6-carsamba-14-ekim-meze-yakin-cekim.jpg",
+    "mutfella-icerik/mutfella-sicak-sicak-yolda-post.jpg",
+    "mekan-sizin/haftalik-feed-2/sirali/4-persembe-22-ekim-mac-gunu-crystal-palace.png",
+    "mekan-sizin/haftalik-feed-2/sirali/5-cuma-23-ekim-yesil-meze.jpg",
+    "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png"
+  ],
+  "unvan": "SOSYAL MEDYA · REKLAM · WEB",
+  "surec_baslik": "FİKİRDEN AKIŞA.",
+  "surec": [
+    ["ANALİZ", "profil · rakip · hedef kitle"],
+    ["PLAN", "takvim · konsept · saat"],
+    ["TASARIM", "afiş · reels · story"],
+    ["PAYLAŞIM", "açıklama · etiket · konum"],
+    ["RAPOR", "erişim · etkileşim · DM"]
+  ],
+  "surec_alt": "TEK EKİP · TEK PLAN",
+  "isler_ust": "GERÇEK İŞLETMELER · GERÇEK PAYLAŞIMLAR",
+  "isler_baslik": "SAHNE SİZİN.",
+  "isler": [
+    {"dosya": "mekan-sizin/haftalik-feed-2/sirali/2-sali-20-ekim-uefa-gecesi-crystal-palace.png", "etiket": "MEKAN SİZİN"},
+    {"dosya": "mutfella-icerik/mutfella-gunun-menusu-post.jpg", "etiket": "MUTFELLA CATERING"},
+    {"dosya": "mekan-sizin/haftalik-feed/sirali/2-cumartesi-10-ekim-meze-masasi.jpg", "etiket": "MEKAN SİZİN"},
+    {"dosya": "mutfella-icerik/mutfella-sicak-sicak-yolda-post.jpg", "etiket": "MUTFELLA CATERING"},
+    {"dosya": "mekan-sizin/haftalik-feed-2/sirali/4-persembe-22-ekim-mac-gunu-crystal-palace.png", "etiket": "MEKAN SİZİN"},
+    {"dosya": "ivex-icerik/gun2-vaka-mekan-sizin-1.png", "etiket": "VAKA ANALİZİ"},
+    {"dosya": "mekan-sizin/haftalik-feed-2/sirali/3-carsamba-21-ekim-labne.jpg", "etiket": "MEKAN SİZİN"}
+  ],
+  "hizmetler_ust": "NE YAPIYORUZ",
+  "hizmetler": ["SOSYAL MEDYA YÖNETİMİ", "REELS", "AFİŞ TASARIMI", "META & GOOGLE REKLAM", "WEB TASARIM", "İÇERİK PLANI", "STORY"],
+  "kelimeler": [
+    {"kelime": "PLAN", "dosya": "mutfella-icerik/mutfella-sicak-sicak-yolda-post.jpg", "etiket": "MUTFELLA CATERING"},
+    {"kelime": "TASARIM", "dosya": "mekan-sizin/haftalik-feed/sirali/6-carsamba-14-ekim-meze-yakin-cekim.jpg", "etiket": "MEKAN SİZİN"},
+    {"kelime": "AKIŞ", "dosya": "mekan-sizin/haftalik-feed-2/sirali/5-cuma-23-ekim-yesil-meze.jpg", "etiket": "MEKAN SİZİN"}
+  ],
+  "son": {
+    "satirlar": [["Akışı", "beyaz"], ["biz kurarız.", "lime"]],
+    "buton": "DM'DEN “PROFİL” YAZ",
+    "alt": ["Profilini inceleyip", "ücretsiz yol haritası çıkaralım."]
+  }
+}

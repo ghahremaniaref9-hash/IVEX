@@ -141,3 +141,65 @@ www.ivex.com.tr
 - **Story:** Reels'i story'de paylaşın + **Soru** çıkartması: "İşletmenin dijitalde en büyük sorunu ne?"
 
 Yeniden üretme (`uretim/` klasöründen): `python3 konusma_kurgu.py ../ayarlar/ivex-tanitim-video.json`. Kesimler, yakınlaştırmalar, altyazı metni ve hizmet etiketleri `ayarlar/ivex-tanitim-video.json` içinde.
+
+---
+
+## Ek: IVEX marka filmi ("Akışı biz kurarız")
+
+**Dosyalar:**
+- `ivex-marka-filmi-reels.mp4`: 29 sn, 1080×1920, sessiz.
+- Kapak: `ivex-marka-filmi-kapak.jpg`.
+
+**Çıkış noktası:** Rast Creative'in marka filmi. Format alındı, içerik IVEX'e özgü:
+- **Rast'ın kurgusu:** Karanlıkta bir ışık noktası ve tek bir benzetme ("ışık"), ardından süreç, gerçek işler ve teklif.
+- **IVEX'in benzetmesi:** Instagram'ın **"+" (yeni gönderi) butonu**. Boş profilde yanıp sönen "+" bir akışa dönüşüyor, sonra 45° dönüp IVEX logosundaki **X** oluyor.
+
+**Kurgu:**
+
+| Süre | Sahne |
+|---|---|
+| 0–3,6 sn | **Kanca:** "Her işletme boş bir profille başlar." Yanıp sönen lime "+", "0 gönderi · 0 takipçi" |
+| 3,6–7,6 sn | **"Akışı kuruyoruz."** Gerçek gönderiler ızgaraya tek tek düşüyor, sayaç 0'dan 9'a çıkıyor, "9 günlük içerik · 1 günde" |
+| 7,6–11 sn | **Logo:** "+" dönüp X oluyor, IVE kayarak geliyor, lime ışın patlaması. "Sosyal medya · reklam · web" |
+| 11–15,6 sn | **"Fikirden akışa."** 5 adımlık halka: Analiz → Plan → Tasarım → Paylaşım → Rapor, "Tek ekip · tek plan" |
+| 15,6–19,6 sn | **"Sahne sizin."** Gerçek işler kart karuselinde: Mekan Sizin, Mutfella Catering, vaka analizi |
+| 19,6–22,6 sn | **"Ne yapıyoruz":** Hizmetler eğik kayan şeritlerde, sırayla parlıyor |
+| 22,6–25 sn | **"PLAN. TASARIM. AKIŞ."** Harflerin içinde müşteri fotoğrafları |
+| 25–29 sn | **Kapanış:** "Akışı biz kurarız." + "DM'den “PROFİL” yaz" + www.ivex.com.tr |
+
+**Müzik:**
+- **Nasıl eklenir:** Video sessiz; müziği Instagram'da, lisanslı kütüphaneden ekleyin.
+- **Aranacak kelimeler:** "cinematic", "epic", "trailer" ya da "brand intro". Ağır başlayıp yükselen bir parça seçin.
+- **Ritim:** Sahne geçişleri 0,5 sn'lik ritme oturuyor. Parçanın vuruşu logonun çıktığı ana (7,6–8,8 sn) denk gelirse en iyi sonuç alınır.
+
+**Önerilen zaman ve kullanım:**
+- **Zaman:** Hafta içi 20:00.
+- **Profil:** Paylaştıktan sonra **profile sabitleyin**; profile yeni gelen biri ilk bunu görsün.
+- **Öne Çıkanlar:** "İŞLERİMİZ" başlığına ekleyin.
+
+```
+Her işletme boş bir profille başlar. ➕
+
+Biz o profili bir akışa çeviriyoruz:
+🔍 Analiz: profil, rakip, hedef kitle
+🗓️ Plan: takvim, konsept, paylaşım saati
+🎨 Tasarım: afiş, Reels, story
+📲 Paylaşım ve rapor: erişim, etkileşim, gelen mesajlar
+
+Mekan Sizin'in 9 günlük içeriğini 1 günde hazırladık. Sıradaki akış senin işletmenin olsun.
+
+DM'den "PROFİL" yaz, profilini inceleyip ücretsiz yol haritanı çıkaralım. 📩
+🌐 www.ivex.com.tr
+
+#sosyalmedyaajansı #sosyalmedyayönetimi #dijitalpazarlama #reklamajansı #ivexmedya
+```
+- **Alternatif metin:** IVEX Medya marka filmi. Boş bir Instagram profilinde yanıp sönen "+" butonu, gerçek müşteri gönderileriyle dolan bir ızgaraya dönüşüyor. "+" dönüp IVEX logosunun X'i oluyor. Ardından 5 adımlık çalışma süreci, Mekan Sizin ve Mutfella Catering için yapılan işler ve hizmet listesi geliyor. Video "Akışı biz kurarız" sözüyle bitiyor.
+- **Reklam:** Güven veren bir video; soğuk kitleden çok, profili ziyaret edenlere ya da tanıtım Reels'ini izleyenlere gösterildiğinde işe yarar. "Öne çıkar"da amaç olarak **Mesajlar**'ı seçin.
+- **Alkol:** Dikilitaş Shop'un içki kampanyası görselleri bu filmde de kullanılmadı.
+
+**Yeniden üretme** (`ivex-icerik/uretim/` klasöründen):
+```
+python3 marka_filmi.py ../ayarlar/marka-filmi.json            # video + kapak
+python3 marka_filmi.py ../ayarlar/marka-filmi.json 5 9.5 26   # yalnızca bu saniyelerin önizleme kareleri
+```
+Metinler, görseller ve hizmet listesi `ayarlar/marka-filmi.json` dosyasında.

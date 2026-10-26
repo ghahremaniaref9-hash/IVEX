@@ -147,30 +147,31 @@ Yeniden üretme (`uretim/` klasöründen): `python3 konusma_kurgu.py ../ayarlar/
 ## Ek: IVEX marka filmi ("Akışı biz kurarız")
 
 **Dosyalar:**
-- `ivex-marka-filmi-reels.mp4`: 29 sn, 1080×1920, sessiz.
+- `ivex-marka-filmi-reels.mp4`: 30 sn, 1080×1920, **kendi müziğiyle**.
 - Kapak: `ivex-marka-filmi-kapak.jpg`.
 
 **Çıkış noktası:** Rast Creative'in marka filmi. Format alındı, içerik IVEX'e özgü:
 - **Rast'ın kurgusu:** Karanlıkta bir ışık noktası ve tek bir benzetme ("ışık"), ardından süreç, gerçek işler ve teklif.
-- **IVEX'in benzetmesi:** Instagram'ın **"+" (yeni gönderi) butonu**. Boş profilde yanıp sönen "+" bir akışa dönüşüyor, sonra 45° dönüp IVEX logosundaki **X** oluyor.
+- **IVEX'in benzetmesi:** Instagram'ın **"+" (yeni gönderi) butonu**. Boş profilde atan "+" bir akışa dönüşüyor, sonra 45° dönüp IVEX logosundaki **X** oluyor.
 
-**Kurgu:**
+**Kurgu ve müzik:** Bütün kesmeler ve yazılar 120 BPM'lik vuruş ızgarasında.
 
-| Süre | Sahne |
-|---|---|
-| 0–3,6 sn | **Kanca:** "Her işletme boş bir profille başlar." Yanıp sönen lime "+", "0 gönderi · 0 takipçi" |
-| 3,6–7,6 sn | **"Akışı kuruyoruz."** Gerçek gönderiler ızgaraya tek tek düşüyor, sayaç 0'dan 9'a çıkıyor, "9 günlük içerik · 1 günde" |
-| 7,6–11 sn | **Logo:** "+" dönüp X oluyor, IVE kayarak geliyor, lime ışın patlaması. "Sosyal medya · reklam · web" |
-| 11–15,6 sn | **"Fikirden akışa."** 5 adımlık halka: Analiz → Plan → Tasarım → Paylaşım → Rapor, "Tek ekip · tek plan" |
-| 15,6–19,6 sn | **"Sahne sizin."** Gerçek işler kart karuselinde: Mekan Sizin, Mutfella Catering, vaka analizi |
-| 19,6–22,6 sn | **"Ne yapıyoruz":** Hizmetler eğik kayan şeritlerde, sırayla parlıyor |
-| 22,6–25 sn | **"PLAN. TASARIM. AKIŞ."** Harflerin içinde müşteri fotoğrafları |
-| 25–29 sn | **Kapanış:** "Akışı biz kurarız." + "DM'den “PROFİL” yaz" + www.ivex.com.tr |
+| Süre | Görüntü | Ses |
+|---|---|---|
+| 0–4 sn | **Kanca:** "Her işletme boş bir profille başlar." "+" butonu her vuruşta atıyor, "0 gönderi · 0 takipçi" | Koyu zemin, "+" ile aynı anda kalp atışı, her yazıda kısa efekt, "BAŞLAR."da derin vuruş |
+| 4–7,5 sn | **"Akışı kuruyoruz."** Gerçek gönderiler sekizlik notalarla ızgaraya düşüyor, "9 günlük içerik · 1 günde" | Atan bas; her gönderi yükselen bir nota, rozet "pop" sesi; sonda yükselen gerilim ve trampet rulosu |
+| 7,5–10 sn | **Logo:** "+" dönüyor, **8,0 sn'de X oluyor**. Lime parlama, IVE kayarak geliyor, "Sosyal medya · reklam · web" | **Drop:** büyük vuruş, akorlar başlıyor, alt yazıda parıltı |
+| 10–15 sn | **"Fikirden akışa."** 5 adım, her biri bir vuruşta | Yarım tempolu ritim başlıyor; her adımda yükselen bir tom sesi |
+| 15–19 sn | **"Sahne sizin."** Kartlar her vuruşta bir kayıyor | Her kayışta hışırtı ve kart oturuşu |
+| 19–23 sn | **"Ne yapıyoruz":** Hizmetler vuruşla sırayla parlıyor | Her hizmette bir synth vurgusu |
+| 23–26 sn | **"PLAN. TASARIM. AKIŞ."** Kelimeler saniyede bir | Ritim duruyor, her kelimede vuruş ve lime parlama, sonda yükseliş |
+| 26–30 sn | **Kapanış:** "Akışı biz kurarız." + "DM'den “PROFİL” yaz" + www.ivex.com.tr | Final vuruşu, uzayan akor, son 2 sn'de kısılma |
 
-**Müzik:**
-- **Nasıl eklenir:** Video sessiz; müziği Instagram'da, lisanslı kütüphaneden ekleyin.
-- **Aranacak kelimeler:** "cinematic", "epic", "trailer" ya da "brand intro". Ağır başlayıp yükselen bir parça seçin.
-- **Ritim:** Sahne geçişleri 0,5 sn'lik ritme oturuyor. Parçanın vuruşu logonun çıktığı ana (7,6–8,8 sn) denk gelirse en iyi sonuç alınır.
+**Müziğin özellikleri:**
+- **Kaynak:** Tamamen kodla üretildi (`uretim/ses.py`), telifsiz ve IVEX'e ait. Videoyu reklamla öne çıkarırken müzik sorunu çıkmaz.
+- **Karakter:** Referans filmdeki gibi koyu, baskın bas, yarım tempolu bir ritim; La minör (Am – F – C – G).
+- **Ses seviyesi:** -14 LUFS'a ayarlandı; Instagram'ın hedef seviyesi bu.
+- **Instagram'da ekleme:** Instagram'dan ayrıca müzik eklemeyin. Trend bir ses kullanmak isterseniz videonun kendi sesini kapatmanız gerekir; o zaman vuruş senkronu kaybolur.
 
 **Önerilen zaman ve kullanım:**
 - **Zaman:** Hafta içi 20:00.
@@ -199,7 +200,7 @@ DM'den "PROFİL" yaz, profilini inceleyip ücretsiz yol haritanı çıkaralım. 
 
 **Yeniden üretme** (`ivex-icerik/uretim/` klasöründen):
 ```
-python3 marka_filmi.py ../ayarlar/marka-filmi.json            # video + kapak
+python3 marka_filmi.py ../ayarlar/marka-filmi.json            # müzikli video + kapak
 python3 marka_filmi.py ../ayarlar/marka-filmi.json 5 9.5 26   # yalnızca bu saniyelerin önizleme kareleri
 ```
-Metinler, görseller ve hizmet listesi `ayarlar/marka-filmi.json` dosyasında.
+Metinler, görseller ve hizmet listesi `ayarlar/marka-filmi.json` dosyasında. Sahne ve vuruş zamanları `marka_filmi.py`'nin başında tanımlı; müzik aynı zamanlardan üretildiği için bir zamanlama değişince ses de kendiliğinden kayar.

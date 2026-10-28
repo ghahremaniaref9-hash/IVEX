@@ -126,7 +126,7 @@ Bu tempoya kaç puan verirsin? Yorumlara yaz. 👇
 ```
 Her şeyden önce hijyen. 🧤
 
-Yemek siparişinde en çok neyi merak edersiniz? Biz söyleyelim: mutfağı. 👀 Bizim için hijyen bir ayrıntı değil, işin kendisi. Eldivenler, boneler, pırıl pırıl tezgâhlar ve aynı titizlikle çalışan bir ekip… Her tabak, temiz mutfakta titiz ellerle hazırlanır.
+Yemek siparişinde en çok neyi merak edersiniz? Biz söyleyelim: mutfağı. 👀 Bizim için hijyen bir ayrıntı değil, işin kendisi. Eldivenler, boneler, pırıl pırıl tezgâhlar… Her tabak, mevzuata uygun hijyen standartlarında usta şeflerimiz tarafından hazırlanır.
 
 Ofisinizde yemek işini kim organize ediyorsa bu gönderiyi ona gönderin. 📩
 

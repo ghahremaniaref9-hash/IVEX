@@ -138,20 +138,26 @@ def subline(draw, x, y, items):
         x += draw.textlength(item, font=fnt)
 
 
+def wrap_lines(draw, text, fnt, width):
+    """Word-wrap `text` to `width`; a newline in the text forces a break."""
+    lines = []
+    for para in text.split("\n"):
+        line = ""
+        for word in para.split():
+            trial = f"{line} {word}".strip()
+            if draw.textlength(trial, font=fnt) > width and line:
+                lines.append(line)
+                line = word
+            else:
+                line = trial
+        lines.append(line)
+    return lines
+
+
 def wrapped(draw, x, y, text, fnt, width, fill=WHITE, leading=1.3):
     """Draw `text` word-wrapped to `width`; returns the y below the last line."""
-    words, line = text.split(), ""
-    lines = []
-    for word in words:
-        trial = f"{line} {word}".strip()
-        if draw.textlength(trial, font=fnt) > width and line:
-            lines.append(line)
-            line = word
-        else:
-            line = trial
-    lines.append(line)
     step = round(fnt.size * leading)
-    for line in lines:
+    for line in wrap_lines(draw, text, fnt, width):
         draw.text((x, y), line, font=fnt, fill=fill)
         y += step
     return y
@@ -193,12 +199,19 @@ def post(item, size):
     asc = fnt.getbbox("H")[1]
     y_line = footer(ink)
     if item["duzen"] == "alt":
-        sub_y = y_line - 46 - 40
+        # "alt" is either a list of short items (one line, red dots between) or a sentence that may wrap
+        sub_font = font("Medium", 34)
+        sentence = isinstance(item["alt"], str)
+        extra = len(wrap_lines(draw, item["alt"], sub_font, W - 2 * MARGIN)) - 1 if sentence else 0
+        sub_y = y_line - 46 - 40 - extra * round(34 * 1.3)
         head_bottom = sub_y - 34
         head_y = head_bottom - (step * (len(lines) - 1) + fnt.getbbox("Hg")[3])
         draw.rectangle((MARGIN, head_y + asc - 44, MARGIN + 96, head_y + asc - 34), fill=RED)
         headline(draw, MARGIN, head_y, lines, size)
-        subline(draw, MARGIN, sub_y, item["alt"])
+        if sentence:
+            wrapped(draw, MARGIN, sub_y, item["alt"], sub_font, W - 2 * MARGIN)
+        else:
+            subline(draw, MARGIN, sub_y, item["alt"])
     else:
         head_y = 45 + 40 + 56 + 92 - asc
         draw.rectangle((MARGIN, head_y + asc - 44, MARGIN + 96, head_y + asc - 34), fill=RED)

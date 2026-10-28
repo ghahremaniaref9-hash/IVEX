@@ -5,8 +5,8 @@ Gönderiler 1080x1440 çıkar: Instagram profil ızgarasının 3:4 oranıyla bir
 kırparsa da kesilmeyecek alanda (üstten ve alttan 45 px içeride) durur.
 Hikâyeler 1080x1920 çıkar; yazılar üstteki profil çubuğunun altında, alttaki mesaj çubuğunun üstünde kalır,
 ortadaki boşluk uygulamada eklenecek anket / soru / kaydırıcı çıkartması içindir.
-Tasarım önceki Mutfella gönderilerinin çizgisini izler: kırmızı etiket, kalın beyaz başlık, kırmızı nokta,
-altta "MUTFELLA CATERING · Kurumsal Yemek Hizmeti".
+Tasarım önceki Mutfella gönderilerinin çizgisini izler: kırmızı etiket, kalın beyaz başlık, kırmızı nokta;
+altta yuvarlak Mutfella logosu, "MUTFELLA CATERING · Kurumsal Yemek Hizmeti" ve web adresi.
 "video" olan günler ızgarada boş, numaralı kutu olarak kalır; videolar gelince yerlerine girer.
 """
 import json
@@ -25,6 +25,8 @@ MARGIN = 64
 RED = (200, 16, 46)
 WHITE = (255, 255, 255)
 HEAD_MAX, HEAD_MIN = 104, 72
+LOGO = os.path.join(ROOT, "mutfella-icerik", "marka", "mutfella-logo.png")
+SITE = "mutfella.com.tr"
 
 
 def repo(p):
@@ -155,13 +157,21 @@ def wrapped(draw, x, y, text, fnt, width, fill=WHITE, leading=1.3):
     return y
 
 
-def footer(draw, y_line=H - 45 - 112):
+def footer(ink, y_line=H - 45 - 140):
+    """Brand band under a hairline: round logo, name and service line on the left, web address on the right."""
+    draw = ImageDraw.Draw(ink)
     draw.line((MARGIN, y_line, W - MARGIN, y_line), fill=(255, 255, 255, 90), width=2)
-    brand, tag = font("Bold", 26), font("Medium", 25)
-    y = y_line + 38
-    tracked(draw, (MARGIN, y), "MUTFELLA CATERING", brand, WHITE, 7)
-    text = "Kurumsal Yemek Hizmeti"
-    draw.text((W - MARGIN - draw.textlength(text, font=tag), y + 1), text, font=tag, fill=(255, 255, 255, 225))
+    d = 92
+    logo = Image.open(LOGO).convert("RGBA").resize((d, d), Image.LANCZOS)
+    top = y_line + 24
+    ink.alpha_composite(logo, (MARGIN, top))
+    cy = top + d / 2
+    brand, tag, site = font("Bold", 26), font("Medium", 23), font("Bold", 30)
+    x = MARGIN + d + 24
+    tracked(draw, (x, cy - 31 - brand.getbbox("M")[1]), "MUTFELLA CATERING", brand, WHITE, 7)
+    draw.text((x, cy + 7 - tag.getbbox("K")[1]), "Kurumsal Yemek Hizmeti", font=tag, fill=(255, 255, 255, 225))
+    box = site.getbbox(SITE)
+    draw.text((W - MARGIN - draw.textlength(SITE, font=site), cy - (box[1] + box[3]) / 2), SITE, font=site, fill=WHITE)
     return y_line
 
 
@@ -181,7 +191,7 @@ def post(item, size):
     fnt = font("ExtraBold", size)
     step = round(size * 1.04)
     asc = fnt.getbbox("H")[1]
-    y_line = footer(draw)
+    y_line = footer(ink)
     if item["duzen"] == "alt":
         sub_y = y_line - 46 - 40
         head_bottom = sub_y - 34
@@ -218,7 +228,7 @@ def story(item, size):
     draw.rectangle((MARGIN, 250 + 56 + 48, MARGIN + 96, 250 + 56 + 58), fill=RED)
     bottom = headline(draw, MARGIN, head_y, item["baslik"], size)
     wrapped(draw, MARGIN, bottom + 30, item["alt"], font("Medium", 40), W - 2 * MARGIN)
-    footer(draw, SH - 340 - 100)
+    footer(ink, SH - 340 - 130)
     return with_shadow(img, ink)
 
 

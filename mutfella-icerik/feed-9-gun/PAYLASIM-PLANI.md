@@ -11,6 +11,7 @@ Hesap: **@kuzenler_mutfak** · Fotoğraflar: Drive › İvex › Mutfella › Ç
 - **Ölçüler:**
   - Gönderiler 1080×1440 (3:4), profil ızgarasıyla birebir aynı oran. Yüklerken kırpma ekranında **3:4** seç. Uygulama 4:5'e kırparsa da yazılar kesilmez.
   - Hikâyeler 1080×1920. Ortadaki boş alan, uygulamada eklenecek çıkartma (anket, soru, test) içindir.
+- **Logo ve web sitesi:** Her gönderi ve hikâyenin alt bandında yuvarlak Mutfella logosu, "MUTFELLA CATERING · Kurumsal Yemek Hizmeti" ve **mutfella.com.tr** var. Açıklamaların sonuna da 🌐 mutfella.com.tr satırı eklendi.
 - **Klasörler:** `gonderiler/` (6 fotoğraf gönderisi), `hikayeler/` (9 hikâye), `izgara-onizleme.jpg`, `izgara-paylasim-sirasi.jpg` (kutularda gün numaraları var).
 
 ## Takvim
@@ -55,6 +56,7 @@ Et sotenin hazırlığı tezgâhta başlıyor: kırmızı biber, yeşil biber, r
 Sen hangi takımdasın: kırmızı biber 🔴 mi, yeşil biber 🟢 mi? Yorumlara bırak.
 
 Mutfella Catering · Kurumsal yemek ve ofise öğle yemeği
+🌐 mutfella.com.tr
 
 #kurumsalyemek #catering #evyemekleri #ofisyemeği #mutfella
 ```
@@ -70,6 +72,8 @@ Sesini aç, gerisini tencere anlatsın. 🔊
 
 Öğle yemeğini dört gözle bekleyen ofis arkadaşına gönder. 📩
 
+🌐 mutfella.com.tr
+
 #kurumsalyemek #catering #mutfaktan #evyemekleri #mutfella
 ```
 
@@ -82,6 +86,8 @@ Kuşbaşılar tepsi tepsi hazırlanıyor, sosuna kavuşmak için sırasını bek
 
 Sence bu etin gideceği yer et sote mi, tas kebabı mı? Tek kelimeyle yorumlara yaz. 👇
 
+🌐 mutfella.com.tr
+
 #kurumsalyemek #catering #etsote #evyemekleri #mutfella
 ```
 
@@ -93,6 +99,8 @@ Her tabağın arkasında bir gülüş var. 😊
 Ofislere giden yemekleri, işini severek yapan bir ekip hazırlıyor. Bu hafta sonu mutfağımızın kalbinden selam olsun.
 
 Ofiste en çok hangi ev yemeğini özlüyorsun? Yorumlara yaz, ekibimize iletelim. ❤️
+
+🌐 mutfella.com.tr
 
 #kurumsalyemek #catering #mutfakekibi #evyemekleri #mutfella
 ```
@@ -108,6 +116,8 @@ Mutfakta bir sabah. ⏱️
 
 Bu tempoya kaç puan verirsin? Yorumlara yaz. 👇
 
+🌐 mutfella.com.tr
+
 #kurumsalyemek #catering #mutfakekibi #mutfaktan #mutfella
 ```
 
@@ -120,6 +130,8 @@ Eldiven, bone, paslanmaz tezgâh ve aynı tempoda çalışan bir ekip… Her por
 
 Ofisinizde yemek işini kim organize ediyorsa bu gönderiyi ona gönderin. 📩
 
+🌐 mutfella.com.tr
+
 #kurumsalyemek #catering #hijyen #ofisyemeği #mutfella
 ```
 
@@ -131,6 +143,8 @@ Ekibiniz küçük de olsa kalabalık da, öğle yemeği derdi bizde. 🍽️
 Porsiyonlu paketleme, sıcak teslim ve kişi sayınıza göre hazırlanan teklif… Gerisini biz düşünürüz.
 
 👉 Teklif için DM'den “MENÜ” yazmanız yeterli.
+
+🌐 mutfella.com.tr
 
 #kurumsalyemek #catering #ofisyemeği #toplantıyemeği #mutfella
 ```
@@ -148,6 +162,8 @@ Hazırlanır, paketlenir, mühürlenir… ve öğle arası masanızda.
 
 “Bugün ne yesek?” diye düşünen ofis arkadaşını etiketle. 👇
 
+🌐 mutfella.com.tr
+
 #kurumsalyemek #catering #ofisyemeği #evyemekleri #mutfella
 ```
 
@@ -160,6 +176,8 @@ Yumuşacık patates püresi, sosuna doymuş et ve biber. Ev yemeği tadında, ku
 
 Bu tabağa 10 üzerinden kaç verirsin? Puanını yorumlara yaz. 👇
 Kaydet, bir sonraki ofis menüsünde aklında olsun. 📌
+
+🌐 mutfella.com.tr
 
 #kurumsalyemek #catering #etsote #evyemekleri #mutfella
 ```
@@ -178,7 +196,7 @@ Kaydet, bir sonraki ofis menüsünde aklında olsun. 📌
 | 4 | 10:30 | `4-cumartesi-31-ekim-hikaye-soru.jpg` | **Soru çıkartması:** "Ofiste en çok özlediğin ev yemeği?" |
 | 5 | 11:00 | `5-pazar-1-kasim-hikaye-anket.jpg` | **Anket:** "Şart 😋" / "Olmasa da olur". Aynı gün 4. günün soru cevaplarından 2–3 tanesini de hikâyede paylaş. |
 | 6 | 09:30 | `6-pazartesi-2-kasim-hikaye-anket.jpg` | **Anket (3 seçenek):** "12.00" / "12.30" / "13.00" |
-| 7 | 09:30 | `7-sali-3-kasim-hikaye-teklif.jpg` | **Bağlantı çıkartması:** WhatsApp hattı ya da web sitesi varsa, metin "Teklif al". Yoksa çıkartmasız paylaş. |
+| 7 | 09:30 | `7-sali-3-kasim-hikaye-teklif.jpg` | **Bağlantı çıkartması:** https://mutfella.com.tr, çıkartma metni "Teklif al" |
 | 8 | 09:30 | `8-carsamba-4-kasim-hikaye-test.jpg` | **Test (quiz):** "Biber" / "Domates" / "Ananas 🍍", doğru cevap: **Ananas** |
 | 9 | 09:30 | `9-persembe-5-kasim-hikaye-puan.jpg` | **Anket:** "10/10 🔥" / "11/10 🤤" |
 
@@ -196,8 +214,9 @@ Hikâyeleri öne çıkanlarda iki başlık altında topla:
 2. **DM paylaşımları ve etiketler:** 2. ve 6. günlerde "ofis arkadaşına / yemek işini organize edene gönder", 8. günde "arkadaşını etiketle" cümlesi var. Gönderinin DM'den paylaşılması, Instagram'ın yeni kitleye gösterme kararında en güçlü sinyal.
 3. **Kaydetmeler:** 9. gün "kaydet" çağrısı var. Kaydedilen gönderi uzun süre önerilmeye devam eder.
 4. **Tek kelimelik sorular:** Kırmızı mı yeşil mi, et sote mi tas kebabı mı, puan kaç gibi. Cevabı kolay soruya yorum gelir.
-5. **"MENÜ" yazan herkese** aynı gün dönüş yap. Bu 9 günün asıl hedefi bu mesajlar.
-6. **Reels kapakları:** Videolar gelince her birine bu tasarımla (kırmızı etiket ve kalın başlık) kapak hazırlarım, böylece ızgara bütün görünür.
+5. **Biyografi:** Açıklamadaki adres tıklanmaz. Profilin bağlantı alanında https://mutfella.com.tr olduğundan emin ol; açıklamalar ve hikâyeler oraya yönlendiriyor.
+6. **"MENÜ" yazan herkese** aynı gün dönüş yap. Bu 9 günün asıl hedefi bu mesajlar.
+7. **Reels kapakları:** Videolar gelince her birine bu tasarımla (kırmızı etiket ve kalın başlık) kapak hazırlarım, böylece ızgara bütün görünür.
 
 ## Yeniden üretmek
 
@@ -206,4 +225,4 @@ cd mutfella-icerik/uretim
 python3 feed.py ../feed-9-gun/ayarlar.json
 ```
 
-Metinler, kırpma merkezleri ve tarihler `ayarlar.json` içinde. Fotoğraflar `kaynak/` klasöründe (Drive'daki orijinal dosya adlarıyla).
+Metinler, kırpma merkezleri ve tarihler `ayarlar.json` içinde. Fotoğraflar `kaynak/` klasöründe (Drive'daki orijinal dosya adlarıyla). Logo: `mutfella-icerik/marka/mutfella-logo.png` (işletmenin gönderdiği görselden yuvarlak olarak kesildi; kaynak dosya aynı klasörde).

@@ -23,7 +23,7 @@ Hesap: **@kuzenler_mutfak** · Fotoğraflar: Drive › İvex › Mutfella › Ç
 | 3 | 30 Ekim Cuma | 11:30 | Gönderi · Bol etli, bol özenli. | 09:30 emoji kaydırıcı · 11:35 gönderiyi paylaş |
 | 4 | 31 Ekim Cumartesi | 12:30 | Gönderi · Lezzetin arkasındaki yüz. | 10:30 soru · 12:35 gönderiyi paylaş |
 | 5 | 1 Kasım Pazar | 19:30 | **VİDEO 2** (Reels) | 11:00 anket · 19:35 Reels'i paylaş |
-| 6 | 2 Kasım Pazartesi | 11:30 | Gönderi · Hijyen standart, özen ekstra. | 09:30 anket (3 seçenek) · 11:35 gönderiyi paylaş |
+| 6 | 2 Kasım Pazartesi | 11:30 | Gönderi · Her şeyden önce hijyen. | 09:30 anket (3 seçenek) · 11:35 gönderiyi paylaş |
 | 7 | 3 Kasım Salı | 11:30 | Gönderi · Ofisiniz kaç kişi? | 09:30 teklif · 11:35 gönderiyi paylaş |
 | 8 | 4 Kasım Çarşamba | 19:30 | **VİDEO 3** (Reels) | 09:30 test · 19:35 Reels'i paylaş |
 | 9 | 5 Kasım Perşembe | 11:30 | Gönderi · Püre yatağında et sote. | 09:30 anket · 11:35 gönderiyi paylaş |
@@ -124,9 +124,9 @@ Bu tempoya kaç puan verirsin? Yorumlara yaz. 👇
 ### 6. Gün · 2 Kasım Pazartesi · 11:30 · `6-pazartesi-2-kasim-ekip-hijyen.jpg`
 
 ```
-Yemek siparişinde en çok neyi merak edersiniz? Biz söyleyelim: mutfağı. 👀
+Her şeyden önce hijyen. 🧤
 
-Eldiven, bone, paslanmaz tezgâh ve aynı tempoda çalışan bir ekip… Her porsiyon bu düzenin içinden geçiyor.
+Yemek siparişinde en çok neyi merak edersiniz? Biz söyleyelim: mutfağı. 👀 Bizim için hijyen bir ayrıntı değil, işin kendisi. Eldivenler, boneler, pırıl pırıl tezgâhlar ve aynı titizlikle çalışan bir ekip… Her tabak, temiz mutfakta titiz ellerle hazırlanır.
 
 Ofisinizde yemek işini kim organize ediyorsa bu gönderiyi ona gönderin. 📩
 

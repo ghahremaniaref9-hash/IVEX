@@ -1,0 +1,24 @@
+{
+  "cikti": "ivex-icerik/ivex-siparis-reklam-reels.mp4",
+  "kapak": "ivex-icerik/ivex-siparis-reklam-kapak.jpg",
+  "harita": "ivex-icerik/kaynak/harita/tr-iller.json",
+  "kanca": ["Siparişlerinin", "artmasını mı", "istiyorsun?"],
+  "merkez": {"etiket": "İŞLETMEN", "konum": [35.0, 39.05]},
+  "sehirler": [
+    ["İstanbul", 28.98, 41.01],
+    ["İzmir", 27.14, 38.42],
+    ["Trabzon", 39.72, 41.00],
+    ["Antalya", 30.71, 36.90],
+    ["Gaziantep", 37.38, 37.07],
+    ["Ankara", 32.85, 39.93]
+  ],
+  "bildirim": "Yeni sipariş",
+  "mesaj": ["Türkiye'nin", "dört bir yanına", "ulaş!"],
+  "sayac": {"etiket": "SİPARİŞLER", "baslangic": 36, "bitis": 1284, "not": "Temsili gösterimdir"},
+  "son": {
+    "unvan": "SOSYAL MEDYA · REKLAM · WEB",
+    "satirlar": [["İşletmeni büyütmeye", "beyaz"], ["hazır mısın?", "lime"]],
+    "buton": "DM'DEN “BÜYÜ” YAZ",
+    "alt": ["Satış odaklı reklam ve sosyal medya yönetimi"]
+  }
+}

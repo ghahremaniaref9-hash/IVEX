@@ -258,3 +258,44 @@ python3 goz_testi.py ../ayarlar/goz-testi.json 3 8.5 19   # önizleme kareleri
   1. Seslendirmeyi `seslendir.py` ile yeniden üretin (kurulumu dosyanın başında yazıyor).
   2. Yazıların zamanlarını yeni sesin duraklarına göre ayarlayın.
   3. Motor her seferinde biraz farklı okur; "gri" gibi kısa kelimeleri birkaç denemeyle kontrol edin.
+
+---
+
+## Ek: "Türkiye'nin dört bir yanına" sipariş reklamı (15 sn)
+
+**Dosyalar:** `ivex-siparis-reklam-reels.mp4` (1080×1920, 15 sn, müzikli, -14 LUFS) · `ivex-siparis-reklam-kapak.jpg`
+**Hedef:** Ürün satan ve siparişini artırmak isteyen işletmeler. Hem organik Reels hem Meta reklamı olarak kullanılabilir.
+
+| Süre | Görüntü | Ses |
+|---|---|---|
+| 0–3 sn | Koyu zeminde Türkiye haritası noktalar halinde batıdan doğuya belirir; kamera eğik açıdan haritaya iner. "Siparişlerinin / **artmasını mı** / istiyorsun?" | Yükselen bas, her satırda geçiş sesi, gerilim |
+| 3 sn | Haritanın ortasında lime "İŞLETMEN" noktası, parlama | Büyük vuruş, ritim başlar |
+| 3,5–6,5 sn | Her vuruşta bir şehre (İstanbul, İzmir, Trabzon, Antalya, Gaziantep, Ankara) haritanın üstünde yükselen ışıklı yol; uçta paket, "+1" ve üstte "Yeni sipariş · şehir · şimdi" bildirimi | Her varışta yükselen bir nota |
+| 8–12 sn | Yollar 75 ile çoğalır, harita merkezden dışa doğru yanar. "Türkiye'nin / dört bir yanına / **ulaş!**" ve temsili sipariş sayacı (36 → 1.284, "Temsili gösterimdir") | Hızlanan notalar, yükselen ses |
+| 12–15 sn | IVEX logosu, "Sosyal medya · reklam · web", "İşletmeni büyütmeye / **hazır mısın?**", "DM'DEN “BÜYÜ” YAZ", www.ivex.com.tr | Final vuruşu, kapanış akoru |
+
+- **Harita:** 81 ilin gerçek sınırlarından çizildi (`kaynak/harita/tr-iller.json`), şekil ve şehir konumları doğru.
+- **Rakamlar:** Sayaç ve "+1"ler temsilî, ekranda "Temsili gösterimdir" yazıyor; garanti edilen bir sonuç yok.
+- **Müzik:** `ses.py`'den üretildi, telifsiz. Instagram'dan ayrıca müzik eklemeyin.
+
+**Önerilen zaman:** Hafta içi 11:30 ya da 20:30. Reklam olarak çıkacaksa hedef: Türkiye, 25–55 yaş, ilgi alanları e-ticaret, küçük işletme, girişimcilik, online alışveriş; amaç "Mesajlar" (DM).
+
+```
+Siparişlerin sadece bulunduğun şehirde mi kalıyor? 📦
+
+Doğru reklam ve güçlü bir sosyal medya ile ürünlerin İstanbul'dan Gaziantep'e, Türkiye'nin dört bir yanına ulaşabilir. Hedef kitleni bulalım, reklamını kuralım, siparişlerini birlikte büyütelim.
+
+İşletmeni büyütmeye hazırsan DM'den "BÜYÜ" yaz. 🚀
+
+#eticaret #dijitalpazarlama #instagramreklamı #sosyalmedyaajansı #ivexmedya
+```
+- **Kapak:** Kanca karesi ("Siparişlerinin artmasını mı istiyorsun?" ve harita, altta küçük IVEX logosu). Logo 3:4 ızgara kırpmasının içinde.
+- **Alternatif metin:** Koyu yeşil zeminde Türkiye haritası. Ortadaki işletme noktasından İstanbul, İzmir, Trabzon, Antalya, Gaziantep ve Ankara'ya ışıklı yollar uzanıyor, şehirlerde paket ve "yeni sipariş" bildirimleri beliriyor; video IVEX logosu ve "İşletmeni büyütmeye hazır mısın?" yazısıyla bitiyor.
+- **DM:** "BÜYÜ" yazanlara aynı gün dönün: ne sattıklarını ve hangi şehirlere gönderdiklerini sorun, ücretsiz profil analizini teklif edin.
+
+**Yeniden üretme** (`ivex-icerik/uretim/` klasöründen):
+```
+python3 siparis_reklami.py ../ayarlar/siparis-reklami.json              # video + kapak (~1,5 dk)
+python3 siparis_reklami.py ../ayarlar/siparis-reklami.json 2.7 5 10 14  # önizleme kareleri
+```
+Metinler, şehirler, sayaç ve kapanış `ayarlar/siparis-reklami.json` içinde. Şehir eklemek için `sehirler` listesine ad, boylam ve enlem yazmak yeterli; zamanlama vuruş ızgarasına göre kendiliğinden kayar.

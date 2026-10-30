@@ -1,0 +1,52 @@
+{
+  "cikti": "ivex-icerik/teklifler/marcyla-buyume-rehberi.png",
+  "pdf": "ivex-icerik/teklifler/marcyla-buyume-rehberi.pdf",
+  "sablon": "ivex-icerik/kaynak/teklif-sablon-grow.png",
+  "ust_not": "MARCYLA İÇİN ÖZEL HAZIRLANDI",
+  "baslik": "Marcyla Büyüme Rehberi",
+  "bolumler": [
+    {
+      "baslik": "SAYFA YÖNETİMİ",
+      "maddeler": [
+        "Instagram hesap yönetimi",
+        "Aylık içerik ve sezon takvimi",
+        "5 Reels video ve senaryosu",
+        "15 ürün ve kombin post tasarımı",
+        "15 Story (hikâye) senaryosu",
+        "Profil ve bio optimizasyonu",
+        "Aylık performans raporu"
+      ]
+    },
+    {
+      "baslik": "META REKLAM YÖNETİMİ",
+      "maddeler": [
+        "Pixel ve Dönüşüm API kurulumu",
+        "Dinamik katalog reklamları",
+        "Kampanya kurgusu ve hedef kitle",
+        "Yeniden pazarlama (retargeting)",
+        "Kreatif A/B testleri",
+        "Bütçe ve ROAS optimizasyonu",
+        "Haftalık reklam raporu"
+      ]
+    },
+    {
+      "baslik": "SHOPIFY PANEL YÖNETİMİ",
+      "maddeler": [
+        "Ürün, beden ve renk yükleme",
+        "Stok ve koleksiyon düzeni",
+        "Ürün açıklamaları ve SEO",
+        "İndirim ve kampanya kurulumu",
+        "Ana sayfa ve sezon güncellemeleri",
+        "Sepet hatırlatma e-postaları",
+        "Satış ve dönüşüm raporu"
+      ]
+    }
+  ],
+  "toplam": {
+    "etiket": "TÜM HİZMETLER TOPLAM",
+    "fiyat": "39.000 TL",
+    "donem": "/ ay"
+  },
+  "dipnot": "* Fiyat aylıktır. Reklam bütçesi, Shopify abonelik ve uygulama ücretleri hizmet bedeline dahil değildir.",
+  "vurgu": "İçerik, reklam ve mağaza tek ekipten, tek plandan."
+}

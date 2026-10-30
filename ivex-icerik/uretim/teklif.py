@@ -73,8 +73,12 @@ def main():
         cfg = json.load(fh)
     im = Image.new("RGB", (W, H), LIME)
     d = ImageDraw.Draw(im)
-    im.paste(logo_from_template(cfg["sablon"]), (104, 68), logo_from_template(cfg["sablon"]))
-    tracked(d, (X1, 90), cfg["ust_not"], font("Bold", 22), BLACK, 4, anchor="r")
+    if cfg.get("logo", True):
+        mark = logo_from_template(cfg["sablon"])
+        im.paste(mark, (104, 68), mark)
+        tracked(d, (X1, 90), cfg["ust_not"], font("Bold", 22), BLACK, 4, anchor="r")
+    else:  # no wordmark: the note takes its place on the left
+        tracked(d, (X0, 90), cfg["ust_not"], font("Bold", 22), BLACK, 4)
     im.paste(gradient(X1 - X0, 3), (X0, 155))
     d.text((X0 - 4, 188), cfg["baslik"], font=font("Bold", 84), fill=BLACK)
 

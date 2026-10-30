@@ -1,0 +1,29 @@
+{
+  "cikti": "ivex-icerik/ivex-kanca-hatalari-reels.mp4",
+  "kapak": "ivex-icerik/ivex-kanca-hatalari-kapak.jpg",
+  "kullanici": "@isletmeniz",
+  "giris": {"baslik": ["İçeriğin 2 saniyede", "geçiliyorsa", "sebebi bu 3 hata."],
+            "alt": "Üçüncüsünü çoğu işletme fark etmiyor."},
+  "hatalar": [
+    {"hata": ["Kanca yok."], "neden": "Video logoyla ya da “merhaba” ile başlıyor.",
+     "dogrusu": ["İlk saniyede", "en iyi kareni göster."]},
+    {"hata": ["Afiş gibi görünüyor."], "neden": "Logo, indirim, numara… refleksle geçiliyor.",
+     "dogrusu": ["Afiş değil,", "bir an göster."]},
+    {"hata": ["Sessiz izleyen", "anlamıyor."], "neden": "Akışta pek çok kişi sesi kapalı izliyor.",
+     "dogrusu": ["Altyazı ekle,", "ilk saniyede başlık koy."]}
+  ],
+  "ornekler": {
+    "kanca": ["Bunu 3 dakikada", "hazırlıyoruz"],
+    "an": ["Günün ilk kahvesi", "hazır."],
+    "baslik": ["EN ÇOK SATAN", "3 ÜRÜNÜMÜZ"],
+    "altyazi": ["Bugün size", "en çok satan", "3 ürünümüzü", "gösteriyorum!"]
+  },
+  "kapanis_once": [["Bu videoyu", "buraya kadar izledin."], ["Çünkü üçünü de", "uyguladık."]],
+  "etiketler": ["KANCA", "AN", "ALTYAZI"],
+  "son": {
+    "unvan": "SOSYAL MEDYA · REKLAM · WEB",
+    "satirlar": [["İçeriğini birlikte", "beyaz"], ["inceleyelim.", "lime"]],
+    "buton": "DM'DEN “KANCA” YAZ",
+    "alt": ["Kancasını birlikte bulalım."]
+  }
+}

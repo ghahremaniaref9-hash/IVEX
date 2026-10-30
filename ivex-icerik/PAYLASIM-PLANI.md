@@ -299,3 +299,55 @@ python3 siparis_reklami.py ../ayarlar/siparis-reklami.json              # video 
 python3 siparis_reklami.py ../ayarlar/siparis-reklami.json 2.7 5 10 14  # önizleme kareleri
 ```
 Metinler, şehirler, sayaç ve kapanış `ayarlar/siparis-reklami.json` içinde. Şehir eklemek için `sehirler` listesine ad, boylam ve enlem yazmak yeterli; zamanlama vuruş ızgarasına göre kendiliğinden kayar.
+
+---
+
+## Ek: "İçeriğin 2 saniyede geçiliyorsa sebebi bu 3 hata" (28 sn, seslendirmesiz)
+
+**Dosyalar:** `ivex-kanca-hatalari-reels.mp4` (1080×1920, 28 sn, müzikli, -14 LUFS) · `ivex-kanca-hatalari-kapak.jpg`
+**Amaç:** Kaydedilme ve DM. İşletme sahibi kendi içeriğindeki hatayı görüyor, "KANCA" yazıp içeriğini gönderiyor.
+**Asıl numara:** Video anlattığı üç kuralı kendisi uyguluyor ve sonunda bunu söylüyor.
+
+| Süre | Telefonda | Üstte yazan |
+|---|---|---|
+| 0–3 sn | Sıradan paylaşımlar (motivasyon sözü, logo, stok fotoğraf…) art arda kaydırılıyor, her birine "GEÇİLDİ" damgası | İçeriğin 2 saniyede geçiliyorsa **sebebi bu 3 hata.** · "Üçüncüsünü çoğu işletme fark etmiyor." |
+| 3–6 sn | Logoyla ve "sunar…" diye açılan video, temsilî izlenme çizgisi 2. saniyede düşüyor, GEÇİLDİ | **HATA 1** Kanca yok. |
+| 6–10 sn | İlk karesi buharı tüten tabak olan video: "Bunu 3 dakikada hazırlıyoruz". Başparmak duruyor: DURDU, çizgi yüksek kalıyor | **DOĞRUSU** İlk saniyede en iyi kareni göster. |
+| 10–13 sn | Gökkuşağı zeminli afiş; logo, %20, stok fotoğraf ve telefon numarası kırmızıyla tek tek işaretleniyor, GEÇİLDİ | **HATA 2** Afiş gibi görünüyor. |
+| 13–17 sn | Tek cümlelik an: "Günün ilk kahvesi hazır.", DURDU | **DOĞRUSU** Afiş değil, bir an göster. |
+| 17–19,5 sn | Konuşan kişi, ses kapalı ikonu, yazı yok. **Müzik boğuklaşıp kısılıyor.** GEÇİLDİ | **HATA 3** Sessiz izleyen anlamıyor. |
+| 19,5–23 sn | Aynı kişi: üstte başlık, altta kelime kelime lime altyazı. **Ses geri geliyor.** DURDU | **DOĞRUSU** Altyazı ekle, ilk saniyede başlık koy. |
+| 23–25 sn | Geri sarma: tabak, kahve, altyazı; "KANCA ✓ AN ✓ ALTYAZI ✓" | Bu videoyu buraya kadar izledin. **Çünkü üçünü de uyguladık.** |
+| 25–28 sn | IVEX kapanışı | İçeriğini birlikte **inceleyelim.** · DM'DEN “KANCA” YAZ · Kancasını birlikte bulalım. |
+
+- **Örnekler:** Hepsi kodla çizildi; gerçek bir işletme, logo ya da müşteri görseli yok. Kullanıcı adı `@isletmeniz`, telefon numarası `0 (555) 000 00 00` (gerçek değil).
+- **İzlenme çizgisi:** Temsilî, kartta "temsilî" yazıyor.
+- **Ses:** Seslendirme yok; her şey ekranda yazılı, video sessiz izlenince de tam anlaşılıyor. Müzik ve efektler `ses.py`'den. Instagram'dan ayrıca müzik eklemeyin.
+
+**Önerilen zaman:** Hafta içi 12:30 ya da 21:00. Bu video kaydedilmek için yapıldı; profile sabitlemeye uygun.
+
+```
+Paylaşıyorsun ama izlenmiyor mu? Sorun çoğu zaman içerikte değil, ilk 2 saniyede. 👀
+
+1️⃣ Kanca yok: video logoyla ya da "merhaba" ile başlıyor
+2️⃣ Afiş gibi: logo, indirim, numara… insanlar reklamı refleksle geçiyor
+3️⃣ Altyazı yok: ses kapalı izleyen hiçbir şey anlamıyor
+
+Bonus: Videonu kısa tut, her 2–3 saniyede yeni bir kare olsun.
+
+Senin içeriğinde hangisi var? Yorumlara numarasını yaz. 👇
+İçeriğini birlikte inceleyelim: DM'den "KANCA" yaz.
+
+#reelsipuçları #içerikstratejisi #sosyalmedyaajansı #dijitalpazarlama #ivexmedya
+```
+- **Kapak:** Giriş karesi ("İçeriğin 2 saniyede geçiliyorsa sebebi bu 3 hata.", telefonda GEÇİLDİ damgası, altta küçük IVEX logosu).
+- **Alternatif metin:** Telefon ekranında Reels'ler kaydırılıyor. Logoyla başlayan video, kalabalık indirim afişi ve altyazısız konuşma videosu "geçildi" diye işaretleniyor; doğru örnekler (ilk karede yemek, tek cümlelik bir an, altyazılı video) izleniyor. Video IVEX logosu ve "DM'den KANCA yaz" çağrısıyla bitiyor.
+- **DM:** "KANCA" yazanlardan içeriklerini (ya da profil bağlantısını) isteyin; 24 saat içinde kısa bir kanca önerisiyle dönün.
+- **Seri:** Aynı tasarımla "Reklam kreatifinde 3 hata", "Story'lerinde 3 hata", "Profilinde 3 hata".
+
+**Yeniden üretme** (`ivex-icerik/uretim/` klasöründen):
+```
+python3 kanca_hatalari.py ../ayarlar/kanca-hatalari.json              # video + kapak (~1 dk)
+python3 kanca_hatalari.py ../ayarlar/kanca-hatalari.json 4 11.9 21    # önizleme kareleri
+```
+Bütün yazılar `ayarlar/kanca-hatalari.json` içinde; zamanlar ve sahne sırası `kanca_hatalari.py`'nin başında.

@@ -1,0 +1,27 @@
+{
+  "cikti": "ivex-icerik/turkcesi-ne/01-roas-reels.mp4",
+  "kapak": "ivex-icerik/turkcesi-ne/01-roas-kapak.jpg",
+  "seri": "TÜRKÇESİ NE?",
+  "bolum": 1,
+  "kelime": "ROAS",
+  "jargon": ["CTR", "CPM", "KPI", "CPC", "Retargeting", "Lookalike", "Funnel", "ROAS", "Pixel", "A/B test"],
+  "kanca": ["Reklamcın “ROAS” dedi,", "kafan mı karıştı?"],
+  "turkcesi": ["Reklama verdiğin", "her *1 lira*,", "sana *kaç lira* olarak", "geri döndü?"],
+  "ornek": {
+    "tur": "para",
+    "giren": 1000,
+    "cikan": 4000,
+    "giren_etiket": "REKLAM",
+    "cikan_etiket": "SATIŞ",
+    "sonuc": "ROAS = 4",
+    "aciklama": "Her 1 lira, 4 lira olarak geri döndü.",
+    "not": "örnek gösterim"
+  },
+  "mesele": {"once": "Beğeni güzel.", "ara": "Ama asıl soru şu:", "vurgu": "Kasaya ne girdi?"},
+  "son": {
+    "satirlar": [["Reklamın sana", "beyaz"], ["ne kazandırıyor?", "lime"]],
+    "alt": "Birlikte bakalım.",
+    "buton": "DM'DEN “ROAS” YAZ",
+    "seri_notu": "TÜRKÇESİ NE? · HER HAFTA BİR KELİME"
+  }
+}

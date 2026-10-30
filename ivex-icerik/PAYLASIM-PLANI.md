@@ -351,3 +351,51 @@ python3 kanca_hatalari.py ../ayarlar/kanca-hatalari.json              # video + 
 python3 kanca_hatalari.py ../ayarlar/kanca-hatalari.json 4 11.9 21    # önizleme kareleri
 ```
 Bütün yazılar `ayarlar/kanca-hatalari.json` içinde; zamanlar ve sahne sırası `kanca_hatalari.py`'nin başında.
+
+---
+
+## Seri: "Türkçesi Ne?" (her hafta bir reklam kelimesi, 16 sn, seslendirmesiz)
+
+Reklamcıların kullandığı kelimeleri herkesin anlayacağı dille, her hafta bir tane olmak üzere anlatıyoruz. İzleyen bir şey öğreniyor ve "bu ajans benimle benim dilimle konuşuyor" diye düşünüyor. Bütün bölümler aynı beş adımla ilerliyor; kapakları da aynı düzende, böylece profilde seri olarak görünüyor.
+
+| Süre | Adım |
+|---|---|
+| 0–2 sn | **Kanca:** Kelime ekrana çarpıyor, arkasında anlaşılmaz reklam terimleri uçuşuyor. |
+| 2–5 sn | **Türkçesi:** Kelime yukarı çekiliyor, sade anlamı satır satır geliyor. |
+| 5–10 sn | **Örnek:** Kısa bir animasyon. |
+| 10–13 sn | **Asıl mesele:** İşletme sahibinin "doğru" diyeceği cümle. |
+| 13–16 sn | **Kapanış:** IVEX logosu, DM çağrısı, "Türkçesi Ne? · Her hafta bir kelime". |
+
+### #1 · ROAS — `turkcesi-ne/01-roas-reels.mp4` · `turkcesi-ne/01-roas-kapak.jpg`
+- **Kanca:** "ROAS?" · Reklamcın "ROAS" dedi, kafan mı karıştı?
+- **Türkçesi:** Reklama verdiğin her **1 lira**, sana **kaç lira** olarak geri döndü?
+- **Örnek:** 1.000 TL'lik banknot "REKLAM" kutusuna giriyor, her vuruşta bir banknot çıkıyor; sayaç 4.000 TL'ye ulaşıyor. Ardından "ROAS = 4 · Her 1 lira, 4 lira olarak geri döndü." Ekranda "örnek gösterim" yazıyor.
+- **Asıl mesele:** Beğeni kalpleri yazar kasaya çekiliyor: "Beğeni güzel. Ama asıl soru şu: **Kasaya ne girdi?**"
+- **Kapanış:** Reklamın sana ne kazandırıyor? Birlikte bakalım. **DM'DEN "ROAS" YAZ.**
+
+**Önerilen zaman:** Seri her hafta aynı gün ve saatte çıksın, örneğin salı 12:30. İzleyici ne zaman yeni bölüm geleceğini öğrenir.
+
+```
+ROAS'ın Türkçesi ne? 🤔
+
+Çok basit: Reklama verdiğin her 1 lira, sana kaç lira olarak geri döndü?
+1.000 TL reklama 4.000 TL satış geldiyse ROAS'ın 4'tür.
+
+Beğeni sayısı güzel görünür ama asıl önemli olan kasaya giren para.
+Reklamın sana ne kazandırıyor, birlikte bakalım: DM'den "ROAS" yaz. 💬
+
+Her hafta bir reklam kelimesini Türkçeye çeviriyoruz. Kaçırmamak için takip et.
+
+#türkçesine #reklamipuçları #instagramreklamı #işletmesahibi #ivexmedya
+```
+- **Alternatif metin:** Koyu yeşil zeminde büyük "ROAS?" yazısı. Ardından "Reklama verdiğin her 1 lira, sana kaç lira olarak geri döndü?" cümlesi; 1.000 TL'lik banknot bir reklam kutusuna girip dört banknot olarak çıkıyor, "ROAS = 4". Beğeni kalpleri yazar kasaya dönüşüyor: "Kasaya ne girdi?" Video IVEX logosu ve "DM'den ROAS yaz" çağrısıyla bitiyor.
+- **DM:** "ROAS" yazanlara reklam hesabına bakmak için kısa bir görüşme teklif edin.
+
+### Sıradaki bölümler
+2 · Yeniden pazarlama ("SEPET") · 3 · Etkileşim ("ETKİLEŞİM") · 4 · Erişim mi, gösterim mi? ("ERİŞİM") · 5 · Tıklama oranı ("TIK") · 6 · Benzer kitle ("KİTLE") · 7 · Piksel ("PİKSEL") · 8 · Kanca ("KANCA") · 9 · Dönüşüm ("SATIŞ")
+
+**Yeni bölüm eklemek** (`ivex-icerik/uretim/` klasöründen): `ayarlar/turkcesi-ne-01-roas.json` dosyasını kopyalayıp yazıları değiştirin. Örnek animasyonu `ornek.tur` alanı seçer; ROAS için "para" var, diğer bölümlerin animasyonları geldikçe `turkcesi_ne.py`'ye eklenecek.
+```
+python3 turkcesi_ne.py ../ayarlar/turkcesi-ne-01-roas.json             # video + kapak (~20 sn)
+python3 turkcesi_ne.py ../ayarlar/turkcesi-ne-01-roas.json 1.4 7.6 12  # önizleme kareleri
+```

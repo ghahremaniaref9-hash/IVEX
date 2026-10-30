@@ -1,10 +1,11 @@
 {
-  "cikti": "ivex-icerik/teklifler/marcyla-buyume-rehberi.png",
-  "pdf": "ivex-icerik/teklifler/marcyla-buyume-rehberi.pdf",
+  "cikti": "ivex-icerik/teklifler/mercyla-buyume-rehberi.png",
+  "pdf": "ivex-icerik/teklifler/mercyla-buyume-rehberi.pdf",
   "sablon": "ivex-icerik/kaynak/teklif-sablon-grow.png",
   "logo": false,
-  "ust_not": "MARCYLA İÇİN ÖZEL HAZIRLANDI",
-  "baslik": "Marcyla Büyüme Rehberi",
+  "ust_not": "MERCYLA İÇİN ÖZEL HAZIRLANDI",
+  "site": "MERCYLA.COM",
+  "baslik": "Mercyla Büyüme Rehberi",
   "bolumler": [
     {
       "baslik": "SAYFA YÖNETİMİ",

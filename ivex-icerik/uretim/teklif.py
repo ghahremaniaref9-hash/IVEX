@@ -1,6 +1,6 @@
 """IVEX & CO - tek sayfalık hizmet / paket teklifi (1920x1080 PNG + PDF).
 
-Kullanım:  python3 teklif.py ../ayarlar/teklif-marcyla.json
+Kullanım:  python3 teklif.py ../ayarlar/teklif-mercyla.json
 Tasarım, IVEX & CO "GROW Paket" sunumunu izler: lime zemin, sol üstte IVEX & CO logosu (şablon görselinden
 kesilir), turuncudan turkuaza geçişli çizgi ve rakamlar, Montserrat başlık ve maddeler, Arial ölçülerinde
 (Liberation Sans) bölüm başlıkları, sağ altta siyah toplam kutusu. Bölüm sayısı 2 ya da 3 olabilir.
@@ -77,8 +77,10 @@ def main():
         mark = logo_from_template(cfg["sablon"])
         im.paste(mark, (104, 68), mark)
         tracked(d, (X1, 90), cfg["ust_not"], font("Bold", 22), BLACK, 4, anchor="r")
-    else:  # no wordmark: the note takes its place on the left
+    else:  # no wordmark: the note takes its place on the left, the client's web address goes right
         tracked(d, (X0, 90), cfg["ust_not"], font("Bold", 22), BLACK, 4)
+        if cfg.get("site"):
+            tracked(d, (X1, 90), cfg["site"], font("Bold", 22), BLACK, 4, anchor="r")
     im.paste(gradient(X1 - X0, 3), (X0, 155))
     d.text((X0 - 4, 188), cfg["baslik"], font=font("Bold", 84), fill=BLACK)
 

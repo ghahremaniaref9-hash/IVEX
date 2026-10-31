@@ -20,8 +20,41 @@ PANELS = [  # photo, focus (x, y) in the photo
     ("mutfella-icerik/feed-9-gun/kaynak/IMG_0575.jpg", (0.6, 0.36)),
     ("mutfella-icerik/feed-9-gun/kaynak/IMG_0547.jpg", (0.5, 0.6)),
 ]
+PHONE = "0536 572 12 12"
 OUT = "mutfella-icerik/facebook/mutfella-facebook-kapak.jpg"
 PREVIEW = "mutfella-icerik/facebook/masaustu-onizleme.jpg"
+
+
+# the classic handset (Material "call" icon outline, 24x24 box) as cubic segments; lines are degenerate cubics
+HANDSET = [((6.62, 10.79), (8.06, 13.62), (10.38, 15.93), (13.21, 17.38)), ((13.21, 17.38), None, None, (15.41, 15.18)),
+           ((15.41, 15.18), (15.68, 14.91), (16.08, 14.82), (16.43, 14.94)),
+           ((16.43, 14.94), (17.55, 15.31), (18.76, 15.51), (20.0, 15.51)),
+           ((20.0, 15.51), (20.55, 15.51), (21.0, 15.96), (21.0, 16.51)), ((21.0, 16.51), None, None, (21.0, 20.0)),
+           ((21.0, 20.0), (21.0, 20.55), (20.55, 21.0), (20.0, 21.0)),
+           ((20.0, 21.0), (10.61, 21.0), (3.0, 13.39), (3.0, 4.0)), ((3.0, 4.0), (3.0, 3.45), (3.45, 3.0), (4.0, 3.0)),
+           ((4.0, 3.0), None, None, (7.5, 3.0)), ((7.5, 3.0), (8.05, 3.0), (8.5, 3.45), (8.5, 4.0)),
+           ((8.5, 4.0), (8.5, 5.25), (8.7, 6.45), (9.07, 7.57)), ((9.07, 7.57), (9.18, 7.92), (9.1, 8.31), (8.82, 8.59)),
+           ((8.82, 8.59), None, None, (6.62, 10.79))]
+
+
+def phone_icon(size):
+    """White handset in a red disc."""
+    big = size * 4
+    im = Image.new("RGBA", (big, big), (0, 0, 0, 0))
+    d = ImageDraw.Draw(im)
+    d.ellipse((0, 0, big - 1, big - 1), fill=RED)
+    pts = []
+    for p0, c1, c2, p1 in HANDSET:
+        if c1 is None:
+            pts.append(p1)
+            continue
+        for k in range(1, 13):
+            u = k / 12
+            pts.append(tuple((1 - u) ** 3 * a + 3 * (1 - u) ** 2 * u * b + 3 * (1 - u) * u ** 2 * c + u ** 3 * e
+                             for a, b, c, e in zip(p0, c1, c2, p1)))
+    s, off = big * 0.58 / 24, big * 0.21
+    d.polygon([(off + x * s, off + y * s) for x, y in pts], fill=WHITE)
+    return im.resize((size, size), Image.LANCZOS)
 
 
 def main():
@@ -62,7 +95,7 @@ def main():
     # text block, inside the desktop strip and clear of the bottom-left corner
     ink = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     d = ImageDraw.Draw(ink)
-    x, y = 96, 250
+    x, y = 96, 226
     f = font("Bold", 26)
     label = "MUTFELLA CATERING"
     tw = sum(d.textlength(c, font=f) for c in label) + 4 * (len(label) - 1)
@@ -75,7 +108,11 @@ def main():
     d.text((dot_x, y + 186), ".", font=head, fill=RED)
     d.text((x, y + 316), "Ofislere ve etkinliklere ev tadında yemek", font=font("Medium", 34), fill=(235, 228, 224))
     d.rectangle((x, y + 382, x + 80, y + 388), fill=RED)
-    d.text((x, y + 408), "Sipariş ve teklif için mesaj atın  ·  mutfella.com.tr", font=font("Bold", 26),
+    d.text((x, y + 404), "Sipariş ve teklif için arayın ya da yazın", font=font("Medium", 28), fill=(235, 228, 224))
+    ink.alpha_composite(phone_icon(56), (x, y + 450))
+    big = font("Bold", 46)
+    d.text((x + 72, y + 451), PHONE, font=big, fill=WHITE)
+    d.text((x + 72 + d.textlength(PHONE, font=big) + 26, y + 465), "·  mutfella.com.tr", font=font("Bold", 28),
            fill=(235, 228, 224))
     shadow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     shadow.putalpha(ink.getchannel("A").filter(ImageFilter.GaussianBlur(10)).point(lambda v: v // 2))

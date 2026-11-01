@@ -1,0 +1,54 @@
+{
+  "cikti": "ivex-icerik/teklifler/mercyla-buyume-rehberi-25000.png",
+  "pdf": "ivex-icerik/teklifler/mercyla-buyume-rehberi-25000.pdf",
+  "sablon": "ivex-icerik/kaynak/teklif-sablon-grow.png",
+  "logo": false,
+  "ust_not": "MERCYLA İÇİN ÖZEL HAZIRLANDI",
+  "site": "MERCYLA.COM",
+  "baslik": "Mercyla Büyüme Rehberi",
+  "bolumler": [
+    {
+      "baslik": "SAYFA YÖNETİMİ",
+      "maddeler": [
+        "Instagram hesap yönetimi",
+        "Aylık paylaşım planı ve takvimi",
+        "Açıklama ve hashtag yazımı",
+        "Paylaşım saati ve algoritma takibi",
+        "Yorum ve DM yönetimi",
+        "Profil, bio ve öne çıkanlar düzeni",
+        "Aylık performans raporu"
+      ]
+    },
+    {
+      "baslik": "META REKLAM YÖNETİMİ",
+      "maddeler": [
+        "Pixel ve Dönüşüm API kurulumu",
+        "Dinamik katalog reklamları",
+        "Kampanya kurgusu ve hedef kitle",
+        "Yeniden pazarlama (retargeting)",
+        "Kreatif A/B testleri",
+        "Bütçe ve ROAS optimizasyonu",
+        "Haftalık reklam raporu"
+      ]
+    },
+    {
+      "baslik": "SHOPIFY PANEL YÖNETİMİ",
+      "maddeler": [
+        "Ürün, beden ve renk yükleme",
+        "Stok ve koleksiyon düzeni",
+        "Ürün açıklamaları ve SEO",
+        "İndirim ve kampanya kurulumu",
+        "Ana sayfa ve sezon güncellemeleri",
+        "Sepet hatırlatma e-postaları",
+        "Satış ve dönüşüm raporu"
+      ]
+    }
+  ],
+  "toplam": {
+    "etiket": "TÜM HİZMETLER TOPLAM",
+    "fiyat": "25.000 TL",
+    "donem": "/ ay"
+  },
+  "dipnot": "* Fiyat aylıktır. Reklam bütçesi, Shopify abonelik ve uygulama ücretleri hizmet bedeline dahil değildir.",
+  "vurgu": "Sayfa, reklam ve mağaza tek ekipten, tek plandan."
+}

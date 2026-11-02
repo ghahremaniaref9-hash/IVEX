@@ -5,93 +5,636 @@
   "magaza": "Minah Tekstil mağazası",
   "gizle": {
     "_not": "Eşofman altındaki OYSHO yazısı (başka bir markanın adı). Bu kutular hiçbir kadraja girmez; hikayede yalnızca yazı kartının altında kalabilir.",
-    "09-ekru-bluz-on.jpg": [0.63, 0.565, 0.68, 0.625],
-    "10-ekru-bluz-yan.jpg": [0.59, 0.555, 0.64, 0.615]
+    "09-ekru-bluz-on.jpg": [
+      0.63,
+      0.565,
+      0.68,
+      0.625
+    ],
+    "10-ekru-bluz-yan.jpg": [
+      0.59,
+      0.555,
+      0.64,
+      0.615
+    ]
   },
   "urunler": [
     {
       "kod": "01-siyah-tayt",
       "etiket": "YÜKSEK BEL SİYAH TAYT",
       "baslik": "Her kombine uyan siyah tayt",
-      "ozellikler": ["Yüksek bel", "Dar kesim", "Uzun boy"],
-      "akis": [
-        {"foto": "02-siyah-tayt-on.jpg", "alan": [0.2, 0.0, 0.85, 0.94], "not": "Önden"},
-        {"foto": "01-siyah-tayt-arka.jpg", "alan": [0.15, 0.01, 0.8, 0.93], "not": "Arkadan"}
+      "ozellikler": [
+        "Yüksek bel",
+        "Dar kesim",
+        "Uzun boy"
       ],
-      "hikaye": {"tur": "ikili", "fotolar": [
-        {"foto": "02-siyah-tayt-on.jpg", "alan": [0.2, 0.0, 0.85, 0.94], "not": "Önden"},
-        {"foto": "01-siyah-tayt-arka.jpg", "alan": [0.15, 0.0, 0.8, 0.93], "not": "Arkadan"}
-      ]},
-      "kart": {"foto": "01-siyah-tayt-arka.jpg", "alan": [0.1, 0.25, 0.9, 0.92]}
+      "akis": [
+        {
+          "foto": "02-siyah-tayt-on.jpg",
+          "alan": [
+            0.2,
+            0.0,
+            0.85,
+            0.94
+          ],
+          "not": "Önden"
+        },
+        {
+          "foto": "01-siyah-tayt-arka.jpg",
+          "alan": [
+            0.15,
+            0.01,
+            0.8,
+            0.93
+          ],
+          "not": "Arkadan"
+        }
+      ],
+      "hikaye": {
+        "tur": "ikili",
+        "fotolar": [
+          {
+            "foto": "02-siyah-tayt-on.jpg",
+            "alan": [
+              0.2,
+              0.0,
+              0.85,
+              0.94
+            ],
+            "not": "Önden"
+          },
+          {
+            "foto": "01-siyah-tayt-arka.jpg",
+            "alan": [
+              0.15,
+              0.0,
+              0.8,
+              0.93
+            ],
+            "not": "Arkadan"
+          }
+        ]
+      },
+      "kart": {
+        "foto": "01-siyah-tayt-arka.jpg",
+        "alan": [
+          0.1,
+          0.25,
+          0.9,
+          0.92
+        ]
+      }
     },
     {
       "kod": "02-polo-cizgili-kazak",
       "etiket": "POLO YAKA ÇİZGİLİ TRİKO KAZAK",
       "baslik": "Klasik çizgiler, rahat kesim",
-      "ozellikler": ["Polo yaka", "Düğmeli ön", "Lacivert, kırmızı, ekru"],
-      "akis": [
-        {"foto": "03-polo-kazak-ayakta.jpg", "alan": [0.12, 0.22, 0.9, 1.0]},
-        {"foto": "04-polo-kazak-oturan.jpg", "alan": [0.08, 0.27, 1.0, 1.0]}
+      "ozellikler": [
+        "Polo yaka",
+        "Düğmeli ön",
+        "Lacivert, kırmızı, ekru"
       ],
-      "hikaye": {"tur": "ikili", "fotolar": [
-        {"foto": "03-polo-kazak-ayakta.jpg", "alan": [0.15, 0.22, 0.88, 1.0]},
-        {"foto": "04-polo-kazak-oturan.jpg", "alan": [0.15, 0.26, 1.0, 1.0]}
-      ]},
-      "kart": {"foto": "03-polo-kazak-ayakta.jpg", "alan": [0.0, 0.26, 1.0, 0.82]}
+      "akis": [
+        {
+          "foto": "03-polo-kazak-ayakta.jpg",
+          "alan": [
+            0.12,
+            0.22,
+            0.9,
+            1.0
+          ]
+        },
+        {
+          "foto": "04-polo-kazak-oturan.jpg",
+          "alan": [
+            0.08,
+            0.27,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "hikaye": {
+        "tur": "ikili",
+        "fotolar": [
+          {
+            "foto": "03-polo-kazak-ayakta.jpg",
+            "alan": [
+              0.15,
+              0.22,
+              0.88,
+              1.0
+            ]
+          },
+          {
+            "foto": "04-polo-kazak-oturan.jpg",
+            "alan": [
+              0.15,
+              0.26,
+              1.0,
+              1.0
+            ]
+          }
+        ]
+      },
+      "kart": {
+        "foto": "03-polo-kazak-ayakta.jpg",
+        "alan": [
+          0.0,
+          0.26,
+          1.0,
+          0.82
+        ]
+      }
     },
     {
       "kod": "03-ajurlu-kazak-lacivert",
       "etiket": "AJURLU TRİKO KAZAK · LACİVERT",
       "baslik": "Örgüsüyle fark yaratan kazak",
-      "ozellikler": ["Ajurlu örgü", "Bisiklet yaka", "Jean ile tam uyum"],
-      "akis": [
-        {"foto": "05-ajurlu-lacivert-boy.jpg", "alan": [0.25, 0.14, 0.8, 0.95]},
-        {"foto": "06-ajurlu-lacivert-yakin.jpg", "alan": [0.0, 0.15, 1.0, 1.0]}
+      "ozellikler": [
+        "Ajurlu örgü",
+        "Bisiklet yaka",
+        "Jean ile tam uyum"
       ],
-      "hikaye": {"tur": "tek", "foto": "05-ajurlu-lacivert-boy.jpg", "alan": [0.2, 0.12, 0.85, 0.92]},
-      "kart": {"foto": "06-ajurlu-lacivert-yakin.jpg", "alan": [0.0, 0.16, 1.0, 0.72]}
+      "akis": [
+        {
+          "foto": "05-ajurlu-lacivert-boy.jpg",
+          "alan": [
+            0.25,
+            0.14,
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "foto": "06-ajurlu-lacivert-yakin.jpg",
+          "alan": [
+            0.0,
+            0.15,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "hikaye": {
+        "tur": "tek",
+        "foto": "05-ajurlu-lacivert-boy.jpg",
+        "alan": [
+          0.2,
+          0.12,
+          0.85,
+          0.92
+        ]
+      },
+      "kart": {
+        "foto": "06-ajurlu-lacivert-yakin.jpg",
+        "alan": [
+          0.0,
+          0.16,
+          1.0,
+          0.72
+        ]
+      }
     },
     {
       "kod": "04-ajurlu-kazak-kirmizi",
       "etiket": "AJURLU TRİKO KAZAK · KIRMIZI",
       "baslik": "Kombinine kırmızı bir dokunuş",
-      "ozellikler": ["Ajurlu örgü", "Bisiklet yaka", "Katmanlı giyime uygun"],
-      "akis": [
-        {"foto": "07-ajurlu-kirmizi-boy.jpg", "alan": [0.25, 0.18, 0.8, 0.95]},
-        {"foto": "08-ajurlu-kirmizi-oturan.jpg", "alan": [0.0, 0.3, 1.0, 1.0]}
+      "ozellikler": [
+        "Ajurlu örgü",
+        "Bisiklet yaka",
+        "Katmanlı giyime uygun"
       ],
-      "hikaye": {"tur": "tek", "foto": "07-ajurlu-kirmizi-boy.jpg", "alan": [0.2, 0.15, 0.85, 0.95]},
-      "kart": {"foto": "08-ajurlu-kirmizi-oturan.jpg", "alan": [0.0, 0.32, 1.0, 0.88]}
+      "akis": [
+        {
+          "foto": "07-ajurlu-kirmizi-boy.jpg",
+          "alan": [
+            0.25,
+            0.18,
+            0.8,
+            0.95
+          ]
+        },
+        {
+          "foto": "08-ajurlu-kirmizi-oturan.jpg",
+          "alan": [
+            0.0,
+            0.3,
+            1.0,
+            1.0
+          ]
+        }
+      ],
+      "hikaye": {
+        "tur": "tek",
+        "foto": "07-ajurlu-kirmizi-boy.jpg",
+        "alan": [
+          0.2,
+          0.15,
+          0.85,
+          0.95
+        ]
+      },
+      "kart": {
+        "foto": "08-ajurlu-kirmizi-oturan.jpg",
+        "alan": [
+          0.0,
+          0.32,
+          1.0,
+          0.88
+        ]
+      }
     },
     {
       "kod": "05-kolsuz-bluz-ekru",
       "etiket": "KOLSUZ YARIM BALIKÇI BLUZ · EKRU",
       "baslik": "Sade, şık,|her şeyle uyumlu",
-      "ozellikler": ["Yarım balıkçı yaka", "Kolsuz", "Vücuda yakın kesim"],
-      "akis": [
-        {"foto": "09-ekru-bluz-on.jpg", "alan": [0.18, 0.15, 0.92, 0.555]}
+      "ozellikler": [
+        "Yarım balıkçı yaka",
+        "Kolsuz",
+        "Vücuda yakın kesim"
       ],
-      "hikaye": {"tur": "tek", "foto": "10-ekru-bluz-yan.jpg", "alan": [0.2, 0.1, 0.86, 0.76]},
-      "kart": {"foto": "10-ekru-bluz-yan.jpg", "alan": [0.2, 0.15, 0.86, 0.52]}
+      "akis": [
+        {
+          "foto": "09-ekru-bluz-on.jpg",
+          "alan": [
+            0.18,
+            0.15,
+            0.92,
+            0.555
+          ]
+        }
+      ],
+      "hikaye": {
+        "tur": "tek",
+        "foto": "10-ekru-bluz-yan.jpg",
+        "alan": [
+          0.2,
+          0.1,
+          0.86,
+          0.76
+        ]
+      },
+      "kart": {
+        "foto": "10-ekru-bluz-yan.jpg",
+        "alan": [
+          0.2,
+          0.15,
+          0.86,
+          0.52
+        ]
+      }
     },
     {
       "kod": "06-melanj-tayt-antrasit",
       "etiket": "YÜKSEK BEL MELANJ TAYT · ANTRASİT",
       "baslik": "Sporda da sokakta da|aynı rahatlık",
-      "ozellikler": ["Yüksek bel", "Melanj doku", "Uzun paça"],
-      "akis": [
-        {"foto": "12-gri-tayt-on.jpg", "alan": [0.15, 0.2, 0.68, 0.97], "not": "Önden"},
-        {"foto": "11-gri-tayt-arka.jpg", "alan": [0.3, 0.17, 0.88, 0.98], "not": "Arkadan"}
+      "ozellikler": [
+        "Yüksek bel",
+        "Melanj doku",
+        "Uzun paça"
       ],
-      "hikaye": {"tur": "ikili", "fotolar": [
-        {"foto": "12-gri-tayt-on.jpg", "alan": [0.15, 0.19, 0.68, 0.98], "not": "Önden"},
-        {"foto": "11-gri-tayt-arka.jpg", "alan": [0.3, 0.17, 0.88, 0.99], "not": "Arkadan"}
-      ]},
-      "kart": {"foto": "11-gri-tayt-arka.jpg", "alan": [0.2, 0.42, 0.95, 0.98]}
+      "akis": [
+        {
+          "foto": "12-gri-tayt-on.jpg",
+          "alan": [
+            0.15,
+            0.2,
+            0.68,
+            0.97
+          ],
+          "not": "Önden"
+        },
+        {
+          "foto": "11-gri-tayt-arka.jpg",
+          "alan": [
+            0.3,
+            0.17,
+            0.88,
+            0.98
+          ],
+          "not": "Arkadan"
+        }
+      ],
+      "hikaye": {
+        "tur": "ikili",
+        "fotolar": [
+          {
+            "foto": "12-gri-tayt-on.jpg",
+            "alan": [
+              0.15,
+              0.19,
+              0.68,
+              0.98
+            ],
+            "not": "Önden"
+          },
+          {
+            "foto": "11-gri-tayt-arka.jpg",
+            "alan": [
+              0.3,
+              0.17,
+              0.88,
+              0.99
+            ],
+            "not": "Arkadan"
+          }
+        ]
+      },
+      "kart": {
+        "foto": "11-gri-tayt-arka.jpg",
+        "alan": [
+          0.2,
+          0.42,
+          0.95,
+          0.98
+        ]
+      }
     }
   ],
   "marka_karti": {
-    "satirlar": ["Triko kazaktan taytlara", "yeni sezon Trendyol'da"],
+    "satirlar": [
+      "Triko kazaktan taytlara",
+      "yeni sezon Trendyol'da"
+    ],
     "alt": "Minah Tekstil mağazasını ziyaret et"
-  }
+  },
+  "tekli": [
+    {
+      "foto": "01-siyah-tayt-arka.jpg",
+      "urun": "01-siyah-tayt",
+      "baslik": "Yüksek bel,|şık duruş",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.2,
+          0.0,
+          0.8,
+          0.95
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.15,
+          0.0,
+          0.85,
+          1.0
+        ]
+      }
+    },
+    {
+      "foto": "02-siyah-tayt-on.jpg",
+      "urun": "01-siyah-tayt",
+      "baslik": "Her kombine uyan|siyah tayt",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.25,
+          0.0,
+          0.85,
+          0.95
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.15,
+          0.0,
+          0.85,
+          1.0
+        ]
+      }
+    },
+    {
+      "foto": "03-polo-kazak-ayakta.jpg",
+      "urun": "02-polo-cizgili-kazak",
+      "baslik": "Klasik çizgiler,|rahat kesim",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.12,
+          0.2,
+          0.9,
+          1.0
+        ]
+      },
+      "hikaye": {
+        "tur": "cerceve",
+        "alan": [
+          0.05,
+          0.24,
+          0.95,
+          0.84
+        ]
+      }
+    },
+    {
+      "foto": "04-polo-kazak-oturan.jpg",
+      "urun": "02-polo-cizgili-kazak",
+      "baslik": "Günlük şıklığın|çizgili hali",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.1,
+          0.25,
+          1.0,
+          1.0
+        ]
+      },
+      "hikaye": {
+        "tur": "cerceve",
+        "alan": [
+          0.0,
+          0.28,
+          1.0,
+          0.9
+        ]
+      }
+    },
+    {
+      "foto": "05-ajurlu-lacivert-boy.jpg",
+      "urun": "03-ajurlu-kazak-lacivert",
+      "baslik": "Örgüsüyle fark|yaratan kazak",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.25,
+          0.12,
+          0.8,
+          0.95
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.2,
+          0.12,
+          0.85,
+          0.92
+        ]
+      }
+    },
+    {
+      "foto": "06-ajurlu-lacivert-yakin.jpg",
+      "urun": "03-ajurlu-kazak-lacivert",
+      "baslik": "Yakından bak:|ajurlu örgü",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.0,
+          0.15,
+          1.0,
+          1.0
+        ]
+      },
+      "hikaye": {
+        "tur": "cerceve",
+        "alan": [
+          0.0,
+          0.16,
+          1.0,
+          0.74
+        ]
+      }
+    },
+    {
+      "foto": "07-ajurlu-kirmizi-boy.jpg",
+      "urun": "04-ajurlu-kazak-kirmizi",
+      "baslik": "Kombinine kırmızı|bir dokunuş",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.25,
+          0.15,
+          0.8,
+          0.95
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.2,
+          0.15,
+          0.85,
+          0.95
+        ]
+      }
+    },
+    {
+      "foto": "08-ajurlu-kirmizi-oturan.jpg",
+      "urun": "04-ajurlu-kazak-kirmizi",
+      "baslik": "Kışın en|sıcak rengi",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.0,
+          0.3,
+          1.0,
+          1.0
+        ]
+      },
+      "hikaye": {
+        "tur": "cerceve",
+        "alan": [
+          0.0,
+          0.32,
+          1.0,
+          0.9
+        ]
+      }
+    },
+    {
+      "foto": "09-ekru-bluz-on.jpg",
+      "urun": "05-kolsuz-bluz-ekru",
+      "baslik": "Sade, şık,|her şeyle uyumlu",
+      "akis": {
+        "tur": "yatay",
+        "alan": [
+          0.18,
+          0.15,
+          0.92,
+          0.555
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.2,
+          0.1,
+          0.9,
+          0.76
+        ]
+      }
+    },
+    {
+      "foto": "10-ekru-bluz-yan.jpg",
+      "urun": "05-kolsuz-bluz-ekru",
+      "baslik": "Basic ama|asla sıradan değil",
+      "akis": {
+        "tur": "yatay",
+        "alan": [
+          0.2,
+          0.14,
+          0.86,
+          0.545
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.2,
+          0.1,
+          0.86,
+          0.76
+        ]
+      }
+    },
+    {
+      "foto": "11-gri-tayt-arka.jpg",
+      "urun": "06-melanj-tayt-antrasit",
+      "baslik": "Her adımda|rahat ve şık",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.3,
+          0.15,
+          0.88,
+          0.99
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.25,
+          0.12,
+          0.92,
+          1.0
+        ]
+      }
+    },
+    {
+      "foto": "12-gri-tayt-on.jpg",
+      "urun": "06-melanj-tayt-antrasit",
+      "baslik": "Sporda da sokakta da|aynı rahatlık",
+      "akis": {
+        "tur": "dikey",
+        "alan": [
+          0.15,
+          0.18,
+          0.68,
+          0.98
+        ]
+      },
+      "hikaye": {
+        "tur": "tek",
+        "alan": [
+          0.1,
+          0.12,
+          0.75,
+          1.0
+        ]
+      }
+    }
+  ]
 }

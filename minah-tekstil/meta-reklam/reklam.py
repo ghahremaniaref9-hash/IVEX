@@ -264,6 +264,70 @@ def feed(cfg, p):
     return im.convert("RGB")
 
 
+def wrap_tracked(text, fnt, track, width):
+    lines, cur = [], ""
+    for word in text.split():
+        trial = (cur + " " + word).strip()
+        if tracked_width(trial, fnt, track) <= width or not cur:
+            cur = trial
+        else:
+            lines.append(cur)
+            cur = word
+    return lines + ([cur] if cur else [])
+
+
+def feed_column(cfg, p, foto, alan):
+    """4:5 feed ad with one tall photo (left) and a cream text column (right)."""
+    W, H, PW = 1080, 1350, 668
+    im = Image.new("RGBA", (W, H), CREAM + (255,))
+    im.paste(photo(cfg, foto, alan, (PW, H)), (0, 0))
+    x0, x1 = PW + 44, W - 44
+    width = x1 - x0
+    badge(im, ((PW + W) / 2, 196), 232)
+    d = ImageDraw.Draw(im)
+    stitch(d, x0, x1, 352)
+
+    lf = font("600SemiBold", 20)
+    label = wrap_tracked(p["etiket"], lf, 2.2, width)
+    text = p["baslik"].replace("|", " ")
+    sizes = (52, 50, 48, 46, 44, 42, 40, 38)
+    choice = None
+    for most in (3, 4):  # prefer three lines, allow four for long headlines
+        for size in sizes:
+            hf = font("800ExtraBold", size)
+            head = wrap(text, hf, width)
+            if len(head) <= most and all(hf.getlength(l) <= width for l in head) and size >= 44:
+                choice = (hf, head)
+                break
+        if choice:
+            break
+    hf, head = choice or (font("800ExtraBold", sizes[-1]), wrap(text, font("800ExtraBold", sizes[-1]), width))
+    ff = font("500Medium", 26)
+    while max(ff.getlength(i) for i in p["ozellikler"]) > width - 26 and ff.size > 18:
+        ff = font("500Medium", ff.size - 1)
+    lh, fh = round(hf.size * 1.13), round(ff.size * 1.6)
+    block = len(label) * 30 + 26 + len(head) * lh + 30 + len(p["ozellikler"]) * fh
+    y = max(390, 390 + (1130 - 390 - block) / 2)
+    for line in label:
+        tracked(d, (x0, y), line, lf, BRONZE, 2.2)
+        y += 30
+    y += 26
+    for line in head:
+        d.text((x0 - 2, y), line, font=hf, fill=TEAL)
+        y += lh
+    y += 30
+    for item in p["ozellikler"]:
+        cy = y + ff.getbbox("x")[3] * 0.62
+        d.polygon([(x0 + 6, cy - 6), (x0 + 12, cy), (x0 + 6, cy + 6), (x0, cy)], fill=TAN)
+        d.text((x0 + 26, y), item, font=ff, fill=TEAL)
+        y += fh
+    button(im, (x0, 1166, x1, 1240), cfg["buton"], TEAL, CREAM)
+    sf = font("500Medium", 21)
+    d = ImageDraw.Draw(im)
+    d.text(((x0 + x1) / 2 - sf.getlength(cfg["magaza"]) / 2, 1264), cfg["magaza"], font=sf, fill=BRONZE)
+    return im.convert("RGB")
+
+
 def story_text(p, inner, lines_max):
     """Fonts, lines and the height of the story card for this product."""
     hf, lines = fit(p["baslik"], "800ExtraBold", (60, 58, 56, 54, 52, 50, 48, 46, 44), inner, lines_max)
@@ -279,15 +343,16 @@ def story(cfg, p):
     """9:16 story / reels ad. Text stays between the top 250 px and the bottom 340 px that Meta covers."""
     W, H = 1080, 1920
     s = p["hikaye"]
-    pair = s["tur"] == "ikili"
+    pair = s["tur"] in ("ikili", "cerceve")  # photos framed on cream, text in a teal card below them
     card_x0, card_x1, bottom = (36, 1044, 1572) if pair else (48, 1032, 1566)
     hf, lines, lh, ff, height = story_text(p, card_x1 - card_x0 - 80, 1 if pair else 2)
     card = (card_x0, bottom - height, card_x1, bottom)
     if pair:
         im = Image.new("RGBA", (W, H), CREAM + (255,))
         top, low = 180, card[1] - 28
-        for ph, x0 in zip(s["fotolar"], (36, 544)):
-            b = (x0, top, x0 + 500, low)
+        frames = [(36, 536), (544, 1044)] if s["tur"] == "ikili" else [(36, 1044)]
+        for ph, (x0, x1) in zip(s["fotolar"], frames):
+            b = (x0, top, x1, low)
             img = photo(cfg, ph["foto"], ph["alan"], (b[2] - b[0], b[3] - b[1]))
             im.alpha_composite(rounded(img, 28), b[:2])
             if ph.get("not"):
@@ -375,6 +440,28 @@ def main():
     name = os.path.join(out, "kart", f"{len(cfg['urunler']) + 1:02d}-marka-karti-1x1.jpg")
     brand_card(cfg).save(name, quality=92, subsampling=0)
     made.append(name)
+
+    products = {p["kod"]: p for p in cfg["urunler"]}
+    for sub in ("akis", "hikaye"):
+        os.makedirs(os.path.join(out, "tekli", sub), exist_ok=True)
+    for e in cfg.get("tekli", []):
+        p = dict(products[e["urun"]], baslik=e["baslik"])
+        stem = os.path.splitext(e["foto"])[0]
+        a = e["akis"]
+        if a["tur"] == "dikey":
+            img = feed_column(cfg, p, e["foto"], a["alan"])
+        else:
+            img = feed(cfg, dict(p, akis=[{"foto": e["foto"], "alan": a["alan"]}]))
+        name = os.path.join(out, "tekli", "akis", f"{stem}-4x5.jpg")
+        img.save(name, quality=92, subsampling=0)
+        made.append(name)
+        h = e["hikaye"]
+        story_cfg = {"tur": h["tur"], "foto": e["foto"], "alan": h["alan"]}
+        if h["tur"] == "cerceve":
+            story_cfg = {"tur": "cerceve", "fotolar": [{"foto": e["foto"], "alan": h["alan"]}]}
+        name = os.path.join(out, "tekli", "hikaye", f"{stem}-9x16.jpg")
+        story(cfg, dict(p, hikaye=story_cfg)).save(name, quality=92, subsampling=0)
+        made.append(name)
     for m in made:
         print("kaydedildi:", os.path.relpath(m, REPO))
 

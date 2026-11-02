@@ -1,6 +1,6 @@
 # Minah Tekstil – Meta reklamları
 
-Görseller `gorseller/` klasöründe. Her ürün için üç boyut var:
+Görseller `gorseller/` klasöründe. Her ürün için iki fotoğrafı birlikte kullanan üç boyut var. Her fotoğrafın ayrı reklamı da `gorseller/tekli/` klasöründe (aşağıda).
 
 | Klasör | Boyut | Nerede kullanılır |
 |---|---|---|
@@ -57,6 +57,25 @@ Görsellerde fiyat, indirim ya da kargo bilgisi yok. Bu bilgiler bizde olmadığ
 - **Başlık:** Yüksek Bel Melanj Tayt – Antrasit
 - **Açıklama:** Siyahı da mağazada
 - **Buton:** Alışveriş Yap
+
+## Tek fotoğraflı reklamlar
+
+`gorseller/tekli/` klasöründe her fotoğraf ayrı bir reklam olarak hazır: `akis/` içinde 4:5, `hikaye/` içinde 9:16. Aynı ürünün iki fotoğrafında farklı başlık var. İkisini aynı reklam setinde açıp hangisinin daha çok tıklandığına bakabilirsiniz. Ana metin, başlık ve açıklama için yukarıdaki ürün metinleri kullanılır.
+
+| Fotoğraf | Ürün | Görseldeki başlık |
+|---|---|---|
+| 01-siyah-tayt-arka | Yüksek bel siyah tayt | Yüksek bel, şık duruş |
+| 02-siyah-tayt-on | Yüksek bel siyah tayt | Her kombine uyan siyah tayt |
+| 03-polo-kazak-ayakta | Polo yaka çizgili kazak | Klasik çizgiler, rahat kesim |
+| 04-polo-kazak-oturan | Polo yaka çizgili kazak | Günlük şıklığın çizgili hali |
+| 05-ajurlu-lacivert-boy | Ajurlu kazak – lacivert | Örgüsüyle fark yaratan kazak |
+| 06-ajurlu-lacivert-yakin | Ajurlu kazak – lacivert | Yakından bak: ajurlu örgü |
+| 07-ajurlu-kirmizi-boy | Ajurlu kazak – kırmızı | Kombinine kırmızı bir dokunuş |
+| 08-ajurlu-kirmizi-oturan | Ajurlu kazak – kırmızı | Kışın en sıcak rengi |
+| 09-ekru-bluz-on | Kolsuz bluz – ekru | Sade, şık, her şeyle uyumlu |
+| 10-ekru-bluz-yan | Kolsuz bluz – ekru | Basic ama asla sıradan değil |
+| 11-gri-tayt-arka | Melanj tayt – antrasit | Her adımda rahat ve şık |
+| 12-gri-tayt-on | Melanj tayt – antrasit | Sporda da sokakta da aynı rahatlık |
 
 ## Kaydırmalı (karusel) reklam
 

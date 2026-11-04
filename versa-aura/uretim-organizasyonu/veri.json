@@ -1,0 +1,70 @@
+{
+  "marka": "VERSA AURA",
+  "baslik": "Üretim Organizasyonu",
+  "alt_baslik": "Bikini & Mayo · Pareo & Şal",
+  "hazirlayan": "IVEX Medya",
+  "tarih": "Kasım 2026",
+  "cikti": "versa-aura/uretim-organizasyonu/versa-aura-uretim-organizasyonu.pdf",
+  "roller": {
+    "creative": {
+      "etiket": "CREATIVE DIRECTION",
+      "ad": "Versa Aura Creative Direction",
+      "gorevler": ["Marka dili", "Koleksiyon konsepti", "Tasarım onayı"],
+      "aciklama": "Markanın dilini ve koleksiyonun konseptini belirler, tasarımlara son onayı verir."
+    },
+    "stilist1": {
+      "etiket": "STİLİST 1",
+      "ad": "Bikini & Mayo Fabrikası",
+      "gorevler": ["Özel kalıp", "Kumaş", "Astar", "Numune ve üretim"],
+      "aciklama": "Onaylanan bikini ve mayo tasarımlarını kalıba, kumaşa ve numuneye dönüştürür, üretimi yürütür."
+    },
+    "stilist2": {
+      "etiket": "STİLİST 2",
+      "ad": "Pareo & Şal Fabrikası",
+      "gorevler": ["Özel kalıp", "Kumaş", "Astar", "Numune ve üretim"],
+      "aciklama": "Onaylanan pareo ve şal tasarımlarını kalıba, kumaşa ve numuneye dönüştürür, üretimi yürütür."
+    },
+    "koordinator": {
+      "etiket": "ÜRETİM KOORDİNATÖRÜ",
+      "ad": "Tek koordinatör, iki fabrika",
+      "gorevler": ["Kumaş onayı", "Numune takibi", "Kalite kontrol", "Sevkiyat"],
+      "aciklama": "İki fabrikanın tek temas noktasıdır. Kumaşı onaylar, numuneleri takip eder, kaliteyi kontrol eder ve sevkiyatı yönetir."
+    }
+  },
+  "akis": [
+    {"faz": "TASARIM", "adimlar": [
+      {"no": 1, "creative": "Marka dili"},
+      {"no": 2, "creative": "Koleksiyon konsepti"},
+      {"no": 3, "creative": "Tasarım onayı", "onay": true}
+    ]},
+    {"faz": "GELİŞTİRME", "adimlar": [
+      {"no": 4, "stilist": "Özel kalıp"},
+      {"no": 5, "stilist": "Kumaş", "koordinator": "Kumaş onayı", "onay": true},
+      {"no": 6, "stilist": "Astar"},
+      {"no": 7, "stilist": "Numune", "koordinator": "Numune takibi"}
+    ]},
+    {"faz": "ÜRETİM VE TESLİM", "adimlar": [
+      {"no": 8, "stilist": "Üretim", "koordinator": "Kalite kontrol", "onay": true},
+      {"no": 9, "koordinator": "Sevkiyat"}
+    ]}
+  ],
+  "bikini": {
+    "ad": "Bikini & Mayo Koleksiyonu",
+    "birim": "takım",
+    "modeller": [
+      {"ad": "İpli takım", "kod": "IP", "desen": 10, "adet": 50},
+      {"ad": "Biyeli takım", "kod": "BY", "desen": 10, "adet": 50}
+    ],
+    "beden": {"S": 15, "M": 20, "L": 10, "XL": 5}
+  },
+  "pareo": {
+    "ad": "Pareo Koleksiyonu",
+    "birim": "adet",
+    "kod": "PR",
+    "model": 10,
+    "adet": 25,
+    "beden": {"S": 7, "M": 7, "L": 5, "XL": 4, "XXL": 2},
+    "not": "Şal adetleri netleştiğinde bu plana eklenecektir."
+  },
+  "takip": ["Tasarım onayı", "Kalıp", "Kumaş onayı", "Astar", "Numune", "Üretim", "Kalite kontrol", "Sevkiyat"]
+}

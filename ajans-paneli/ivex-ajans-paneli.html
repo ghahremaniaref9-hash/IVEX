@@ -1,0 +1,1109 @@
+<title>IVEX Ajans Paneli</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: masthead + tab strip; each tab is a two-column workspace (entry form | live shared list) that stacks to one column on phones */
+:root {
+  --bg: #F1F3F7;
+  --surface: #FFFFFF;
+  --surface-2: #E8ECF2;
+  --ink: #111923;
+  --muted: #576274;
+  --line: #D5DBE4;
+  --accent: #2343D2;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #E1E6FB;
+  --good: #0F6E4B;
+  --good-soft: #DAF0E6;
+  --bad: #B8321F;
+  --bad-soft: #FAE2DD;
+  --warn: #8A5700;
+  --warn-soft: #F8ECCF;
+  --f-display: "Bricolage Grotesque", "IBM Plex Sans", system-ui, sans-serif;
+  --f-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0E131A; --surface: #151C26; --surface-2: #1D2633; --ink: #E6EBF2; --muted: #93A0B3; --line: #283241;
+    --accent: #8098FF; --accent-ink: #0A0F22; --accent-soft: #1D2850;
+    --good: #4FC79B; --good-soft: #10332A; --bad: #FF8B79; --bad-soft: #3A1B17; --warn: #EFB64F; --warn-soft: #382A0F;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0E131A; --surface: #151C26; --surface-2: #1D2633; --ink: #E6EBF2; --muted: #93A0B3; --line: #283241;
+  --accent: #8098FF; --accent-ink: #0A0F22; --accent-soft: #1D2850;
+  --good: #4FC79B; --good-soft: #10332A; --bad: #FF8B79; --bad-soft: #3A1B17; --warn: #EFB64F; --warn-soft: #382A0F;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+h1, h2, h3 { font-family: var(--f-display); margin: 0; text-wrap: balance; letter-spacing: -0.01em; }
+a { color: var(--accent); }
+code, .mono { font-family: var(--f-mono); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Masthead */
+.top { padding-block: 22px 6px; }
+.top .wrap { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.brand { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.brand h1 { font-size: 34px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.brand h1 span { color: var(--accent); }
+.brand .sub { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); }
+.who { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); min-width: 0; }
+.who img { width: 26px; height: 26px; border-radius: 50%; }
+
+/* Tabs */
+.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); margin-top: 16px; overflow-x: auto; scrollbar-width: none; }
+.tab { display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px 11px; font-weight: 600; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
+.tab .n { font-family: var(--f-mono); font-size: 12px; font-weight: 500; background: var(--surface-2); color: var(--muted); padding: 1px 7px; border-radius: 999px; font-variant-numeric: tabular-nums; }
+@media (max-width: 480px) { .tab { padding: 10px 8px 11px; gap: 6px; font-size: 14px; } .tab .n { padding: 1px 6px; } }
+
+.notice { margin-top: 14px; padding: 10px 14px; border-radius: 8px; background: var(--warn-soft); color: var(--ink); border: 1px solid var(--line); font-size: 14px; }
+.panel { padding-block: 18px 48px; display: grid; gap: 16px; }
+.panel-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.panel-head p { margin: 4px 0 0; color: var(--muted); font-size: 14px; max-width: 62ch; }
+.panel-head h2 { font-size: 22px; font-weight: 600; }
+
+/* Workspace */
+.work { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 880px) { .work { grid-template-columns: minmax(0, 1fr); } }
+.side-col { display: grid; gap: 14px; }
+@media (min-width: 881px) { .side-col { position: sticky; top: 12px; } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; }
+.form { display: grid; gap: 12px; }
+.form-title { font-size: 17px; font-weight: 600; }
+.field { display: grid; gap: 5px; min-width: 0; }
+.field label, .lbl { font-size: 12.5px; font-weight: 600; color: var(--muted); letter-spacing: 0.02em; }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 10px; }
+input, select, textarea { width: 100%; min-width: 0; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); }
+textarea { resize: vertical; min-height: 64px; }
+input:focus, select:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+input:disabled, select:disabled, textarea:disabled { opacity: 0.6; }
+.with-btns { display: flex; gap: 6px; }
+.with-btns input { flex: 1; }
+.hint { margin: 0; font-size: 12.5px; color: var(--muted); }
+.err { margin: 0; font-size: 13px; color: var(--bad); }
+.form-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.seg { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg-opt { position: relative; }
+.seg-opt input { position: absolute; opacity: 0; inset: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.seg-opt span { display: block; text-align: center; padding: 8px; font-weight: 600; color: var(--muted); }
+.seg-opt + .seg-opt { border-left: 1px solid var(--line); }
+.seg-opt.gelir input:checked + span { background: var(--good-soft); color: var(--good); }
+.seg-opt.gider input:checked + span { background: var(--bad-soft); color: var(--bad); }
+.seg-opt input:focus-visible + span { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 9px 14px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); font-weight: 600; cursor: pointer; text-decoration: none; color: var(--ink); white-space: nowrap; }
+.btn:hover:not(:disabled) { border-color: var(--muted); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.btn.primary:hover:not(:disabled) { filter: brightness(1.08); border-color: var(--accent); }
+.btn.ghost { background: transparent; }
+.btn.danger { background: var(--bad); border-color: var(--bad); color: var(--surface); }
+.btn.sm { padding: 5px 10px; font-size: 13px; }
+.btn.xs { padding: 2px 8px; font-size: 12px; border-radius: 6px; }
+
+/* Toolbar + totals */
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.toolbar select, .toolbar input { width: auto; padding: 7px 10px; background: var(--surface); }
+.toolbar input[type="search"] { width: 280px; max-width: 100%; }
+.totals { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+.tot { padding: 14px 16px; display: grid; gap: 2px; min-width: 0; }
+.tot + .tot { border-left: 1px solid var(--line); }
+.tot .lbl { text-transform: uppercase; letter-spacing: 0.08em; font-size: 11.5px; }
+.tot .val { font-family: var(--f-mono); font-size: 21px; font-weight: 500; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.tot.gelir .val { color: var(--good); }
+.tot.gider .val { color: var(--bad); }
+.tot.net .val[data-sign="neg"] { color: var(--bad); }
+.tot.net .val[data-sign="pos"] { color: var(--good); }
+.period { font-size: 13px; color: var(--muted); }
+@media (max-width: 560px) {
+  .totals { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tot.net { grid-column: 1 / -1; border-left: 0; border-top: 1px solid var(--line); }
+  .tot .val { font-size: 17px; }
+}
+
+.chips { display: flex; gap: 6px; flex-wrap: wrap; }
+.chip { padding: 5px 11px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); font-size: 13px; font-weight: 600; color: var(--muted); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
+.chip .c { font-family: var(--f-mono); font-weight: 400; margin-left: 4px; }
+
+/* Lists */
+.list { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.row { padding: 13px 16px; display: grid; gap: 10px 14px; align-items: center; }
+.row + .row { border-top: 1px solid var(--line); }
+.main { min-width: 0; display: grid; gap: 2px; }
+.title { font-weight: 600; overflow-wrap: anywhere; }
+.title .client { font-weight: 400; color: var(--muted); }
+.meta { font-size: 13px; color: var(--muted); overflow-wrap: anywhere; }
+.meta a { text-decoration: none; }
+.note { font-size: 13.5px; color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; margin-top: 4px; }
+.acts { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; align-items: center; }
+.acts .q { font-size: 13px; font-weight: 600; color: var(--bad); margin-right: 2px; }
+
+.row.fin { grid-template-columns: 96px minmax(0, 1fr) auto auto; grid-template-areas: "date main amt acts"; }
+.row.fin .date { grid-area: date; font-family: var(--f-mono); font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.row.fin .main { grid-area: main; }
+.row.fin .amt { grid-area: amt; font-family: var(--f-mono); font-weight: 500; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+.row.fin .amt[data-tur="gelir"] { color: var(--good); }
+.row.fin .amt[data-tur="gider"] { color: var(--bad); }
+.row.fin .acts { grid-area: acts; }
+@media (max-width: 620px) {
+  .row.fin { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "date amt" "main main" "acts acts"; }
+  .row.fin .acts { justify-content: flex-start; }
+}
+
+.row.acc { grid-template-columns: 38px minmax(0, 1fr) auto; align-items: start; }
+.glyph { width: 38px; height: 38px; border-radius: 9px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; font-family: var(--f-display); font-weight: 800; font-size: 17px; }
+.cred { margin-top: 8px; display: grid; gap: 6px; font-size: 13.5px; }
+.cred.err { color: var(--bad); }
+.kv { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-width: 0; }
+.kv .k { width: 62px; flex: none; font-size: 12px; color: var(--muted); }
+.kv code { background: var(--surface-2); padding: 2px 7px; border-radius: 5px; font-size: 13px; overflow-wrap: anywhere; min-width: 0; }
+.locked-line { margin-top: 6px; font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+@media (max-width: 620px) {
+  .row.acc { grid-template-columns: 38px minmax(0, 1fr); }
+  .row.acc .acts { grid-column: 2; justify-content: flex-start; }
+}
+
+.row.ic { grid-template-columns: minmax(0, 1fr) auto; align-items: start; }
+.row.ic .side { display: grid; gap: 8px; justify-items: end; }
+.drive { display: inline-flex; align-items: center; gap: 8px; margin-top: 8px; padding: 6px 11px; border: 1px solid var(--line); border-radius: 8px; font-weight: 600; font-size: 13.5px; text-decoration: none; justify-self: start; max-width: 100%; min-width: 0; }
+.drive:hover { border-color: var(--accent); }
+.drive .host { font-family: var(--f-mono); font-weight: 400; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.nolink { margin-top: 6px; font-size: 13px; color: var(--muted); }
+select.status { width: auto; padding: 5px 9px; font-size: 13px; font-weight: 600; border-radius: 999px; border-color: transparent; }
+select.status[data-durum="hazirlaniyor"] { background: var(--surface-2); color: var(--muted); }
+select.status[data-durum="onayda"] { background: var(--warn-soft); color: var(--warn); }
+select.status[data-durum="onaylandi"] { background: var(--accent-soft); color: var(--accent); }
+select.status[data-durum="yayinda"] { background: var(--good-soft); color: var(--good); }
+@media (max-width: 620px) {
+  .row.ic { grid-template-columns: minmax(0, 1fr); }
+  .row.ic .side { justify-items: start; grid-auto-flow: column; justify-content: space-between; align-items: center; }
+}
+
+.empty { padding: 30px 20px; display: grid; gap: 6px; }
+.empty h3 { font-size: 17px; font-weight: 600; }
+.empty p { margin: 0; color: var(--muted); max-width: 52ch; }
+
+/* Vault gate */
+.gate h3 { font-size: 18px; font-weight: 600; }
+.gate p { margin: 0; font-size: 14px; color: var(--muted); }
+.gate .lockmark { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; background: var(--surface-2); color: var(--ink); }
+.gate details { border-top: 1px solid var(--line); padding-top: 10px; font-size: 14px; }
+.gate summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+.gate details .form { margin-top: 10px; }
+.vault-bar { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: 13px; color: var(--good); font-weight: 600; }
+
+#toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(18px + env(safe-area-inset-bottom, 0px)); z-index: 50; background: var(--ink); color: var(--bg); padding: 10px 16px; border-radius: 8px; font-size: 14px; max-width: calc(100% - 32px); box-shadow: 0 6px 24px rgb(0 0 0 / 0.18); }
+#toast[data-kind="err"] { background: var(--bad); color: var(--surface); }
+@media (prefers-reduced-motion: no-preference) { .btn, .chip, .tab, .drive { transition: border-color .15s, background-color .15s, color .15s; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <h1>IVEX<span>.</span></h1>
+      <span class="sub">Ajans paneli</span>
+    </div>
+    <div class="who" id="who"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <nav class="tabs" role="tablist" aria-label="Bölümler">
+    <a class="tab" role="tab" id="tb-finans" href="#finans" aria-selected="true">Gelir / Gider <span class="n" id="n-finans">0</span></a>
+    <a class="tab" role="tab" id="tb-hesaplar" href="#hesaplar" aria-selected="false">Hesaplar <span class="n" id="n-hesaplar">0</span></a>
+    <a class="tab" role="tab" id="tb-icerikler" href="#icerikler" aria-selected="false">İçerikler <span class="n" id="n-icerikler">0</span></a>
+  </nav>
+  <div class="notice" id="notice" role="status" hidden></div>
+
+  <!-- GELİR / GİDER -->
+  <section class="panel" id="tab-finans" role="tabpanel" aria-labelledby="tb-finans">
+    <div class="panel-head">
+      <div>
+        <h2>Gelir / Gider</h2>
+        <p>Müşteri ödemelerini, reklam bütçelerini, abonelikleri ve diğer masrafları buraya yazın. Ekipteki herkes aynı defteri görür.</p>
+      </div>
+      <div class="toolbar">
+        <label class="lbl" for="ay">Dönem</label>
+        <select id="ay"></select>
+        <select id="f-turfilt" aria-label="Türe göre filtrele">
+          <option value="hepsi">Gelir ve gider</option>
+          <option value="gelir">Sadece gelir</option>
+          <option value="gider">Sadece gider</option>
+        </select>
+        <button class="btn sm" id="csv" type="button" hidden>Excel için indir (CSV)</button>
+      </div>
+    </div>
+
+    <div class="totals" aria-live="polite">
+      <div class="tot gelir"><span class="lbl">Gelir</span><span class="val" id="t-gelir">₺0,00</span><span class="period" id="t-donem"></span></div>
+      <div class="tot gider"><span class="lbl">Gider</span><span class="val" id="t-gider">₺0,00</span><span class="period" id="t-adet"></span></div>
+      <div class="tot net"><span class="lbl">Net</span><span class="val" id="t-net">₺0,00</span><span class="period">Gelir eksi gider</span></div>
+    </div>
+
+    <div class="work">
+      <div class="side-col">
+        <form class="card form" id="f-form" novalidate>
+          <h3 class="form-title" id="f-ftitle">Yeni kayıt</h3>
+          <div class="seg" role="radiogroup" aria-label="Kayıt türü">
+            <label class="seg-opt gelir"><input type="radio" name="f-tur" id="f-tur-gelir" value="gelir" checked><span>Gelir</span></label>
+            <label class="seg-opt gider"><input type="radio" name="f-tur" id="f-tur-gider" value="gider"><span>Gider</span></label>
+          </div>
+          <div class="two">
+            <div class="field"><label for="f-tutar">Tutar (₺)</label><input id="f-tutar" inputmode="decimal" autocomplete="off" placeholder="12.500,00"></div>
+            <div class="field"><label for="f-tarih">Tarih</label><input id="f-tarih" type="date"></div>
+          </div>
+          <div class="field"><label for="f-kategori">Kategori</label><input id="f-kategori" list="kat-list" autocomplete="off" placeholder="Listeden seçin ya da yazın"></div>
+          <div class="field"><label for="f-musteri">Müşteri / firma</label><input id="f-musteri" list="musteri-list" autocomplete="off" placeholder="İsteğe bağlı"></div>
+          <div class="field"><label for="f-aciklama">Açıklama</label><input id="f-aciklama" autocomplete="off" placeholder="Örn. Kasım sosyal medya paketi"></div>
+          <div class="field"><label for="f-odeme">Ödeme şekli</label><select id="f-odeme"></select></div>
+          <p class="err" id="f-err" hidden></p>
+          <div class="form-actions">
+            <button class="btn primary" id="f-submit" type="submit">Kaydı ekle</button>
+            <button class="btn ghost" id="f-cancel" type="button" hidden>Vazgeç</button>
+          </div>
+        </form>
+      </div>
+      <div class="list" id="f-list" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- HESAPLAR -->
+  <section class="panel" id="tab-hesaplar" role="tabpanel" aria-labelledby="tb-hesaplar" hidden>
+    <div class="panel-head">
+      <div>
+        <h2>Hesaplar</h2>
+        <p>Müşteri ve ajans hesaplarının giriş bilgileri. Kullanıcı adı, şifre ve notlar ekibin ortak kasa şifresiyle bu tarayıcıda şifrelenir; kaydedilen yerde sadece şifreli hali durur.</p>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="h-ara" placeholder="Platform, müşteri ya da kullanıcı ara" aria-label="Hesaplarda ara">
+      </div>
+    </div>
+    <div class="work">
+      <div class="side-col">
+        <div class="card form gate" id="gate">
+          <div class="lockmark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10" width="16" height="11" rx="2" fill="none"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none"/></svg>
+          </div>
+          <div id="g-loading"><p>Kasa bilgisi yükleniyor…</p></div>
+
+          <form class="form" id="g-setup" novalidate hidden>
+            <h3>Kasayı kurun</h3>
+            <p>Ekibin ortak kullanacağı bir kasa şifresi belirleyin. Bu şifre hiçbir yere kaydedilmez; hesap şifreleri onunla kilitlenir. Ekip arkadaşlarınıza yüz yüze ya da telefonda söyleyin, bu sayfaya yazmayın.</p>
+            <div class="field"><label for="g-p1">Kasa şifresi (en az 10 karakter)</label><input id="g-p1" type="password" autocomplete="new-password"></div>
+            <div class="field"><label for="g-p2">Kasa şifresi tekrar</label><input id="g-p2" type="password" autocomplete="new-password"></div>
+            <p class="hint">Kasa şifresi unutulursa kayıtlı şifreler geri getirilemez. Bir yere not alın.</p>
+            <p class="err" id="g-setup-err" hidden></p>
+            <div class="form-actions"><button class="btn primary" id="g-setup-btn" type="submit">Kasayı kur</button></div>
+          </form>
+
+          <div id="g-unlock-wrap" hidden>
+            <form class="form" id="g-unlock" novalidate>
+              <h3>Kasa kilitli</h3>
+              <p>Kullanıcı adlarını ve şifreleri görmek ya da yeni hesap eklemek için kasa şifresini girin.</p>
+              <div class="field"><label for="g-pass">Kasa şifresi</label><input id="g-pass" type="password" autocomplete="current-password"></div>
+              <p class="err" id="g-unlock-err" hidden></p>
+              <div class="form-actions"><button class="btn primary" id="g-unlock-btn" type="submit">Kilidi aç</button></div>
+            </form>
+            <p class="hint" id="g-ask" style="margin-top:12px">Kasa şifresini bilmiyorsanız panelin sahibine sorun.</p>
+            <details id="g-reset-wrap" hidden style="margin-top:12px">
+              <summary>Kasa şifresini unuttum</summary>
+              <form class="form" id="g-reset" novalidate>
+                <p>Kasayı sıfırlamak kayıtlı bütün hesapları kalıcı olarak siler. Sonra yeni bir kasa şifresiyle baştan kurarsınız. Bu seçeneği sadece panelin sahibi görür.</p>
+                <div class="field"><label for="g-reset-confirm">Onay için SIFIRLA yazın</label><input id="g-reset-confirm" autocomplete="off"></div>
+                <p class="err" id="g-reset-err" hidden></p>
+                <div class="form-actions"><button class="btn danger" id="g-reset-btn" type="submit">Kasayı sıfırla</button></div>
+              </form>
+            </details>
+          </div>
+        </div>
+
+        <form class="card form" id="h-form" novalidate hidden>
+          <div class="vault-bar"><span>Kasa açık</span><button class="btn xs ghost" id="lock-btn" type="button">Kilitle</button></div>
+          <h3 class="form-title" id="h-ftitle">Yeni hesap</h3>
+          <div class="field"><label for="h-platform">Platform</label><input id="h-platform" list="platform-list" autocomplete="off" placeholder="Instagram, Meta Business, Google Ads…"></div>
+          <div class="field"><label for="h-musteri">Kime ait</label><input id="h-musteri" list="musteri-list" autocomplete="off" placeholder="Müşteri adı ya da IVEX"></div>
+          <div class="field"><label for="h-url">Giriş adresi</label><input id="h-url" inputmode="url" autocomplete="off" placeholder="instagram.com"></div>
+          <div class="field"><label for="h-user">Kullanıcı adı / e-posta</label><input id="h-user" autocomplete="off" spellcheck="false"></div>
+          <div class="field">
+            <label for="h-pass">Şifre</label>
+            <div class="with-btns">
+              <input id="h-pass" type="password" autocomplete="new-password" spellcheck="false">
+              <button class="btn sm ghost" id="h-pass-show" type="button" aria-pressed="false">Göster</button>
+              <button class="btn sm ghost" id="h-pass-gen" type="button">Üret</button>
+            </div>
+          </div>
+          <div class="field"><label for="h-not">Not</label><textarea id="h-not" rows="2" placeholder="Örn. doğrulama kodu hangi telefona geliyor"></textarea></div>
+          <p class="err" id="h-err" hidden></p>
+          <div class="form-actions">
+            <button class="btn primary" id="h-submit" type="submit">Hesabı ekle</button>
+            <button class="btn ghost" id="h-cancel" type="button" hidden>Vazgeç</button>
+          </div>
+        </form>
+      </div>
+      <div class="list" id="h-list" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- İÇERİKLER -->
+  <section class="panel" id="tab-icerikler" role="tabpanel" aria-labelledby="tb-icerikler" hidden>
+    <div class="panel-head">
+      <div>
+        <h2>İçerikler</h2>
+        <p>Hazırlanan video, gönderi ve tasarımların Drive linkleri. Dosyayı Drive'a yükleyin, paylaşım linkini buraya yapıştırın ve durumunu güncel tutun.</p>
+      </div>
+      <div class="toolbar">
+        <input type="search" id="i-ara" placeholder="Başlık ya da not ara" aria-label="İçeriklerde ara">
+        <select id="i-musfilt" aria-label="Müşteriye göre filtrele"></select>
+      </div>
+    </div>
+    <div class="chips" id="i-chips" role="group" aria-label="Duruma göre filtrele"></div>
+    <div class="work">
+      <div class="side-col">
+        <form class="card form" id="i-form" novalidate>
+          <h3 class="form-title" id="i-ftitle">Yeni içerik</h3>
+          <div class="field"><label for="i-baslik">Başlık</label><input id="i-baslik" autocomplete="off" placeholder="Örn. Aralık kampanya reels'i"></div>
+          <div class="field"><label for="i-musteri">Müşteri</label><input id="i-musteri" list="musteri-list" autocomplete="off"></div>
+          <div class="two">
+            <div class="field"><label for="i-tur">Tür</label><select id="i-tur"></select></div>
+            <div class="field"><label for="i-durum">Durum</label><select id="i-durum"></select></div>
+          </div>
+          <div class="field"><label for="i-link">Drive linki</label><input id="i-link" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://drive.google.com/…"></div>
+          <div class="field"><label for="i-tarih">Yayın tarihi</label><input id="i-tarih" type="date"></div>
+          <div class="field"><label for="i-not">Not</label><textarea id="i-not" rows="2" placeholder="Revize istekleri, açıklama metni…"></textarea></div>
+          <p class="hint">Linki herkesin açabilmesi için Drive'da paylaşım ayarını "Bağlantıya sahip olan herkes" ya da ekip üyelerine açık yapın.</p>
+          <p class="err" id="i-err" hidden></p>
+          <div class="form-actions">
+            <button class="btn primary" id="i-submit" type="submit">İçeriği ekle</button>
+            <button class="btn ghost" id="i-cancel" type="button" hidden>Vazgeç</button>
+          </div>
+        </form>
+      </div>
+      <div class="list" id="i-list" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<datalist id="kat-list"></datalist>
+<datalist id="musteri-list"></datalist>
+<datalist id="platform-list"></datalist>
+<div id="toast" role="status" aria-live="polite" hidden></div>
+
+<script>
+(() => {
+'use strict';
+
+/* ---------- helpers ---------- */
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  if (attrs) for (const [k, v] of Object.entries(attrs)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v;
+    else if (typeof v === 'boolean') el[k] = v;
+    else el.setAttribute(k, v);
+  }
+  for (const k of kids.flat(Infinity)) {
+    if (k == null || k === false) continue;
+    el.append(k instanceof Node ? k : document.createTextNode(String(k)));
+  }
+  return el;
+}
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const nowIso = () => new Date().toISOString();
+const pad = n => String(n).padStart(2, '0');
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`; };
+const thisMonth = () => today().slice(0, 7);
+const ymd = s => { const [y, m, d] = String(s || '').split('-').map(Number); return (y && m && d) ? new Date(y, m - 1, d) : null; };
+const fmtDate = s => { const d = ymd(s); return d ? d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'short', year: 'numeric' }) : '—'; };
+const monthLabel = ym => {
+  const [y, m] = ym.split('-').map(Number);
+  const t = new Date(y, m - 1, 1).toLocaleDateString('tr-TR', { month: 'long', year: 'numeric' });
+  return t.charAt(0).toLocaleUpperCase('tr-TR') + t.slice(1);
+};
+const TRY = new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY', minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmt = n => TRY.format(Number(n) || 0);
+const trLower = s => String(s || '').toLocaleLowerCase('tr-TR');
+
+function parseTutar(raw) {
+  let s = String(raw || '').replace(/\s|₺/g, '').replace(/tl$/i, '');
+  if (!s) return NaN;
+  const lc = s.lastIndexOf(','), ld = s.lastIndexOf('.');
+  if (lc >= 0 && ld >= 0) s = ld > lc ? s.replace(/,/g, '') : s.replace(/\./g, '').replace(',', '.');
+  else if (lc >= 0) s = s.replace(/\./g, '').replace(',', '.');
+  else if (/^\d{1,3}(\.\d{3})+$/.test(s)) s = s.replace(/\./g, '');
+  if (!/^\d+(\.\d+)?$/.test(s)) return NaN;
+  return Math.round(Number(s) * 100) / 100;
+}
+function normUrl(u) {
+  u = String(u || '').trim();
+  if (!u) return '';
+  if (!/^[a-z][a-z0-9+.-]*:\/\//i.test(u)) u = 'https://' + u;
+  try { const x = new URL(u); return (x.protocol === 'https:' || x.protocol === 'http:') && x.hostname.includes('.') ? x.href : null; }
+  catch { return null; }
+}
+const safeUrl = u => { const n = normUrl(u); return n || null; };
+const hostOf = u => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
+const isDrive = u => /(^|\.)(drive|docs)\.google\.com$/.test(hostOf(u));
+
+/* ---------- crypto (Web Crypto: PBKDF2-SHA256 -> AES-GCM-256) ---------- */
+const enc = new TextEncoder(), dec = new TextDecoder();
+const ITER = 600000;
+const b64 = buf => { let s = ''; for (const b of new Uint8Array(buf)) s += String.fromCharCode(b); return btoa(s); };
+const unb64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+async function deriveKey(pass, saltB64, iter) {
+  const base = await crypto.subtle.importKey('raw', enc.encode(pass), 'PBKDF2', false, ['deriveKey']);
+  return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: unb64(saltB64), iterations: iter, hash: 'SHA-256' },
+    base, { name: 'AES-GCM', length: 256 }, false, ['encrypt', 'decrypt']);
+}
+async function seal(key, obj, aad) {
+  const iv = crypto.getRandomValues(new Uint8Array(12));
+  const ct = await crypto.subtle.encrypt({ name: 'AES-GCM', iv, additionalData: enc.encode(aad) }, key, enc.encode(JSON.stringify(obj)));
+  return { iv: b64(iv), ct: b64(ct) };
+}
+async function openBox(key, box, aad) {
+  const pt = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: unb64(box.iv), additionalData: enc.encode(aad) }, key, unb64(box.ct));
+  return JSON.parse(dec.decode(pt));
+}
+function genPassword(len = 18) {
+  const cs = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*?-_';
+  const out = []; const buf = new Uint8Array(1);
+  const lim = 256 - (256 % cs.length);
+  while (out.length < len) { crypto.getRandomValues(buf); if (buf[0] < lim) out.push(cs[buf[0] % cs.length]); }
+  return out.join('');
+}
+
+/* ---------- constants ---------- */
+const TABS = ['finans', 'hesaplar', 'icerikler'];
+const KATEGORI = {
+  gelir: ['Müşteri ödemesi', 'Kapora / ön ödeme', 'Reklam yönetimi ücreti', 'Danışmanlık', 'Diğer gelir'],
+  gider: ['Reklam bütçesi', 'Yazılım / abonelik', 'Maaş / prim', 'Freelancer', 'Ofis / kira', 'Vergi / muhasebe', 'Ekipman', 'Diğer gider']
+};
+const ODEME = ['Havale / EFT', 'Kredi kartı', 'Nakit', 'Diğer'];
+const PLATFORM = ['Instagram', 'Facebook', 'Meta Business Suite', 'TikTok', 'YouTube', 'Google Ads', 'Google İşletme Profili', 'Gmail / Google hesabı', 'LinkedIn', 'X (Twitter)', 'Canva', 'Web sitesi paneli', 'Hosting / alan adı'];
+const ITUR = ['Reels', 'Gönderi', 'Story', 'Video', 'Tasarım', 'Logo / kurumsal kimlik', 'Web sitesi', 'Diğer'];
+const DURUM = [['hazirlaniyor', 'Hazırlanıyor'], ['onayda', 'Müşteri onayında'], ['onaylandi', 'Onaylandı'], ['yayinda', 'Yayınlandı']];
+const DURUM_AD = Object.fromEntries(DURUM);
+const LOCK_MS = 10 * 60 * 1000;
+const TAB_ID = 'tab-' + Math.random().toString(36).slice(2);
+
+/* ---------- state ---------- */
+const S = {
+  db: null, user: null, dl: null, noDb: false,
+  me: null, isOwner: false, canWrite: null, readOnly: false,
+  finans: [], hesaplar: [], icerikler: [], kasa: null,
+  loaded: { finans: false, hesaplar: false, icerikler: false, kasa: false },
+  failed: false, slow: false,
+  key: null, keySalt: null, secrets: new Map(), shown: new Set(),
+  edit: { finans: null, hesaplar: null, icerikler: null },
+  del: null, names: new Map(),
+  filt: { ay: thisMonth(), tur: 'hepsi', hq: '', iq: '', imus: '', idur: 'hepsi' },
+  lastAct: Date.now()
+};
+const ro = () => S.noDb || S.readOnly;
+
+/* ---------- ui bits ---------- */
+let toastT;
+function toast(msg, kind) {
+  const t = $('#toast'); t.textContent = msg; t.dataset.kind = kind || ''; t.hidden = false;
+  clearTimeout(toastT); toastT = setTimeout(() => { t.hidden = true; }, 3600);
+}
+function showErr(id, msg) { const e = $(id); e.textContent = msg || ''; e.hidden = !msg; }
+function busy(btn, on, label) {
+  if (on) { btn.dataset.label = btn.textContent; btn.textContent = label; btn.disabled = true; }
+  else { if (btn.dataset.label) btn.textContent = btn.dataset.label; btn.disabled = ro() && btn.dataset.ro !== 'ok'; }
+}
+function updateNotice() {
+  const n = $('#notice'); let msg = '';
+  if (S.noDb) msg = 'Bu panel kayıtları claude.ai üzerinde saklar. Kayıtları görmek ve eklemek için sayfayı claude.ai bağlantısından, oturum açmış olarak açın.';
+  else if (S.readOnly) msg = 'Bu panelde sadece görüntüleme yetkiniz var, kayıtları göremez ve ekleyemezsiniz. Panelin sahibinden sizi Düzenleyen (Editor) olarak eklemesini isteyin.';
+  else if (S.failed) msg = 'Kayıtlara şu an ulaşılamıyor. Sayfayı yeniden açmayı deneyin.';
+  else if (S.slow && !Object.values(S.loaded).every(Boolean)) msg = 'Kayıtlar henüz yüklenemedi. Bağlantınızı kontrol edin; gelen kayıtlar burada görünecek.';
+  n.textContent = msg; n.hidden = !msg;
+}
+function emptyState(title, text) { return h('div', { class: 'empty' }, h('h3', null, title), h('p', null, text)); }
+const loadingState = () => emptyState('Kayıtlar yükleniyor…', 'Ekibin eklediği kayıtlar birazdan burada görünecek.');
+function metaLine(parts) {
+  const xs = parts.filter(Boolean);
+  return xs.length ? h('div', { class: 'meta' }, xs.flatMap((p, i) => i ? [' · ', p] : [p])) : null;
+}
+function byName(uid) {
+  if (!uid) return null;
+  return h('span', { 'data-uid': uid }, S.names.get(uid) || 'Ekip üyesi');
+}
+async function fillNames() {
+  const els = $$('[data-uid]'); if (!els.length || !S.user) return;
+  const ids = [...new Set(els.map(e => e.dataset.uid))];
+  try {
+    const ps = await S.user.profiles(ids);
+    for (const id of ids) { const p = ps[id]; S.names.set(id, p ? (p.isMe ? 'Siz' : (p.name || 'Ekip üyesi')) : 'Ekip üyesi'); }
+    for (const el of $$('[data-uid]')) { const n = S.names.get(el.dataset.uid); if (n) el.textContent = n; }
+  } catch { /* names are optional */ }
+}
+function actions(col, id, opts = {}) {
+  const k = col + '/' + id;
+  if (S.del === k) {
+    return h('div', { class: 'acts' },
+      h('span', { class: 'q' }, 'Silinsin mi?'),
+      h('button', { class: 'btn sm danger', type: 'button', 'data-act': 'del-yes', 'data-col': col, 'data-id': id }, 'Evet, sil'),
+      h('button', { class: 'btn sm ghost', type: 'button', 'data-act': 'del-no' }, 'Vazgeç'));
+  }
+  return h('div', { class: 'acts' },
+    h('button', { class: 'btn sm ghost', type: 'button', 'data-act': 'edit', 'data-col': col, 'data-id': id, disabled: ro() || !!opts.noEdit }, 'Düzenle'),
+    h('button', { class: 'btn sm ghost', type: 'button', 'data-act': 'del', 'data-col': col, 'data-id': id, disabled: ro() || !!opts.locked }, 'Sil'));
+}
+
+/* ---------- routing ---------- */
+function route() {
+  const want = location.hash.slice(1);
+  const t = TABS.includes(want) ? want : 'finans';
+  for (const x of TABS) {
+    $('#tab-' + x).hidden = x !== t;
+    $('#tb-' + x).setAttribute('aria-selected', String(x === t));
+  }
+}
+
+/* ---------- render ---------- */
+function renderAll() {
+  renderCounts(); renderDatalists(); renderFinans(); renderHesaplar(); renderIcerikler(); fillNames();
+}
+function renderCounts() {
+  $('#n-finans').textContent = S.finans.length;
+  $('#n-hesaplar').textContent = S.hesaplar.length;
+  $('#n-icerikler').textContent = S.icerikler.length;
+}
+function renderDatalists() {
+  const tur = ($('input[name="f-tur"]:checked') || {}).value || 'gelir';
+  const used = S.finans.filter(r => r.tur === tur).map(r => r.kategori).filter(Boolean);
+  const kats = [...new Set([...KATEGORI[tur], ...used])];
+  $('#kat-list').replaceChildren(...kats.map(k => h('option', { value: k })));
+  const mus = [...new Set([...S.finans, ...S.hesaplar, ...S.icerikler].map(r => (r.musteri || '').trim()).filter(Boolean))]
+    .sort((a, b) => a.localeCompare(b, 'tr'));
+  $('#musteri-list').replaceChildren(...mus.map(k => h('option', { value: k })));
+  const plats = [...new Set([...PLATFORM, ...S.hesaplar.map(r => r.platform).filter(Boolean)])];
+  $('#platform-list').replaceChildren(...plats.map(k => h('option', { value: k })));
+  const sel = $('#i-musfilt'); const cur = S.filt.imus;
+  const imus = [...new Set(S.icerikler.map(r => (r.musteri || '').trim()).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'tr'));
+  sel.replaceChildren(h('option', { value: '' }, 'Tüm müşteriler'), ...imus.map(m => h('option', { value: m }, m)));
+  sel.value = imus.includes(cur) ? cur : '';
+  if (sel.value !== cur) S.filt.imus = sel.value;
+}
+
+const byDateDesc = (a, b) => String(b.tarih || '').localeCompare(String(a.tarih || '')) || String(b.olusturma || '').localeCompare(String(a.olusturma || ''));
+function finansInPeriod() {
+  const ay = S.filt.ay;
+  return S.finans.filter(r => ay === 'tum' || String(r.tarih || '').startsWith(ay));
+}
+function renderFinans() {
+  const months = new Set([thisMonth(), ...S.finans.map(r => String(r.tarih || '').slice(0, 7)).filter(m => /^\d{4}-\d{2}$/.test(m))]);
+  if (S.filt.ay !== 'tum') months.add(S.filt.ay);
+  const sel = $('#ay');
+  sel.replaceChildren(...[...months].sort().reverse().map(m => h('option', { value: m }, monthLabel(m))), h('option', { value: 'tum' }, 'Tüm kayıtlar'));
+  sel.value = S.filt.ay;
+
+  const inP = finansInPeriod();
+  let gel = 0, gid = 0;
+  for (const r of inP) { const t = Number(r.tutar) || 0; if (r.tur === 'gelir') gel += t; else if (r.tur === 'gider') gid += t; }
+  gel = Math.round(gel * 100) / 100; gid = Math.round(gid * 100) / 100;
+  const net = Math.round((gel - gid) * 100) / 100;
+  $('#t-gelir').textContent = fmt(gel);
+  $('#t-gider').textContent = fmt(gid);
+  const tn = $('#t-net'); tn.textContent = (net > 0 ? '+' : '') + fmt(net); tn.dataset.sign = net > 0 ? 'pos' : net < 0 ? 'neg' : '';
+  $('#t-donem').textContent = S.filt.ay === 'tum' ? 'Tüm kayıtlar' : monthLabel(S.filt.ay);
+  $('#t-adet').textContent = inP.length + ' kayıt';
+
+  const rows = inP.filter(r => S.filt.tur === 'hepsi' || r.tur === S.filt.tur).sort(byDateDesc);
+  const box = $('#f-list');
+  if (!rows.length) {
+    box.replaceChildren(!S.noDb && !S.loaded.finans ? loadingState() : S.finans.length
+      ? emptyState('Bu dönemde kayıt yok', 'Dönem seçimini değiştirin ya da bu döneme ait yeni bir kayıt ekleyin.')
+      : emptyState('Defter boş', 'Soldaki formdan ilk geliri ya da gideri ekleyin. Eklediğiniz kayıt ekipteki herkesin listesinde anında görünür.'));
+    return;
+  }
+  box.replaceChildren(...rows.map(r => h('div', { class: 'row fin' },
+    h('div', { class: 'date' }, fmtDate(r.tarih)),
+    h('div', { class: 'main' },
+      h('div', { class: 'title' }, r.aciklama || r.kategori || (r.tur === 'gelir' ? 'Gelir' : 'Gider')),
+      metaLine([r.aciklama ? r.kategori : null, r.musteri, r.odeme, byName(r.ekleyen)])),
+    h('div', { class: 'amt', 'data-tur': r.tur }, (r.tur === 'gelir' ? '+' : '−') + fmt(r.tutar)),
+    actions('finans', r.id))));
+}
+
+function renderGate() {
+  const setUp = !!(S.kasa && S.kasa.kontrol);
+  const open = !!S.key;
+  $('#gate').hidden = open;
+  $('#h-form').hidden = !open;
+  $('#g-loading').hidden = S.noDb || setUp || S.loaded.kasa;
+  $('#g-setup').hidden = S.noDb || setUp || !S.loaded.kasa;
+  $('#g-unlock-wrap').hidden = S.noDb || !setUp;
+  $('#g-reset-wrap').hidden = !S.isOwner;
+  $('#g-ask').hidden = S.isOwner;
+  if (S.noDb) {
+    $('#g-loading').hidden = false;
+    $('#g-loading').firstElementChild.textContent = 'Kasa, sayfa claude.ai üzerinde açıldığında kullanılabilir.';
+  }
+}
+function renderHesaplar() {
+  renderGate();
+  const q = trLower(S.filt.hq).trim();
+  const rows = S.hesaplar.filter(r => {
+    if (!q) return true;
+    const sec = S.key ? S.secrets.get(r.id) : null;
+    const hay = trLower([r.platform, r.musteri, r.url, sec && sec.data ? sec.data.kullanici : ''].join(' '));
+    return hay.includes(q);
+  }).sort((a, b) => String(a.platform || '').localeCompare(String(b.platform || ''), 'tr') || String(a.musteri || '').localeCompare(String(b.musteri || ''), 'tr'));
+  const box = $('#h-list');
+  if (!rows.length) {
+    box.replaceChildren(!S.noDb && !S.loaded.hesaplar ? loadingState() : S.hesaplar.length
+      ? emptyState('Eşleşen hesap yok', 'Aramayı değiştirin ya da temizleyin.')
+      : emptyState('Kayıtlı hesap yok', S.key ? 'Soldaki formdan ilk hesabı ekleyin.' : 'Önce kasayı kurun ya da açın, sonra soldaki formdan hesap ekleyin.'));
+    return;
+  }
+  box.replaceChildren(...rows.map(r => {
+    const url = r.url ? safeUrl(r.url) : null;
+    const sec = S.key ? S.secrets.get(r.id) : null;
+    return h('div', { class: 'row acc' },
+      h('div', { class: 'glyph', 'aria-hidden': 'true' }, (String(r.platform || '?').trim().charAt(0) || '?').toLocaleUpperCase('tr-TR')),
+      h('div', { class: 'main' },
+        h('div', { class: 'title' }, r.platform || 'Adsız hesap', r.musteri ? h('span', { class: 'client' }, ' · ' + r.musteri) : null),
+        metaLine([url ? h('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, hostOf(url)) : null, byName(r.ekleyen)]),
+        S.key ? credBlock(r, sec) : h('div', { class: 'locked-line' }, 'Kullanıcı adı ve şifre kasada kilitli')),
+      actions('hesaplar', r.id, { noEdit: !S.key || !sec || !!sec.error, locked: !S.key }));
+  }));
+}
+function credBlock(r, sec) {
+  if (!sec) return h('div', { class: 'cred' }, 'Çözülüyor…');
+  if (sec.error) return h('div', { class: 'cred err' }, 'Bu kayıt mevcut kasa şifresiyle açılamadı.');
+  const d = sec.data || {}; const shown = S.shown.has(r.id);
+  return h('div', { class: 'cred' },
+    h('div', { class: 'kv' }, h('span', { class: 'k' }, 'Kullanıcı'),
+      h('code', { id: 'us-' + r.id }, d.kullanici || '—'),
+      d.kullanici ? h('button', { class: 'btn xs ghost', type: 'button', 'data-act': 'copy-user', 'data-id': r.id }, 'Kopyala') : null),
+    h('div', { class: 'kv' }, h('span', { class: 'k' }, 'Şifre'),
+      h('code', { id: 'pw-' + r.id }, d.sifre ? (shown ? d.sifre : '••••••••••') : '—'),
+      d.sifre ? [
+        h('button', { class: 'btn xs ghost', type: 'button', 'data-act': 'toggle-pw', 'data-id': r.id, 'aria-pressed': String(shown) }, shown ? 'Gizle' : 'Göster'),
+        h('button', { class: 'btn xs ghost', type: 'button', 'data-act': 'copy-pw', 'data-id': r.id }, 'Kopyala')] : null),
+    d.not ? h('div', { class: 'note' }, d.not) : null);
+}
+
+function renderIcerikler() {
+  const q = trLower(S.filt.iq).trim();
+  const base = S.icerikler.filter(r => (!S.filt.imus || (r.musteri || '').trim() === S.filt.imus)
+    && (!q || trLower([r.baslik, r.not, r.musteri, r.tur].join(' ')).includes(q)));
+  const counts = Object.fromEntries(DURUM.map(([k]) => [k, 0]));
+  for (const r of base) if (counts[r.durum] != null) counts[r.durum]++;
+  $('#i-chips').replaceChildren(
+    h('button', { class: 'chip', type: 'button', 'data-act': 'idur', 'data-v': 'hepsi', 'aria-pressed': String(S.filt.idur === 'hepsi') }, 'Tümü', h('span', { class: 'c' }, base.length)),
+    ...DURUM.map(([k, ad]) => h('button', { class: 'chip', type: 'button', 'data-act': 'idur', 'data-v': k, 'aria-pressed': String(S.filt.idur === k) }, ad, h('span', { class: 'c' }, counts[k]))));
+  const rows = base.filter(r => S.filt.idur === 'hepsi' || r.durum === S.filt.idur).sort(byDateDesc);
+  const box = $('#i-list');
+  if (!rows.length) {
+    box.replaceChildren(!S.noDb && !S.loaded.icerikler ? loadingState() : S.icerikler.length
+      ? emptyState('Bu filtreye uyan içerik yok', 'Durum, müşteri ya da arama filtresini değiştirin.')
+      : emptyState('Henüz içerik yok', 'Dosyayı Drive\'a yükleyin, paylaşım linkini soldaki forma yapıştırın. Ekip içerikleri ve durumlarını buradan takip eder.'));
+    return;
+  }
+  box.replaceChildren(...rows.map(r => {
+    const link = r.link ? safeUrl(r.link) : null;
+    return h('div', { class: 'row ic' },
+      h('div', { class: 'main' },
+        h('div', { class: 'title' }, r.baslik || 'Adsız içerik'),
+        metaLine([r.musteri, r.tur, r.tarih ? fmtDate(r.tarih) : null, byName(r.ekleyen)]),
+        r.not ? h('div', { class: 'note' }, r.not) : null,
+        link ? h('a', { class: 'drive', href: link, target: '_blank', rel: 'noopener noreferrer' }, isDrive(link) ? 'Drive\'da aç' : 'Linki aç', h('span', { class: 'host' }, hostOf(link)))
+             : h('div', { class: 'nolink' }, 'Link eklenmedi')),
+      h('div', { class: 'side' },
+        h('select', { class: 'status', 'data-act': 'durum', 'data-id': r.id, 'data-durum': r.durum || 'hazirlaniyor', 'aria-label': 'Durum', disabled: ro() },
+          ...DURUM.map(([k, ad]) => h('option', { value: k, selected: (r.durum || 'hazirlaniyor') === k }, ad))),
+        actions('icerikler', r.id)));
+  }));
+}
+
+function renderWho() {
+  const me = S.me; if (!me) return;
+  $('#who').replaceChildren(h('img', { src: me.avatarUrl, alt: '' }), h('span', null, me.name || 'Siz'));
+}
+
+/* ---------- writes ---------- */
+function writeErr(e) {
+  switch (e && e.code) {
+    case 'invalid_argument': return 'Kaydedilemedi: bu panelde düzenleme yetkiniz yok ya da kayıt az önce silinmiş.';
+    case 'quota_exceeded': return 'Depolama sınırı doldu. Eski kayıtları silip tekrar deneyin.';
+    case 'resource_exhausted': return 'Çok hızlı işlem yapıldı. Birkaç saniye bekleyip tekrar deneyin.';
+    default: return 'Bağlantı sorunu nedeniyle kaydedilemedi. Tekrar deneyin.';
+  }
+}
+async function write(fn) {
+  try { return await fn(); }
+  catch (e) {
+    if (e && e.code === 'unavailable') { await sleep(500 + Math.random() * 700); return await fn(); }
+    throw e;
+  }
+}
+function onWriteFail(e, errId) {
+  const msg = writeErr(e);
+  if (errId) showErr(errId, msg); else toast(msg, 'err');
+  if (e && e.code === 'invalid_argument' && S.canWrite !== true && !S.edit.finans && !S.edit.hesaplar && !S.edit.icerikler) setReadOnly();
+}
+function setReadOnly() {
+  S.readOnly = true;
+  for (const f of ['#f-form', '#h-form', '#i-form', '#g-setup']) for (const el of $(f).elements) el.disabled = true;
+  updateNotice(); renderAll();
+}
+function touch() { S.lastAct = Date.now(); }
+
+function resetForm(col) {
+  S.edit[col] = null;
+  if (col === 'finans') {
+    for (const id of ['#f-tutar', '#f-kategori', '#f-musteri', '#f-aciklama']) $(id).value = '';
+    $('#f-odeme').value = ODEME[0];
+    if (!$('#f-tarih').value) $('#f-tarih').value = today();
+    showErr('#f-err');
+  } else if (col === 'hesaplar') {
+    for (const id of ['#h-platform', '#h-musteri', '#h-url', '#h-user', '#h-pass', '#h-not']) $(id).value = '';
+    $('#h-pass').type = 'password'; $('#h-pass-show').textContent = 'Göster'; $('#h-pass-show').setAttribute('aria-pressed', 'false');
+    showErr('#h-err');
+  } else {
+    for (const id of ['#i-baslik', '#i-musteri', '#i-link', '#i-tarih', '#i-not']) $(id).value = '';
+    $('#i-tur').value = ITUR[0]; $('#i-durum').value = 'hazirlaniyor';
+    showErr('#i-err');
+  }
+  formMode(col);
+}
+function formMode(col) {
+  const p = { finans: 'f', hesaplar: 'h', icerikler: 'i' }[col];
+  const editing = !!S.edit[col];
+  const labels = { finans: ['Yeni kayıt', 'Kaydı düzenle', 'Kaydı ekle'], hesaplar: ['Yeni hesap', 'Hesabı düzenle', 'Hesabı ekle'], icerikler: ['Yeni içerik', 'İçeriği düzenle', 'İçeriği ekle'] }[col];
+  $('#' + p + '-ftitle').textContent = editing ? labels[1] : labels[0];
+  $('#' + p + '-submit').textContent = editing ? 'Değişiklikleri kaydet' : labels[2];
+  $('#' + p + '-cancel').hidden = !editing;
+}
+function startEdit(col, id) {
+  const r = S[col].find(x => x.id === id); if (!r) return;
+  if (col === 'finans') {
+    $('#f-tur-' + (r.tur === 'gider' ? 'gider' : 'gelir')).checked = true;
+    $('#f-tutar').value = (Number(r.tutar) || 0).toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    $('#f-tarih').value = r.tarih || today();
+    $('#f-kategori').value = r.kategori || ''; $('#f-musteri').value = r.musteri || '';
+    $('#f-aciklama').value = r.aciklama || ''; $('#f-odeme').value = ODEME.includes(r.odeme) ? r.odeme : 'Diğer';
+    renderDatalists();
+  } else if (col === 'hesaplar') {
+    const sec = S.secrets.get(id); if (!S.key || !sec || sec.error) return;
+    $('#h-platform').value = r.platform || ''; $('#h-musteri').value = r.musteri || ''; $('#h-url').value = r.url || '';
+    $('#h-user').value = sec.data.kullanici || ''; $('#h-pass').value = sec.data.sifre || ''; $('#h-not').value = sec.data.not || '';
+  } else {
+    $('#i-baslik').value = r.baslik || ''; $('#i-musteri').value = r.musteri || '';
+    $('#i-tur').value = ITUR.includes(r.tur) ? r.tur : 'Diğer'; $('#i-durum').value = DURUM_AD[r.durum] ? r.durum : 'hazirlaniyor';
+    $('#i-link').value = r.link || ''; $('#i-tarih').value = r.tarih || ''; $('#i-not').value = r.not || '';
+  }
+  S.edit[col] = id; formMode(col);
+  const p = { finans: 'f', hesaplar: 'h', icerikler: 'i' }[col];
+  const form = $('#' + p + '-form');
+  form.scrollIntoView({ block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  const first = form.querySelector('input:not([type=radio]), select, textarea'); if (first) first.focus({ preventScroll: true });
+}
+
+async function saveFinans(e) {
+  e.preventDefault(); if (ro()) return; showErr('#f-err');
+  const tur = $('input[name="f-tur"]:checked').value;
+  const tutar = parseTutar($('#f-tutar').value);
+  if (!(tutar > 0)) { showErr('#f-err', 'Tutarı sayı olarak girin, örneğin 12.500 ya da 2499,90.'); $('#f-tutar').focus(); return; }
+  const tarih = $('#f-tarih').value || today();
+  const body = { tur, tarih, tutar, kategori: $('#f-kategori').value.trim(), musteri: $('#f-musteri').value.trim(), aciklama: $('#f-aciklama').value.trim(), odeme: $('#f-odeme').value };
+  const btn = $('#f-submit'); busy(btn, true, 'Kaydediliyor…');
+  const editId = S.edit.finans;
+  try {
+    const col = S.db.collection('finans');
+    if (editId) await write(() => col.doc(editId).update({ ...body, guncelleyen: S.me && S.me.id || null, guncelleme: nowIso() }));
+    else { const ref = col.doc(); await write(() => ref.set({ ...body, ekleyen: S.me && S.me.id || null, olusturma: nowIso() })); }
+    const keepDate = tarih;
+    resetForm('finans'); $('#f-tarih').value = editId ? today() : keepDate;
+    if (!editId && S.filt.ay !== 'tum' && !tarih.startsWith(S.filt.ay)) { S.filt.ay = tarih.slice(0, 7); renderFinans(); }
+    toast(editId ? 'Kayıt güncellendi.' : (tur === 'gelir' ? 'Gelir eklendi.' : 'Gider eklendi.'));
+  } catch (err) { onWriteFail(err, '#f-err'); }
+  finally { busy(btn, false); }
+}
+
+async function saveHesap(e) {
+  e.preventDefault(); if (ro() || !S.key) return; showErr('#h-err');
+  const platform = $('#h-platform').value.trim();
+  if (!platform) { showErr('#h-err', 'Platform adını yazın.'); $('#h-platform').focus(); return; }
+  const rawUrl = $('#h-url').value.trim(); const url = rawUrl ? normUrl(rawUrl) : '';
+  if (rawUrl && !url) { showErr('#h-err', 'Giriş adresi geçerli değil. Örnek: instagram.com'); $('#h-url').focus(); return; }
+  const secret = { kullanici: $('#h-user').value.trim(), sifre: $('#h-pass').value, not: $('#h-not').value.trim() };
+  if (!secret.kullanici && !secret.sifre) { showErr('#h-err', 'En azından kullanıcı adını ya da şifreyi girin.'); $('#h-user').focus(); return; }
+  const btn = $('#h-submit'); busy(btn, true, 'Şifreleniyor…');
+  const editId = S.edit.hesaplar; const key = S.key;
+  try {
+    const col = S.db.collection('hesaplar');
+    const ref = editId ? col.doc(editId) : col.doc();
+    const gizli = await seal(key, secret, 'hesap:' + ref.id);
+    const body = { platform, musteri: $('#h-musteri').value.trim(), url, gizli };
+    if (editId) await write(() => ref.update({ ...body, guncelleyen: S.me && S.me.id || null, guncelleme: nowIso() }));
+    else await write(() => ref.set({ ...body, ekleyen: S.me && S.me.id || null, olusturma: nowIso() }));
+    resetForm('hesaplar');
+    toast(editId ? 'Hesap güncellendi.' : 'Hesap şifrelenip kaydedildi.');
+  } catch (err) { onWriteFail(err, '#h-err'); }
+  finally { busy(btn, false); }
+}
+
+async function saveIcerik(e) {
+  e.preventDefault(); if (ro()) return; showErr('#i-err');
+  const baslik = $('#i-baslik').value.trim();
+  if (!baslik) { showErr('#i-err', 'İçeriğe bir başlık verin.'); $('#i-baslik').focus(); return; }
+  const raw = $('#i-link').value.trim(); const link = raw ? normUrl(raw) : '';
+  if (raw && !link) { showErr('#i-err', 'Link geçerli değil. Drive\'daki "Bağlantıyı kopyala" ile aldığınız adresi yapıştırın.'); $('#i-link').focus(); return; }
+  const body = { baslik, musteri: $('#i-musteri').value.trim(), tur: $('#i-tur').value, durum: $('#i-durum').value, link, tarih: $('#i-tarih').value || '', not: $('#i-not').value.trim() };
+  const btn = $('#i-submit'); busy(btn, true, 'Kaydediliyor…');
+  const editId = S.edit.icerikler;
+  try {
+    const col = S.db.collection('icerikler');
+    if (editId) await write(() => col.doc(editId).update({ ...body, guncelleyen: S.me && S.me.id || null, guncelleme: nowIso() }));
+    else { const ref = col.doc(); await write(() => ref.set({ ...body, ekleyen: S.me && S.me.id || null, olusturma: nowIso() })); }
+    resetForm('icerikler');
+    toast(editId ? 'İçerik güncellendi.' : 'İçerik eklendi.');
+  } catch (err) { onWriteFail(err, '#i-err'); }
+  finally { busy(btn, false); }
+}
+
+/* ---------- vault ---------- */
+let syncing = Promise.resolve();
+function syncSecrets() {
+  syncing = syncing.then(async () => {
+    if (!S.key) return;
+    const key = S.key; let changed = false;
+    const ids = new Set(S.hesaplar.map(r => r.id));
+    for (const id of [...S.secrets.keys()]) if (!ids.has(id)) { S.secrets.delete(id); changed = true; }
+    for (const r of S.hesaplar) {
+      const sig = r.gizli && r.gizli.ct || '';
+      const c = S.secrets.get(r.id);
+      if (c && c.sig === sig) continue;
+      let entry;
+      try { entry = { sig, data: await openBox(key, r.gizli, 'hesap:' + r.id) }; }
+      catch { entry = { sig, error: true }; }
+      if (S.key !== key) return;
+      S.secrets.set(r.id, entry); changed = true;
+    }
+    if (changed) { renderHesaplar(); fillNames(); }
+  }).catch(() => {});
+  return syncing;
+}
+function lock(msg) {
+  S.key = null; S.keySalt = null; S.secrets.clear(); S.shown.clear();
+  resetForm('hesaplar');
+  renderHesaplar(); fillNames();
+  if (msg) toast(msg);
+}
+async function setupKasa(e) {
+  e.preventDefault(); if (ro()) return; showErr('#g-setup-err');
+  const p1 = $('#g-p1').value, p2 = $('#g-p2').value;
+  if (p1.length < 10) { showErr('#g-setup-err', 'Kasa şifresi en az 10 karakter olmalı.'); return; }
+  if (p1 !== p2) { showErr('#g-setup-err', 'İki şifre birbirini tutmuyor.'); return; }
+  const btn = $('#g-setup-btn'); busy(btn, true, 'Kuruluyor…');
+  try {
+    const ref = S.db.doc('kasa/ayar');
+    const lease = await ref.acquire({ holder: TAB_ID, ttlMs: 20000 });
+    if (!lease.acquired) { showErr('#g-setup-err', 'Başka biri şu anda kasayı kuruyor. Birkaç saniye sonra tekrar bakın.'); return; }
+    const cur = await ref.get();
+    if (cur.exists && cur.data() && cur.data().kontrol) { showErr('#g-setup-err', 'Kasa az önce kuruldu. Kasa şifresini kuran kişiden alıp kilidi açın.'); return; }
+    const salt = b64(crypto.getRandomValues(new Uint8Array(16)));
+    const key = await deriveKey(p1, salt, ITER);
+    const kontrol = await seal(key, { ok: 'IVEX-KASA' }, 'kasa');
+    await write(() => ref.set({ v: 1, salt, iter: ITER, kontrol, kuran: S.me && S.me.id || null, olusturma: nowIso() }));
+    S.key = key; S.keySalt = salt; S.kasa = { v: 1, salt, iter: ITER, kontrol }; touch();
+    $('#g-p1').value = ''; $('#g-p2').value = '';
+    await syncSecrets(); renderHesaplar();
+    toast('Kasa kuruldu ve açıldı.');
+  } catch (err) { showErr('#g-setup-err', writeErr(err)); }
+  finally { busy(btn, false); }
+}
+async function unlockKasa(e) {
+  e.preventDefault(); showErr('#g-unlock-err');
+  const pass = $('#g-pass').value; const k = S.kasa;
+  if (!pass) { showErr('#g-unlock-err', 'Kasa şifresini girin.'); return; }
+  if (!k || !k.kontrol) return;
+  const btn = $('#g-unlock-btn'); btn.dataset.ro = 'ok'; busy(btn, true, 'Açılıyor…');
+  try {
+    const key = await deriveKey(pass, k.salt, k.iter || ITER);
+    const v = await openBox(key, k.kontrol, 'kasa');
+    if (!v || v.ok !== 'IVEX-KASA') throw new Error('bad');
+    S.key = key; S.keySalt = k.salt; S.secrets.clear(); touch();
+    $('#g-pass').value = '';
+    renderHesaplar(); await syncSecrets(); renderHesaplar(); fillNames();
+    toast('Kasa açıldı. 10 dakika işlem yapılmazsa kendiliğinden kilitlenir.');
+  } catch { showErr('#g-unlock-err', 'Kasa şifresi yanlış.'); }
+  finally { busy(btn, false); }
+}
+async function resetKasa(e) {
+  e.preventDefault(); showErr('#g-reset-err');
+  const v = $('#g-reset-confirm').value.trim().toLocaleUpperCase('tr-TR').replace(/İ/g, 'I');
+  if (v !== 'SIFIRLA') { showErr('#g-reset-err', 'Onaylamak için kutuya SIFIRLA yazın.'); return; }
+  const btn = $('#g-reset-btn'); busy(btn, true, 'Siliniyor…');
+  try {
+    for (const r of [...S.hesaplar]) await write(() => S.db.collection('hesaplar').doc(r.id).delete());
+    await write(() => S.db.doc('kasa/ayar').delete());
+    $('#g-reset-confirm').value = ''; $('#g-reset-wrap').open = false;
+    toast('Kasa sıfırlandı. Yeni bir kasa şifresiyle baştan kurabilirsiniz.');
+  } catch (err) { showErr('#g-reset-err', writeErr(err)); }
+  finally { busy(btn, false); }
+}
+function selectEl(el) {
+  if (!el) return;
+  const sel = getSelection(); sel.removeAllRanges();
+  const rg = document.createRange(); rg.selectNodeContents(el); sel.addRange(rg);
+}
+
+/* ---------- csv ---------- */
+async function downloadCsv() {
+  if (!S.dl) return;
+  const rows = finansInPeriod().filter(r => S.filt.tur === 'hepsi' || r.tur === S.filt.tur)
+    .sort((a, b) => -byDateDesc(a, b));
+  if (!rows.length) { toast('Bu dönemde indirilecek kayıt yok.'); return; }
+  const txt = v => { let s = String(v == null ? '' : v); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return /[;"\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  const num = n => (Number(n) || 0).toFixed(2).replace('.', ',');
+  const lines = [['Tarih', 'Tür', 'Kategori', 'Müşteri / Firma', 'Açıklama', 'Ödeme', 'Tutar (TL)'].join(';'),
+    ...rows.map(r => [txt(r.tarih), txt(r.tur === 'gelir' ? 'Gelir' : 'Gider'), txt(r.kategori), txt(r.musteri), txt(r.aciklama), txt(r.odeme), (r.tur === 'gider' ? '-' : '') + num(r.tutar)].join(';'))];
+  try { await S.dl.save({ filename: 'ivex-gelir-gider-' + (S.filt.ay === 'tum' ? 'tum-kayitlar' : S.filt.ay) + '.csv', data: '﻿' + lines.join('\r\n') }); }
+  catch (e) { if (!e || e.code !== 'declined') toast('Dosya indirilemedi.', 'err'); }
+}
+
+/* ---------- events ---------- */
+function wire() {
+  $('#f-odeme').replaceChildren(...ODEME.map(o => h('option', { value: o }, o)));
+  $('#i-tur').replaceChildren(...ITUR.map(o => h('option', { value: o }, o)));
+  $('#i-durum').replaceChildren(...DURUM.map(([k, ad]) => h('option', { value: k }, ad)));
+  $('#f-tarih').value = today();
+
+  $('#f-form').addEventListener('submit', saveFinans);
+  $('#h-form').addEventListener('submit', saveHesap);
+  $('#i-form').addEventListener('submit', saveIcerik);
+  $('#g-setup').addEventListener('submit', setupKasa);
+  $('#g-unlock').addEventListener('submit', unlockKasa);
+  $('#g-reset').addEventListener('submit', resetKasa);
+  $('#f-cancel').addEventListener('click', () => resetForm('finans'));
+  $('#h-cancel').addEventListener('click', () => resetForm('hesaplar'));
+  $('#i-cancel').addEventListener('click', () => resetForm('icerikler'));
+  $('#lock-btn').addEventListener('click', () => lock('Kasa kilitlendi.'));
+  for (const r of $$('input[name="f-tur"]')) r.addEventListener('change', renderDatalists);
+  $('#h-pass-show').addEventListener('click', () => {
+    const i = $('#h-pass'); const show = i.type === 'password'; i.type = show ? 'text' : 'password';
+    $('#h-pass-show').textContent = show ? 'Gizle' : 'Göster'; $('#h-pass-show').setAttribute('aria-pressed', String(show));
+  });
+  $('#h-pass-gen').addEventListener('click', () => {
+    const i = $('#h-pass'); i.value = genPassword(); i.type = 'text';
+    $('#h-pass-show').textContent = 'Gizle'; $('#h-pass-show').setAttribute('aria-pressed', 'true');
+  });
+  $('#ay').addEventListener('change', e => { S.filt.ay = e.target.value; renderFinans(); fillNames(); });
+  $('#f-turfilt').addEventListener('change', e => { S.filt.tur = e.target.value; renderFinans(); fillNames(); });
+  $('#csv').addEventListener('click', downloadCsv);
+  $('#h-ara').addEventListener('input', e => { S.filt.hq = e.target.value; renderHesaplar(); fillNames(); });
+  $('#i-ara').addEventListener('input', e => { S.filt.iq = e.target.value; renderIcerikler(); fillNames(); });
+  $('#i-musfilt').addEventListener('change', e => { S.filt.imus = e.target.value; renderIcerikler(); fillNames(); });
+
+  document.addEventListener('click', async e => {
+    const b = e.target.closest('[data-act]'); if (!b || b.tagName === 'SELECT') return;
+    const act = b.dataset.act, col = b.dataset.col, id = b.dataset.id;
+    if (act === 'idur') { S.filt.idur = b.dataset.v; renderIcerikler(); fillNames(); return; }
+    if (act === 'edit') { startEdit(col, id); return; }
+    if (act === 'del') { S.del = col + '/' + id; renderAll(); return; }
+    if (act === 'del-no') { S.del = null; renderAll(); return; }
+    if (act === 'del-yes') {
+      S.del = null;
+      try {
+        await write(() => S.db.collection(col).doc(id).delete());
+        if (S.edit[col] === id) resetForm(col);
+        toast('Silindi.');
+      } catch (err) { onWriteFail(err); }
+      renderAll(); return;
+    }
+    if (act === 'toggle-pw') { if (S.shown.has(id)) S.shown.delete(id); else S.shown.add(id); renderHesaplar(); fillNames(); return; }
+    if (act === 'copy-pw' || act === 'copy-user') {
+      const sec = S.secrets.get(id); if (!S.key || !sec || !sec.data) return;
+      const pw = act === 'copy-pw';
+      const text = pw ? sec.data.sifre : sec.data.kullanici;
+      try { await navigator.clipboard.writeText(text); toast(pw ? 'Şifre kopyalandı.' : 'Kullanıcı adı kopyalandı.'); }
+      catch {
+        if (pw && !S.shown.has(id)) { S.shown.add(id); renderHesaplar(); fillNames(); }
+        selectEl($((pw ? '#pw-' : '#us-') + id));
+        toast('Otomatik kopyalanamadı. Metin seçildi, elle kopyalayın.', 'err');
+      }
+    }
+  });
+  document.addEventListener('change', async e => {
+    const s = e.target; if (!s.matches('select[data-act="durum"]')) return;
+    const id = s.dataset.id, durum = s.value; s.dataset.durum = durum;
+    try { await write(() => S.db.collection('icerikler').doc(id).update({ durum, guncelleyen: S.me && S.me.id || null, guncelleme: nowIso() })); toast('Durum: ' + DURUM_AD[durum]); }
+    catch (err) { onWriteFail(err); renderIcerikler(); fillNames(); }
+  });
+  for (const ev of ['pointerdown', 'keydown']) document.addEventListener(ev, touch, { passive: true });
+  setInterval(() => { if (S.key && Date.now() - S.lastAct > LOCK_MS) lock('Kasa, 10 dakika işlem yapılmadığı için kilitlendi.'); }, 15000);
+  window.addEventListener('hashchange', route);
+  for (const a of $$('.tab')) a.addEventListener('click', () => setTimeout(route, 0));
+}
+
+/* ---------- data ---------- */
+function subscribe() {
+  const timer = setTimeout(() => { S.slow = true; updateNotice(); }, 10000);
+  const done = k => {
+    if (S.loaded[k]) return;
+    S.loaded[k] = true;
+    if (Object.values(S.loaded).every(Boolean)) { clearTimeout(timer); S.slow = false; }
+    updateNotice();
+  };
+  const fail = k => () => { S.failed = true; done(k); updateNotice(); };
+  for (const name of ['finans', 'hesaplar', 'icerikler']) {
+    S.db.collection(name).onSnapshot(snap => {
+      S[name] = snap.docs.map(d => ({ id: d.id, ...d.data() }));
+      if (!snap.metadata.fromCache) done(name);
+      if (name === 'hesaplar') syncSecrets();
+      renderAll();
+    }, fail(name));
+  }
+  S.db.doc('kasa/ayar').onSnapshot(snap => {
+    const k = snap.exists ? snap.data() : null;
+    S.kasa = k;
+    if (!snap.metadata.fromCache) done('kasa');
+    if (S.key && (!k || !k.kontrol || k.salt !== S.keySalt)) lock('Kasa değişti. Yeni kasa şifresiyle tekrar açın.');
+    renderHesaplar(); fillNames();
+  }, fail('kasa'));
+}
+
+async function init() {
+  wire(); route(); renderAll();
+  const C = window.claude;
+  if (!C || typeof C.use !== 'function') { S.noDb = true; setReadOnly(); return; }
+  const [db, user, dl] = await Promise.all([C.use('db'), C.use('user'), C.use('downloads')]);
+  S.db = db; S.user = user; S.dl = dl;
+  $('#csv').hidden = !dl;
+  if (!db) { S.noDb = true; setReadOnly(); return; }
+  if (user) {
+    try {
+      S.me = await user.me(); S.isOwner = !!S.me.isOwner;
+      S.canWrite = await user.can('data.write');
+    } catch { /* reads never reject; defensive */ }
+    renderWho();
+  }
+  if (S.canWrite === false) setReadOnly();
+  subscribe();
+  renderAll();
+}
+init();
+})();
+</script>

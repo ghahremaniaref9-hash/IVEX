@@ -1,2 +1,5 @@
 Bu klasördeki Montserrat fontları Google Fonts kaynaklıdır ve SIL Open Font License 1.1 ile lisanslıdır.
+Playfair Display (PlayfairDisplay_Variable.ttf, PlayfairDisplay_Italic_Variable.ttf; Copyright 2017 The Playfair
+Display Project Authors) ve Great Vibes (GreatVibes_400Regular.ttf; Copyright 2015 The Great Vibes Pro Project Authors) de Google Fonts
+deposundan alınmıştır ve aynı lisansla (SIL Open Font License 1.1) kullanılır.
 https://openfontlicense.org

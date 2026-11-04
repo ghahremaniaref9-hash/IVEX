@@ -1,0 +1,27 @@
+{
+  "logo": "bidaha/marka/bidaha-logo.png",
+  "cikti": {
+    "hikaye": "bidaha/yilbasi-menu/bidaha-yilbasi-menu-9x16.jpg",
+    "gonderi": "bidaha/yilbasi-menu/bidaha-yilbasi-menu-4x5.jpg"
+  },
+  "serit": "10. YIL · 2027",
+  "giris": "Tam 10 yıldır aynı sofrada, aynı müzikte, aynı güzel enerjide buluşuyoruz... Bu özel yılımızda, yenilenen menümüzle sizi yeniden aramızda görmekten büyük mutluluk duyacağız.",
+  "baslik": "Yeni Menümüz",
+  "sol": [
+    {"baslik": "MEZELER", "not": "(12 Çeşit Servis Edilir)", "ogeler": ["30 - 35 Çeşit Normal ve Balıklı Meze"]},
+    {"baslik": "ARA SICAKLAR", "ogeler": ["Kalamar Tava", "Tereyağlı Karides", "Tereyağlı Yaprak Ciğer"]},
+    {"baslik": "SALATALAR", "ogeler": ["Grek Salata"]}
+  ],
+  "sag": [
+    {"baslik": "ANA YEMEKLER", "not": "(Seçmeli)", "ogeler": ["Fırın Somon", "Izgara Köfte", "Kuzu Şiş"]},
+    {"baslik": "GÜNÜN TATLISI", "ogeler": ["Profiterol", "Dondurmalı İrmik Tatlısı", "Hayrabolu Tatlısı", "~veya", "Meyve Tabağı"]}
+  ],
+  "fiyatlar": [
+    {"baslik": "CUMA - CUMARTESİ", "satirlar": [["Alkollü Yemekli", 3250], ["Alkollü Ana Yemeksiz", 2550], ["Alkolsüz Yemekli", 2550]]},
+    {"baslik": "DİĞER GÜNLER", "satirlar": [["Alkollü Yemekli", 2950], ["Alkollü Ana Yemeksiz", 2250], ["Alkolsüz Yemekli", 2250]]}
+  ],
+  "alt": {
+    "rezervasyon": "Rezervasyon: 0530 100 85 95 · 0541 243 24 21",
+    "adres": "İstiklal Caddesi No: 187 · İstanbul"
+  }
+}

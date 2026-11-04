@@ -8,15 +8,28 @@
     "sayi": "10.",
     "alt": "YILIMIZA GİRİYORUZ"
   },
-  "yil": {"eski": "2026", "yeni": "2027"},
+  "yil": {
+    "eski": "2026",
+    "yeni": "2027"
+  },
   "davet": {
     "satir1": "Yeni yıla Bidaha'da gir!",
     "satir2": "31 ARALIK · YILBAŞI GECESİ"
   },
   "cta": {
-    "baslik": "Masanı şimdiden ayırt",
+    "baslik": "Masanı hemen ayırt",
     "alt": "Rezervasyon için ara",
-    "telefonlar": ["0530 100 85 95", "0541 243 24 21"],
-    "adres": ["İstiklal Caddesi No: 187", "İstanbul"]
+    "telefonlar": [
+      "0530 100 85 95",
+      "0541 243 24 21"
+    ],
+    "adres": [
+      "İstiklal Caddesi No: 187",
+      "İstanbul"
+    ]
+  },
+  "kapanis": {
+    "video": "bidaha/genel/bidaha-rezervasyon-kapanis.mp4",
+    "gorsel": "bidaha/genel/bidaha-rezervasyon-karti.jpg"
   }
 }

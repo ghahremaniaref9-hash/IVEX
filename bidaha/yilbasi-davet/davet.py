@@ -396,7 +396,7 @@ class Video:
                                   RNG.integers(0, 5)]) for _ in range(170)]
 
         c = cfg["cta"]
-        self.card = (80, 300, 1000, 1560)
+        self.card = (80, 320, 1000, 1480)
         self.cta_logo = None
         logo = load_logo(cfg["logo"])
         lw = 600
@@ -425,8 +425,6 @@ class Video:
             row.alpha_composite(l, (ic.width + 22, yy))
             yy += l.height - 8
         self.address = Layer(row)
-        self.cta_date = Layer(text_img(cfg["davet"]["satir2"], font("Montserrat_700Bold.ttf", 34), GOLD8 + (255,),
-                                       track=6))
         # bulbs around the card
         x0, y0, x1, y1 = self.card
         per = []
@@ -582,16 +580,15 @@ class Video:
         def item(layer, cy, at, rise=24):
             layer.draw(f, W / 2, cy + rise * (1 - ease_out((lt - at) / 0.35)), op * ramp(lt, at, at + 0.3))
 
-        item(self.cta_logo, 480, 0.15)
-        item(self.cta_head, 720, 0.35)
-        item(self.cta_sub, 812, 0.5)
+        item(self.cta_logo, 569, 0.15)
+        item(self.cta_head, 754, 0.35)
+        item(self.cta_sub, 836, 0.5)
         pulse = 1 + 0.025 * math.sin(lt * 5)
         for k, ph in enumerate(self.phones):
             at = 0.65 + k * 0.15
-            ph.draw(f, W / 2, 965 + k * 140 + 24 * (1 - ease_out((lt - at) / 0.35)), op * ramp(lt, at, at + 0.3),
+            ph.draw(f, W / 2, 970 + k * 140 + 24 * (1 - ease_out((lt - at) / 0.35)), op * ramp(lt, at, at + 0.3),
                     pulse if lt > 1.4 else 1.0)
-        item(self.address, 1290, 1.0)
-        item(self.cta_date, 1440, 1.15)
+        item(self.address, 1270, 1.0)
 
     def frame(self, t, i):
         if t < T_LOGO:
@@ -615,16 +612,16 @@ class Video:
             self.cta_scene(f, t)
         return f
 
-    def render(self, out_mp4, audio):
+    def render(self, out_mp4, audio, t0=0.0, t1=DUR):
         self.flash = glow_sprite(2600, (1.0, 0.86, 0.6), 330)
-        n = int(round(DUR * FPS))
+        n = int(round((t1 - t0) * FPS))
         enc = subprocess.Popen(
             [FF, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}", "-r", str(FPS),
              "-i", "-", "-i", audio, "-map", "0:v", "-map", "1:a", "-c:v", "libx264", "-preset", "medium", "-crf", "18",
              "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out_mp4],
             stdin=subprocess.PIPE)
         for i in range(n):
-            t = i / FPS
+            t = t0 + i / FPS
             f = self.frame(t, i)
             enc.stdin.write((np.clip(f, 0, 1) * 255).astype(np.uint8).tobytes())
             if i % 60 == 0:
@@ -655,6 +652,86 @@ def relay_click():
     return ses.stereo(x + ses.osc(1900, 0.12) * np.exp(-t / 0.02) * 0.12)
 
 
+def groove(put, music, start, end, kick_from):
+    """Festive groove in C major, 120 BPM, I - V - vi - IV: pad, bell arpeggio, bass, shaker, kick and clap."""
+    beat = 0.5
+    chords = [(65.41, (261.63, 329.63, 392.0)), (98.0, (246.94, 293.66, 392.0)),
+              (110.0, (261.63, 329.63, 440.0)), (87.31, (261.63, 349.23, 440.0))]
+    melody = [[523.25, 659.25, 783.99, 659.25, 1046.5, 783.99, 659.25, 783.99],
+              [587.33, 783.99, 987.77, 783.99, 1174.66, 987.77, 783.99, 587.33],
+              [659.25, 880.0, 1046.5, 880.0, 1318.51, 1046.5, 880.0, 659.25],
+              [698.46, 880.0, 1046.5, 880.0, 1396.91, 1046.5, 880.0, 698.46]]
+    t, bar = start, 0
+    while t < end:
+        root, triad = chords[bar % 4]
+        put(music, t, ses.pad([f / 2 for f in triad], 2.05, hi=1800), 0.9)
+        for k in range(8):
+            at = t + k * beat / 2
+            if at >= end:
+                break
+            put(music, at, ses.pluck(melody[bar % 4][k]), 0.55 if k % 2 else 0.75)
+            put(music, at, ses.bass(root if k % 2 == 0 else root * 2, beat / 2 * 0.9), 0.5)
+        for b in range(4):
+            at = t + b * beat
+            if at >= end:
+                break
+            if at >= kick_from:
+                put(music, at, ses.kick(), 0.85)
+                if b % 2 == 1:
+                    put(music, at, ses.clap(), 0.55)
+            for q in range(4):
+                put(music, at + q * beat / 4, ses.hat(), 0.32 if q % 2 else 0.18)
+        t += 4 * beat
+        bar += 1
+
+
+def finish(music, fx, sec, path):
+    """Mix, add room, fade the tail and master to -14 LUFS."""
+    import soundfile as sf
+    SR = ses.SR
+    n = len(music)
+    mix = music * 0.8 + fx
+    mix += ses.reverb(mix * 0.22, 2.0)
+    fade = np.ones(n)
+    a, b = int((sec - 0.4) * SR), min(n, int((sec + 0.6) * SR))
+    fade[a:b] = np.linspace(1, 0, b - a)
+    fade[b:] = 0
+    fade[: int(0.03 * SR)] = np.linspace(0, 1, int(0.03 * SR))  # no hard edge on the first sample
+    mix = (mix * fade[:, None])[: int(sec * SR)]
+    raw = path + ".wav"
+    sf.write(raw, (mix / max(1e-6, np.abs(mix).max()) * 0.9).astype(np.float32), SR)
+    loud = path + ".loud.m4a"
+    ses.master(raw, loud)
+    # short, punchy mixes can overshoot after loudness matching: hold peaks under -1.5 dBFS
+    subprocess.run([FF, "-y", "-loglevel", "error", "-i", loud, "-af", "alimiter=limit=0.74:level=false",
+                    "-c:a", "aac", "-b:a", "192k", path], check=True)
+    os.remove(raw)
+    os.remove(loud)
+
+
+def outro_sound(path):
+    """Sound for the end card on its own: whoosh in, the groove, a closing chord."""
+    SR = ses.SR
+    sec = DUR - T_CTA
+    n = int((sec + 1.5) * SR)
+    music, fx = np.zeros((n, 2)), np.zeros((n, 2))
+
+    def put(buf, at, sig, gain=1.0):
+        i = int(at * SR)
+        j = min(n, i + len(sig))
+        if i < n:
+            buf[i:j] += sig[: j - i] * gain
+
+    groove(put, music, 0.0, sec - 0.6, 0.0)
+    put(fx, 0.0, ses.whoosh(0.4, rising=False), 0.6)
+    put(fx, 0.0, ses.shimmer(1.6), 1.0)
+    for k in range(2):
+        put(fx, 0.65 + k * 0.15, ses.blip(1568 + 400 * k, 0.3), 0.9)
+    put(fx, sec - 0.6, ses.stab((261.63, 329.63, 392.0, 523.25), 1.2), 1.3)
+    put(fx, sec - 0.6, ses.impact(0.8), 0.4)
+    finish(music, fx, sec, path)
+
+
 def soundtrack(cfg, path):
     SR = ses.SR
     n = int((DUR + 1.5) * SR)
@@ -681,37 +758,8 @@ def soundtrack(cfg, path):
     for k in range(6):  # each sign letter switching on
         put(fx, T_LOGO + 0.3 + k * 0.14, relay_click(), 0.9)
 
-    # festive groove in C major, 120 BPM, I - V - vi - IV, from the logo onwards
-    beat = 0.5
-    chords = [(65.41, (261.63, 329.63, 392.0)), (98.0, (246.94, 293.66, 392.0)),
-              (110.0, (261.63, 329.63, 440.0)), (87.31, (261.63, 349.23, 440.0))]
-    melody = [[523.25, 659.25, 783.99, 659.25, 1046.5, 783.99, 659.25, 783.99],
-              [587.33, 783.99, 987.77, 783.99, 1174.66, 987.77, 783.99, 587.33],
-              [659.25, 880.0, 1046.5, 880.0, 1318.51, 1046.5, 880.0, 659.25],
-              [698.46, 880.0, 1046.5, 880.0, 1396.91, 1046.5, 880.0, 698.46]]
-    start, end = T_LOGO, DUR - 0.6
-    t, bar = start, 0
-    while t < end:
-        root, triad = chords[bar % 4]
-        put(music, t, ses.pad([f / 2 for f in triad], 2.05, hi=1800), 0.9)
-        for k in range(8):
-            at = t + k * beat / 2
-            if at >= end:
-                break
-            put(music, at, ses.pluck(melody[bar % 4][k]), 0.55 if k % 2 else 0.75)
-            put(music, at, ses.bass(root if k % 2 == 0 else root * 2, beat / 2 * 0.9), 0.5)
-        for b in range(4):
-            at = t + b * beat
-            if at >= end:
-                break
-            if at >= T_LOGO + 1.0:  # the beat comes in once the logo is lit
-                put(music, at, ses.kick(), 0.85)
-                if b % 2 == 1:
-                    put(music, at, ses.clap(), 0.55)
-            for s in range(4):
-                put(music, at + s * beat / 4, ses.hat(), 0.32 if s % 2 else 0.18)
-        t += 4 * beat
-        bar += 1
+    groove(put, music, T_LOGO, DUR - 0.6, T_LOGO + 1.0)
+    end = DUR - 0.6
 
     put(fx, T_TEN, ses.stab((261.63, 329.63, 392.0, 523.25)), 1.2)
     put(fx, T_TEN, ses.impact(0.6), 0.35)
@@ -727,18 +775,7 @@ def soundtrack(cfg, path):
     put(fx, end, ses.stab((261.63, 329.63, 392.0, 523.25), 1.2), 1.3)
     put(fx, end, ses.impact(0.8), 0.4)
 
-    mix = music * 0.8 + fx
-    mix += ses.reverb(mix * 0.22, 2.0)
-    fade = np.ones(n)
-    a, b = int((DUR - 0.4) * SR), int((DUR + 0.6) * SR)
-    fade[a:b] = np.linspace(1, 0, b - a)
-    fade[b:] = 0
-    mix *= fade[:, None]
-    mix = mix[: int(DUR * SR)]
-    raw = os.path.join(HERE, ".muzik.wav")
-    sf.write(raw, (mix / max(1e-6, np.abs(mix).max()) * 0.9).astype(np.float32), SR)
-    ses.master(raw, path)
-    os.remove(raw)
+    finish(music, fx, DUR, path)
 
 
 def main():
@@ -754,6 +791,16 @@ def main():
     v2 = Video(cfg)
     v2.still(POP_AT + 1.2, repo(cfg["kapak"]))
     print("kaydedildi:", cfg["kapak"])
+
+    # the end card on its own, for any other Bidaha video or story
+    k = cfg["kapanis"]
+    os.makedirs(os.path.dirname(repo(k["video"])), exist_ok=True)
+    audio = os.path.join(HERE, ".kapanis.m4a")
+    outro_sound(audio)
+    Video(cfg).render(repo(k["video"]), audio, T_CTA, DUR)
+    os.remove(audio)
+    Video(cfg).still(T_CTA + 3.0, repo(k["gorsel"]))
+    print("kaydedildi:", k["video"], "ve", k["gorsel"])
 
 
 if __name__ == "__main__":

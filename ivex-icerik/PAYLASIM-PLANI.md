@@ -399,3 +399,35 @@ Her hafta bir reklam kelimesini Türkçeye çeviriyoruz. Kaçırmamak için taki
 python3 turkcesi_ne.py ../ayarlar/turkcesi-ne-01-roas.json             # video + kapak (~20 sn)
 python3 turkcesi_ne.py ../ayarlar/turkcesi-ne-01-roas.json 1.4 7.6 12  # önizleme kareleri
 ```
+
+## Ek: "Ne yapıyoruz?" vitrin Reels'i
+
+- **Video:** `ivex-vitrin-reels.mp4` (27 sn, 1080×1920, müzikli)
+- **Kapak:** `ivex-vitrin-kapak.jpg`
+- **Amaç:** IVEX'in farkını göstermek: pahalı reklamdan önce güçlü senaryo ve organik müşteri, sonra doğru yönetilen Meta reklamı. Gövdedeki işler müşterilere gerçekten teslim edilmiş dosyalar; hiçbir rakam ya da sonuç vaadi yok.
+- **Açılış sahnesi:** Higgsfield, Kling 3.0 Pro, 5 sn, sessiz (8,75 kredi). Boş butikte telefonuna bakıp iç çeken işletme sahibi.
+
+| Süre | Sahne |
+|---|---|
+| 0–4 sn | "Reklama para yakıyorsun, ama satış gelmiyor mu?" |
+| 4–7 sn | "Sorun bütçe değil." (üstü çizilir) – "Sorun senaryo." |
+| 7–11,5 sn | IVEX yöntemi: 01 Güçlü senaryo · 02 Organik izlenme · 03 Doğru Meta reklamı |
+| 11,5–20,3 sn | Gerçek işlerimizden: Mutfella feed'i, Minah Tekstil logo (önce/sonra), Minah Meta reklamı (önce/sonra), Bidaha davet videosu |
+| 20,3–23 sn | Hizmetlerimiz ve kimlerle çalıştığımız |
+| 23–27 sn | "Önce organik, sonra doğru reklam." · DM'den "SENARYO" yaz |
+
+**Açıklama:**
+
+```
+Reklama her ay para yakıp satış göremiyorsan, sorun bütçende değil. 🎯
+
+Biz önce senaryoyu kuruyoruz: durduran, izleten, güven veren içerik. Organik izlenme ve müşteri gelmeye başlayınca Meta reklamını doğru yönetip bütçeni işe yarayan yere yönlendiriyoruz.
+
+📌 Sosyal medya yönetimi · Meta reklam · Video üretimi · Trendyol & Shopify · Marka kimliği · Web sitesi
+
+Markana özel senaryoyu birlikte kuralım. DM'den "SENARYO" yaz. 📩
+
+#IVEXMedya #reklamajansı #sosyalmedyaajansı #dijitalpazarlama #metareklam #içerikstratejisi #organikbüyüme #reelsstratejisi #eticaret #markayönetimi
+```
+
+**Not:** Videoda Mutfella, Minah Tekstil ve Bidaha işleri görünüyor. Paylaşmadan önce üç müşteriden de onay alınmalı. Onay vermeyen olursa `ayarlar/vitrin.json` içindeki `isler` listesinden çıkarıp videoyu yeniden üretmek yeterli.

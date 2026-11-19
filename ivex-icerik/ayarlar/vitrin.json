@@ -1,0 +1,112 @@
+{
+  "cikti": "ivex-icerik/ivex-vitrin-reels.mp4",
+  "kapak": "ivex-icerik/ivex-vitrin-kapak.jpg",
+  "acilis_klibi": "ivex-icerik/kaynak/higgsfield/acilis-butik.mp4",
+  "kanca": [
+    "Reklama para yakıyorsun,",
+    "ama satış gelmiyor mu?"
+  ],
+  "sorun": {
+    "ilk": "Sorun bütçe değil.",
+    "ikinci": "Sorun senaryo."
+  },
+  "yontem": {
+    "baslik": "IVEX YÖNTEMİ",
+    "adimlar": [
+      [
+        "Güçlü senaryo",
+        "Durduran, izleten içerik"
+      ],
+      [
+        "Organik izlenme",
+        "Reklam vermeden müşteri"
+      ],
+      [
+        "Doğru Meta reklamı",
+        "Bütçe, işe yarayana gider"
+      ]
+    ]
+  },
+  "isler_baslik": "GERÇEK İŞLERİMİZDEN",
+  "isler": [
+    {
+      "tur": "telefon",
+      "etiket": "İçerik & sayfa yönetimi",
+      "musteri": "Mutfella Catering",
+      "gorseller": [
+        "mutfella-icerik/feed-9-gun/gonderiler/9-persembe-5-kasim-sofra-et-sote.jpg",
+        "mutfella-icerik/feed-9-gun/gonderiler/7-sali-3-kasim-sofra-teklif.jpg",
+        "mutfella-icerik/feed-9-gun/gonderiler/6-pazartesi-2-kasim-ekip-hijyen.jpg",
+        "mutfella-icerik/feed-9-gun/gonderiler/4-cumartesi-31-ekim-ekip-usta.jpg",
+        "mutfella-icerik/feed-9-gun/gonderiler/3-cuma-30-ekim-malzeme-et.jpg",
+        "mutfella-icerik/feed-9-gun/gonderiler/1-carsamba-28-ekim-malzeme-biber.jpg"
+      ]
+    },
+    {
+      "tur": "once_sonra",
+      "etiket": "Marka kimliği",
+      "musteri": "Minah Tekstil · logo yenileme",
+      "once": "minah-tekstil/marka/kaynak-trendyol-magaza.jpg",
+      "once_kirp": [
+        149,
+        39,
+        268,
+        157
+      ],
+      "sonra": "minah-tekstil/marka/minah-tekstil-logo-kare.jpg",
+      "oran": [
+        1,
+        1
+      ]
+    },
+    {
+      "tur": "once_sonra",
+      "etiket": "Meta reklam kreatifi",
+      "musteri": "Minah Tekstil · Trendyol mağazası",
+      "once": "minah-tekstil/meta-reklam/kaynak/07-ajurlu-kirmizi-boy.jpg",
+      "sonra": "minah-tekstil/meta-reklam/gorseller/tekli/akis/07-ajurlu-kirmizi-boy-4x5.jpg",
+      "oran": [
+        4,
+        5
+      ]
+    },
+    {
+      "tur": "video",
+      "etiket": "Video üretimi",
+      "musteri": "Bidaha · davet videosu",
+      "video": "bidaha/yilbasi-davet/bidaha-yilbasi-davet-reels.mp4",
+      "baslangic": 4.2
+    }
+  ],
+  "hizmetler": [
+    "Sosyal medya",
+    "Meta reklam",
+    "Video",
+    "Trendyol & Shopify",
+    "Marka kimliği",
+    "Web sitesi"
+  ],
+  "sektorler": [
+    "E-ticaret",
+    "Restoran & kafe",
+    "Otel",
+    "Giyim",
+    "Kurumsal"
+  ],
+  "son": {
+    "satirlar": [
+      [
+        "Önce organik,",
+        "beyaz"
+      ],
+      [
+        "sonra doğru reklam.",
+        "lime"
+      ]
+    ],
+    "buton": "DM'DEN “SENARYO” YAZ",
+    "alt": [
+      "Markana özel senaryoyu birlikte kuralım."
+    ]
+  }
+}

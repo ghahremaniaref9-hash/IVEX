@@ -1,0 +1,40 @@
+{
+  "ses": {"model": "text2speech_v2", "variant": "elevenlabs", "voice_type": "preset",
+          "voice_id": "573e5163-59b3-4926-aab1-951ef2985f81", "ad": "Harrison"},
+  "videolar": {
+    "vitrin": {
+      "kaynak": "ivex-icerik/ivex-vitrin-reels.mp4",
+      "cikti": "ivex-icerik/ivex-vitrin-reels-seslendirmeli.mp4",
+      "satirlar": [
+        [0.25, 3.6, "Reklama para yakıyorsun, ama satış gelmiyor mu?"],
+        [4.15, 2.8, "Sorun bütçe değil. Sorun senaryo."],
+        [7.4, 4.0, "Önce senaryo. Sonra organik izlenme. En son, doğru Meta reklamı."],
+        [11.7, 8.4, "Mutfella'nın sayfası, Minah Tekstil'in logosu ve reklamları, Mekan Sizin'in maç günü kampanyası... Hepsi bizden."],
+        [20.45, 2.5, "E-ticaretten restorana, otelden giyime."],
+        [23.3, 3.6, "Önce organik, sonra doğru reklam. DM'den SENARYO yaz."]
+      ]
+    },
+    "kova": {
+      "kaynak": "ivex-icerik/ivex-delikli-kova-reels.mp4",
+      "cikti": "ivex-icerik/ivex-delikli-kova-reels-seslendirmeli.mp4",
+      "satirlar": [
+        [0.3, 4.0, "Her ay reklama bütçe döküyorsun... ama kova delik."],
+        [4.7, 4.2, "Delikler belli: kaydırılan video, hikâyesiz fotoğraf, hedefsiz metin."],
+        [9.1, 3.8, "Daha çok para dökmek deliği kapatmaz. Önce deliği kapat."],
+        [13.3, 4.0, "Önce senaryo: delik kapanır. Sonra reklam: kova dolar."],
+        [17.7, 3.6, "Deliklerini birlikte bulalım. DM'den KOVA yaz."]
+      ]
+    },
+    "fark": {
+      "kaynak": "ivex-icerik/ivex-ayni-urun-iki-senaryo-reels.mp4",
+      "cikti": "ivex-icerik/ivex-ayni-urun-iki-senaryo-reels-seslendirmeli.mp4",
+      "satirlar": [
+        [0.15, 2.8, "Aynı kazak. Aynı bütçe. İki farklı video."],
+        [3.2, 4.2, "Birincisi: askıda bir kazak, bir de indirim yazısı. Sonuç? Kaydırılır."],
+        [7.7, 4.6, "İkincisi: soğuk bir vapur sabahı, sıcacık bir kırmızı. Sonuç? İzlenir."],
+        [12.7, 4.1, "Fark ürün değil, senaryo. Merak, hikâye ve net bir çağrı."],
+        [17.2, 4.0, "Ürünün aynı kalsın, senaryon değişsin. DM'den FARK yaz."]
+      ]
+    }
+  }
+}

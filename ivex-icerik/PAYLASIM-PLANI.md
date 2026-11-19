@@ -468,3 +468,25 @@ Fark ürün değil, senaryo. İlk 3 saniyede merak, ürün yerine hikâye, sonun
 
 #IVEXMedya #reklamajansı #içerikstratejisi #reelsstratejisi #organikbüyüme #dijitalpazarlama #eticaret #modamarkası #sosyalmedyaajansı #metareklam
 ```
+
+## Ek: Üç Reels'in seslendirmeli sürümleri
+
+Vitrin, "Delikli kova" ve "Aynı ürün, iki senaryo" videolarının erkek sesle Türkçe anlatımlı hâlleri. Müzikli sürümler de duruyor, ikisinden biri seçilebilir.
+
+| Dosya | Süre |
+|---|---|
+| `ivex-vitrin-reels-seslendirmeli.mp4` | 30,8 sn |
+| `ivex-delikli-kova-reels-seslendirmeli.mp4` | 23,4 sn |
+| `ivex-ayni-urun-iki-senaryo-reels-seslendirmeli.mp4` | 26,1 sn |
+
+- **Ses:** Higgsfield, ElevenLabs, hazır ses "Harrison" (`voice_id: 573e5163-59b3-4926-aab1-951ef2985f81`). Cümle başına yaklaşık 0,75 kredi.
+- **Senkron:**
+  - Ses hızlandırılmadı. Cümlesi sığmayan sahneler cümle bitene kadar orantılı uzatıldı.
+  - Bu yüzden videolar müzikli hâlinden birkaç saniye uzun.
+  - Müzik ve efektler yeni sürelere göre yeniden üretildi. Konuşma sırasında müzik kısılıyor.
+- **Metin:** Cümleler `ayarlar/seslendirme.json` içinde, ses dosyaları `kaynak/seslendirme/harrison/` klasöründe. Ekrandaki yazılar aynı kaldı, video sessiz izlense de anlaşılıyor.
+- **Değiştirmek için:**
+  1. Cümleyi json'da düzeltin.
+  2. O satırı aynı sesle Higgsfield'da yeniden üretin ve aynı numarayla kaydedin (vitrin 00–05, kova 06–10, fark 11–15).
+  3. `python3 ivex-icerik/uretim/anlatim.py [vitrin|kova|fark]` komutunu çalıştırın.
+- **Açıklamalar:** Yukarıdaki müzikli sürümlerin açıklamaları ve etiketleri aynen kullanılabilir.

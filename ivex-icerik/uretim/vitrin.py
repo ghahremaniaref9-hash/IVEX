@@ -7,7 +7,7 @@ Kurgu (IVEX'in farkı: pahalı reklamdan önce güçlü senaryo ve organik müş
    4,0 -  7,0  "Sorun bütçe değil." - "Sorun senaryo."
    7,0 - 11,5  IVEX yöntemi: 01 güçlü senaryo, 02 organik izlenme, 03 doğru Meta reklamı.
   11,5 - 20,3  Gerçek işlerimizden: Mutfella feed'i, Minah Tekstil logosu (önce/sonra), Minah Meta reklamı
-               (önce/sonra), Bidaha davet videosu. Her biri 2,2 sn.
+               (önce/sonra), Mekan Sizin maç günü kampanyası (kaydırmalı). Her biri 2,2 sn.
   20,3 - 23,0  Hizmetler ve sektörler.
   23,0 - 27,0  Kapanış: "Önce organik, sonra doğru reklam." ve DM'den "SENARYO" yaz.
 Sahnedeki işler müşterilere gerçekten teslim edilen dosyalardır; rakam ya da sonuç gösterilmez.
@@ -35,6 +35,7 @@ T_PROBLEM, T_METHOD, T_WORK, WORK_LEN, T_SERV, T_END, TOTAL = 4.0, 7.0, 11.5, 2.
 HOOK2 = 1.45
 SCEN2 = 5.15
 STEPS = (7.55, 8.45, 9.35)
+SLIDES = (0.78, 1.42)  # within a carousel item: when the next post slides in
 
 
 def ease(x):
@@ -222,6 +223,10 @@ class Reel:
                 before = cover(before, size)
             after = cover(Image.open(repo(w["sonra"])), size)
             item["before"], item["after"], item["size"] = before, after, size
+        elif w["tur"] == "kaydirma":
+            size = (700, 875)
+            item["posts"] = [cover(Image.open(repo(g)), size) for g in w["gorseller"]]
+            item["size"] = size
         else:
             size = (540, 960)
             item["frames"] = video_frames(repo(w["video"]), w["baslangic"], WORK_LEN + 0.2, size)
@@ -286,11 +291,22 @@ class Reel:
             card = self.phone(it, st)
         elif it["tur"] == "once_sonra":
             card = self.before_after(it, st)
+        elif it["tur"] == "kaydirma":
+            card = self.carousel(it, st)
+            n = len(it["posts"])
+            cur = sum(st >= a for a in SLIDES[: n - 1])
+            d = ImageDraw.Draw(f)  # carousel dots under the card
+            for j in range(n):
+                x = W / 2 + (j - (n - 1) / 2) * 30
+                r = 8 if j == cur else 6
+                d.ellipse((x - r, cy + ch / 2 + 40 - r, x + r, cy + ch / 2 + 40 + r),
+                          fill=LIME if j == cur else (120, 150, 120))
         else:
             fr = it["frames"][min(int(st * FPS), len(it["frames"]) - 1)]
             card = card_shadow(fr)
         put(f, card, cx, cy, enter * (1 - leave))
-        put(f, it["client"], W / 2 + dx * 0.6, cy + ch / 2 + 62, ramp(st, 0.2, 0.45) * (1 - leave))
+        gap = 100 if it["tur"] == "kaydirma" else 62
+        put(f, it["client"], W / 2 + dx * 0.6, cy + ch / 2 + gap, ramp(st, 0.2, 0.45) * (1 - leave))
         return f
 
     @staticmethod
@@ -308,6 +324,21 @@ class Reel:
         d = ImageDraw.Draw(im)
         d.rounded_rectangle((w / 2 - 60, 36, w / 2 + 60, 62), radius=13, fill=(14, 16, 14, 255))
         return card_shadow_rgba(im)
+
+    @staticmethod
+    def carousel(it, st):
+        """Posts swiping left one after another, like an Instagram carousel."""
+        w, h = it["size"]
+        posts = it["posts"]
+        pos = 0.0
+        for a in SLIDES[: len(posts) - 1]:
+            pos += ease((st - a) / 0.22)
+        im = Image.new("RGB", (w, h))
+        for j, p in enumerate(posts):
+            x = round((j - pos) * w)
+            if -w < x < w:
+                im.paste(p, (x, 0))
+        return card_shadow(im)
 
     @staticmethod
     def before_after(it, st):
@@ -392,6 +423,8 @@ def sound_plan(cfg):
         ev += [[at + 0.3, "kaydir", {}], [at + 0.32, "kart", {}]]
         if cfg["isler"][k]["tur"] == "once_sonra":
             ev += [[at + 1.25, "whoosh", {"sure": 0.5}], [at + 1.25, "parilti", {}]]
+        if cfg["isler"][k]["tur"] == "kaydirma":
+            ev += [[at + a + 0.2, "kaydir", {}] for a in SLIDES]
     ev += [[T_SERV, "gecis", {}]]
     ev += [[T_SERV + 0.15 + k * 0.1, "nota", {"i": k}] for k in range(len(cfg["hizmetler"]))]
     ev += [[T_SERV + 1.0 + k * 0.1, "nota", {"i": k + 3}] for k in range(len(cfg["sektorler"]))]

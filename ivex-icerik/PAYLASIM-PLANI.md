@@ -412,7 +412,7 @@ python3 turkcesi_ne.py ../ayarlar/turkcesi-ne-01-roas.json 1.4 7.6 12  # önizle
 | 0–4 sn | "Reklama para yakıyorsun, ama satış gelmiyor mu?" |
 | 4–7 sn | "Sorun bütçe değil." (üstü çizilir) – "Sorun senaryo." |
 | 7–11,5 sn | IVEX yöntemi: 01 Güçlü senaryo · 02 Organik izlenme · 03 Doğru Meta reklamı |
-| 11,5–20,3 sn | Gerçek işlerimizden: Mutfella feed'i, Minah Tekstil logo (önce/sonra), Minah Meta reklamı (önce/sonra), Bidaha davet videosu |
+| 11,5–20,3 sn | Gerçek işlerimizden: Mutfella feed'i, Minah Tekstil logo (önce/sonra), Minah Meta reklamı (önce/sonra), Mekan Sizin maç günü kampanyası |
 | 20,3–23 sn | Hizmetlerimiz ve kimlerle çalıştığımız |
 | 23–27 sn | "Önce organik, sonra doğru reklam." · DM'den "SENARYO" yaz |
 
@@ -430,4 +430,4 @@ Markana özel senaryoyu birlikte kuralım. DM'den "SENARYO" yaz. 📩
 #IVEXMedya #reklamajansı #sosyalmedyaajansı #dijitalpazarlama #metareklam #içerikstratejisi #organikbüyüme #reelsstratejisi #eticaret #markayönetimi
 ```
 
-**Not:** Videoda Mutfella, Minah Tekstil ve Bidaha işleri görünüyor. Paylaşmadan önce üç müşteriden de onay alınmalı. Onay vermeyen olursa `ayarlar/vitrin.json` içindeki `isler` listesinden çıkarıp videoyu yeniden üretmek yeterli.
+**Not:** Videoda Mutfella, Minah Tekstil ve Mekan Sizin işleri görünüyor. Paylaşmadan önce üç müşteriden de onay alınmalı. Onay vermeyen olursa `ayarlar/vitrin.json` içindeki `isler` listesinden çıkarıp videoyu yeniden üretmek yeterli.

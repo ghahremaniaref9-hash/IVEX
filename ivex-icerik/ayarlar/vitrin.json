@@ -71,11 +71,14 @@
       ]
     },
     {
-      "tur": "video",
-      "etiket": "Video üretimi",
-      "musteri": "Bidaha · davet videosu",
-      "video": "bidaha/yilbasi-davet/bidaha-yilbasi-davet-reels.mp4",
-      "baslangic": 4.2
+      "tur": "kaydirma",
+      "etiket": "Kampanya senaryosu",
+      "musteri": "Mekan Sizin · maç günü içerikleri",
+      "gorseller": [
+        "mekan-sizin/haftalik-feed/sirali/1-cuma-9-ekim-bu-pazar-bjk-kocaelispor.png",
+        "mekan-sizin/haftalik-feed/sirali/5-sali-13-ekim-uefa-gecesi-hoffenheim.png",
+        "mekan-sizin/haftalik-feed/sirali/9-cumartesi-17-ekim-deplasman-trabzonspor.png"
+      ]
     }
   ],
   "hizmetler": [

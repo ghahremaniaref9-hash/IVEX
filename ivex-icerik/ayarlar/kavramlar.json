@@ -1,0 +1,35 @@
+{
+  "kova": {
+    "cikti": "ivex-icerik/ivex-delikli-kova-reels.mp4",
+    "kapak": "ivex-icerik/ivex-delikli-kova-kapak.jpg",
+    "klip_delik": "ivex-icerik/kaynak/higgsfield/kova-delik.mp4",
+    "klip_dolu": "ivex-icerik/kaynak/higgsfield/kova-dolu.mp4",
+    "kanca": ["Her ay reklama bütçe döküyorsun,", "ama kova delik."],
+    "delikler_baslik": "DELİKLER NEREDE?",
+    "delikler": ["İlk 3 saniyede kaydırılan video", "Hikâyesi olmayan ürün fotoğrafı", "Kime konuştuğu belli olmayan metin"],
+    "sorun": ["Daha çok para dökmek", "deliği kapatmaz."],
+    "cevap": "Önce deliği kapat.",
+    "cozum": ["Önce senaryo: delik kapanır.", "Sonra reklam: kova dolar."],
+    "son": {
+      "satirlar": [["Önce deliği kapat,", "beyaz"], ["sonra bütçeyi dök.", "lime"]],
+      "buton": "DM'DEN “KOVA” YAZ",
+      "alt": ["Deliklerini birlikte bulalım."]
+    }
+  },
+  "fark": {
+    "cikti": "ivex-icerik/ivex-ayni-urun-iki-senaryo-reels.mp4",
+    "kapak": "ivex-icerik/ivex-ayni-urun-iki-senaryo-kapak.jpg",
+    "klip_siradan": "ivex-icerik/kaynak/higgsfield/kazak-siradan.mp4",
+    "klip_senaryo": "ivex-icerik/kaynak/higgsfield/kazak-vapur.mp4",
+    "kanca": [["Aynı kazak.", "beyaz"], ["Aynı bütçe.", "beyaz"], ["İki farklı video.", "lime"]],
+    "a": {"etiket": "A · SIRADAN", "aciklama": "Yeni sezon kazak! %20 indirim!!", "sonuc": "Sonuç: kaydırılır."},
+    "b": {"etiket": "B · SENARYOLU", "hikaye": ["Soğuk vapur sabahları için…", "…sıcacık bir kırmızı."], "sonuc": "Sonuç: izlenir."},
+    "ders": ["Fark ürün değil,", "senaryo."],
+    "malzemeler": ["İlk 3 saniyede merak", "Ürün değil, hikâye", "Net bir çağrı"],
+    "son": {
+      "satirlar": [["Ürünün aynı kalsın,", "beyaz"], ["senaryon değişsin.", "lime"]],
+      "buton": "DM'DEN “FARK” YAZ",
+      "alt": ["Ürününe özel senaryoyu birlikte yazalım."]
+    }
+  }
+}

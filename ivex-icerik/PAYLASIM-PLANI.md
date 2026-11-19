@@ -431,3 +431,40 @@ Markana özel senaryoyu birlikte kuralım. DM'den "SENARYO" yaz. 📩
 ```
 
 **Not:** Videoda Mutfella, Minah Tekstil ve Mekan Sizin işleri görünüyor. Paylaşmadan önce üç müşteriden de onay alınmalı. Onay vermeyen olursa `ayarlar/vitrin.json` içindeki `isler` listesinden çıkarıp videoyu yeniden üretmek yeterli.
+
+## Ek: "Delikli kova" Reels'i
+
+- **Video:** `ivex-delikli-kova-reels.mp4` (21,5 sn) · **Kapak:** `ivex-delikli-kova-kapak.jpg`
+- **Fikir:** Reklam bütçesi delikli bir kovaya dökülen altın gibi; delik zayıf içerik. Önce deliği kapat (senaryo), sonra bütçeyi dök (reklam).
+- **Higgsfield sahneleri:** Delikli kova ve dolan kova, Kling 3.0 Pro, 5'er sn (2 × 8,75 kredi). Dolan kova sahnesinin son saniyesinde paralar kovanın içinden geçiyor gibi göründüğü için ilk 3,6 sn yavaşlatılarak kullanıldı.
+
+```
+Her ay reklama bütçe döküyorsun ama satış gelmiyor mu? 🪣
+
+Muhtemelen kovan delik. İlk 3 saniyede kaydırılan videolar, hikâyesi olmayan ürün fotoğrafları, kime konuştuğu belli olmayan metinler… Bunlar düzelmeden dökülen her lira akıp gider.
+
+Biz önce deliği kapatıyoruz: güçlü senaryo, organik ilgi. Sonra bütçeyi doğru reklama döküyoruz.
+
+Deliklerini birlikte bulalım. DM'den "KOVA" yaz. 📩
+
+#IVEXMedya #reklamajansı #metareklam #dijitalpazarlama #içerikstratejisi #organikbüyüme #sosyalmedyaajansı #eticaret #reklambütçesi #markayönetimi
+```
+
+## Ek: "Aynı ürün, iki senaryo" Reels'i
+
+- **Video:** `ivex-ayni-urun-iki-senaryo-reels.mp4` (21,5 sn) · **Kapak:** `ivex-ayni-urun-iki-senaryo-kapak.jpg`
+- **Fikir:** Aynı kırmızı kazak iki kez: A askıda, sıradan bir metinle ("kaydırılır"); B sisli bir İstanbul vapurunda hikâyeyle ("izlenir"). Fark ürün değil, senaryo.
+- **Higgsfield sahneleri:** Askıdaki kazak ve vapurdaki kadın, Kling 3.0 Pro, 5'er sn (2 × 8,75 kredi). Gerçek bir müşteri ürünü değildir.
+
+```
+Aynı kazak. Aynı bütçe. İki farklı video. 👀
+
+A: "Yeni sezon kazak! %20 indirim!!" Kaydırılıp geçilir.
+B: Soğuk bir vapur sabahı, sıcacık bir kırmızı. Durdurur, izletir, sordurur.
+
+Fark ürün değil, senaryo. İlk 3 saniyede merak, ürün yerine hikâye, sonunda net bir çağrı.
+
+Ürünün aynı kalsın, senaryon değişsin. DM'den "FARK" yaz. 📩
+
+#IVEXMedya #reklamajansı #içerikstratejisi #reelsstratejisi #organikbüyüme #dijitalpazarlama #eticaret #modamarkası #sosyalmedyaajansı #metareklam
+```

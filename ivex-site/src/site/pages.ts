@@ -11,7 +11,7 @@ const PROVIDER = { "@type": "ProfessionalService", name: "IVEX Medya", url: `${S
 function page(meta: Meta, nav: NavKey, main: string) {
   return `<!doctype html>
 <!-- Generated from src/site/pages.ts; edit the content there, not this file. -->
-<html lang="tr">
+<html lang="tr" data-theme="light">
   ${head(meta)}
   <body>
     ${header(nav)}

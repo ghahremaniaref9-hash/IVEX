@@ -36,7 +36,7 @@ export function head({ title, description, path, jsonLd }: Meta) {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${t}</title>
     <meta name="description" content="${d}" />
-    <meta name="theme-color" content="#07100C" />
+    <meta name="theme-color" content="#F6F8F3" />
     <link rel="canonical" href="${url}" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="IVEX Medya" />
@@ -203,8 +203,8 @@ export function applyForm() {
             </div>`;
 }
 
-/** Preview of the light theme: ?tema=beyaz switches it on for the rest of the visit, ?tema=koyu back off. */
-export const THEME_SCRIPT = `try{var q=new URLSearchParams(location.search).get("tema");if(q)sessionStorage.setItem("ivx-tema",q);if((q||sessionStorage.getItem("ivx-tema"))==="beyaz")document.documentElement.dataset.theme="light"}catch(e){}`;
+/** Pages ship with the light theme; ?tema=koyu shows the dark one for the rest of the visit, ?tema=beyaz switches back. */
+export const THEME_SCRIPT = `try{var q=new URLSearchParams(location.search).get("tema");if(q)sessionStorage.setItem("ivx-tema",q);if((q||sessionStorage.getItem("ivx-tema"))==="koyu")delete document.documentElement.dataset.theme}catch(e){}`;
 
 /** Swap <!--ivx:name--> / <!--ivx:header=key--> placeholders in a hand-written page. */
 export function fillPlaceholders(html: string) {

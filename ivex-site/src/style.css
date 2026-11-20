@@ -35,7 +35,7 @@
   --ivx-focus-ring: rgb(218 255 46 / 0.16);
   --ivx-hover-tint: rgb(218 255 46 / 0.08);
 }
-/* Light theme (preview with ?tema=beyaz) */
+/* Light theme: the default (pages carry data-theme="light"); ?tema=koyu previews the dark one */
 :root[data-theme="light"] {
   color-scheme: light;
   --ivx-ground: #f6f8f3;

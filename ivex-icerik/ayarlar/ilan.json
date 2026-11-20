@@ -5,7 +5,8 @@
     "baslik": [["IVEX ekibine", "beyaz"], ["katıl.", "lime"]],
     "slogan": "Ekipman bizden, yetenek senden.",
     "not": "Çekim ve kurgu için gereken tüm ekipman ajansta mevcut.",
-    "kaydir": "Kaydır, pozisyonlara bak"
+    "kaydir": "Kaydır, pozisyonlara bak",
+    "hikaye_kaydir": "Pozisyonlar sonraki hikâyede"
   },
   "pozisyonlar": [
     {

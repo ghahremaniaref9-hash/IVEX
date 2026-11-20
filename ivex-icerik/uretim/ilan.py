@@ -3,7 +3,9 @@
 Kullanım:  python3 ilan.py [ayar.json]
 Metinler ayarlar/ilan.json'da. Çıktı (ivex-icerik/ilan/):
   ivex-ilan-1-kapak.jpg ... ivex-ilan-5-basvuru.jpg  Instagram karuseli, 1080x1350 (4:5)
-  ivex-ilan-hikaye.jpg                               hikâye, 1080x1920 (üst 250 / alt 340 px boş)
+  ivex-ilan-hikaye-1-kapak.jpg ... -5-basvuru.jpg    aynı 5 kare hikâye boyutunda, 1080x1920
+  ivex-ilan-hikaye.jpg                               tek hikâyelik özet, 1080x1920
+  (hikâyelerde Instagram'ın üst 250 / alt 340 pikseline yazı konmaz)
 """
 import json
 import os
@@ -19,6 +21,12 @@ COLORS = {"beyaz": WHITE, "lime": LIME}
 CARD = (10, 40, 18, 230)
 LINE = (70, 120, 60, 255)
 MUTED = (150, 178, 150)
+
+
+def canvas(size, seed, glow, transparent):
+    if transparent:
+        return Image.new("RGBA", size, (0, 0, 0, 0))
+    return background(size, seed=seed, glow=glow).convert("RGBA")
 
 
 def wrap(d, text, fnt, maxw):
@@ -90,8 +98,8 @@ def role_row(im, n, title, sub, kind, y, x=110, w=860, h=126):
     d.text((x + w - 36 - d.textlength(num, font=f), y + 38), num, font=f, fill=(90, 140, 70))
 
 
-def cover(cfg, roles):
-    im = background((FW, FH), seed=31, glow=(0.75, 0.2)).convert("RGBA")
+def cover(cfg, roles, transparent=False, kaydir=None):
+    im = canvas((FW, FH), 31, (0.75, 0.2), transparent)
     head(im, cfg["etiket"])
     d = ImageDraw.Draw(im)
     centered(d, cfg["baslik"], 250, 104)
@@ -104,7 +112,7 @@ def cover(cfg, roles):
     nf = font("Medium", 28)
     d.text(((FW - d.textlength(cfg["not"], font=nf)) / 2, 1070), cfg["not"], font=nf, fill=SOFT)
     f2 = font("SemiBold", 26)
-    t2 = cfg["kaydir"] + "  →"
+    t2 = (kaydir or cfg["kaydir"]) + "  →"
     d.text(((FW - d.textlength(t2, font=f2)) / 2, 1230), t2, font=f2, fill=MUTED)
     return im
 
@@ -126,8 +134,8 @@ def bullets(im, title, items, box, dot=LIME):
     return y
 
 
-def role(r, n, total):
-    im = background((FW, FH), seed=40 + n, glow=(0.2, 0.15)).convert("RGBA")
+def role(r, n, total, transparent=False):
+    im = canvas((FW, FH), 40 + n, (0.2, 0.15), transparent)
     head(im, f"POZİSYON {n:02d} / {total:02d}")
     d = ImageDraw.Draw(im)
     tf = font("Black", 92)
@@ -161,8 +169,8 @@ def step_card(n, title, sub, w=860, h=150):
     return im
 
 
-def apply_slide(cfg):
-    im = background((FW, FH), seed=55, glow=(0.7, 0.3)).convert("RGBA")
+def apply_slide(cfg, transparent=False):
+    im = canvas((FW, FH), 55, (0.7, 0.3), transparent)
     head(im, cfg["etiket"])
     d = ImageDraw.Draw(im)
     centered(d, cfg["baslik"], 240, 100)
@@ -192,6 +200,16 @@ def story(cfg, roles):
     return im
 
 
+SLIDE_LOOK = [(31, (0.75, 0.2)), (41, (0.2, 0.15)), (42, (0.2, 0.15)), (43, (0.2, 0.15)), (55, (0.7, 0.3))]
+
+
+def as_story(content, seed, glow, top=285):
+    """Put a 4:5 slide's content on a 9:16 brand background, clear of Instagram's top 250 / bottom 340 px."""
+    im = background((1080, 1920), seed=seed, glow=glow).convert("RGBA")
+    im.alpha_composite(content, (0, top))
+    return im
+
+
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else repo("ivex-icerik", "ayarlar", "ilan.json")
     cfg = json.load(open(path, encoding="utf-8"))
@@ -204,6 +222,12 @@ def main():
     for n, im in zip(names, slides):
         p = os.path.join(out, f"ivex-ilan-{n}.jpg")
         im.convert("RGB").save(p, quality=93)
+        print("kaydedildi:", os.path.relpath(p, repo()))
+    layers = [cover(cfg["kapak"], roles, True, cfg["kapak"].get("hikaye_kaydir"))] + \
+             [role(r, i + 1, len(roles), True) for i, r in enumerate(roles)] + [apply_slide(cfg["basvuru"], True)]
+    for n, lay, (seed, glow) in zip(names, layers, SLIDE_LOOK):
+        p = os.path.join(out, f"ivex-ilan-hikaye-{n}.jpg")
+        as_story(lay, seed, glow).convert("RGB").save(p, quality=93)
         print("kaydedildi:", os.path.relpath(p, repo()))
     p = os.path.join(out, "ivex-ilan-hikaye.jpg")
     story(cfg["hikaye"], roles).convert("RGB").save(p, quality=93)

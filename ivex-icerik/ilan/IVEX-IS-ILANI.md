@@ -5,7 +5,8 @@ Köşeli parantez içindeki yerleri `[...]` kendi bilgilerinizle doldurun. Görs
 | Dosya | Ne için |
 |---|---|
 | `ivex-ilan-1-kapak.jpg` … `ivex-ilan-5-basvuru.jpg` | Instagram karuseli (4:5), bu sırayla |
-| `ivex-ilan-hikaye.jpg` | Hikâye (9:16) |
+| `ivex-ilan-hikaye-1-kapak.jpg` … `ivex-ilan-hikaye-5-basvuru.jpg` | Aynı 5 kare hikâye boyutunda (9:16), art arda paylaşmak için |
+| `ivex-ilan-hikaye.jpg` | Tek hikâyelik özet (9:16) |
 
 Metinleri değiştirmek için `ayarlar/ilan.json` dosyasını düzenleyip `python3 ivex-icerik/uretim/ilan.py` komutunu çalıştırın.
 
@@ -25,7 +26,7 @@ Başvurmak için DM'den "BAŞVURU" yaz, portfolyonu ve pozisyonu ekle. 📩
 #IVEXMedya #işilanı #fotoğrafçı #kurgucu #metareklam
 ```
 
-**Hikâyede:** `ivex-ilan-hikaye.jpg` görselini paylaşın, üstüne "Soru kutusu" etiketi ekleyin: "Pozisyonlarla ilgili sorunu yaz". Karusel gönderisini de hikâyeye ekleyin.
+**Hikâyede:** 5 hikâyeyi art arda paylaşın (1 kapak, 2–4 pozisyonlar, 5 başvuru). Son hikâyeye "Soru kutusu" etiketi ekleyin: "Pozisyonlarla ilgili sorunu yaz". Tek hikâye yeterliyse `ivex-ilan-hikaye.jpg` özetini kullanın. Ardından 5 hikâyeyi "Kariyer" adlı bir öne çıkana ekleyin.
 
 ---
 

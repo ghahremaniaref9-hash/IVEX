@@ -596,9 +596,9 @@ export function startScene(canvas: HTMLCanvasElement): boolean {
     uMouseForce: { value: 0 },
     uSize: { value: small ? 4.4 : 3.9 },
     uPixelRatio: { value: 1 },
-    uColorA: { value: new THREE.Color(light ? "#1d3c1c" : "#1f7a3f") },
-    uColorB: { value: new THREE.Color(light ? "#0e6e43" : "#b6ef2a") },
-    uColorC: { value: new THREE.Color(light ? "#7fa800" : "#f3ffd2") },
+    uColorA: { value: new THREE.Color(light ? "#0f4f27" : "#1f7a3f") },
+    uColorB: { value: new THREE.Color(light ? "#3d8a10" : "#b6ef2a") },
+    uColorC: { value: new THREE.Color(light ? "#8cc400" : "#f3ffd2") },
     uOpacity: { value: 0.85 },
   };
 

@@ -639,15 +639,29 @@ Görseller `hikayeler/ivex-hikaye-*.jpg` dosyalarında (1080×1920). Etiketlerin
 - **Not:** Ekranlar temsilidir; örnek içerikler kurgusal bir giyim markası için. Rakam ya da sonuç vaadi yok.
 - **Üretim:** Higgsfield GPU, ArtCraft kutusu (L40S), EffectCraft. Katmanları düzenlenebilir proje `uretim/effectcraft/ivex-panel-proje.zip` içinde (`ivex-panel.ecproj` + görseller, fontlar, sesler). Projeyi kuran betik `uretim/effectcraft/ivex-panel.jsx`; metinler ve zamanlamalar orada.
 
-```
-Biz işe reklamla değil, seni dinleyerek başlıyoruz. 🎯
+**Açıklama:**
 
-1. Markanı ve müşterini tanıyoruz.
+```
+Reklam bir şans oyunu değil, bir operasyon. ⚙️
+
+Her marka için aynı adımları işletiyoruz:
+1. Markanı ve müşterini dinliyoruz.
 2. İlk 3 saniyede durduran senaryoyu yazıyoruz.
 3. İçeriği planlıyor, üretiyor, düzenli paylaşıyoruz.
-4. Organik ilgi gören içeriği seçip reklam bütçesini ona veriyoruz.
+4. Organik ilgi gören içeriği seçip bütçeyi ona veriyoruz.
 
-Önce organik, sonra doğru reklam. DM'den "OPERASYON" yaz. 📩
+Önce organik, sonra doğru reklam.
+Markan için operasyonu başlatalım: DM'den "OPERASYON" yaz. 📩
 
-#reklamajansı #sosyalmedyaajansı #içerikstratejisi #metareklam #IVEXMedya
+#IVEXMedya #reklamajansı #sosyalmedyaajansı #metareklam #içerikstratejisi
+```
+
+**Kısa hâli:**
+
+```
+Reklam şans değil, operasyon. ⚙️
+Dinliyoruz, senaryoyu yazıyoruz, planlıyoruz, bütçeyi işe yarayana veriyoruz.
+Markan için başlatalım: DM'den "OPERASYON" yaz. 📩
+
+#IVEXMedya #reklamajansı #sosyalmedyaajansı #metareklam #içerikstratejisi
 ```

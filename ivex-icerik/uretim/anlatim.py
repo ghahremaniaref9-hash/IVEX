@@ -1,12 +1,15 @@
 """IVEX Medya - vitrin, delikli kova ve iki senaryo Reels'lerinin seslendirmeli sürümleri.
 
-Kullanım:  python3 anlatim.py [vitrin|kova|fark]   (ad verilmezse üçü de üretilir)
+Kullanım:  python3 anlatim.py [vitrin|kova|fark] [--sadece-ses]   (ad verilmezse üçü de üretilir)
 Seslendirme cümleleri ayarlar/seslendirme.json'da, her cümle bir sahneye ait; ses dosyaları
 kaynak/seslendirme/<ses>/NN.mp3 (Higgsfield, ElevenLabs). Ses hızlandırılmaz, görüntü sese uydurulur:
 cümlesi sahneye sığmayan sahne, cümle bitene kadar orantılı uzatılır (sahnedeki animasyonlar aynı oranda
-yavaşlar, video klipler kare harmanlanarak akıcı kalır). Müzik ve efektler yeni zaman çizelgesiyle yeniden
-üretilir, konuşma sırasında müzik kısılır; ses -14 LUFS'a getirilir ve tepeler sınırlanır.
+yavaşlar, video klipler kare harmanlanarak akıcı kalır). Ses -14 LUFS'a getirilir ve tepeler sınırlanır.
 Ekrandaki yazılar aynen kalır, video sessiz izlense de anlaşılır.
+
+seslendirme.json'da "muzik": false ise yalnızca konuşma duyulur; true ise müzik ve efektler yeni zaman
+çizelgesiyle yeniden üretilir ve konuşma sırasında kısılır.
+--sadece-ses: görüntü değişmediyse videoyu yeniden çizmez, mevcut videonun yalnızca ses kanalını yeniler.
 """
 import json
 import os
@@ -81,7 +84,7 @@ def plan(name):
         clips.append((new[-1] + offset, clip))
         print(f"  sahne {k + 1}: {old[k + 1] - old[k]:.2f} -> {length:.2f} sn  | {text}")
         new.append(new[-1] + length)
-    return Warp(old, new), clips, vcfg["videolar"][name]
+    return Warp(old, new), clips, vcfg["videolar"][name], vcfg.get("muzik", True)
 
 
 def warp_sound_plan(p, warp):
@@ -100,12 +103,14 @@ def warp_sound_plan(p, warp):
 
 def mix(music, clips, total):
     n = int(total * SR)
-    music = music[:n] * (MUSIC_RMS / (np.sqrt(np.mean(music[:n] ** 2)) + 1e-9))
     voice = np.zeros((n, 2))
     for at, clip in clips:
         i = int(at * SR)
         j = min(n, i + len(clip))
         voice[i:j] += clip[: j - i]
+    if music is None:
+        return voice
+    music = music[:n] * (MUSIC_RMS / (np.sqrt(np.mean(music[:n] ** 2)) + 1e-9))
     # speech gate on 10 ms frames, held through short pauses, then smoothed (soft attack and release)
     hop = int(0.01 * SR)
     frames = np.abs(voice[: n // hop * hop]).max(axis=1).reshape(-1, hop).max(axis=1) > 0.01
@@ -129,9 +134,9 @@ def smooth_clip(self, frames, t, start):
 kavramlar.Base.clip = smooth_clip
 
 
-def render(name):
+def render(name, audio_only=False):
     print(f"{name}:")
-    warp, clips, vcfg = plan(name)
+    warp, clips, vcfg, with_music = plan(name)
     total = warp.new[-1]
     if name == "vitrin":
         cfg = json.load(open(repo("ivex-icerik", "ayarlar", "vitrin.json"), encoding="utf-8"))
@@ -140,7 +145,8 @@ def render(name):
         cfg = json.load(open(repo("ivex-icerik", "ayarlar", "kavramlar.json"), encoding="utf-8"))[name]
         reel = (kavramlar.Kova if name == "kova" else kavramlar.Fark)(cfg)
         p = reel.sound()
-    audio = mix(ses.score(warp_sound_plan(p, warp), total), clips, total)
+    music = ses.score(warp_sound_plan(p, warp), total) if with_music else None
+    audio = mix(music, clips, total)
     raw, loud, final = (repo("ivex-icerik", f".{name}-anlatim{s}") for s in (".wav", "-yuksek.wav", ".m4a"))
     sf.write(raw, (audio / max(1e-6, np.abs(audio).max()) * 0.9).astype(np.float32), SR)
     ses.master(raw, loud)
@@ -148,25 +154,31 @@ def render(name):
                     "alimiter=limit=0.74:level=false,afade=t=in:d=0.03", "-c:a", "aac", "-b:a", "192k", final],
                    check=True)
     out = repo(vcfg["cikti"])
-    enc = subprocess.Popen([FF, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
-                            "-r", str(FPS), "-i", "-", "-i", final, "-map", "0:v", "-map", "1:a", "-c:v", "libx264",
-                            "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-c:a", "copy", "-shortest",
-                            "-movflags", "+faststart", out], stdin=subprocess.PIPE)
-    count = round(total * FPS)
-    for i in range(count):
-        enc.stdin.write(reel.frame(warp.to_visual(i / FPS)).tobytes())
-        if i % 150 == 0:
-            print(f"  kare {i}/{count}", flush=True)
-    enc.stdin.close()
-    enc.wait()
+    if audio_only and os.path.exists(out):
+        tmp = repo("ivex-icerik", f".{name}-anlatim.mp4")
+        subprocess.run([FF, "-y", "-loglevel", "error", "-i", out, "-i", final, "-map", "0:v", "-map", "1:a",
+                        "-c", "copy", "-shortest", "-movflags", "+faststart", tmp], check=True)
+        os.replace(tmp, out)
+    else:
+        enc = subprocess.Popen([FF, "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
+                                "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-i", final, "-map", "0:v", "-map", "1:a",
+                                "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p",
+                                "-c:a", "copy", "-shortest", "-movflags", "+faststart", out], stdin=subprocess.PIPE)
+        count = round(total * FPS)
+        for i in range(count):
+            enc.stdin.write(reel.frame(warp.to_visual(i / FPS)).tobytes())
+            if i % 150 == 0:
+                print(f"  kare {i}/{count}", flush=True)
+        enc.stdin.close()
+        enc.wait()
     for f in (raw, loud, final):
         os.remove(f)
-    print(f"  kaydedildi: {vcfg['cikti']} ({total:.1f} sn)")
+    print(f"  kaydedildi: {vcfg['cikti']} ({total:.1f} sn, {'müzikli' if with_music else 'yalnızca konuşma'})")
 
 
 def main():
     for name in [a for a in sys.argv[1:] if a in ("vitrin", "kova", "fark")] or ["vitrin", "kova", "fark"]:
-        render(name)
+        render(name, audio_only="--sadece-ses" in sys.argv)
 
 
 if __name__ == "__main__":

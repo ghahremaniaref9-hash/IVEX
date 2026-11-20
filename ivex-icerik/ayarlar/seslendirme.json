@@ -1,6 +1,7 @@
 {
   "ses": {"model": "text2speech_v2", "variant": "elevenlabs", "voice_type": "preset",
           "voice_id": "573e5163-59b3-4926-aab1-951ef2985f81", "ad": "Harrison"},
+  "muzik": false,
   "videolar": {
     "vitrin": {
       "kaynak": "ivex-icerik/ivex-vitrin-reels.mp4",

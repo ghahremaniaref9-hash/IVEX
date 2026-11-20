@@ -602,3 +602,25 @@ Kısa bir görüşme için sana uygun bir saat de yazarsan hemen dönüyoruz.
 
 - İlk 1 saatte gelen yorumların hepsine cevap verin.
 - 48 saat sonra izlenme, kaydetme, paylaşım ve DM sayısını not edin. Hangi videonun daha çok DM getirdiğine bakın; bir sonraki içerik o yönde gider.
+
+## Etkileşim hikâyeleri (6 adet, 21–27 Kasım 2026)
+
+Her hikâye farklı bir Instagram etiketi için tasarlandı. Etiketlere dokunmak ve cevap yazmak hikâyelerin daha çok kişiye gösterilmesini sağlıyor. Hikâyeler Reels takvimiyle bağlantılı: geri sayım Pazar videosuna, test ipucu kova videosuna, A/B anketi aynı akşamki iki senaryo videosuna izleyici taşıyor.
+
+Görseller `hikayeler/ivex-hikaye-*.jpg` dosyalarında (1080×1920). Etiketlerin yeri `hikayeler/ivex-hikaye-etiket-rehberi.jpg` dosyasında gösteriliyor; bu dosya paylaşmak için değil, yerleştirme rehberi. Etiket, görseldeki boş alana konur.
+
+| # | Gün | Görsel | Eklenecek etiket |
+|---|---|---|---|
+| 1 | Cumartesi 21 Kasım, 12:30 | `ivex-hikaye-1-anket.jpg` | Anket: "Evet, tam olarak bu" / "Hayır, satış geliyor" |
+| 2 | Cumartesi 21 Kasım, 20:00 | `ivex-hikaye-2-geri-sayim.jpg` | Geri sayım: "Delikli kova", bitiş Pazar 22 Kasım 20:00 |
+| 3 | Pazartesi 23 Kasım, 12:30 | `ivex-hikaye-3-test.jpg` | Test: "Düşük bütçe" / "Zayıf içerik" (doğru) / "Yanlış paylaşım saati" |
+| 4 | Salı 24 Kasım, 12:30 | `ivex-hikaye-4-a-mi-b-mi.jpg` | Anket: "A" / "B" |
+| 5 | Çarşamba 25 Kasım, 12:30 | `ivex-hikaye-5-kaydirici.jpg` | Emoji kaydırıcı (ateş): "Bu yöntem sence ne kadar mantıklı?" |
+| 6 | Cuma 27 Kasım, 12:30 | `ivex-hikaye-6-soru-kutusu.jpg` | Soru kutusu: "IVEX'e sor" |
+
+- **Geri sayım:** Takipçiler hatırlatıcı kurabilir. Pazar 20:00'de kova videosu yayınlanınca Instagram onlara bildirim gönderir.
+- **Test ve anket sonuçları:** 24 saat sonra sonuç ekranını hikâyede paylaşın. Örneğin "%70'iniz 'Zayıf içerik' dedi, doğru cevap!" Gerçek oranı yazın.
+- **Soru kutusu:** Gelen soruları tek tek hikâyede cevaplayın. En çok sorulanlar yeni Reels konusu olur.
+- **Cevap verenler:** Ankete "Evet" diyen ya da soru soranlara DM'den kısa bir teşekkür mesajı atın, sohbet başlatın.
+- **Öne çıkanlar:** 6 hikâyeyi "IVEX" adlı bir öne çıkana ekleyin.
+- **Yeniden üretmek için:** Metinler `ayarlar/hikayeler.json` içinde; `python3 ivex-icerik/uretim/hikayeler.py` komutunu çalıştırın.

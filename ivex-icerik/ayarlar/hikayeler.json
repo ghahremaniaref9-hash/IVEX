@@ -1,0 +1,75 @@
+{
+  "klasor": "ivex-icerik/hikayeler",
+  "hikayeler": [
+    {
+      "ad": "1-anket",
+      "tur": "foto",
+      "klip": "ivex-icerik/kaynak/higgsfield/acilis-butik.mp4", "an": 1.5,
+      "etiket": "1 SANİYELİK ANKET",
+      "baslik": [["Reklam veriyorsun,", "beyaz"], ["ama satış", "lime"], ["gelmiyor mu?", "lime"]],
+      "baslik_y": 985, "boyut": 88,
+      "alan": [1300, 1560], "alan_adi": "ANKET",
+      "gun": "Cumartesi 21 Kasım, 12:30",
+      "sticker": "Anket: \"Evet, tam olarak bu\" / \"Hayır, satış geliyor\""
+    },
+    {
+      "ad": "2-geri-sayim",
+      "tur": "foto",
+      "klip": "ivex-icerik/kaynak/higgsfield/kova-delik.mp4", "an": 3.5,
+      "etiket": "YENİ VİDEO · PAZAR 20:00",
+      "baslik": [["Kovan delik mi?", "beyaz"]],
+      "alt": ["Reklam bütçen nereye akıyor?", "Pazar akşamı gösteriyoruz."],
+      "baslik_y": 1060, "boyut": 104,
+      "alan": [1330, 1560], "alan_adi": "GERİ SAYIM",
+      "gun": "Cumartesi 21 Kasım, 20:00",
+      "sticker": "Geri sayım: \"Delikli kova\", bitiş Pazar 22 Kasım 20:00 (takipçiler hatırlatıcı kurabilir)"
+    },
+    {
+      "ad": "3-test",
+      "tur": "test",
+      "etiket": "MİNİ TEST",
+      "baslik": [["Reklam bütçeni", "beyaz"], ["en çok ne", "beyaz"], ["boşa harcatır?", "lime"]],
+      "baslik_y": 430, "boyut": 96,
+      "alt": ["İpucu: Pazar akşamki videoda."],
+      "alt_y": 1440,
+      "alan": [850, 1380], "alan_adi": "TEST",
+      "gun": "Pazartesi 23 Kasım, 12:30",
+      "sticker": "Test: \"Düşük bütçe\" / \"Zayıf içerik\" (doğru cevap) / \"Yanlış paylaşım saati\""
+    },
+    {
+      "ad": "4-a-mi-b-mi",
+      "tur": "ikili",
+      "a": {"klip": "ivex-icerik/kaynak/higgsfield/kazak-siradan.mp4", "an": 1.5, "yazi": "Yeni sezon kazak!|%20 indirim!!"},
+      "b": {"klip": "ivex-icerik/kaynak/higgsfield/kazak-vapur.mp4", "an": 3.5, "yazi": "Soğuk vapur|sabahları için…"},
+      "baslik": [["Aynı kazak, aynı bütçe.", "beyaz"], ["Hangisinde durursun?", "lime"]],
+      "baslik_y": 352, "boyut": 64,
+      "alt": ["Cevap bu akşam 19:30'da, Reels'te."],
+      "alan": [1405, 1570], "alan_adi": "ANKET",
+      "gun": "Salı 24 Kasım, 12:30",
+      "sticker": "Anket: \"A\" / \"B\""
+    },
+    {
+      "ad": "5-kaydirici",
+      "tur": "yontem",
+      "etiket": "IVEX YÖNTEMİ",
+      "baslik": [["Reklamdan önce", "beyaz"], ["organik müşteri.", "lime"]],
+      "baslik_y": 450, "boyut": 84,
+      "adimlar": [["Güçlü senaryo", "Durduran, izleten içerik"], ["Organik izlenme", "Reklam vermeden müşteri"],
+                  ["Doğru Meta reklamı", "Bütçe, işe yarayana gider"]],
+      "alan": [1360, 1570], "alan_adi": "KAYDIRICI",
+      "gun": "Çarşamba 25 Kasım, 12:30",
+      "sticker": "Emoji kaydırıcı (ateş emojisi): \"Bu yöntem sence ne kadar mantıklı?\""
+    },
+    {
+      "ad": "6-soru-kutusu",
+      "tur": "soru",
+      "baslik": [["Reklam, içerik,", "beyaz"], ["Trendyol, Shopify…", "beyaz"], ["Aklına takılanı sor.", "lime"]],
+      "baslik_y": 560, "boyut": 74,
+      "alt": ["En çok sorulanları videoyla cevaplayacağız."],
+      "alan": [1000, 1380], "alan_adi": "SORU KUTUSU",
+      "dipnot": "Markana özel konuşmak için DM'den “SENARYO” yaz.",
+      "gun": "Cuma 27 Kasım, 12:30",
+      "sticker": "Soru kutusu: \"IVEX'e sor\""
+    }
+  ]
+}

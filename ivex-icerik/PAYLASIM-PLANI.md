@@ -491,3 +491,114 @@ Vitrin, "Delikli kova" ve "Aynı ürün, iki senaryo" videolarının erkek sesle
   3. `python3 ivex-icerik/uretim/anlatim.py [vitrin|kova|fark]` komutunu çalıştırın.
      - Yalnızca ses değiştiyse sona `--sadece-ses` ekleyin. Görüntü yeniden çizilmez, sadece ses kanalı yenilenir.
 - **Açıklamalar:** Yukarıdaki müzikli sürümlerin açıklamaları ve etiketleri aynen kullanılabilir.
+
+## Yayın planı: 3 seslendirmeli Reels (22–26 Kasım 2026)
+
+Sıra bilinçli: önce sorun (kova), sonra çözümün kanıtı (iki senaryo), en son "biz kimiz" (vitrin). Vitrin profilde en üste sabitlenir, yeni gelen herkes önce onu görür. Saatler öneri; Instagram'da Profesyonel panel > Takipçiler > "En aktif saatler" farklı gösteriyorsa ona göre kaydırın.
+
+| Gün | Saat | Video | Kapak | DM kelimesi |
+|---|---|---|---|---|
+| Pazar 22 Kasım | 20:00 | `ivex-delikli-kova-reels-seslendirmeli.mp4` | `ivex-delikli-kova-kapak.jpg` | KOVA |
+| Salı 24 Kasım | 19:30 | `ivex-ayni-urun-iki-senaryo-reels-seslendirmeli.mp4` | `ivex-ayni-urun-iki-senaryo-kapak.jpg` | FARK |
+| Perşembe 26 Kasım | 19:30 | `ivex-vitrin-reels-seslendirmeli.mp4` | `ivex-vitrin-kapak.jpg` | SENARYO |
+
+Kova, Kasım indirimleri (27 Kasım "Efsane Cuma" haftası) öncesine denk geliyor; markalar bütçe artırırken "önce deliği kapat" mesajı tam yerinde.
+
+### Açıklamalar
+
+**1. Delikli kova (Pazar 22 Kasım, 20:00)**
+
+```
+Reklam bütçeni artırmadan önce kovana bak. 🪣
+
+Kasım indirimlerinde herkes bütçeyi büyütüyor. Ama ilk 3 saniyede kaydırılan video, hikâyesi olmayan fotoğraf ve kime konuştuğu belli olmayan metin varken dökülen her lira akıp gider.
+
+Biz önce deliği kapatıyoruz: güçlü senaryo, organik ilgi. Sonra bütçeyi doğru reklama döküyoruz.
+
+Deliklerini birlikte bulalım. DM'den "KOVA" yaz. 📩
+
+#reklamajansı #metareklam #içerikstratejisi #eticaret #IVEXMedya
+```
+
+**2. Aynı ürün, iki senaryo (Salı 24 Kasım, 19:30)**
+
+```
+Aynı kazak, aynı bütçe. Sen hangisinde durursun, A mı B mi? 👀
+
+A: "Yeni sezon kazak! %20 indirim!!"
+B: Soğuk bir vapur sabahı, sıcacık bir kırmızı.
+
+Fark ürün değil, senaryo. İlk 3 saniyede merak, ürün yerine hikâye, sonunda net bir çağrı.
+
+Ürününe özel senaryoyu birlikte yazalım. DM'den "FARK" yaz. 📩
+
+#reelsstratejisi #içerikstratejisi #organikbüyüme #modamarkası #IVEXMedya
+```
+
+**3. Vitrin (Perşembe 26 Kasım, 19:30, profile sabitlenecek)**
+
+```
+Reklama para yakıp satış göremiyorsan, sorun bütçende değil. 🎯
+
+Biz önce senaryoyu kuruyoruz: durduran, izleten, güven veren içerik. Organik izlenme ve müşteri gelmeye başlayınca Meta reklamını doğru yönetip bütçeni işe yarayan yere yönlendiriyoruz.
+
+Sosyal medya · Meta reklam · Video · Trendyol & Shopify · Marka kimliği · Web sitesi
+
+Markana özel senaryoyu birlikte kuralım. DM'den "SENARYO" yaz. 📩
+
+#reklamajansı #sosyalmedyaajansı #dijitalpazarlama #metareklam #IVEXMedya
+```
+
+### Paylaşırken
+
+- **Kapak:** Her videoda kendi kapak dosyasını yükleyin. Kapaklar profil ızgarasında (3:4) da düzgün görünüyor.
+- **Yapay zekâ etiketi:** Konuşma sesi ve video sahneleri yapay zekâyla üretildi. Paylaşmadan önce gelişmiş ayarlardaki yapay zekâ etiketini açın.
+- **Facebook'ta da paylaş** seçeneğini açık bırakın.
+- **Sabitleme:** Vitrin paylaşıldıktan sonra profilde en üste sabitlenir. Kova ve iki senaryo da ilk 3'e alınabilir.
+- **Müşteri onayı:** Vitrinde müşteri işleri ekranda görünüyor. Paylaşmadan önce Mutfella, Minah Tekstil ve Mekan Sizin'den onay alın.
+
+### Hikâye desteği (paylaşımdan 1–2 saat sonra)
+
+| Video | Hikâyede | Etiket |
+|---|---|---|
+| Kova | Reels'i hikâyeye ekle: "Senin kovan delik mi?" | Anket: "Reklam bütçem geri dönüyor" / "Akıp gidiyor" |
+| İki senaryo | Reels'i hikâyeye ekle: "Sen hangisinde durdun?" | Anket: "A" / "B" |
+| Vitrin | Reels'i hikâyeye ekle: "Markana özel senaryo için" | Metin: DM'den "SENARYO" yaz |
+
+Ankete "Akıp gidiyor" ya da "B" diyenlere birkaç saat içinde DM'den kısa bir teşekkür mesajı atılabilir.
+
+### DM hazır yanıtları
+
+Instagram'da Ayarlar > İşletme araçları > Hazır yanıtlar bölümüne kaydedin. Kelimeyi yazan herkese aynı gün dönün.
+
+**KOVA:**
+```
+Merhaba, yazdığın için teşekkürler! 🙌 Deliklerini bulmak için 3 kısa soru:
+1) Markanın Instagram ya da mağaza linki?
+2) Şu an reklam veriyor musun, aylık yaklaşık bütçen ne?
+3) En çok satmak istediğin ürün ya da hizmet hangisi?
+Cevaplarına göre sana özel kısa bir değerlendirmeyle dönüyoruz.
+```
+
+**FARK:**
+```
+Merhaba, yazdığın için teşekkürler! 🙌 Ürününe özel senaryo için:
+1) Ürününün ya da mağazanın linki?
+2) Şu an içeriklerini kim hazırlıyor?
+3) Hedef müşterin kim (yaş, şehir, ilgi alanı)?
+Cevaplarına göre ürünün için senaryo fikirleriyle dönüyoruz.
+```
+
+**SENARYO:**
+```
+Merhaba, yazdığın için teşekkürler! 🙌 Seni tanıyalım:
+1) Markanın adı ve Instagram ya da web sitesi?
+2) Hangi sektördesin?
+3) En çok neye ihtiyacın var: içerik, reklam, mağaza yönetimi ya da marka kimliği?
+Kısa bir görüşme için sana uygun bir saat de yazarsan hemen dönüyoruz.
+```
+
+### İlk 48 saat
+
+- İlk 1 saatte gelen yorumların hepsine cevap verin.
+- 48 saat sonra izlenme, kaydetme, paylaşım ve DM sayısını not edin. Hangi videonun daha çok DM getirdiğine bakın; bir sonraki içerik o yönde gider.

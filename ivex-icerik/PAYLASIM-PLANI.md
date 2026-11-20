@@ -484,7 +484,7 @@ Vitrin, "Delikli kova" ve "Aynı ürün, iki senaryo" videolarının erkek sesle
   - Ses hızlandırılmadı. Cümlesi sığmayan sahneler cümle bitene kadar orantılı uzatıldı.
   - Bu yüzden videolar müzikli hâlinden birkaç saniye uzun.
   - Müzik istenirse `ayarlar/seslendirme.json` içinde `"muzik": true` yapılır. Müzik ve efektler yeni sürelere göre üretilir, konuşma sırasında kısılır.
-- **Metin:** Cümleler `ayarlar/seslendirme.json` içinde, ses dosyaları `kaynak/seslendirme/harrison/` klasöründe. Ekrandaki yazılar aynı kaldı, video sessiz izlense de anlaşılıyor.
+- **Metin:** Vitrin videosunda müşteri markalarının adı seslendirmede söylenmiyor, "bu marka" deniyor. Cümleler `ayarlar/seslendirme.json` içinde, ses dosyaları `kaynak/seslendirme/harrison/` klasöründe. Ekrandaki yazılar aynı kaldı, video sessiz izlense de anlaşılıyor.
 - **Değiştirmek için:**
   1. Cümleyi json'da düzeltin.
   2. O satırı aynı sesle Higgsfield'da yeniden üretin ve aynı numarayla kaydedin (vitrin 00–05, kova 06–10, fark 11–15).

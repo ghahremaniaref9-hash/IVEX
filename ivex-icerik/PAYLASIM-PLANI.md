@@ -633,8 +633,9 @@ Görseller `hikayeler/ivex-hikaye-*.jpg` dosyalarında (1080×1920). Etiketlerin
   2. Senaryo sayfası: ilk 3 saniyelik kanca vurgulanıyor.
   3. İçerik takvimi: Reels, hikâye ve gönderi kartları günlere sürükleniyor.
   4. Reklam paneli: organik ilgisi yüksek içerik seçilip "Reklama çıkar" tıklanıyor.
-  5. Kapanış: DM'den "SENARYO" yaz.
-- **Ses:** Harrison seslendirmesi, müzik yok. -14,4 LUFS.
+  5. Kapanış: DM'den "OPERASYON" yaz.
+- **Ses:** Harrison seslendirmesi, müzik yok. -14,3 LUFS.
+- **DM kelimesi:** OPERASYON. Bu kelimeyle gelen mesajlara da hazır yanıt kaydedilmeli.
 - **Not:** Ekranlar temsilidir; örnek içerikler kurgusal bir giyim markası için. Rakam ya da sonuç vaadi yok.
 - **Üretim:** Higgsfield GPU, ArtCraft kutusu (L40S), EffectCraft. Katmanları düzenlenebilir proje `uretim/effectcraft/ivex-panel-proje.zip` içinde (`ivex-panel.ecproj` + görseller, fontlar, sesler). Projeyi kuran betik `uretim/effectcraft/ivex-panel.jsx`; metinler ve zamanlamalar orada.
 
@@ -646,7 +647,7 @@ Biz işe reklamla değil, seni dinleyerek başlıyoruz. 🎯
 3. İçeriği planlıyor, üretiyor, düzenli paylaşıyoruz.
 4. Organik ilgi gören içeriği seçip reklam bütçesini ona veriyoruz.
 
-Önce organik, sonra doğru reklam. DM'den "SENARYO" yaz. 📩
+Önce organik, sonra doğru reklam. DM'den "OPERASYON" yaz. 📩
 
 #reklamajansı #sosyalmedyaajansı #içerikstratejisi #metareklam #IVEXMedya
 ```

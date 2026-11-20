@@ -379,8 +379,8 @@ S(endLogo).setValue([ek, ek]);
 P(endLogo).setValue([540, 620]);
 var e1 = text(main, "Kapanış satır 1", "Önce organik,", F.black, 66, C.white, 540, 820, "C");
 var e2 = text(main, "Kapanış satır 2", "sonra doğru reklam.", F.black, 66, C.lime, 540, 902, "C");
-var eb = rect(main, "Kapanış buton", 540, 78, 39, C.lime, null, 0, 540, 1010);
-var ebt = text(main, "Kapanış buton yazı", "DM'DEN “SENARYO” YAZ", F.xb, 30, C.ink, 540, 1021, "C", 60);
+var eb = rect(main, "Kapanış buton", 640, 78, 39, C.lime, null, 0, 540, 1010);
+var ebt = text(main, "Kapanış buton yazı", "DM'DEN “OPERASYON” YAZ", F.xb, 30, C.ink, 540, 1021, "C", 60);
 ebt.parent = eb;
 var es = text(main, "Kapanış alt yazı", "Markana özel senaryoyu birlikte kuralım.", F.med, 28, C.soft, 540, 1120, "C");
 var ew = text(main, "Kapanış site", "WWW.İVEX.COM.TR", F.bold, 22, C.muted, 540, 1200, "C", 250);
@@ -394,7 +394,7 @@ for (var ep = 0; ep < endParts.length; ep++) {
     keys(O(endParts[ep]), [[t0, 0], [t0 + 0.35, 100]], 60);
     span(endParts[ep], E0 - 0.05, DUR);
 }
-keys(S(eb), [[24.45, [100, 100]], [24.65, [107, 107]], [24.9, [100, 100]]], 60);
+keys(S(eb), [[24.6, [100, 100]], [24.8, [107, 107]], [25.05, [100, 100]]], 60);
 
 // ------------------------------------------------------------------ cursor and clicks
 var CLICKS = [[1.05, G(600, 192)], [1.95, G(120, 334)], [2.7, G(560, 476)], [3.85, G(560, 640)], [7.85, G(840, 160)],

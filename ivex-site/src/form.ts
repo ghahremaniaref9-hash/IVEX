@@ -1,7 +1,7 @@
 // "Sizi arayalım" form: inline validation, sends to Netlify Forms (which emails the
 // team), then offers to send the same details on WhatsApp.
 
-const WHATSAPP_NUMBER = "905010623794";
+import { WHATSAPP as WHATSAPP_NUMBER } from "./site/content";
 
 type Rule = (el: HTMLInputElement) => string;
 

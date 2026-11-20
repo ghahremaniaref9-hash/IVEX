@@ -1,0 +1,6 @@
+node_modules
+dist
+.netlify
+# Rendered from src/site/pages.ts by vite.config.ts
+/hizmetler/
+/iletisim/

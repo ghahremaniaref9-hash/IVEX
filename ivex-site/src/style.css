@@ -1,0 +1,1292 @@
+:root {
+  --ivx-ground: #07100c;
+  --ivx-surface: #0b2a1d;
+  --ivx-line: #123d2b;
+  --ivx-accent: #daff2e;
+  --ivx-text: #f2f5f3;
+  --ivx-muted: #9fb3a8;
+  --ivx-error: #ff9b85;
+  --ivx-frame: 14px;
+  --ivx-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --ivx-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ivx-gutter: clamp(1rem, 4vw, 4rem);
+  --ivx-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ivx-nav-h: 4.5rem;
+  --ivx-logo-ink: #ffffff;
+  --ivx-logo-x: #daff2e;
+  /* accent as text and thin lines; --ivx-accent stays the solid button fill */
+  --ivx-accent-ink: #daff2e;
+  --ivx-accent-soft: rgb(218 255 46 / 0.45);
+  --ivx-on-accent: #07100c;
+  --ivx-body: #c3d2ca;
+  --ivx-note: #7f978a;
+  --ivx-placeholder: #6f8579;
+  --ivx-nav-bg: rgb(7 16 12 / 0.7);
+  --ivx-nav-border: rgb(18 61 43 / 0.7);
+  --ivx-vignette:
+    linear-gradient(90deg, rgb(7 16 12 / 0.82) 0%, rgb(7 16 12 / 0.45) 34%, rgb(7 16 12 / 0) 60%),
+    radial-gradient(120% 90% at 70% 50%, rgb(7 16 12 / 0) 40%, rgb(7 16 12 / 0.55) 100%);
+  --ivx-vignette-mobile: linear-gradient(180deg, rgb(7 16 12 / 0.2) 0%, rgb(7 16 12 / 0.42) 100%);
+  --ivx-row-hover: rgb(11 42 29 / 0.92);
+  --ivx-panel-bg: rgb(9 30 21 / 0.62);
+  --ivx-panel-border: rgb(218 255 46 / 0.16);
+  --ivx-panel-shadow: 0 30px 80px -30px rgb(0 0 0 / 0.6);
+  --ivx-field-bg: rgb(7 16 12 / 0.72);
+  --ivx-focus-ring: rgb(218 255 46 / 0.16);
+  --ivx-hover-tint: rgb(218 255 46 / 0.08);
+}
+/* Light theme: the default (pages carry data-theme="light"); ?tema=koyu previews the dark one */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ivx-ground: #f6f8f3;
+  --ivx-surface: #ffffff;
+  --ivx-line: #d3dfd6;
+  --ivx-text: #0b1a12;
+  --ivx-muted: #4d6156;
+  --ivx-body: #2c4035;
+  --ivx-note: #66796e;
+  --ivx-placeholder: #8c9b92;
+  --ivx-error: #b93c12;
+  --ivx-logo-ink: #0b1a12;
+  --ivx-logo-x: #5a9a00;
+  --ivx-accent-ink: #4a8500;
+  --ivx-accent-soft: rgb(74 133 0 / 0.45);
+  --ivx-nav-bg: rgb(246 248 243 / 0.82);
+  --ivx-nav-border: rgb(211 223 214 / 0.9);
+  --ivx-vignette:
+    linear-gradient(90deg, rgb(246 248 243 / 0.9) 0%, rgb(246 248 243 / 0.55) 34%, rgb(246 248 243 / 0) 60%),
+    radial-gradient(120% 90% at 70% 50%, rgb(246 248 243 / 0) 45%, rgb(246 248 243 / 0.6) 100%);
+  --ivx-vignette-mobile: linear-gradient(180deg, rgb(246 248 243 / 0.3) 0%, rgb(246 248 243 / 0.6) 100%);
+  --ivx-row-hover: rgb(218 255 46 / 0.32);
+  --ivx-panel-bg: rgb(255 255 255 / 0.8);
+  --ivx-panel-border: rgb(11 26 18 / 0.1);
+  --ivx-panel-shadow: 0 30px 80px -40px rgb(11 26 18 / 0.28);
+  --ivx-field-bg: #ffffff;
+  --ivx-focus-ring: rgb(74 133 0 / 0.18);
+  --ivx-hover-tint: rgb(74 133 0 / 0.08);
+}
+@media (max-width: 959px) {
+  :root {
+    --ivx-nav-h: 5.6rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--ivx-ground);
+  color: var(--ivx-text);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--ivx-nav-h) + 1rem);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  background: var(--ivx-ground);
+  color: var(--ivx-text);
+  font-family: var(--ivx-display);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--ivx-accent);
+  color: var(--ivx-on-accent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ivx-accent-ink);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.ivx-skip {
+  position: fixed;
+  left: 1rem;
+  top: -4rem;
+  z-index: 60;
+  padding: 0.6rem 1rem;
+  background: var(--ivx-accent);
+  color: var(--ivx-on-accent);
+  font-weight: 600;
+}
+.ivx-skip:focus {
+  top: 1rem;
+}
+
+/* WebGL layer: fixed behind the page, with a vignette that keeps copy legible */
+#gl {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.gl-vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--ivx-vignette);
+}
+@media (max-width: 899px) {
+  .gl-vignette {
+    background: var(--ivx-vignette-mobile);
+  }
+}
+.ivx-page {
+  position: relative;
+  z-index: 2;
+}
+
+.ivx-wrap {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: var(--ivx-gutter);
+}
+.ivx-accent {
+  color: var(--ivx-accent-ink);
+}
+.ivx-cap {
+  display: block;
+  font-family: var(--ivx-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivx-muted);
+}
+.ivx-kicker {
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ivx-accent-ink);
+}
+
+/* Logo (supplied artwork, traced to SVG) */
+.ivx-logo {
+  display: block;
+  height: 26px;
+  width: auto;
+}
+.ivx-logo__ink {
+  fill: var(--ivx-logo-ink);
+}
+.ivx-logo__x {
+  fill: var(--ivx-logo-x);
+}
+.ivx-igbadge__core .ivx-logo-x {
+  width: 1.5rem;
+  height: auto;
+}
+
+/* Nav: links on the left, the logo centred, WhatsApp on the right.
+   Below 960px the links drop to a second row under the logo. */
+.ivx-nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 50;
+  background: var(--ivx-nav-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--ivx-nav-border);
+}
+.ivx-nav__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "links logo end";
+  align-items: center;
+  column-gap: 1.5rem;
+  height: var(--ivx-nav-h);
+}
+.ivx-nav__links {
+  grid-area: links;
+  justify-self: start;
+  display: flex;
+  gap: 2.25rem;
+  font-size: 0.95rem;
+  color: var(--ivx-muted);
+}
+.ivx-nav__links a {
+  padding-block: 0.3rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+.ivx-nav__links a:hover,
+.ivx-nav__links a[aria-current="page"] {
+  color: var(--ivx-text);
+}
+.ivx-nav__links a[aria-current="page"] {
+  border-bottom-color: var(--ivx-accent-ink);
+}
+.ivx-nav__logo {
+  grid-area: logo;
+  justify-self: center;
+}
+.ivx-nav__logo .ivx-logo {
+  height: 30px;
+}
+.ivx-nav__end {
+  grid-area: end;
+  justify-self: end;
+  display: flex;
+}
+.ivx-nav__wa {
+  display: none;
+}
+@media (max-width: 959px) {
+  .ivx-nav__inner {
+    grid-template-rows: 3.5rem 1fr;
+    grid-template-areas:
+      ". logo end"
+      "links links links";
+  }
+  .ivx-nav__logo .ivx-logo {
+    height: 26px;
+  }
+  .ivx-nav__links {
+    justify-self: center;
+    align-self: start;
+    gap: 1.75rem;
+    font-size: 0.9rem;
+  }
+  .ivx-nav__end .ivx-scramble {
+    display: none;
+  }
+  .ivx-nav__end .ivx-nav__wa {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.7rem;
+    font-family: var(--ivx-mono);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ivx-on-accent);
+    background: var(--ivx-accent);
+  }
+}
+
+/* CTA: nav WhatsApp, mono label that decodes */
+.ivx-scramble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 17ch;
+  padding: 0.7rem 1rem;
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--ivx-on-accent);
+  background: var(--ivx-accent);
+  transition: transform 0.15s;
+}
+.ivx-scramble:active {
+  transform: translateY(1px);
+}
+
+/* Hero */
+.ivx-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding-top: var(--ivx-nav-h);
+}
+.ivx-hero__content {
+  padding-block: 3rem;
+}
+.ivx-hero__title {
+  margin-top: 1.25rem;
+  font-size: clamp(2.3rem, 3.6vw, 4.3rem);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+.ivx-hero__title > span {
+  display: block;
+}
+.ivx-hero__title em {
+  font-style: normal;
+  color: var(--ivx-accent-ink);
+}
+.ivx-hero__sub {
+  margin-top: 1.5rem;
+  font-size: clamp(1.05rem, 1.3vw, 1.25rem);
+  color: var(--ivx-muted);
+}
+.ivx-hero__ctas {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 2.5rem;
+}
+.ivx-hero__fallback {
+  margin-top: 2.5rem;
+  overflow: hidden;
+  border-radius: var(--ivx-frame);
+  aspect-ratio: 4 / 3;
+}
+.ivx-hero__fallback img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 50%;
+}
+.gl-on .ivx-hero__fallback {
+  display: none;
+}
+@keyframes ivx-rise {
+  from { transform: translateY(0.5em); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+.ivx-rise {
+  animation: ivx-rise 0.9s var(--ivx-ease) both;
+  animation-delay: var(--d, 0ms);
+}
+
+/* CTA: hero WhatsApp, double-helix waveform underline */
+.ivx-helix-cta {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-block: 0.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.ivx-helix-cta__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.ivx-helix-cta__arrow {
+  color: var(--ivx-accent-ink);
+  transition: transform 0.25s var(--ivx-ease);
+}
+.ivx-helix-cta:hover .ivx-helix-cta__arrow,
+.ivx-helix-cta:focus-visible .ivx-helix-cta__arrow {
+  transform: translateX(5px);
+}
+.ivx-helix-cta__wave {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 12px;
+  overflow: hidden;
+}
+.ivx-helix-cta__wave svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  max-width: none;
+  height: 12px;
+}
+.ivx-helix-cta__wave path {
+  fill: none;
+  stroke-width: 1.6;
+  vector-effect: non-scaling-stroke;
+}
+.ivx-helix-cta__wave path:first-child {
+  stroke: var(--ivx-accent-ink);
+}
+.ivx-helix-cta__wave path:last-child {
+  stroke: var(--ivx-accent-soft);
+}
+.ivx-helix-cta:hover .ivx-helix-cta__wave svg,
+.ivx-helix-cta:focus-visible .ivx-helix-cta__wave svg {
+  animation: ivx-wave 1.4s linear infinite;
+}
+@keyframes ivx-wave {
+  to { transform: translateX(-50%); }
+}
+
+/* Hero secondary text link */
+.ivx-textlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--ivx-muted);
+  transition: color 0.2s;
+}
+.ivx-textlink span {
+  display: inline-block;
+  transition: transform 0.25s var(--ivx-ease);
+}
+.ivx-textlink:hover {
+  color: var(--ivx-text);
+}
+.ivx-textlink:hover span {
+  transform: translateY(3px);
+}
+
+/* Shared chapter rhythm: each chapter holds the viewport while its shape forms */
+.ivx-chapter {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(5rem, 10vw, 8rem);
+}
+
+/* About statement */
+.ivx-about__statement {
+  max-width: 30ch;
+  font-size: clamp(1.65rem, 3.1vw, 3rem);
+  font-weight: 500;
+  line-height: 1.16;
+  letter-spacing: -0.022em;
+}
+.ivx-about__tags {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 1.25rem;
+  max-width: 44rem;
+  border-top: 1px solid var(--ivx-line);
+  display: grid;
+  gap: 0.5rem 3rem;
+  font-family: var(--ivx-mono);
+  font-size: 0.9rem;
+  color: var(--ivx-muted);
+}
+@media (min-width: 768px) {
+  .ivx-about__tags {
+    grid-template-columns: repeat(2, max-content);
+  }
+}
+
+/* Home about: link to the about page, arrow box slides */
+.ivx-arrowlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 2.25rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+.ivx-arrowlink__icon {
+  display: inline-grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 1px solid var(--ivx-line);
+  color: var(--ivx-accent-ink);
+  transition: transform 0.3s var(--ivx-ease), border-color 0.3s;
+}
+.ivx-arrowlink:hover .ivx-arrowlink__icon,
+.ivx-arrowlink:focus-visible .ivx-arrowlink__icon {
+  transform: translateX(6px);
+  border-color: var(--ivx-accent-ink);
+}
+
+/* Services: index list, the ring + phone forms on the right */
+.ivx-services__inner {
+  width: 100%;
+}
+.ivx-services__head h2,
+.ivx-approach__title {
+  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.ivx-services__intro,
+.ivx-approach__lead {
+  margin-top: 1rem;
+  max-width: 44ch;
+  color: var(--ivx-muted);
+  line-height: 1.6;
+}
+.ivx-svc {
+  margin-top: 2.5rem;
+  max-width: 44rem;
+  border-top: 1px solid var(--ivx-line);
+}
+
+/* CTA: service rows, grade shift + sliding index digit */
+.ivx-svc__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.75rem 1fr auto;
+  column-gap: 1rem;
+  align-items: baseline;
+  padding: 1.25rem 1rem 1.25rem 0.25rem;
+  border-bottom: 1px solid var(--ivx-line);
+  background: linear-gradient(90deg, var(--ivx-row-hover), transparent) no-repeat;
+  background-size: 0% 100%;
+  transition: background-size 0.45s var(--ivx-ease);
+}
+.ivx-svc__row:hover,
+.ivx-svc__row:focus-visible {
+  background-size: 100% 100%;
+}
+.ivx-svc__idx {
+  display: inline-block;
+  font-family: var(--ivx-mono);
+  font-size: 0.8rem;
+  color: var(--ivx-accent-ink);
+  transition: transform 0.45s var(--ivx-ease);
+}
+.ivx-svc__row:hover .ivx-svc__idx,
+.ivx-svc__row:focus-visible .ivx-svc__idx {
+  transform: translateX(0.7rem);
+}
+.ivx-svc__name {
+  font-size: clamp(1.25rem, 1.9vw, 1.65rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  transition: color 0.3s;
+}
+.ivx-svc__row:hover .ivx-svc__name {
+  color: var(--ivx-accent-ink);
+}
+.ivx-svc__go {
+  color: var(--ivx-accent-ink);
+  opacity: 0;
+  transform: translate(-6px, 4px);
+  transition: opacity 0.3s, transform 0.3s var(--ivx-ease);
+}
+.ivx-svc__row:hover .ivx-svc__go,
+.ivx-svc__row:focus-visible .ivx-svc__go {
+  opacity: 1;
+  transform: none;
+}
+.ivx-svc__desc {
+  grid-column: 2 / -1;
+  margin-top: 0.3rem;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ivx-muted);
+}
+
+/* Approach: the steps + beam form in the middle, copy above and below */
+.ivx-approach {
+  align-items: stretch;
+}
+.ivx-approach__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 40vh;
+  width: 100%;
+}
+.ivx-steps {
+  display: grid;
+  gap: 2rem;
+}
+.ivx-step {
+  padding-top: 1rem;
+  border-top: 1px solid var(--ivx-accent-ink);
+}
+.ivx-step__n {
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  color: var(--ivx-accent-ink);
+}
+.ivx-step h3 {
+  margin-top: 0.5rem;
+  font-size: clamp(1.4rem, 2vw, 1.9rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.ivx-step p {
+  margin-top: 0.5rem;
+  max-width: 34ch;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--ivx-muted);
+}
+@media (min-width: 900px) {
+  .ivx-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 3rem);
+    align-items: end;
+  }
+  .ivx-steps:not(.ivx-steps--flat) .ivx-step:nth-child(2) {
+    transform: translateY(-1.75rem);
+  }
+  .ivx-steps:not(.ivx-steps--flat) .ivx-step:nth-child(3) {
+    transform: translateY(-3.5rem);
+  }
+}
+@media (max-width: 899px) {
+  .ivx-approach__inner {
+    gap: 30vh;
+  }
+}
+
+/* Contact: the Xi forms on the right */
+.ivx-contact__inner {
+  width: 100%;
+}
+.ivx-closing {
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.ivx-closing span {
+  display: block;
+}
+.ivx-closing span:first-child {
+  color: var(--ivx-accent-ink);
+}
+.ivx-contact__grid {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--ivx-line);
+  display: grid;
+  gap: 2.25rem;
+  align-items: end;
+}
+.ivx-contact__cell address {
+  margin-top: 0.6rem;
+  font-style: normal;
+  line-height: 1.6;
+}
+@media (min-width: 768px) {
+  .ivx-contact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1100px) {
+  .ivx-contact__grid {
+    grid-template-columns: 1.2fr 1.2fr 1fr auto;
+  }
+}
+
+/* CTA: contact WhatsApp, the one solid slab, label rolls up */
+.ivx-wa-slab {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 22rem;
+  padding: 1.15rem 1.35rem;
+  background: var(--ivx-accent);
+  color: var(--ivx-on-accent);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: transform 0.15s;
+}
+.ivx-wa-slab:active {
+  transform: translateY(1px);
+}
+.ivx-wa-slab__roll {
+  display: block;
+  height: 1.35em;
+  overflow: hidden;
+  line-height: 1.35em;
+}
+.ivx-wa-slab__roll span {
+  display: block;
+  transition: transform 0.4s var(--ivx-ease);
+}
+.ivx-wa-slab:hover .ivx-wa-slab__roll span,
+.ivx-wa-slab:focus-visible .ivx-wa-slab__roll span {
+  transform: translateY(-100%);
+}
+
+/* CTA: e-mail, corner-bracket viewfinder */
+.ivx-viewfinder {
+  position: relative;
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.85rem 1.1rem;
+  font-family: var(--ivx-mono);
+  font-size: clamp(0.95rem, 1.3vw, 1.1rem);
+}
+.ivx-viewfinder__c {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 0 solid var(--ivx-accent-ink);
+  transition: transform 0.3s var(--ivx-ease);
+}
+.ivx-viewfinder__c--tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+.ivx-viewfinder__c--tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+.ivx-viewfinder__c--bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+.ivx-viewfinder__c--br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+.ivx-viewfinder:hover .ivx-viewfinder__c--tl,
+.ivx-viewfinder:focus-visible .ivx-viewfinder__c--tl { transform: translate(5px, 5px); }
+.ivx-viewfinder:hover .ivx-viewfinder__c--tr,
+.ivx-viewfinder:focus-visible .ivx-viewfinder__c--tr { transform: translate(-5px, 5px); }
+.ivx-viewfinder:hover .ivx-viewfinder__c--bl,
+.ivx-viewfinder:focus-visible .ivx-viewfinder__c--bl { transform: translate(5px, -5px); }
+.ivx-viewfinder:hover .ivx-viewfinder__c--br,
+.ivx-viewfinder:focus-visible .ivx-viewfinder__c--br { transform: translate(-5px, -5px); }
+
+/* CTA: Instagram, circular text badge */
+.ivx-igbadge {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  width: 8.5rem;
+  height: 8.5rem;
+  border-radius: 50%;
+}
+.ivx-igbadge__ring {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: ivx-spin 14s linear infinite;
+  animation-play-state: paused;
+}
+.ivx-igbadge:hover .ivx-igbadge__ring,
+.ivx-igbadge:focus-visible .ivx-igbadge__ring {
+  animation-play-state: running;
+}
+.ivx-igbadge__ring text {
+  font-family: var(--ivx-mono);
+  font-size: 8.6px;
+  fill: var(--ivx-text);
+}
+.ivx-igbadge__core {
+  display: grid;
+  place-items: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--ivx-line);
+  font-size: 1.6rem;
+  transition: border-color 0.3s;
+}
+.ivx-igbadge:hover .ivx-igbadge__core {
+  border-color: var(--ivx-accent-ink);
+}
+@keyframes ivx-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Application form ("Sizi arayalım"): glass panel on the left, the phone-in-ring forms on the right */
+.ivx-apply__col {
+  width: 100%;
+  max-width: 40rem;
+}
+.ivx-apply__title {
+  margin-top: 1rem;
+  font-size: clamp(2.3rem, 4.6vw, 4.1rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+.ivx-apply__lead {
+  margin-top: 1rem;
+  max-width: 40ch;
+  color: var(--ivx-muted);
+  line-height: 1.6;
+}
+.ivx-apply__panel {
+  margin-top: 2rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid var(--ivx-panel-border);
+  border-radius: var(--ivx-frame);
+  background: var(--ivx-panel-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--ivx-panel-shadow);
+}
+.ivx-form__grid {
+  display: grid;
+  gap: 0.35rem 1.25rem;
+}
+@media (min-width: 640px) {
+  .ivx-form__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.ivx-field label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-family: var(--ivx-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ivx-muted);
+}
+.ivx-field input {
+  width: 100%;
+  height: 3.1rem;
+  padding: 0 1rem;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--ivx-text);
+  background: var(--ivx-field-bg);
+  border: 1px solid var(--ivx-line);
+  border-radius: 0;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.ivx-field input::placeholder {
+  color: var(--ivx-placeholder);
+}
+.ivx-field input:focus {
+  border-color: var(--ivx-accent-ink);
+  box-shadow: 0 0 0 3px var(--ivx-focus-ring);
+}
+.ivx-field input[aria-invalid="true"],
+.ivx-consent input[aria-invalid="true"] {
+  border-color: var(--ivx-error);
+}
+.ivx-field__err {
+  min-height: 1.25rem;
+  margin-top: 0.3rem;
+  font-size: 0.82rem;
+  color: var(--ivx-error);
+}
+.ivx-consent {
+  margin-top: 0.4rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.75rem;
+  align-items: start;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--ivx-muted);
+}
+.ivx-consent input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1rem;
+  border: 1px solid var(--ivx-line);
+  background: var(--ivx-field-bg);
+  cursor: pointer;
+}
+.ivx-consent input:checked {
+  background: var(--ivx-accent);
+  border-color: var(--ivx-accent-ink);
+}
+.ivx-consent input:checked::after {
+  content: "";
+  width: 0.35rem;
+  height: 0.65rem;
+  border: solid var(--ivx-on-accent);
+  border-width: 0 2px 2px 0;
+  transform: translateY(-1px) rotate(45deg);
+}
+.ivx-consent label {
+  cursor: pointer;
+}
+.ivx-consent .ivx-field__err {
+  grid-column: 2;
+  margin-top: 0;
+}
+
+/* CTA: submit, a light sweep crosses the slab */
+.ivx-submit {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1.1rem;
+  padding: 1.1rem 1.35rem;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ivx-on-accent);
+  background: var(--ivx-accent);
+  transition: transform 0.15s, opacity 0.2s;
+}
+.ivx-submit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 35%, rgb(255 255 255 / 0.55) 50%, transparent 65%);
+  transform: translateX(-110%);
+  transition: transform 0.7s var(--ivx-ease);
+}
+.ivx-submit:hover::after,
+.ivx-submit:focus-visible::after {
+  transform: translateX(110%);
+}
+.ivx-submit:active {
+  transform: translateY(1px);
+}
+.ivx-submit[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.8;
+}
+.ivx-form__note {
+  margin-top: 0.9rem;
+  font-size: 0.82rem;
+  color: var(--ivx-note);
+}
+.ivx-form__status {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--ivx-error);
+}
+.ivx-form__status:empty {
+  display: none;
+}
+.ivx-form__status a {
+  color: var(--ivx-accent-ink);
+  border-bottom: 1px solid currentColor;
+}
+
+/* Sent state */
+.ivx-sent__icon {
+  width: 3rem;
+  height: 3rem;
+  fill: none;
+  stroke: var(--ivx-accent-ink);
+  stroke-width: 2;
+}
+.ivx-sent__icon path {
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: ivx-draw 0.6s 0.15s var(--ivx-ease) forwards;
+}
+@keyframes ivx-draw {
+  to { stroke-dashoffset: 0; }
+}
+.ivx-sent__title {
+  margin-top: 1.25rem;
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  outline: none;
+}
+.ivx-sent p {
+  margin-top: 0.6rem;
+  line-height: 1.6;
+  color: var(--ivx-muted);
+}
+
+/* CTA: send the details on WhatsApp, outlined, the arrow lifts */
+.ivx-wa-send {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding: 0.95rem 1.25rem;
+  border: 1px solid var(--ivx-accent-ink);
+  color: var(--ivx-accent-ink);
+  font-weight: 600;
+  transition: background-color 0.25s;
+}
+.ivx-wa-send span {
+  display: inline-block;
+  transition: transform 0.25s var(--ivx-ease);
+}
+.ivx-wa-send:hover {
+  background: var(--ivx-hover-tint);
+}
+.ivx-wa-send:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* About page */
+.ivx-story-hero h1 {
+  margin-top: 1.25rem;
+  max-width: 19ch;
+  font-size: clamp(2.2rem, 4.4vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.ivx-story-hero h1 em {
+  font-style: normal;
+  color: var(--ivx-accent-ink);
+}
+.ivx-timeline {
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 40rem;
+}
+.ivx-timeline__year {
+  display: block;
+  font-family: var(--ivx-mono);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1;
+}
+.ivx-timeline__label {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--ivx-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ivx-muted);
+}
+.ivx-timeline__line {
+  height: 1px;
+  background: linear-gradient(90deg, var(--ivx-line), var(--ivx-accent-ink));
+}
+.ivx-story__text {
+  max-width: 62ch;
+}
+.ivx-story__text p {
+  font-size: clamp(1.08rem, 1.35vw, 1.28rem);
+  line-height: 1.65;
+  color: var(--ivx-body);
+}
+.ivx-story__text p + p {
+  margin-top: 1.4rem;
+}
+.ivx-story__text .ivx-story__belief {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--ivx-accent-ink);
+  font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  color: var(--ivx-text);
+}
+@media (min-width: 900px) {
+  .ivx-story-close {
+    min-height: 72svh;
+  }
+}
+@media (max-width: 899px) {
+  .ivx-story-close {
+    min-height: auto;
+  }
+}
+.ivx-about-svc .ivx-svc {
+  margin-top: 2rem;
+}
+.ivx-story-close__title {
+  max-width: 13ch;
+  font-size: clamp(2.3rem, 5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+.ivx-story-close__title span {
+  display: block;
+}
+.ivx-story-close__title span:first-child {
+  color: var(--ivx-accent-ink);
+}
+.ivx-story-close__cta {
+  margin-top: 2rem;
+}
+
+/* Sub-pages (services, contact): shorter chapters so copy flows without gaps */
+.ivx-chapter--fit {
+  min-height: auto;
+  padding-block: clamp(4.5rem, 9vw, 7.5rem);
+}
+.ivx-h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.ivx-crumbs {
+  display: flex;
+  gap: 0.6rem;
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ivx-accent-ink);
+}
+.ivx-crumbs a {
+  color: var(--ivx-muted);
+  transition: color 0.2s;
+}
+.ivx-crumbs a:hover {
+  color: var(--ivx-text);
+}
+.ivx-sub-hero__title {
+  margin-top: 1.25rem;
+  max-width: 15ch;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.ivx-sub-hero__lead {
+  margin-top: 1.25rem;
+  max-width: 46ch;
+  font-size: clamp(1.05rem, 1.35vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--ivx-muted);
+}
+.ivx-scope__list {
+  margin-top: 2.25rem;
+  max-width: 46rem;
+  display: grid;
+  border-top: 1px solid var(--ivx-line);
+}
+@media (min-width: 768px) {
+  .ivx-scope__list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2.5rem;
+  }
+}
+.ivx-scope__list li {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--ivx-line);
+  font-size: clamp(1.02rem, 1.3vw, 1.15rem);
+  line-height: 1.45;
+}
+.ivx-scope__n {
+  flex: none;
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  color: var(--ivx-accent-ink);
+}
+.ivx-scope__for {
+  margin-top: 2.25rem;
+  max-width: 46ch;
+}
+.ivx-scope__for p {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ivx-body);
+}
+.ivx-steps--flat {
+  margin-top: 2.25rem;
+  max-width: 62rem;
+}
+.ivx-svc-close__cta {
+  margin-top: 2rem;
+}
+.ivx-others {
+  margin-top: clamp(3rem, 6vw, 4.5rem);
+  max-width: 44rem;
+}
+.ivx-others .ivx-svc {
+  margin-top: 0.75rem;
+}
+.ivx-contact-hero .ivx-contact__grid {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  max-width: 44rem;
+}
+@media (min-width: 1100px) {
+  .ivx-contact-hero .ivx-contact__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Footer: logo, page links, copyright */
+.ivx-footer {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--ivx-line);
+  padding-block: 2.25rem;
+  background: var(--ivx-ground);
+}
+.ivx-footer__inner {
+  display: grid;
+  justify-items: center;
+  gap: 1.25rem;
+  text-align: center;
+}
+.ivx-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 2rem;
+  font-size: 0.92rem;
+  color: var(--ivx-muted);
+}
+@media (min-width: 900px) {
+  .ivx-footer__inner {
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .ivx-footer__logo {
+    justify-self: start;
+  }
+  .ivx-footer small {
+    justify-self: end;
+  }
+}
+.ivx-footer__links a:hover {
+  color: var(--ivx-text);
+}
+.ivx-footer small {
+  font-family: var(--ivx-mono);
+  font-size: 0.78rem;
+  color: var(--ivx-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .ivx-rise,
+  .ivx-helix-cta__wave svg,
+  .ivx-igbadge__ring,
+  .ivx-submit::after {
+    animation: none !important;
+  }
+  .ivx-svc__row,
+  .ivx-svc__idx,
+  .ivx-wa-slab__roll span,
+  .ivx-viewfinder__c,
+  .ivx-arrowlink__icon {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ivx-sent__icon path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+  .ivx-submit::after {
+    display: none;
+  }
+}

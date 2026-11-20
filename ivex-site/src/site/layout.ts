@@ -72,6 +72,7 @@ export function header(active: NavKey) {
   return `<a class="ivx-skip" href="#icerik">İçeriğe geç</a>
     <canvas id="gl" aria-hidden="true"></canvas>
     <div class="gl-vignette" aria-hidden="true"></div>
+    <div class="ipb-mark" aria-hidden="true">IVEX</div>
     <header class="ivx-nav">
       <div class="ivx-wrap ivx-nav__inner">
         <nav aria-label="Ana menü" class="ivx-nav__links">${navLinks(active)}</nav>

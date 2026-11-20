@@ -1,0 +1,54 @@
+{
+  "klasor": "ivex-icerik/ilan",
+  "kapak": {
+    "etiket": "EKİBİMİZİ BÜYÜTÜYORUZ",
+    "baslik": [["IVEX ekibine", "beyaz"], ["katıl.", "lime"]],
+    "slogan": "Ekipman bizden, yetenek senden.",
+    "not": "Çekim ve kurgu için gereken tüm ekipman ajansta mevcut.",
+    "kaydir": "Kaydır, pozisyonlara bak"
+  },
+  "pozisyonlar": [
+    {
+      "ad": "Fotoğrafçı",
+      "ek": "Fotoğraf & video çekim",
+      "ikon": "kamera",
+      "ozet": "Ürünü, mekânı ve insanı hikâyeyle çeken göz.",
+      "isler": ["Ürün, yemek, mekân ve moda çekimleri", "Reels için dikey video çekimleri",
+                "Işık kurulumu ve set hazırlığı", "Fotoğraf düzenleme ve zamanında teslim"],
+      "aranan": ["Güçlü bir portfolyo", "Işık ve kompozisyon bilgisi", "Lightroom ve Photoshop"]
+    },
+    {
+      "ad": "Kurgucu",
+      "ek": "Video editör",
+      "ikon": "video",
+      "ozet": "İlk 3 saniyede durduran videoları kuran el.",
+      "isler": ["Reels ve TikTok kurgusu", "Kanca, altyazı, ses ve renk düzenleme",
+                "Senaryoya göre hızlı kurgu", "Trendleri markaya uyarlama"],
+      "aranan": ["Premiere Pro, CapCut ya da DaVinci", "Ritim ve hikâye duygusu", "After Effects bilgisi artı"]
+    },
+    {
+      "ad": "Reklamcı",
+      "ek": "Meta reklam uzmanı",
+      "ikon": "grafik",
+      "ozet": "Bütçeyi işe yarayan içeriğe yönlendiren akıl.",
+      "isler": ["Meta reklam kampanyalarını kurmak", "Hedef kitle ve A/B testleri",
+                "Organik başarılı içeriği reklama taşımak", "Haftalık performans raporu"],
+      "aranan": ["Meta Reklam Yöneticisi deneyimi", "Piksel ve dönüşüm takibi bilgisi", "Rakamlarla rahat çalışmak"]
+    }
+  ],
+  "basvuru": {
+    "etiket": "NASIL BAŞVURULUR?",
+    "baslik": [["3 adımda", "beyaz"], ["başvur.", "lime"]],
+    "adimlar": [["Portfolyonu hazırla", "Çekim, kurgu ya da kampanya örneklerin"],
+                ["Pozisyonu seç", "Fotoğrafçı, kurgucu ya da reklamcı"],
+                ["DM'den gönder", "“BAŞVURU” yaz, portfolyonu ekle"]],
+    "buton": "DM'DEN “BAŞVURU” YAZ",
+    "not": "Çekim ve kurgu için gereken tüm ekipman ajansta mevcut."
+  },
+  "hikaye": {
+    "etiket": "EKİBİMİZİ BÜYÜTÜYORUZ",
+    "baslik": [["Fotoğrafçı,", "beyaz"], ["kurgucu ve", "beyaz"], ["reklamcı arıyoruz.", "lime"]],
+    "slogan": "Ekipman bizden, yetenek senden.",
+    "buton": "DM'DEN “BAŞVURU” YAZ"
+  }
+}
